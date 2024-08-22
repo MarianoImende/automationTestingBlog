@@ -1,4 +1,4 @@
-baseURL = "https://automationtesting.ar/"
+baseURL = "https://automationtestingblog.pages.dev/"
 languageCode = "en-us"
 title = "Blog de Testing"
 theme = "ananke"

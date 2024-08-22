@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog de Testing</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content on Blog de Testing</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Apr 2017 11:25:05 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contract First y testing</title>
+      <link>http://localhost:1313/post/contractfirst/</link>
+      <pubDate>Fri, 14 Apr 2017 11:25:05 -0400</pubDate>
+      <guid>http://localhost:1313/post/contractfirst/</guid>
+      <description>Implementación de la Metodología Contract First en Pruebas de Software Este post tiene la intención de mostrar cómo adoptar la metodología Contract First en el contexto de pruebas de software. Implementar esta metodología implica una serie de pasos que facilitan la integración de contratos en el proceso de pruebas, abarcando desde la educación y la capacitación hasta la automatización y la colaboración continua. Al usar herramientas como Postman y generadores de clientes API, los testers pueden crear y ejecutar pruebas de manera eficiente y consistente, asegurando que las APIs cumplan con las especificaciones definidas en los contratos.</description>
+    </item>
+    <item>
+      <title>Esmeralda del testing</title>
+      <link>http://localhost:1313/post/chapter-6/</link>
+      <pubDate>Fri, 14 Apr 2017 11:25:05 -0400</pubDate>
+      <guid>http://localhost:1313/post/chapter-6/</guid>
+      <description>We are delighted to be able to inform the reader, that during the whole of this scene, Gringoire and his piece had stood firm. His actors, spurred on by him, had not ceased to spout his comedy, and he had not ceased to listen to it. He had made up his mind about the tumult, and was determined to proceed to the end, not giving up the hope of a return of attention on the part of the public.</description>
+    </item>
+    <item>
+      <title>La Pirámide de Pruebas</title>
+      <link>http://localhost:1313/post/piramide/</link>
+      <pubDate>Fri, 14 Apr 2017 11:25:05 -0400</pubDate>
+      <guid>http://localhost:1313/post/piramide/</guid>
+      <description>La Pirámide de Pruebas según Mike Cohn Mike Cohn ha discutido y promovido este modelo en sus libros y presentaciones sobre desarrollo ágil y gestión de proyectos, destacando su importancia para la calidad del software y la eficiencia en las prácticas de prueba.&#xA;Base de la pirámide - Pruebas Unitarias Las pruebas unitarias constituyen la base de la pirámide. Son pruebas automatizadas que verifican el funcionamiento correcto de unidades individuales de código, como funciones, métodos o componentes pequeños.</description>
+    </item>
+    <item>
+      <title>Performance testing</title>
+      <link>http://localhost:1313/post/performance/</link>
+      <pubDate>Fri, 14 Apr 2017 11:25:05 -0400</pubDate>
+      <guid>http://localhost:1313/post/performance/</guid>
+      <description>La importancia de un plan en las pruebas de rendimiento Las pruebas de rendimiento son cruciales para evaluar el comportamiento de un sistema bajo carga, identificando cuellos de botella y garantizando una experiencia de usuario satisfactoria. Sin embargo, para sacar el máximo provecho de estas pruebas y obtener resultados confiables, es fundamental contar con un plan bien definido.&#xA;Un plan de pruebas de rendimiento sirve como una hoja de ruta detallada, estableciendo objetivos claros, metodologías, herramientas, recursos y responsabilidades.</description>
+    </item>
+  </channel>
+</rss>

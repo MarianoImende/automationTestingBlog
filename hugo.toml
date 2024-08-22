@@ -1,0 +1,68 @@
+baseURL = "https://automationtesting.ar/"
+languageCode = "en-us"
+title = "Blog de Testing"
+theme = "ananke"
+resourceDir = "../resources"
+recent_posts_number = 1
+
+
+MetaDataFormat         = "yaml" # Formato cabeceras
+DefaultContentLanguage = "es"   # Idioma por defecto del contenido
+SectionPagesMenu       = "main" #
+Paginate               = 15      # Posts por página en main
+googleAnalytics        = ""     # Código para estadísticas web
+enableRobotsTXT        = true   # Buscadores
+
+[params.contact]
+    email = 'imende.mariano@gmail.com'
+    phone = '+1 202-555-1212'
+
+[params]
+  facebook = ""
+  #twitter = "https://twitter.com/GoHugoIO"
+  instagram = "https://instagram.com/GoHugoIO"
+  youtube = "https://youtube.com/GoHugoIO"
+  github = "https://github.com/GoHugoIO"
+  linkedin = "https://linkedin/GoHugoIO"
+  read_more_copy= "Leer más sobre este artículo"
+  text_color = "black"
+  author = "Mariano Imende"
+  favicon = ""
+  site_logo = ""
+  description = "Blog personal sobre testing de software, automatización de pruebas y performance testing"
+  dateFormat = "Mon, Jan 2, 2006"
+  themeColor = "black"
+  commentoEnable = true
+  # choose a background color from any on this page: https://tachyons.io/docs/themes/skins/ and preface it with "bg-"
+  background_color_class = "bg-light-green"
+  featured_image         = "/images/gohugo-default-sample-hero-image.jpg"
+
+[services.disqus]
+  shortname = 'YOURSHORTNAME'
+
+[[params.ananke_socials]]
+name = "twitter"
+url = "https://twitter.com/GoHugoIO"
+
+
+[menu]
+  [[menu.main]]
+    name = "Inicio"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Artículos"
+    url = "/post/"
+    weight = 3
+  [[menu.main]]
+    name = "Tutoriales"
+    url = "/tutoriales/"
+    weight = 4
+  [[menu.main]]
+    name = "Noticias"
+    url = "/news/"
+    weight = 5
+  [[menu.main]]
+    name = "Contacto"
+    url = "/contact/"
+    weight = 6

@@ -2,9 +2,8 @@
 date: 2017-04-14T11:25:05-04:00
 description: "Introducción a la Programación Orientada a Objetos (POO) TypeScript"
 featured_image: "/images/esmeralda.jpg"
-tags: ["POO"]
 title: "Introducción a la Programación Orientada a Objetos (POO) TypeScript"
-disable_share: false
+disable_share: true
 ---
 # Introducción a la Programación Orientada a Objetos (POO) TypeScript
 

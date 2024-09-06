@@ -28,5 +28,39 @@ El encapsulamiento consiste en ocultar los detalles internos de una clase y expo
 
 
 ```tsx 
-class Persona { private nombre: string; // solo accesible dentro de la clase private edad: number; constructor(nombre: string, edad: number) { this.nombre = nombre; this.edad = edad; } // Método público para obtener el nombre public getNombre(): string { return this.nombre; } // Método público para obtener la edad public getEdad(): number { return this.edad; } // Método público para cambiar la edad, controlando los valores public setEdad(nuevaEdad: number): void { if (nuevaEdad > 0) { this.edad = nuevaEdad; } else { console.log("La edad debe ser positiva."); } } } // Uso del encapsulamiento const persona = new Persona("Juan", 25); console.log(persona.getNombre()); // Juan persona.setEdad(30); console.log(persona.getEdad()); // 30
+class Persona {
+    private nombre: string; // solo accesible dentro de la clase
+    private edad: number;
+ 
+    constructor(nombre: string, edad: number) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+ 
+    // Método público para obtener el nombre
+    public getNombre(): string {
+        return this.nombre;
+    }
+ 
+    // Método público para obtener la edad
+    public getEdad(): number {
+        return this.edad;
+    }
+ 
+    // Método público para cambiar la edad, controlando los valores
+    public setEdad(nuevaEdad: number): void {
+        if (nuevaEdad > 0) {
+            this.edad = nuevaEdad;
+        } else {
+            console.log("La edad debe ser positiva.");
+        }
+    }
+}
+ 
+// Uso del encapsulamiento
+const persona = new Persona("Juan", 25);
+console.log(persona.getNombre()); // Juan
+persona.setEdad(30);
+console.log(persona.getEdad()); // 30
+
 ```

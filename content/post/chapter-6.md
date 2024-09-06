@@ -23,7 +23,8 @@ La Programación Orientada a Objetos (POO) surgió en la década de 1960, espec�
 
 ## Encapsulamiento (Protección de los datos)
 
-El encapsulamiento consiste en ocultar los detalles internos de una clase y exponer solo lo necesario mediante métodos públicos. Esto protege los datos y asegura que solo se modifiquen o accedan de manera controlada. Encapsulamiento: Oculta detalles internos para proteger los datos y controlarlos.
+El encapsulamiento consiste en ocultar los detalles internos de una clase y exponer solo lo necesario mediante métodos públicos. Esto protege los datos y asegura que solo se modifiquen o accedan de manera controlada. 
+El Encapsulamiento oculta detalles internos para proteger los datos y controlarlos.
 
 
 ```tsx 

@@ -18,8 +18,8 @@ La Programación Orientada a Objetos (POO) surgió en la década de 1960, espec�
 
 **Objetos:** Son las instancias creadas a partir de esas clases (por ejemplo, Juan es una instancia de la clase Persona). Métodos y propiedades: 
 
-• Las propiedades son los datos que pertenecen a la clase (como nombre o edad). 
-• Los métodos son las acciones que pueden realizar las clases (como getNombre() o setEdad()).
+- Las propiedades son los datos que pertenecen a la clase (como nombre o edad). 
+- Los métodos son las acciones que pueden realizar las clases (como getNombre() o setEdad()).
 
 ## Encapsulamiento (Protección de los datos)
 

@@ -1,10 +1,13 @@
 ---
-date: 2017-04-14T11:25:05-04:00
+#title: "Introducción a la Programación Orientada a Objetos (POO) TypeScript"
+date: 2024-04-14T11:25:05-04:00
 description: "Introducción a la Programación Orientada a Objetos (POO) TypeScript"
-featured_image: "/images/esmeralda.jpg"
-title: "Introducción a la Programación Orientada a Objetos (POO) TypeScript"
-disable_share: true
+# 1. To ensure Netlify triggers a build on our exampleSite instance, we need to change a file in the exampleSite directory.
+cascade:
+featured_image: "/images/posts.jpg"
+
 ---
+
 # Introducción a la Programación Orientada a Objetos (POO) TypeScript
 
 Un conocimiento que hay que lograr para facilitar y construir pruebas automáticas en el mundo del testing de software es sobre la programación orientada a objetos.

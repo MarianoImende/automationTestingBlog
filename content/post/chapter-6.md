@@ -28,7 +28,7 @@ El encapsulamiento consiste en ocultar los detalles internos de una clase y expo
 El Encapsulamiento oculta detalles internos para proteger los datos y controlarlos.
 
 
-```tsx 
+```TypeScript 
 class Persona {
     private nombre: string; // solo accesible dentro de la clase
     private edad: number;

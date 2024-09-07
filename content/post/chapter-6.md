@@ -64,4 +64,12 @@ console.log(persona.getNombre()); // Juan
 persona.setEdad(30);
 console.log(persona.getEdad()); // 30
 
-```
+
+
+	• **Clases y objetos**: Las clases son plantillas para crear objetos, que son instancias de esas clases.
+
+	• **Encapsulamiento**: Protege los datos, permitiendo el acceso controlado.
+
+	• **Herencia**: Permite que una clase reutilice código de otra.
+
+	• **Polimorfismo:** Diferentes clases pueden compartir métodos con comportamientos distintos.

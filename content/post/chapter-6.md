@@ -1,11 +1,8 @@
 ---
 title: "Introducción a la Programación Orientada a Objetos (POO) TypeScript"
 date: 2024-04-14T11:25:05-04:00
-description: "Introducción a la Programación Orientada a Objetos (POO) TypeScript"
-# 1. To ensure Netlify triggers a build on our exampleSite instance, we need to change a file in the exampleSite directory.
-cascade:
+description: "Conocimiento clave para automation testing"
 featured_image: "/images/posts.jpg"
-
 ---
 
 # Introducción a la Programación Orientada a Objetos (POO) TypeScript

@@ -296,7 +296,7 @@ Ventajas del enfoque con clases abstractas:
 • **Obligatoriedad:** Las subclases deben implementar los métodos abstractos definidos en la clase abstracta, lo que garantiza que cada subclase tenga su propia versión de hacerSonido().
 
 **Comparación entre Interfaces y Clases Abstractas en Polimorfismo:**
-
+---
 |**Característica**|**Clases Interfaces**|**Clases Abstractas**| 
 | ----------- | -------------- | -----------------------
 |Jerarquía |No impone una jerarquía o herencia. |Define una jerarquía clara de clases. |
@@ -304,7 +304,7 @@ Ventajas del enfoque con clases abstractas:
 |Uso|Se usa para definir un comportamiento común sin imponer implementación.  |Se usa cuando hay una estructura o comportamiento común y algunas partes necesitan ser implementadas por las subclases.|
 |Reutilización de código|No permite reutilización de código entre clases.|Permite reutilizar código en las subclases (por ejemplo, `moverse()` en `Animal`). |
 |Relación entre clases| Relación de **comportamiento compartido** (no necesariamente están relacionadas). |Relación de **herencia** (por ejemplo, `Perro` y `Gato` son `Animales`). |
-
+---
 
 **¿Cuándo usar uno u otro?**
 

@@ -21,7 +21,7 @@ enableRobotsTXT        = true   # Buscadores
 [params]
   show_reading_time = true
   commentoEnable = true
-  recent_posts_number = 6
+  recent_posts_number = 1
   site_logo = ""
   email = "imende.mariano@gmail.com"
   #twitter = "https://twitter.com/GoHugoIO"

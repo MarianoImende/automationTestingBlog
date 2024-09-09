@@ -1,9 +1,8 @@
 baseURL = "https://automationtesting.ar/"
 languageCode = "en-us"
-title = """Blog: Automation
-& 
-Performance
-  testing."""
+title = """Blog: 
+Automation & Performance
+testing."""
 theme = "ananke"
 resourceDir = "../resources"
 
@@ -56,7 +55,3 @@ enableRobotsTXT        = true   # Buscadores
     name = "Contacto"
     url = "/contact/"
     weight = 3
-  [[menu.main]]
-    name = "Sobre mi"
-    url = "/about/"
-    weight = 4

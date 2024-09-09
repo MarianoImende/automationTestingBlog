@@ -29,7 +29,6 @@ enableRobotsTXT        = true   # Buscadores
   text_color = "black"
   author = "Mariano Imende"
   favicon = ""
-  site_logo = ""
   description = "Blog personal sobre testing de software, automatización de pruebas y performance testing"
   dateFormat = "Mon, Jan 2, 2006"
   themeColor = "black"

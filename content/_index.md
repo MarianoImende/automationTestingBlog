@@ -5,6 +5,7 @@ cascade:
 featured_image: "/images/portada.jpg"
 type: blog
 omit_header_text: true
+disable_share: false
 ---
 ¿Qué Puedes Esperar de Este Blog?
 Tutoriales Prácticos: Guías paso a paso sobre cómo implementar soluciones de automatización de pruebas y pruebas de rendimiento utilizando herramientas modernas y tecnologías emergentes.

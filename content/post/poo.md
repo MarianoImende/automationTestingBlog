@@ -252,6 +252,7 @@ Usamos **interfaz** en el ejemplo de Aeropuerto, Helicóptero y Avión porque **
 		
 ```
 
+
 En el ejemplo anterior, el polimorfismo se expresa dado que diferentes clases (**Perro** y **Gato**) implementan el método **hacerSonido()** de formas distintas. Esto permite que podamos tratar a los objetos Perro y Gato como si fueran del mismo tipo (es decir, como Animal), pero con comportamientos diferentes en función del tipo de objeto real.
 
 Usamos clase abstracta en el ejemplo de Animal, Perro y Gato porque tienen una relación **jerárquica** natural y queremos compartir código y estructura. Existe una relación **"es un"** (Ej., **Perro** es un **Animal**).

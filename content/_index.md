@@ -3,7 +3,7 @@ title: "Bienvenidos a Mi Blog sobre Testing Automation y Performance"
 description: "En este espacio, exploramos el fascinante mundo de la automatización de pruebas y el rendimiento del software. Como profesional con años de experiencia en la industria, mi objetivo es compartir conocimientos, técnicas y mejores prácticas para ayudar a otros testers y desarrolladores a mejorar la calidad y eficiencia de sus proyectos de software. ¿Qué Puedes Esperar de Este Blog?"
 cascade:
   featured_image: "/images/portada.jpg"  # Ruta de la imagen destacada
-type: blog  # Tipo de contenido, en este caso, una página
+type: page  # Tipo de contenido, en este caso, una página
 omit_header_text: true  # Omite el texto del encabezado
 disable_share: false  # Permite compartir en redes sociales
 ---

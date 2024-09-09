@@ -1,14 +1,21 @@
+#---
+#date: 2017-04-14T11:25:05-04:00
+#tags: ["piramide"]
+#featured_image: "/images/piramide.png"
+#title: "La Pirámide de Pruebas"
+#disable_share: true
+#omit_header_text: false #achica la imagen
+#type: page
 ---
-date: 2017-04-14T11:25:05-04:00
-tags: ["piramide"]
+date: "2023-05-14T11:25:05-04:00"
+title: "Pirámide de automatización"
+cascade:
 featured_image: "/images/piramide.png"
-title: "La Pirámide de Pruebas"
-disable_share: true
-omit_header_text: false #achica la imagen
-type: page
+tags: ["piramide"]
+disable_share: false
+omit_header_text: true
+type: post
 ---
-
-
 # La Pirámide de Pruebas según Mike Cohn
 
 Mike Cohn ha discutido y promovido este modelo en sus libros y presentaciones sobre desarrollo ágil y gestión de proyectos, destacando su importancia para la calidad del software y la eficiencia en las prácticas de prueba.

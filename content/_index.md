@@ -8,9 +8,6 @@ omit_header_text: true  # Omite el texto del encabezado
 disable_share: false  # Permite compartir en redes sociales
 ---
 
-<div class="description">
-  "Aquí va tu descripción completa."
-</div>
 
 
 

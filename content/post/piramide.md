@@ -5,7 +5,7 @@ cascade:
 featured_image: "/images/piramide.png"
 tags: ["piramide"]
 disable_share: false
-omit_header_text: true
+omit_header_text: false
 type: post
 ---
 

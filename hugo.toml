@@ -1,7 +1,7 @@
 baseURL = "https://automationtesting.ar/"
 languageCode = "en-us"
 title = """Blog: Automation & Performance
-  esting."""
+  testing."""
 theme = "ananke"
 resourceDir = "../resources"
 

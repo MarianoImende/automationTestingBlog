@@ -5,6 +5,7 @@ cascade:
   featured_image: "/images/portada.jpg"  # Ruta de la imagen destacada
 omit_header_text: true  # Omite el texto del encabezado
 disable_share: false  # Permite compartir en redes sociales
+type: page  # Tipo de contenido, en este caso, una página
 ---
 <div class="centered-content">
   <h2>¿Qué Puedes Esperar de Este Blog?</h2>

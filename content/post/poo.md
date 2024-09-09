@@ -1,5 +1,6 @@
 ---
 date: "2024-04-14T11:25:05-04:00"
+title: "Introducción a la Programación Orientada a Objetos (POO) TypeScript"
 description: "Conocimiento clave para automation testing"
 cascade:
  featured_image: "/images/posts.jpg"
@@ -8,7 +9,7 @@ disable_share: false
 type: page
 ---
 
-# Introducción a la Programación Orientada a Objetos (POO) TypeScript
+# 
 
 Un conocimiento base que hay que lograr para facilitar el desarrollo de pruebas automáticas es sobre la programación orientada a objetos.
 

@@ -18,6 +18,7 @@ enableRobotsTXT        = true   # Buscadores
     phone = '+54-1162271394'
 
 [params]
+  commentoEnable = true
   recent_posts_number = 6
   site_logo = ""
   email = "imende.mariano@gmail.com"

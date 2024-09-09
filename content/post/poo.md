@@ -7,7 +7,7 @@ featured_image: "/images/posts.jpg"
 
 # Introducción a la Programación Orientada a Objetos (POO) TypeScript
 
-Un conocimiento que hay que lograr para facilitar y construir pruebas automáticas en el mundo del testing de software es sobre la programación orientada a objetos.
+Un conocimiento base que hay que lograr para facilitar el desarrollo de pruebas automáticas es sobre la programación orientada a objetos.
 
 La Programación Orientada a Objetos (POO) es un estilo de programación que organiza el código en torno a objetos. Estos objetos representan entidades del mundo real o del dominio del problema, y tienen características (llamadas propiedades) y comportamientos (llamados métodos). El objetivo de la POO es hacer que el código sea más fácil de entender, mantener y reutilizar. Es una forma natural de pensar en los problemas y cómo resolverlos. 
 

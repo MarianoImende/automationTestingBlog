@@ -6,6 +6,7 @@ cascade:
 featured_image: "/images/posts.jpg"
 tags: ["POO"]
 disable_share: false
+omit_header_text: true
 ---
 
 Un tema muy importante a la hora de comenzar el camino de la automatizacion de pruebas es la programación orientada a objetos.

@@ -1,11 +1,11 @@
 ---
+date: "2024-04-14T11:25:05-04:00"
 title: "Introducción a la Programación Orientada a Objetos (POO) TypeScript"
-date: 2024-04-14T11:25:05-04:00
 description: "Conocimiento clave para automation testing"
 cascade:
  featured_image: "/images/posts.jpg"
 tags: ["POO"]
-disable_share: true
+disable_share: false
 type: page
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "Bienvenidos a Mi Blog sobre Testing Automation y Performance"
-
 description: " En este espacio, exploramos el fascinante mundo de la automatización de pruebas y el rendimiento del software. Como profesional con años de experiencia en la industria, mi objetivo es compartir conocimientos, técnicas y mejores prácticas para ayudar a otros testers y desarrolladores a mejorar la calidad y eficiencia de sus proyectos de software.."
 # 1. To ensure Netlify triggers a build on our exampleSite instance, we need to change a file in the exampleSite directory.
 cascade:

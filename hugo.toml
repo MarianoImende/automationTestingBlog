@@ -18,7 +18,7 @@ enableRobotsTXT        = true   # Buscadores
     phone = '+54-1162271394'
 
 [params]
-  site_logo = "static/images/logo.svg"
+  site_logo = "static/images/logo.jpg"
   email = "imende.mariano@gmail.com"
   #twitter = "https://twitter.com/GoHugoIO"
   instagram = "https://www.instagram.com/mariano_imende/?igsh=ZnU0YTJrNTYxcTM3"

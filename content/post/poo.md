@@ -10,7 +10,7 @@ disable_share: false
 
 # 
 
-Un conocimiento base que hay que lograr para facilitar el desarrollo de pruebas automáticas es sobre la programación orientada a objetos.
+Un conocimiento base que hay que lograr para facilitar el desarrollo de pruebas automáticas es el tema de la programación orientada a objetos.
 
 La Programación Orientada a Objetos (POO) es un estilo de programación que organiza el código en torno a objetos. Estos objetos representan entidades del mundo real o del dominio del problema, y tienen características (llamadas propiedades) y comportamientos (llamados métodos). El objetivo de la POO es hacer que el código sea más fácil de entender, mantener y reutilizar. Es una forma natural de pensar en los problemas y cómo resolverlos. 
 
@@ -153,6 +153,8 @@ Ejemplo: Clases Persona y Empleado (Herencia)
 Motivo de ser de la herencia: La herencia permite crear nuevas clases que reutilizan el código de clases existentes. Así, en lugar de duplicar el código para el manejo de nombre y edad, la clase Empleado hereda esas características de Persona. Esto facilita el mantenimiento y la extensión de funcionalidades.
 
 **3. Polimorfismo (Capacidad de un objeto de tomar diferentes formas)**
+
+Polimorfismo usando tanto interfaces como clases abstractas en TypeScript.
 
 El polimorfismo permite que una función se comporte de manera diferente según el tipo de objeto que reciba. En este ejemplo, el método “hacer_volar” que funciona tanto para un helicóptero como para un Avión.
 

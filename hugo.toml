@@ -1,4 +1,4 @@
-baseURL = "https://automationtestingblog.pages.dev/"
+baseURL = "https://automationtesting.ar/"
 languageCode = "en-us"
 title = "Blog de Testing"
 theme = "ananke"
@@ -20,10 +20,10 @@ enableRobotsTXT        = true   # Buscadores
 [params]
   facebook = ""
   #twitter = "https://twitter.com/GoHugoIO"
-  instagram = "https://instagram.com/GoHugoIO"
+  instagram = "https://www.instagram.com/mariano_imende/?igsh=ZnU0YTJrNTYxcTM3"
   youtube = "https://youtube.com/GoHugoIO"
-  github = "https://github.com/GoHugoIO"
-  linkedin = "https://linkedin/GoHugoIO"
+  github = "https://github.com/MarianoImende"
+  linkedin = "https://www.linkedin.com/in/mariano-imende"
   read_more_copy= "Leer más sobre este artículo"
   text_color = "black"
   author = "Mariano Imende"
@@ -38,11 +38,11 @@ enableRobotsTXT        = true   # Buscadores
   featured_image         = "/images/gohugo-default-sample-hero-image.jpg"
 
 [services.disqus]
-  shortname = 'YOURSHORTNAME'
+  shortname = 'Mariano Imende'
 
 [[params.ananke_socials]]
-name = "twitter"
-url = "https://twitter.com/GoHugoIO"
+name = ""
+url = ""
 
 
 [menu]

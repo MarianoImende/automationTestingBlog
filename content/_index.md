@@ -8,6 +8,10 @@ type: page
 omit_header_text: true
 disable_share: false
 ---
+<div class="description">
+  "Aquí va tu descripción fffffffffffffffffffffffffffffffffffffffffffffffffff completa."
+</div>
+
 
 
 

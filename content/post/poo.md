@@ -10,7 +10,7 @@ disable_share: false
 
 # 
 
-Un conocimiento base que hay que lograr para facilitar el desarrollo de pruebas automáticas es el tema de la programación orientada a objetos.
+Un tema muy importante a la hora de comenzar el camino de la automatizacion de pruebas es la programación orientada a objetos.
 
 La Programación Orientada a Objetos (POO) es un estilo de programación que organiza el código en torno a objetos. Estos objetos representan entidades del mundo real o del dominio del problema, y tienen características (llamadas propiedades) y comportamientos (llamados métodos). El objetivo de la POO es hacer que el código sea más fácil de entender, mantener y reutilizar. Es una forma natural de pensar en los problemas y cómo resolverlos. 
 
@@ -274,7 +274,52 @@ Cada subclase (Perro y Gato) proporciona su propia versión de hacerSonido(), ya
 
 **Importante**: No es **obligatorio** que las clases abstractas tengan **solo** métodos o propiedades "exclusivas" de la clase abstracta. El propósito de una clase abstracta es proporcionar una estructura común, que puede incluir tanto métodos concretos (que se heredan) como métodos abstractos (que obligan a las subclases a implementarlos).
 
-**Resumen final:**
+**1. Polimorfismo con Interfaces (Volador, Helicoptero, Avion)**
+Este ejemplo usa una interfaz para lograr polimorfismo. La interfaz Volador define un contrato que cualquier clase que la implemente debe seguir, es decir, debe tener un método volar().
+
+**Ventajas del enfoque con interfaces:**
+
+	• **Flexibilidad:** Cualquier clase que implemente la interfaz Volador puede ser utilizada con el método hacer_volar(), independientemente de su jerarquía. No hay una relación directa entre Helicoptero y Avion más allá de que ambos "pueden volar".
+	
+	• **Separación de responsabilidades:** No es necesario que Helicoptero y Avion compartan una clase padre, simplemente deben implementar la interfaz Volador.
+	
+	• **Extensibilidad:** Si quieres agregar un nuevo tipo de objeto volador (como un Dron), solo necesitas implementar la interfaz, sin modificar el código existente.
+
+**2. Polimorfismo con Clases Abstractas (Animal, Perro, Gato)**
+Este ejemplo usa una clase abstracta para lograr polimorfismo. La clase abstracta Animal define un método abstracto hacerSonido(), que cada subclase (Perro, Gato) debe implementar de manera diferente. También tiene un método concreto moverse() que es compartido por todas las subclases.
+
+Ventajas del enfoque con clases abstractas:
+
+• **Reutilización de código:** Las clases abstractas permiten que las subclases hereden métodos y propiedades comunes. En este caso, moverse() es compartido entre Perro y Gato, evitando duplicación de código.
+
+• **Relación jerárquica clara:** Hay una relación natural de herencia entre las clases (Perro es un Animal, Gato es un Animal). Esto facilita la organización del código cuando las clases tienen un comportamiento común, pero también necesitan especializar ciertos comportamientos.
+
+• **Obligatoriedad:** Las subclases deben implementar los métodos abstractos definidos en la clase abstracta, lo que garantiza que cada subclase tenga su propia versión de hacerSonido().
+
+**Comparación entre Interfaces y Clases Abstractas en Polimorfismo:**
+
+|**Característica**|**Clases Interfaces**|**Clases Abstractas**| 
+| ----------- | -------------- | -----------------------
+|Jerarquía |No impone una jerarquía o herencia. |Define una jerarquía clara de clases. |
+|Herencia múltiple |Una clase puede implementar múltiples interfaces. |Una clase solo puede heredar de una clase abstracta. |
+|Uso|Se usa para definir un comportamiento común sin imponer implementación.  |Se usa cuando hay una estructura o comportamiento común y algunas partes necesitan ser implementadas por las subclases.|
+|Reutilización de código|No permite reutilización de código entre clases.|Permite reutilizar código en las subclases (por ejemplo, `moverse()` en `Animal`). |
+|Relación entre clases| Relación de **comportamiento compartido** (no necesariamente están relacionadas). |Relación de **herencia** (por ejemplo, `Perro` y `Gato` son `Animales`). |
+
+**¿Cuándo usar uno u otro?**
+
+	• Usa interfaces cuando quieres que diferentes clases compartan un comportamiento común, pero no necesariamente estén relacionadas entre sí jerárquicamente. En este caso, Helicoptero y Avion solo comparten la capacidad de volar.
+
+	• Usa clases abstractas cuando tienes una jerarquía clara y quieres compartir tanto comportamientos comunes (con métodos concretos) como forzar la implementación de ciertos métodos por parte de las subclases (con métodos abstractos). En este caso, todos los Animales pueden moverse, pero cada uno hace un sonido diferente.
+
+**Reflexión final:**
+
+• Interfaces son perfectas cuando quieres que varias clases no relacionadas compartan ciertos comportamientos (como volar en el caso del aeropuerto).
+
+• Clases abstractas son útiles cuando las clases tienen un comportamiento común que pueden heredar y especializar (como moverse en el caso de los animales, donde además cada uno tiene su propio sonido).
+Ambos enfoques demuestran el polimorfismo: diferentes clases pueden implementar un comportamiento común de maneras distintas.
+
+**Resumen**
 
 • **Clases y objetos**: Las clases son plantillas para crear objetos, que son instancias de esas clases.
 

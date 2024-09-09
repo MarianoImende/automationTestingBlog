@@ -6,7 +6,6 @@ cascade:
  featured_image: "/images/posts.jpg"
 tags: ["POO"]
 disable_share: false
-type: page
 ---
 
 # 

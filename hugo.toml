@@ -1,11 +1,11 @@
 baseURL = "https://automationtesting.ar/"
 languageCode = "en-us"
-title = """Blog: Automation & Performance
+title = """Blog: Automation
+& 
+Performance
   testing."""
 theme = "ananke"
 resourceDir = "../resources"
-
-
 
 MetaDataFormat         = "yaml" # Formato cabeceras
 DefaultContentLanguage = "es"   # Idioma por defecto del contenido
@@ -21,7 +21,7 @@ enableRobotsTXT        = true   # Buscadores
 [params]
   show_reading_time = true
   commentoEnable = true
-  recent_posts_number = 1
+  recent_posts_number = 10
   site_logo = ""
   email = "imende.mariano@gmail.com"
   #twitter = "https://twitter.com/GoHugoIO"
@@ -49,18 +49,14 @@ enableRobotsTXT        = true   # Buscadores
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "Artículos"
+    name = "Artículos y Tutoriales"
     url = "/post/"
-    weight = 3
-  [[menu.main]]
-    name = "Tutoriales"
-    url = "/tutoriales/"
-    weight = 4
-  [[menu.main]]
-    name = "Noticias"
-    url = "/news/"
-    weight = 5
+    weight = 2
   [[menu.main]]
     name = "Contacto"
     url = "/contact/"
-    weight = 6
+    weight = 3
+  [[menu.main]]
+    name = "Sobre mi"
+    url = "/about/"
+    weight = 4

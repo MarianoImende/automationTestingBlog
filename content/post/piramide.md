@@ -1,8 +1,7 @@
 ---
 date: 2017-04-14T11:25:05-04:00
-cascade:
-   featured_image: "/images/piramide.png"
-tags: []
+tags: ["piramide"]
+featured_image: "/images/piramide.png"
 title: "La Pirámide de Pruebas"
 disable_share: true
 omit_header_text: false #achica la imagen

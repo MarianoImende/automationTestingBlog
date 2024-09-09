@@ -1,11 +1,4 @@
-#---
-#date: 2017-04-14T11:25:05-04:00
-#tags: ["piramide"]
-#featured_image: "/images/piramide.png"
-#title: "La Pirámide de Pruebas"
-#disable_share: true
-#omit_header_text: false #achica la imagen
-#type: page
+
 ---
 date: "2023-05-14T11:25:05-04:00"
 title: "Pirámide de automatización"

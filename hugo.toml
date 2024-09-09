@@ -19,7 +19,7 @@ enableRobotsTXT        = true   # Buscadores
 
 [params]
   show_reading_time = true
-  commentoEnable = true`
+  commentoEnable = true
   recent_posts_number = 6
   site_logo = ""
   email = "imende.mariano@gmail.com"

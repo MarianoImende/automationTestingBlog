@@ -2,7 +2,7 @@ baseURL = "https://automationtesting.ar/"
 languageCode = "en-us"
 title = """Automation
 &
-Performance"""
+Performance
 testing."""
 theme = "ananke"
 resourceDir = "../resources"

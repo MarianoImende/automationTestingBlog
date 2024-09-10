@@ -25,11 +25,6 @@ type: page  # Tipo de contenido, en este caso, una página
   Novedades y Tendencias: Mantente actualizado con las últimas tendencias en la industria del software...
 </div>
 
-sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-
-
-
 <!-- 
 ---
 title: "Ananke: a Hugo Theme"

@@ -19,6 +19,7 @@ enableRobotsTXT        = true   # Buscadores
     phone = '+54-1162271394'
 
 [params]
+  toc= true
   custom_css = ["css/custom.css"]
   max_content_width = "90%"  # Ajusta el ancho máximo del contenido
   show_reading_time = true

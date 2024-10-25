@@ -82,11 +82,12 @@ desde su computadora windows:
 ```
 curl -v -X GET http://<dirección IP>:<puerto>/test
 ```
-IMPORTANTE!
-<dirección IP>:<puerto> son los correspondientes a la computadora donde se encuentra instalado y en ejecución WireMock.
-WireMock debe estar escuchando en el port mencionado anteriormente y ademas, para realizar una prueba y saber si el servicio Windows que se creo con NSSM quedo funcionando correctamente, se debe disponer de un stub (json o xml) configurado, en nustro ejemplo del **curl** el stub respondera a la peticion **GET: /test** devolviendo el siguiente response:
 
-Si todo funciono bien, como resultado de la ejecución del comando curl se vera lo siguiente en la consola de cmd:
+**IMPORTANTE**: `<dirección IP>` corresponde a la computadora donde se encuentra instalado y en ejecución WireMock. WireMock debe estar escuchando en el puerto mencionado anteriormente. 
+
+Además, para realizar una prueba y confirmar que el servicio de Windows creado con NSSM quedó funcionando correctamente, se debe disponer de un *stub* (en formato JSON o XML) configurado. En nuestro ejemplo con el comando `curl`, el *stub* responderá a la petición `GET /test`, devolviendo la siguiente respuesta:
+
+Si todo funcionó bien, como resultado de la ejecución del comando `curl` se verá lo siguiente en la consola de *cmd*:
 
 ```cmd
 curl -v -X GET http://<dirección IP>:<puerto>/test

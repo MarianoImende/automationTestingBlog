@@ -86,8 +86,27 @@ IMPORTANTE!
 <dirección IP>:<puerto> son los correspondientes a la computadora donde se encuentra instalado y en ejecución WireMock.
 WireMock debe estar escuchando en el port mencionado anteriormente y ademas, para realizar una prueba y saber si el servicio Windows que se creo con NSSM quedo funcionando correctamente, se debe disponer de un stub (json o xml) configurado, en nustro ejemplo del **curl** el stub respondera a la peticion **GET: /test** devolviendo el siguiente response:
 
-```
+Si todo funciono bien, como resultado de la ejecución del comando curl se vera lo siguiente en la consola de cmd:
+
+```cmd
 curl -v -X GET http://<dirección IP>:<puerto>/test
-``` 
+Note: Unnecessary use of -X or --request, GET is already inferred.
+* Host <dirección IP>:<puerto> was resolved.
+* IPv6: (none)
+* IPv4: <dirección IP>
+*   Trying <dirección IP>...
+* Connected to <dirección IP>:<puerto>
+> GET /test HTTP/1.1
+> Host: <dirección IP>:<puerto>
+> User-Agent: curl/8.9.1
+> Accept: */*
+>
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Matched-Stub-Id: ce09bd0a-fb97-41a4-a444-605768146f02
+< Transfer-Encoding: chunked
+<
+ESTOY AQUÍ * Connection #0 to host <dirección IP> left intact
+```
 
 

@@ -47,10 +47,31 @@ Más información sobre configuraciones de Wiremock [aquí](https://wiremock.org
 
 Este post no trata de explicar WireMock; existe otro post en este sitio que se dedica con mayor detalle al uso de WireMock. De todas formas, se explicarán las necesidades básicas a nivel de WireMock para poder demostrar el uso de NSSM levantando un servicio de Windows que lo contenga.
 
-!(/NSSM/images/wiremock1.png)
+Recordando y teniendo presente la estructura de directorio de Wiremock:
 
 ![NSSM](/NSSM/images/wiremock1.png)
 
+y el archivo json (sesion.json) con la estructura normalmente utilizada por WireMock:
+
+![NSSM](/NSSM/images/wiremock2.png)
+
+Contenido de sesion.json:
+``` json
+{
+"mappings": [
+  {
+    "request": {
+            "method": "GET",
+            "url": "/test"
+           },
+          "response": {
+            "status": 200,
+            "body": "ESTOY AQUÍ"
+          }
+    }
+  ]
+}
+```
 [Descarga e instalacón de WireMock](https://wiremock.org/docs/download-and-installation/).
 
 

@@ -26,6 +26,8 @@ Consulta más detalles aquí: [nssm.cc/commands](https://nssm.cc/commands).
 
 ## Ejemplo de Configuración de Wiremock
 Para configurar Wiremock con NSSM, utiliza los siguientes argumentos:
+
+![NSSM](/images/NSSM.png)
 ```
 -jar C:\WireMock\wiremock-standalone-3.9.1.jar --port 90 --root C:\WireMock --max-http-client-connections 8000 --jetty-acceptor-threads 8 --verbose
 

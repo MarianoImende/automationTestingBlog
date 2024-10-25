@@ -49,11 +49,11 @@ Este post no trata de explicar WireMock; existe otro post en este sitio que se d
 
 Recordando y teniendo presente la estructura de directorio de Wiremock:
 
-![NSSM](/NSSM/images/wiremock1.png)
+!(/images/NSSM/wiremock1.png)
 
 y el archivo json (sesion.json) con la estructura normalmente utilizada por WireMock:
 
-![NSSM](/NSSM/images/wiremock2.png)
+![NSSM](/images/NSSM/wiremock2.png)
 
 Contenido de sesion.json:
 ``` json

@@ -31,6 +31,6 @@ Para configurar Wiremock con NSSM, utiliza los siguientes argumentos:
 
 ```
 ## Explicación de los Argumentos
---root-dir: Establece el directorio raíz en el cual residen los mappings y __files. Por defecto, es el directorio actual.
---max-http-client-connections: Define el número máximo de conexiones HTTP simultáneas que el servidor Wiremock permitirá. Útil cuando se simulan muchas solicitudes concurrentes.
---jetty-acceptor-threads: Especifica la cantidad de subprocesos que Jetty usa para aceptar solicitudes entrantes.
+-- root-dir: Establece el directorio raíz en el cual residen los mappings y __files. Por defecto, es el directorio actual.
+-- max-http-client-connections: Define el número máximo de conexiones HTTP simultáneas que el servidor Wiremock permitirá. Útil cuando se simulan muchas solicitudes concurrentes.
+-- jetty-acceptor-threads: Especifica la cantidad de subprocesos que Jetty usa para aceptar solicitudes entrantes.

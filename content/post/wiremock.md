@@ -18,7 +18,7 @@ Una vez descargado, instala el servicio ejecutando el siguiente comando:
 
 ```bash
 nssm install <nombre_del_servicio>
-
+```
 **Nota:** Reemplaza <nombre_del_servicio> con el nombre que desees asignarle al servicio.
 
 **NSSM** permite administrar servicios de forma sencilla desde la línea de comandos.

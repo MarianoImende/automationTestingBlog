@@ -47,7 +47,11 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
 <div style="display: flex; gap: 15px; align-items: center;">
     <a "imende.mariano@gmail.com" style="text-decoration: none; color: inherit;">
         <img src="icons8-gmail-48.png" alt="email" style="width: 24px; height: 24px; margin-right: 8px;">
-        email
+        imende.mariano@gmail.com
+    </a>
+      <a "+54-9-11-62271394" style="text-decoration: none; color: inherit;">
+        <img src="icons8-whatsapp-48.png" alt="email" style="width: 24px; height: 24px; margin-right: 8px;">
+        +54-9-11-62271394
     </a>
     <a href="https://linkedin.com/in/mariano-imende" style="text-decoration: none; color: inherit; margin-left: 15px;">
         <img src="icons8-linkedin-48.png" alt="LinkedIn" style="width: 24px; height: 24px; margin-right: 8px;">

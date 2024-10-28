@@ -69,5 +69,3 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
         GitHub
     </a>
 </div>
-
-

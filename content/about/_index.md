@@ -4,15 +4,8 @@ featured_image: '/images/sobreMi.jpg'
 omit_header_text: true
 type: page
 ---
-<div style="display: flex; align-items: center;">
-    <img src="/images/sobreMi.jpg" alt="Perfil" style="width: 150px; height: auto; margin-right: 20px;">
-    <div>
-        <h1>Mariano Imende</h1>
-        <h2>QA Automation and Performance Specialist</h2>
-    </div>
-</div>
-
-
+| ![Perfil](perfil.png) | **Mariano Imende**<br> -QA Automation and Performance Specialist- |
+|------------------------|-------------------------------------------------------------------------------------|
 
 ### Acerca de mí
 

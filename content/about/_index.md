@@ -4,7 +4,7 @@ featured_image: '/images/sobreMi.jpg'
 omit_header_text: true
 type: page
 ---
-![alt](mi.png)
+![alt](perfil.png)
 
 ## Mariano Imende
 ### -QA Automation and Performance Specialist-

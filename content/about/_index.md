@@ -18,9 +18,7 @@ A lo largo de mi carrera, he participado en proyectos de gran impacto, enfrentan
 </div>
 
 - **Centro de Excelencia (CoE):**
-<div style="text-align: center;">
 Como **divulgador y capacitador**, lideré la adopción de automatización y pruebas de rendimiento. Desarrollé e impartí talleres, sesiones de capacitación y documentación técnica, apoyando a testers en su transición hacia automatización y performance testing. Además, colaboré con equipos de desarrollo y stakeholders para integrar metodologías de **testing avanzado** (contract-first, shift-left testing, entre otras).
-</div>
 
 - **Liderazgo y Acompañamiento:** Apoyé a testers en sus primeros proyectos de automatización y rendimiento, proporcionando guías, recursos, mentoría y asesoría personalizada, logrando una **adopción de prácticas avanzadas**.
 
@@ -30,11 +28,14 @@ Como **divulgador y capacitador**, lideré la adopción de automatización y pru
 
 - **Integración y Orquestación:** Desarrollé diseños de testing que apoyan la integración y entrega continua (CI/CD), optimizando los tiempos de prueba y fortaleciendo la colaboración entre equipos de desarrollo y QA.
 
+<div style="text-align: left;">
 He liderado y participado en proyectos de múltiples niveles de complejidad donde implementé mejoras significativas en procesos de testing, logrando productos más robustos y eficientes. La gama de productos en los que he participado incluye home banking, billeteras digitales, balanceadores de carga, servidores de aplicación, contenedores y bases de datos, entre otros.
+</div>
 
 ### Objetivo Profesional
-
+<div style="text-align: left;">
 Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experiencia para mejorar la calidad y eficiencia en testing. Busco seguir desarrollándome en entornos dinámicos y aportar a la creación de soluciones innovadoras y efectivas en el ámbito de QA.
+</div>
 
 #### Tecnologías principales
 

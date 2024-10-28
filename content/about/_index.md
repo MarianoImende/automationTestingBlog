@@ -39,8 +39,6 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
 ***
 ## Contacto
 
-**Ubicación:** Buenos Aires, Provincia de Buenos Aires
-
 <div style="display: flex; gap: 15px; align-items: center;">
     <a "mailto:imende.mariano@gmail.com" style="text-decoration: none; color: inherit;">
         <img src="icons8-gmail-48.png" alt="email" style="width: 24px; height: 24px; margin-right: 8px;">
@@ -59,4 +57,6 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
         GitHub
     </a>
 </div>
+
+**Ubicación:** Buenos Aires, Provincia de Buenos Aires
 

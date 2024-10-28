@@ -41,3 +41,14 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
 
 **GitHub:** [Link](https://github.com/MarianoImende)  
 **LinkedIn:** [Link](www.linkedin.com/in/mariano-imende)
+
+## Contacto
+
+<div style="display: flex; gap: 15px; align-items: center;">
+    <a href="https://github.com/MarianoImende" style="text-decoration: none; color: inherit;">
+        <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="https://linkedin.com/in/mariano-imende" style="text-decoration: none; color: inherit; margin-left: 15px;">
+        <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+</div>

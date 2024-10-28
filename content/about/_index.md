@@ -37,12 +37,10 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
 - **Pruebas de Rendimiento:** K6, JMeter, LoadRunner
 - **Automatización de Pruebas Funcionales End-to-End:** UFT One, Selenium, Requests+Pytest, Postman, Playwright, Insomnia, Rest-Assured
 ***
+## Contacto
+
 **Ubicación:** Buenos Aires, Provincia de Buenos Aires
 
-**GitHub:** [Link](https://github.com/MarianoImende)  
-**LinkedIn:** [Link](www.linkedin.com/in/mariano-imende)
-
-## Contacto
 <div style="display: flex; gap: 15px; align-items: center;">
     <a "mailto:imende.mariano@gmail.com" style="text-decoration: none; color: inherit;">
         <img src="icons8-gmail-48.png" alt="email" style="width: 24px; height: 24px; margin-right: 8px;">

@@ -4,9 +4,15 @@ featured_image: '/images/sobreMi.jpg'
 omit_header_text: true
 type: page
 ---
+<div style="display: flex; align-items: center;">
+    <img src="perfil.png" alt="Perfil" style="width: 150px; height: auto; margin-right: 20px;">
+    <div>
+        <h1>Mariano Imende</h1>
+        <h2>QA Automation and Performance Specialist</h2>
+    </div>
+</div>
 
-| ![Perfil](perfil.png) | **Mariano Imende**<br> -QA Automation and Performance Specialist- |
-|------------------------|-------------------------------------------------------------------------------------|
+
 ### Acerca de mí
 
 Soy un profesional con una sólida trayectoria en automatización de pruebas, performance testing, liderazgo de equipos y formación en el ámbito de QA. Con años de experiencia en la industria, me he especializado en diseñar e implementar soluciones avanzadas de pruebas automatizadas y de performance, abarcando desde frontend hasta backend. Como miembro del CoE de QA desempeño un papel estratégico y técnico para garantizar que las prácticas y procesos de calidad sean uniformes, eficaces y de alto nivel en toda la organización. Mi enfoque incluye orquestación de pruebas (a nivel diseño), plan de estrategias, e investigación continua para optimizar procesos de testing.

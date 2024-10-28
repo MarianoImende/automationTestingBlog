@@ -43,24 +43,24 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
 **LinkedIn:** [Link](www.linkedin.com/in/mariano-imende)
 
 ## Contacto
-<div style="display: flex; gap: 20px; align-items: center; justify-content: center; margin-top: 20px;">
-    <!-- Email -->
-    <a href="mailto:imende.mariano@gmail.com" style="text-decoration: none; color: inherit;">
-        <img src="icons8-gmail-48.png" alt="Email" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
+<div style="display: flex; gap: 15px; align-items: center;">
+    <a "mailto:imende.mariano@gmail.com" style="text-decoration: none; color: inherit;">
+        <img src="icons8-gmail-48.png" alt="email" style="width: 24px; height: 24px; margin-right: 8px;">
         imende.mariano@gmail.com
     </a>
-
-    <!-- WhatsApp -->
-    <a href="https://wa.me/5491162271394" style="text-decoration: none; color: inherit;">
-        <img src="icons8-whatsapp-48.png" alt="WhatsApp" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
-        +54 9 11 6227 1394
+      <a href="https://wa.me/5491162271394" style="text-decoration: none; color: inherit;">
+        <img src="icons8-whatsapp-48.png" alt="WhatsApp" style="width: 24px; height: 24px; margin-right: 8px;">
+        +54-9-11-62271394
     </a>
-
-    <!-- LinkedIn -->
-    <a href="https://linkedin.com/in/mariano-imende" style="text-decoration: none; color: inherit;">
-        <img src="icons8-linkedin-48.png" alt="LinkedIn" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
+    <a href="https://linkedin.com/in/mariano-imende" style="text-decoration: none; color: inherit; margin-left: 15px;">
+        <img src="icons8-linkedin-48.png" alt="LinkedIn" style="width: 24px; height: 24px; margin-right: 8px;">
         LinkedIn
     </a>
+    <a href="https://github.com/MarianoImende" style="text-decoration: none; color: inherit;">
+        <img src="icons8-github-50.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 8px;">
+        GitHub
+    </a>
+</div>
 
     <!-- GitHub -->
     <a href="https://github.com/MarianoImende" style="text-decoration: none; color: inherit;">

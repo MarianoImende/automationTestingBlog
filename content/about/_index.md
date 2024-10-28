@@ -62,9 +62,3 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
     </a>
 </div>
 
-    <!-- GitHub -->
-    <a href="https://github.com/MarianoImende" style="text-decoration: none; color: inherit;">
-        <img src="icons8-github-50.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
-        GitHub
-    </a>
-</div>

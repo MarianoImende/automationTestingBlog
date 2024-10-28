@@ -5,12 +5,13 @@ omit_header_text: true
 type: page
 ---
 <div style="display: flex; align-items: center;">
-    <img src="perfil.png" alt="Perfil" style="width: 150px; height: auto; margin-right: 20px;">
+    <img src="/images/sobreMi.jpg" alt="Perfil" style="width: 150px; height: auto; margin-right: 20px;">
     <div>
         <h1>Mariano Imende</h1>
         <h2>QA Automation and Performance Specialist</h2>
     </div>
 </div>
+
 
 
 ### Acerca de mí

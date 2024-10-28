@@ -41,7 +41,7 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
 
 <div style="display: flex; gap: 15px; align-items: center;">
     <a "mailto:imende.mariano@gmail.com" style="text-decoration: none; color: inherit;">
-        <img src="icons8-gmail-48.png" alt="email" style="width: 24px; height: 24px; margin-right: 8px;">
+        <img src="icons8-gmail-48.png" alt="email" style="width: 24px; height: 24px; margin-right: 8px;vertical-align: middle;"">
         imende.mariano@gmail.com
     </a>
       <a href="https://wa.me/5491162271394" style="text-decoration: none; color: inherit;">
@@ -49,11 +49,11 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
         +54-9-11-62271394
     </a>
     <a href="https://linkedin.com/in/mariano-imende" style="text-decoration: none; color: inherit; margin-left: 15px;">
-        <img src="icons8-linkedin-48.png" alt="LinkedIn" style="width: 24px; height: 24px; margin-right: 8px;">
+        <img src="icons8-linkedin-48.png" alt="LinkedIn" style="width: 24px; height: 24px; margin-right: 8px;vertical-align: middle;">
         LinkedIn
     </a>
     <a href="https://github.com/MarianoImende" style="text-decoration: none; color: inherit;">
-        <img src="icons8-github-50.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 8px;">
+        <img src="icons8-github-50.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 8px;vertical-align: middle;">
         GitHub
     </a>
 </div>

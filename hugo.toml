@@ -14,6 +14,11 @@ Paginate               = 15      # Posts por página en main
 googleAnalytics        = ""     # Código para estadísticas web
 enableRobotsTXT        = true   # Buscadores
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+      
 [params.contact]
     email = 'imende.mariano@gmail.com'
     phone = '+54-1162271394'

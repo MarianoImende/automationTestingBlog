@@ -46,7 +46,7 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
 
 <div style="display: flex; gap: 15px; align-items: center;">
     <a "imende.mariano@gmail.com" style="text-decoration: none; color: inherit;">
-        <img src="icons8-gmail-48.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 8px;">
+        <img src="icons8-gmail-48.png" alt="email" style="width: 24px; height: 24px; margin-right: 8px;">
         GitHub
     </a>
     <a href="https://linkedin.com/in/mariano-imende" style="text-decoration: none; color: inherit; margin-left: 15px;">

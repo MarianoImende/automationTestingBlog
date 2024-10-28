@@ -1,6 +1,7 @@
 ---
 date: "2024-03-14T11:25:05-04:00"
 title: "Wiremock como Servicio en Windows"
+featured_image: "/images/NSSM/WMNSSM.png"
 date: 2024-10-25
 tags: ["wiremock", "windows", "testing", "servicios"]
 description: "Guía para configurar Wiremock como un servicio en Windows utilizando NSSM."

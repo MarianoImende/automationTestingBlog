@@ -44,6 +44,8 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
 
 ## Contacto
 
+## Contacto
+
 <div style="display: flex; gap: 15px; align-items: center;">
     <a href="https://github.com/MarianoImende" style="text-decoration: none; color: inherit;">
         <i class="fab fa-github"></i> GitHub
@@ -52,3 +54,4 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
         <i class="fab fa-linkedin"></i> LinkedIn
     </a>
 </div>
+

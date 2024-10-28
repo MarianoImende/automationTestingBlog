@@ -2,7 +2,7 @@
 date: 2017-04-14T11:25:05-04:00
 description: "Contract First y testing"
 cascade:
-   featured_image: "/images/API-Contract-Testing.png"
+   featured_image: "/images/contractfirst/contract.png"
 tags: []
 title: "Contract First y testing"
 disable_share: true

@@ -53,7 +53,6 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
 - Insomnia
 - Rest-Assured
 
-
 ## Contacto
 
 <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start; margin-top: 20px;">

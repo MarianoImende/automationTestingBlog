@@ -1,5 +1,5 @@
 ---
-date: "2024-03-14T11:25:05-04:00"
+date: "2024-05-10T11:25:04-01:23"
 title: "Selenium POM"
 featured_image: "/images/SeleniumPOM/selenium.png"
 date: 2024-10-25
@@ -29,10 +29,14 @@ Este proyecto, le otorga un marco de trabajo simple y a la vez robusto que le ay
 Los siguientes pasos lo guiaran para lograr implementar el proyecto en Windows:
 
     > - 1. Instalar Python. (c:/Python)
-    > - 2. Descargar y descomprimir el repor o Clonar el repositorio. [Aquí](https://github.com/MarianoImende/SimpleSeleniumPOM.git)
+    > - 2. Descargar y descomprimir el repor o Clonar el repositorio.
     > - 3. Crear entorno virtual (python -m venv venv y activarlo "venv/Script/activate") en el directorio local.
     > - 4. Instalar dependencias : pip install -r requirements.txt
 
+ [descargue o clone el proyecto desde aquí](https://github.com/MarianoImende/SimpleSeleniumPOM.git)
+
+ EXITOS!!!
+ 
 ## Dónde pueden recibir ayuda los usuarios
 
 Escribiendo a: [imende.mariano@gmail.com] o [contacto](https://www.automationtesting.ar/contact/)

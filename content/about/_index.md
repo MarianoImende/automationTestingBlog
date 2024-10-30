@@ -39,9 +39,9 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
 
 #### Tecnologías principales
 <div style="text-align: left;">
-<p><b>Pruebas de Rendimiento:</b></p> K6, JMeter, LoadRunner
+<b>Pruebas de Rendimiento:</b> K6, JMeter, LoadRunner
     
-<p><b>Automatización de Pruebas Funcionales End-to-End:</b></p> UFT One, Selenium, Requests+Pytest, Postman, Playwright, Insomnia, Rest-Assured
+<b>Automatización de Pruebas Funcionales End-to-End:</b> UFT One, Selenium, Requests+Pytest, Postman, Playwright, Insomnia, Rest-Assured
 </div>
 
 ## Contacto

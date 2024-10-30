@@ -76,7 +76,7 @@ Motivo de ser del encapsulamiento: El encapsulamiento permite controlar el acces
 
 **¿Qué significa void?**
 
-En el código anterior en TypeScript, **void** es un tipo que indica que una función no devuelve ningún valor. Es decir, cuando se usa void, significa que la función hace algo (como modificar datos, mostrar mensajes, etc.) pero **no devuelve** un valor al ser llamada. En algunos lenguajes se lo puede llamar "procediemientos"
+En el código anterior en TypeScript, **void** es un tipo que indica que una función no devuelve ningún valor. Es decir, cuando se usa void, significa que la función hace algo (como modificar datos, mostrar mensajes, etc.) pero **no devuelve** un valor al ser llamada. En algunos lenguajes se lo puede llamar "procedimientos"
 
 Ejemplo sencillo:
 ```TypeScript

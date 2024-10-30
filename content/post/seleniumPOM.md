@@ -3,7 +3,7 @@ date: "2024-05-10T11:25:04-01:23"
 title: "Selenium POM"
 featured_image: "/images/SeleniumPOM/selenium.png"
 date: 2024-10-25
-tags: ["wiremock", "post/contractfirst", "testing", "Pirámide de automatización"]
+tags: ["wiremock", "contractfirst", "testing", "Pirámide de automatización"]
 description: "Selenium Webdriver y Python: Automatizacíon de pruebas"
 ---
 

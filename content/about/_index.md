@@ -37,6 +37,8 @@ He liderado y participado en proyectos de múltiples niveles de complejidad dond
 Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experiencia para mejorar la calidad y eficiencia en testing. Busco seguir desarrollándome en entornos dinámicos y aportar a la creación de soluciones innovadoras y efectivas en el ámbito de QA.
 </div>
 
+<div align="left">
+
 ### Tecnologías principales
 
 **Pruebas de Rendimiento:**
@@ -52,6 +54,9 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
 - Playwright
 - Insomnia
 - Rest-Assured
+
+</div>
+
 
 ## Contacto
 

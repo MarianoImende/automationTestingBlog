@@ -37,12 +37,22 @@ He liderado y participado en proyectos de múltiples niveles de complejidad dond
 Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experiencia para mejorar la calidad y eficiencia en testing. Busco seguir desarrollándome en entornos dinámicos y aportar a la creación de soluciones innovadoras y efectivas en el ámbito de QA.
 </div>
 
-#### Tecnologías principales
-<div style="text-align: left;">
-<b>Pruebas de Rendimiento:</b> K6, JMeter, LoadRunner
-    
-<b>Automatización de Pruebas Funcionales End-to-End:</b> UFT One, Selenium, Requests+Pytest, Postman, Playwright, Insomnia, Rest-Assured
-</div>
+### Tecnologías principales
+
+**Pruebas de Rendimiento:**
+- K6
+- JMeter
+- LoadRunner
+
+**Automatización de Pruebas Funcionales End-to-End:**
+- UFT One
+- Selenium
+- Requests + Pytest
+- Postman
+- Playwright
+- Insomnia
+- Rest-Assured
+
 
 ## Contacto
 

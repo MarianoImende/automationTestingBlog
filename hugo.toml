@@ -6,7 +6,7 @@ Performance
 testing"""
 theme = "ananke"
 resourceDir = "../resources"
-
+<link rel="icon" href="/static/favicon.ico" type="image/x-icon">
 MetaDataFormat         = "yaml" # Formato cabeceras
 DefaultContentLanguage = "es"   # Idioma por defecto del contenido
 SectionPagesMenu       = "main" #

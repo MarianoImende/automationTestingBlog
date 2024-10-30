@@ -10,7 +10,7 @@ omit_header_text: false
 type: post
 ---
 
-Un tema muy importante a la hora de comenzar el camino de la automatizacion de pruebas es la programación orientada a objetos.
+Un tema muy importante a la hora de comenzar el camino de la automatización de pruebas es la programación orientada a objetos.
 
 La Programación Orientada a Objetos (POO) es un estilo de programación que organiza el código en torno a objetos. Estos objetos representan entidades del mundo real o del dominio del problema, y tienen características (llamadas propiedades) y comportamientos (llamados métodos). El objetivo de la POO es hacer que el código sea más fácil de entender, mantener y reutilizar. Es una forma natural de pensar en los problemas y cómo resolverlos. 
 

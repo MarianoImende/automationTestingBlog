@@ -14,7 +14,7 @@ type: page
 ---
 
 
-## Implementación de la Metodología Contract First en Pruebas de Software
+## Implementación de la Metodología Contract First en Pruebas de Software.
 
 Este post tiene la intención de mostrar cómo adoptar la metodología Contract First en el contexto de pruebas de software. Implementar esta metodología implica una serie de pasos que facilitan la integración de contratos en el proceso de pruebas, abarcando desde la educación y la capacitación hasta la automatización y la colaboración continua. Al usar herramientas como Postman y generadores de clientes API, los testers pueden crear y ejecutar pruebas de manera eficiente y consistente, asegurando que las APIs cumplan con las especificaciones definidas en los contratos.
 

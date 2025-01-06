@@ -5,7 +5,7 @@ featured_image: "/images/challenge/challenge.png"
 cascade:
    featured_image: "/images/challenge/challenge.png"
 tags: []
-title: "Herramienta educativa para quienes desean practicar y mejorar sus habilidades en automatización de pruebas"
+title: "Challenge utomatización de pruebas"
 disable_share: true
 omit_header_text: false #achica la imagen
 type: page

@@ -4,12 +4,12 @@ featured_image: '/images/sobreMi.jpg'
 omit_header_text: true
 type: page
 ---
-# 📄 Curriculum Vitae
+# 📜 Curriculum Vitae
 
 | ![Perfil](perfil.png) | **Mariano Imende**<br> Performance Engineer, QA Automation, Analista programador graduado |
 |------------------------|-------------------------------------------------------------------------------------|
 
-### ☺️ Acerca de mí
+## 🧑‍💼 Acerca de mí
 <div style="text-align: left;">
 Soy un profesional con una sólida trayectoria en automatización de pruebas, performance testing, liderazgo de equipos y formación en el ámbito de QA. Con años de experiencia en la industria, me he especializado en diseñar e implementar soluciones avanzadas de pruebas automatizadas y de performance, abarcando desde frontend hasta backend. Como miembro del CoE de QA, desempeño un papel estratégico y técnico para garantizar que las prácticas y procesos de calidad sean uniformes, eficaces y de alto nivel en toda la organización. Mi enfoque incluye orquestación de pruebas (a nivel diseño), plan de estrategias, e investigación continua para optimizar procesos de testing.
 </div>
@@ -68,9 +68,63 @@ He liderado y participado en proyectos de múltiples niveles de complejidad dond
 
 </div>
 
-## 📚 Cursos Completados
+# 📚 Cursos Completados
 
-## Contacto
+## 🧪 **Pruebas y Automatización**
+- **Selenium con Java y Cucumber**: El curso definitivo
+- **Automation Tester Avanzado**: REST Assured, Cucumber y Groovy
+- **Planificación y Seguimiento de Pruebas de Software**
+- **ISTQB Foundation Level**
+- 
+## 🌐 **Seguridad y Desarrollo**
+- **Seguridad de la Información**
+- **Desarrollo Seguro**
+- **Node.js**: Creando API con Express y MongoDB (Incl. Deno)
+- **Conceptos básicos de Virtualización**
+- **Monitorización y Gestión de Indicadores**
+- **Java Advanced Programming**: Threads, Networking, J2SE
+- **Java Web**: Servlets, JSP, JSTL, Struts & AJAX
+- **Oracle PL/SQL**
+- **Fundamentos SQL**
+- 
+## 🚀 **Metodologías Ágiles y Liderazgo**
+- **Introducción a la Agilidad**
+- **Liderazgo Ágil**
+- **Gestión Agile de Proyectos**
+- **Cultura Agile**
+- **Agilidad Organizacional**
+- **Planificación Agile - OKRs**
+- **El Líder como Coach**
+- **Liderazgo y Gestión de Equipos**
+- **Jornadas Latinoamericanas de Agilidad**
+
+## 💡 **Innovación y Desarrollo Personal**
+- **Agilidad Emocional**
+- **Stress Tool Box**
+- **Innovación y Design Thinking**
+- **Inteligencia Colectiva**
+- **Sinergia ADN**
+- **Gestión del plan de desarrollo individual**
+- **Taller Objetivos SMART**
+- **Seleccionando a los mejores**
+- **Gimnasia Comunicacional** - Taller vivencial
+
+## 📈 **Riesgos y Gestión**
+- **Riesgo Operacional**
+- **Gestión de Riesgos en Proyectos**
+- **Lean Management**
+- **Capacitación y Presupuestación**
+- **Implementación de Sistemas de Gestión de Calidad en ISO**
+- **Programa de Desarrollo de Líderes**
+
+## 👥 **Habilidades Blandas**
+- **Webinar: Mobbing Laboral**
+- **Taller de Feedback**
+- **Gestión del Desempeño**: Evaluadores
+- **Taller de Negociación Estratégica**
+- **Feedback en Acción**
+
+# 📞 Contacto
 
 <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start; margin-top: 20px;">
     <!-- Email -->
@@ -82,7 +136,7 @@ He liderado y participado en proyectos de múltiples niveles de complejidad dond
         <img src="icons8-whatsapp-48.png" alt="WhatsApp" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
         +54-9-11-62271394
     </a>
-    <a href="https://linkedin.com/in/mariano-imende" style="text-decoration: none; color: inherit;">
+    <a href="https://linkedin.com/in/mariano-imende" style="text-decoration: none; color: inherit;" target="_blank">
         <img src="icons8-linkedin-48.png" alt="LinkedIn" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
         LinkedIn
     </a>
@@ -91,65 +145,3 @@ He liderado y participado en proyectos de múltiples niveles de complejidad dond
         GitHub
     </a>
 </div>
-
-# 📚 Cursos Completados
-
-## 🌐 **Seguridad y Desarrollo**
-- **Seguridad de la Información** - 2023
-- **Seguridad de la Información** - 2022
-- **Desarrollo Seguro** - 2022
-- **Node.js**: Creando API con Express y MongoDB (Incl. Deno)
-- **Conceptos básicos de Virtualización** (x2)
-- **Monitorización y Gestión de Indicadores**
-
-## 🧪 **Pruebas y Automatización**
-- **Selenium con Java y Cucumber**: El curso definitivo
-- **Automation Tester Avanzado**: REST Assured, Cucumber y Groovy
-- **Planificación y Seguimiento de Pruebas de Software**
-- **ISTQB Foundation Level**
-
-## 🚀 **Metodologías Ágiles y Liderazgo**
-- **Liderazgo Ágil**
-- **Gestión Agile de Proyectos**
-- **Cultura Agile**
-- **Agilidad Organizacional**
-- **Planificación Agile - OKRs**
-- **El Líder como Coach**
-- **Liderazgo y Gestión de Equipos**
-- **Jornadas Latinoamericanas de Agilidad**
-- **Introducción a la Agilidad**
-
-## 💡 **Innovación y Desarrollo Personal**
-- **Agilidad Emocional**
-- **Innovación y Design Thinking**
-- **Inteligencia Colectiva**
-- **Sinergia ADN**
-- **Gestión del plan de desarrollo individual**
-- **Taller Objetivos SMART**
-- **Seleccionando a los mejores**
-- **Gimnasia Comunicacional** - Taller vivencial
-
-## 📈 **Riesgos y Gestión**
-- **Riesgo Operacional** (x2, obligatorio)
-- **Gestión de Riesgos en Proyectos**
-- **Lean Management**
-
-## 🎓 **Capacitación Técnica**
-- **Java Advanced Programming**: Threads, Networking, J2SE
-- **Java Web**: Servlets, JSP, JSTL, Struts & AJAX
-- **Oracle PL/SQL** (x2)
-- **Fundamentos SQL**
-
-## 👥 **Habilidades Blandas**
-- **Stress Tool Box**
-- **Webinar: Mobbing Laboral**
-- **Taller de Feedback**
-- **Gestión del Desempeño**: Evaluadores
-- **Taller de Negociación Estratégica**
-- **Feedback en Acción**
-
-## 🔧 **Otros**
-- **Uso de Extintores y Mangueras**
-- **Capacitación y Presupuestación**
-- **Implementación de Sistemas de Gestión de Calidad en ISO**
-- **Programa de Desarrollo de Líderes**

@@ -177,7 +177,6 @@ La gama de productos en los que he participado incluye home banking, billeteras 
   
 <strong>📞 Contacto</strong>
 
-        >
 <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start; margin-top: 20px;">
     <!-- Email -->
     <a href="mailto:imende.mariano@gmail.com" style="text-decoration: none; color: inherit;">
@@ -197,4 +196,4 @@ La gama de productos en los que he participado incluye home banking, billeteras 
         GitHub
     </a>
 </div>
-</div
+</div>

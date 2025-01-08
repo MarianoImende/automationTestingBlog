@@ -47,9 +47,7 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
 <br>
 <div style="text-align: left;">
 A lo largo de mi carrera, he participado en proyectos de gran impacto, enfrentando con éxito desafíos técnicos y organizativos. Algunas áreas clave de mi experiencia incluyen:
-
 <br>
-
 <div style="text-align: left;">  
 <strong><li> Centro de Excelencia (CoE): </li></strong> 
 <br>

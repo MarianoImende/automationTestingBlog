@@ -127,22 +127,3 @@ He liderado y participado en proyectos de múltiples niveles de complejidad dond
 
 # 📞 Contacto
 
-<div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start; margin-top: 20px;">
-    <!-- Email -->
-    <a href="mailto:imende.mariano@gmail.com" style="text-decoration: none; color: inherit;">
-        <img src="icons8-gmail-48.png" alt="Email" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
-        imende.mariano@gmail.com
-    </a>
-    <a href="https://wa.me/5491162271394" style="text-decoration: none; color: inherit;">
-        <img src="icons8-whatsapp-48.png" alt="WhatsApp" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
-        +54-9-11-62271394
-    </a>
-    <a href="https://linkedin.com/in/mariano-imende" style="text-decoration: none; color: inherit;" target="_blank">
-        <img src="icons8-linkedin-48.png" alt="LinkedIn" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
-        LinkedIn
-    </a>
-    <a href="https://github.com/MarianoImende" style="text-decoration: none; color: inherit;">
-        <img src="icons8-github-50.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
-        GitHub
-    </a>
-</div>

@@ -1,5 +1,5 @@
 ---
-title: Acerca de mí
+title: Currículum Vitae
 featured_image: '/images/sobreMi.jpg'
 omit_header_text: true
 type: page

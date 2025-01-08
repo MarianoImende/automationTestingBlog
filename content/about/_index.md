@@ -15,6 +15,7 @@ type: page
         <h1 style="text-align: center; margin: 0; font-size: 1.8em; color: #333;">Mariano Imende</h1>
         <p style="margin: 5px 0 0 0; font-size: 1.2em; color: #666;">Performance Engineer, QA Automation, Analista                     programador.</p>
 </div>
+<hr>
 <br>
 <div style="text-align: left;">
     <h2 style="display: inline; font-weight: bold; font-size: 1.5em; margin: 0;">

@@ -3,6 +3,7 @@ title: Acerca de mí
 featured_image: '/images/sobreMi.jpg'
 omit_header_text: true
 type: page
+
 ---
 # 📜 Curriculum Vitae
 

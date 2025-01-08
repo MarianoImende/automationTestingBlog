@@ -29,12 +29,20 @@ Soy un profesional con una sólida trayectoria en automatización de pruebas, pe
 </div>
 <br>
 
-# 🎯 Objetivo Profesional
+<div style="text-align: left;">
+    <h2 style="display: inline; font-weight: bold; font-size: 1.5em; margin: 0;">
+🎯 Objetivo Profesional
+    </h2>
+</div>            
 <div style="text-align: left;">
 Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experiencia para mejorar la calidad y eficiencia en testing. Busco seguir desarrollándome en entornos dinámicos y aportar a la creación de soluciones innovadoras y efectivas en el ámbito de QA.
 </div>
 
-# 💼 Experiencia y Logros
+<div style="text-align: left;">
+    <h2 style="display: inline; font-weight: bold; font-size: 1.5em; margin: 0;">
+💼 Experiencia y Logros
+    </h2>
+</div>
 <div style="text-align: left;">
 A lo largo de mi carrera, he participado en proyectos de gran impacto, enfrentando con éxito desafíos técnicos y organizativos. Algunas áreas clave de mi experiencia incluyen:
 </div>

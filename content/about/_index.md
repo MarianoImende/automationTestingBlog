@@ -116,8 +116,8 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 
 <strong>🧪 -Pruebas y Automatización</strong>
 
-<strong><li>Selenium con Java y Cucumber: El curso definitivo</li></strong> 
-<strong><li>Automation Tester Avanzado: REST Assured, Cucumber y Groovy</li></strong> 
+<li>Selenium con Java y Cucumber: El curso definitivo</li> 
+<li>Automation Tester Avanzado: REST Assured, Cucumber y Groovy</li>
 <strong><li>Planificación y Seguimiento de Pruebas de Software</li></strong> 
 <strong><li>ISTQB Foundation Level</li></strong> 
 

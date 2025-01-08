@@ -1,1 +1,62 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+/* CSS */
+.profile-container {
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias líneas */
+    gap: 20px; /* Espacio entre elementos */
+}
+
+.profile-image {
+    flex: 0 0 150px;
+    text-align: center;
+}
+
+.profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.profile-info {
+    flex: 1;
+    text-align: left;
+}
+
+.profile-info h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.profile-info p {
+    margin: 5px 0 0 0;
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
+        text-align: center; /* Centra el texto */
+    }
+
+    .profile-image {
+        margin-bottom: 10px; /* Añade espacio entre la imagen y el texto */
+    }
+
+    .profile-info h1 {
+        font-size: 1.5em; /* Reduce el tamaño del título */
+    }
+
+    .profile-info p {
+        font-size: 1em; /* Reduce el tamaño del párrafo */
+    }
+}

@@ -155,7 +155,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <li>Gestión del plan de desarrollo individual</li>
 <li>Taller Objetivos SMART</li>
 <li>Seleccionando a los mejores</li>
-<strong><li>Gimnasia Comunicaciona (Taller vivencial)</li>
+<<li>Gimnasia Comunicaciona (Taller vivencial)</li>
 
 <strong>📈 -Riesgos y Gestión</strong>
 
@@ -170,7 +170,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 
 <li>Webinar: Mobbing Laboral</li>
 <li>Taller de Feedback</li>
-<li>Gestión del Desempeño para Evaluadores</li></strong>
+<li>Gestión del Desempeño para Evaluadores</li>
 <li>Taller de Negociación Estratégica</li>
 <li>Feedback en Acción</li>
   

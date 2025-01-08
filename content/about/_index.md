@@ -176,7 +176,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <strong><li>Feedback en Acción</li></strong> 
   
 <strong>📞 Contacto</strong>
-</div
+
         >
 <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start; margin-top: 20px;">
     <!-- Email -->
@@ -197,3 +197,4 @@ La gama de productos en los que he participado incluye home banking, billeteras 
         GitHub
     </a>
 </div>
+</div

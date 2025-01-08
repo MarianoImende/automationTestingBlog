@@ -12,7 +12,7 @@ type: page
         <img src="perfil.png" alt="Perfil" style="width: 120px; height: 120px; border-radius: 50%; border: 2px solid #ddd;">
     </div>
     <div style="flex: 1; text-align: left;">
-        <h1 style="text-align: left; margin: 0; font-size: 1.8em; color: #333;">Mariano Imende</h1>
+        <h1 style="text-align: center; margin: 0; font-size: 1.8em; color: #333;">Mariano Imende</h1>
         <p style="margin: 5px 0 0 0; font-size: 1.2em; color: #666;">Performance Engineer, QA Automation, Analista                     programador.</p>
 </div>
 <br>

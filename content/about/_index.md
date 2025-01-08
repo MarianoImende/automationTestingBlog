@@ -9,13 +9,24 @@ type: page
 
 | ![Perfil](perfil.png) | **Mariano Imende**<br> Performance Engineer, QA Automation, Analista programador graduado |
 |------------------------|-------------------------------------------------------------------------------------|
+
+<div style="display: flex; align-items: center; background-color: #f4f4f9; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <div style="flex: 0 0 150px; text-align: center; margin-right: 20px;">
+        <img src="perfil.png" alt="Perfil" style="width: 120px; height: 120px; border-radius: 50%; border: 2px solid #ddd;">
+    </div>
+    <div style="flex: 1; text-align: left;">
+        <h1 style="margin: 0; font-size: 1.8em; color: #333;">Mariano Imende</h1>
+        <p style="margin: 5px 0 0 0; font-size: 1.2em; color: #666;">Performance Engineer, QA Automation, Analista programador graduado</p>
+    </div>
+</div>
+
 <br>
 <div style="text-align: left;">
     <h2 style="display: inline; font-weight: bold; font-size: 1.5em; margin: 0;">
         🧑‍💼 Acerca de mí 
-        <br>
     </h2>
 </div>
+<br>
 
 <div style="text-align: left;">
 Soy un profesional con una sólida trayectoria en automatización de pruebas, performance testing, liderazgo de equipos y formación en el ámbito de QA. Con años de experiencia en la industria, me he especializado en diseñar e implementar soluciones avanzadas de pruebas automatizadas y de performance, abarcando desde frontend hasta backend. Como miembro del CoE de QA, desempeño un papel estratégico y técnico para garantizar que las prácticas y procesos de calidad sean uniformes, eficaces y de alto nivel en toda la organización. Mi enfoque incluye orquestación de pruebas (a nivel diseño), plan de estrategias, e investigación continua para optimizar procesos de testing.

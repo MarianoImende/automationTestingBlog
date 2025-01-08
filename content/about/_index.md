@@ -7,15 +7,17 @@ type: page
 
 # 📜 Currículum Vitae
 
-<div style="display: flex; align-items: center; background-color: #f4f4f9; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-    <div style="flex: 0 0 150px; text-align: center; margin-right: 20px;">
-        <img src="perfil.png" alt="Perfil" style="width: 120px; height: 120px; border-radius: 50%; border: 2px solid #ddd;">
+<!-- HTML -->
+<div class="profile-container">
+    <div class="profile-image">
+        <img src="perfil.png" alt="Perfil">
     </div>
-    <div style="flex: 1; text-align: left;">
-        <h1 style="margin: 0; font-size: 1.8em; color: #333;">Mariano Imende</h1>
-        <p style="margin: 5px 0 0 0; font-size: 1.2em; color: #666;">Performance Engineer, QA Automation, Analista programador.</p>
+    <div class="profile-info">
+        <h1>Mariano Imende</h1>
+        <p>Performance Engineer, QA Automation, Analista programador</p>
     </div>
 </div>
+
 
 <br>
 

@@ -109,7 +109,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <strong><li>  Rest-Assured</li></strong> 
 
 <div style="text-align: left;">
-    <h2 style="display: inline; font-weight: bold; font-size: 1.5em; margin: 0;">
+    <h2 style="display: inline; font-weight: bold; font-size: 2.5em; margin: 0;">
 📚 Cursos Completados
     </h2>
 </div>

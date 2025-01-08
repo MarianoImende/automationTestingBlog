@@ -5,6 +5,7 @@ omit_header_text: true
 type: page
 ---
 # 📜 Curriculum Vitae
+
 | ![Perfil](perfil.png) | **Mariano Imende**<br> Performance Engineer, QA Automation, Analista programador graduado |
 |------------------------|-------------------------------------------------------------------------------------|
 

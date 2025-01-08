@@ -114,14 +114,14 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 </div>
 <br>
 
-<strong>🧪 -Pruebas y Automatización</strong>
+<strong>🧪 Pruebas y Automatización</strong>
 
 <li>Selenium con Java y Cucumber: El curso definitivo</li> 
 <li>Automation Tester Avanzado: REST Assured, Cucumber y Groovy</li>
 <li>Planificación y Seguimiento de Pruebas de Software</li>
 <li>ISTQB Foundation Level</li>
 
-<strong>🌐 -Seguridad y Desarrollo</strong>
+<strong>🌐 Seguridad y Desarrollo</strong>
 
 <li>Seguridad de la Información</li>
 <li>Desarrollo Seguro</li>
@@ -133,7 +133,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <li>Oracle PL/SQL</li>
 <li>Fundamentos SQL</li>
 
-<strong>🚀 -Metodologías Ágiles y Liderazgo</strong>
+<strong>🚀 Metodologías Ágiles y Liderazgo</strong>
 
 <li>Introducción a la Agilidad</li>
 <li>Liderazgo Ágil</li>
@@ -145,7 +145,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <li>Liderazgo y Gestión de Equipos</li>
 <li>Jornadas Latinoamericanas de Agilidad</li>
 
-<strong>💡 -Innovación y Desarrollo Personal</strong>
+<strong>💡 Innovación y Desarrollo Personal</strong>
 
 <li>Agilidad Emocional</li>
 <li>Stress Tool Box</li>
@@ -155,9 +155,9 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <li>Gestión del plan de desarrollo individual</li>
 <li>Taller Objetivos SMART</li>
 <li>Seleccionando a los mejores</li>
-<<li>Gimnasia Comunicaciona (Taller vivencial)</li>
+<li>Gimnasia Comunicaciona (Taller vivencial)</li>
 
-<strong>📈 -Riesgos y Gestión</strong>
+<strong>📈 Riesgos y Gestión</strong>
 
 <li>Riesgo Operacional</li>
 <li>Gestión de Riesgos en Proyectos</li>
@@ -166,7 +166,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <li>Implementación de Sistemas de Gestión de Calidad en ISO</li>
 <li>Programa de Desarrollo de Líderes</li>
 
-<strong>👥 -Habilidades Blandas</strong>
+<strong>👥 Habilidades Blandas</strong>
 
 <li>Webinar: Mobbing Laboral</li>
 <li>Taller de Feedback</li>

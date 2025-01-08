@@ -45,9 +45,6 @@ Realización de presentaciones a Gerentes internos y externos.
 He liderado y participado en proyectos de múltiples niveles de complejidad donde implementé mejoras significativas en procesos de testing, logrando productos más robustos y eficientes. La gama de productos en los que he participado incluye home banking, billeteras digitales, balanceadores de carga, servidores de aplicación, contenedores y bases de datos, entre otros.
     
 </div>
-
-
-
 <div align="left">
 
 # 🛠️ Tecnologías principales

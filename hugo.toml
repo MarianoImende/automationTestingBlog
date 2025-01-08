@@ -65,6 +65,6 @@ enableRobotsTXT        = true   # Buscadores
     url = "/contact/"
     weight = 3
   [[menu.main]]
-    name = "sobre mí"
+    name = "Acerca de mí"
     url = "/about/"
     weight = 4

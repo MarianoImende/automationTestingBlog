@@ -114,14 +114,14 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 </div>
 <br>
 
-<strong>🧪 --Pruebas y Automatización</strong>
+<strong>🧪 -Pruebas y Automatización</strong>
 
 <strong><li>Selenium con Java y Cucumber: El curso definitivo</li></strong> 
 <strong><li>Automation Tester Avanzado: REST Assured, Cucumber y Groovy</li></strong> 
 <strong><li>Planificación y Seguimiento de Pruebas de Software</li></strong> 
 <strong><li>ISTQB Foundation Level</li></strong> 
 
-<strong>🌐 --Seguridad y Desarrollo</strong>
+<strong>🌐 -Seguridad y Desarrollo</strong>
 
 <strong><li>Seguridad de la Información</li></strong> 
 <strong><li>Desarrollo Seguro</li></strong> 
@@ -133,7 +133,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <strong><li>Oracle PL/SQL</li></strong> 
 <strong><li>Fundamentos SQL</li></strong> 
 
-<strong>🚀 --Metodologías Ágiles y Liderazgo</strong>
+<strong>🚀 -Metodologías Ágiles y Liderazgo</strong>
 
 <strong><li>Introducción a la Agilidad</li></strong> 
 <strong><li>Liderazgo Ágil</li></strong> 
@@ -145,7 +145,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <strong><li>Liderazgo y Gestión de Equipos</li></strong> 
 <strong><li>Jornadas Latinoamericanas de Agilidad</li></strong> 
 
-<strong>💡 --Innovación y Desarrollo Personal</strong>
+<strong>💡 -Innovación y Desarrollo Personal</strong>
 
 <strong><li>Agilidad Emocional</li></strong> 
 <strong><li>Stress Tool Box</li></strong> 
@@ -157,7 +157,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <strong><li>Seleccionando a los mejores</li></strong> 
 <strong><li>Gimnasia Comunicaciona (Taller vivencial)</li></strong> 
 
-<strong>📈 --Riesgos y Gestión</strong>
+<strong>📈 -Riesgos y Gestión</strong>
 
 <strong><li>Riesgo Operacional</li></strong> 
 <strong><li>Gestión de Riesgos en Proyectos</li></strong> 
@@ -166,7 +166,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <strong><li>Implementación de Sistemas de Gestión de Calidad en ISO</li></strong> 
 <strong><li>Programa de Desarrollo de Líderes</li></strong> 
 
-<strong>👥 --Habilidades Blandas</strong>
+<strong>👥 -Habilidades Blandas</strong>
 
 <strong><li>Webinar: Mobbing Laboral</li></strong> 
 <strong><li>Taller de Feedback</li></strong> 

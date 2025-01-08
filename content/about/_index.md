@@ -65,11 +65,17 @@ Además, he tenido la oportunidad de liderar, durante 4 años, a un equipo de 12
 
 Diseñé e implementé pruebas completas que cubren todo el flujo de trabajo de las aplicaciones, garantizando su funcionalidad en escenarios de producción complejos.
 
-<strong><li> Pruebas de Rendimiento (Performance Testing):</li></strong> Evalué y mejoré la eficiencia y escalabilidad de aplicaciones sometidas a distintas cargas de trabajo, asegurando su rendimiento bajo diversas condiciones.
+<strong><li> Pruebas de Rendimiento (Performance Testing):</li></strong>
 
-<strong><li> Integración y Orquestación:</li></strong> Desarrollé diseños de testing que apoyan la integración y entrega continua (CI/CD-GitLabCI pipelines), optimizando los tiempos de prueba y fortaleciendo la colaboración entre equipos de desarrollo y QA.
+Evalué y mejoré la eficiencia y escalabilidad de aplicaciones sometidas a distintas cargas de trabajo, asegurando su rendimiento bajo diversas condiciones.
 
-<strong><li> Otros logros a lo largo de mi carrera:</li></strong> Implementación E2E ALM Octane, HP ALM, Microfocus UFT Mobile, LoadRunner, desarrollo de winform cliente-servidor (protocolo personalizado), web y API Web y desarrollo de aplicaciones que faciliten la automatización (satelites), estrategias de mockeo.
+<strong><li> Integración y Orquestación:</li></strong> 
+
+Desarrollé diseños de testing que apoyan la integración y entrega continua (CI/CD-GitLabCI pipelines), optimizando los tiempos de prueba y fortaleciendo la colaboración entre equipos de desarrollo y QA.
+
+<strong><li> Otros logros a lo largo de mi carrera:</li></strong> 
+
+Implementación E2E ALM Octane, HP ALM, Microfocus UFT Mobile, LoadRunner, desarrollo de winform cliente-servidor (protocolo personalizado), web y API Web y desarrollo de aplicaciones que faciliten la automatización (satelites), estrategias de mockeo.
 
 Co-diseñe el flujo de trabajo automático de pruebas tales como: análisis de código estático, pruebas de contrato, rendimiento, pruebas unitarias, entre otras.
 
@@ -77,24 +83,32 @@ Realización de presentaciones a Gerentes internos y externos.
 
 La gama de productos en los que he participado incluye home banking, billeteras digitales, balanceadores de carga, servidores de aplicación, contenedores y bases de datos, entre otros.
 
+
+<div style="text-align: left;">
+    <h2 style="display: inline; font-weight: bold; font-size: 1.5em; margin: 0;">
+🛠️ Tecnologías principales
+    </h2>
 </div>
+<br>
 
-# 🛠️ Tecnologías principales
+<strong>⚡ Pruebas de Rendimiento</strong> 
 
-## ⚡ Pruebas de Rendimiento
-- K6
-- JMeter
-- LoadRunner
-- NeoLoad
+<strong><li>  K6</li></strong> 
+<strong><li>  JMeter</li></strong> 
+<strong><li>  LoadRunner</li></strong> 
+<strong><li>  NeoLoad</li></strong> 
 
-## 🤖 Automatización de Pruebas Funcionales End-to-End:**
-- UFT One
-- Selenium
-- Requests + Pytest
-- Postman
-- Playwright
-- Insomnia
-- Rest-Assured
+<strong>🤖 Automatización de Pruebas Funcionales End-to-End:</strong> 
+
+<strong><li>  UFT One</li></strong> 
+<strong><li>  Selenium</li></strong> 
+<strong><li>  Requests + Pytest</li></strong> 
+<strong><li>  Postman</li></strong> 
+<strong><li>  Playwright</li></strong> 
+<strong><li>  Insomnia</li></strong> 
+<strong><li> - Rest-Assured</li></strong> 
+
+</div>
 
 # 📚 Cursos Completados
 

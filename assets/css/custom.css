@@ -1,62 +1,64 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
-/* CSS */
+/* Estilo principal */
 .profile-container {
     display: flex;
     align-items: center;
-    background-color: #f4f4f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9fc; /* Fondo claro con tinte azul/violeta */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
     flex-wrap: wrap; /* Permite que los elementos se acomoden en varias líneas */
-    gap: 20px; /* Espacio entre elementos */
+    gap: 20px; /* Espacio entre la imagen y el texto */
 }
 
+/* Imagen de perfil */
 .profile-image {
-    flex: 0 0 150px;
-    text-align: center;
+    flex: 0 0 150px; /* Imagen fija de 150px de ancho */
+    text-align: center; /* Centrar la imagen */
 }
 
 .profile-image img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 2px solid #ddd;
+    width: 120px; /* Tamaño de la imagen */
+    height: 120px; /* Tamaño cuadrado */
+    border-radius: 50%; /* Bordes redondeados (círculo) */
+    border: 2px solid #ddd; /* Borde gris claro */
 }
 
+/* Información de perfil */
 .profile-info {
-    flex: 1;
-    text-align: left;
+    flex: 1; /* El texto ocupa el espacio disponible */
+    text-align: left; /* Alinear texto a la izquierda */
 }
 
 .profile-info h1 {
-    margin: 0;
-    font-size: 1.8em;
-    color: #333;
+    margin: 0; /* Sin margen superior/inferior */
+    font-size: 1.8em; /* Tamaño del título */
+    color: #333; /* Color del texto principal */
 }
 
 .profile-info p {
-    margin: 5px 0 0 0;
-    font-size: 1.2em;
-    color: #666;
+    margin: 5px 0 0 0; /* Espaciado superior */
+    font-size: 1.2em; /* Tamaño del párrafo */
+    color: #666; /* Color de texto secundario */
 }
 
-/* Media Queries */
+/* Responsividad */
 @media (max-width: 768px) {
     .profile-container {
-        flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
-        text-align: center; /* Centra el texto */
+        flex-direction: column; /* Cambia a diseño vertical */
+        text-align: center; /* Centra el contenido */
     }
 
-    .profile-image {
-        margin-bottom: 10px; /* Añade espacio entre la imagen y el texto */
+    .profile-info {
+        text-align: center; /* Texto centrado en dispositivos pequeños */
     }
 
     .profile-info h1 {
-        font-size: 1.5em; /* Reduce el tamaño del título */
+        font-size: 1.5em; /* Tamaño reducido en pantallas pequeñas */
     }
 
     .profile-info p {
-        font-size: 1em; /* Reduce el tamaño del párrafo */
+        font-size: 1em; /* Tamaño reducido para párrafo */
     }
 }

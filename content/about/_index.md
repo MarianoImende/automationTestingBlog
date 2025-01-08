@@ -13,6 +13,7 @@ type: page
 <div style="text-align: left;">
     <h2 style="display: inline; font-weight: bold; font-size: 1.5em; margin: 0;">
         🧑‍💼 Acerca de mí
+        
     </h2>
 </div>
 

@@ -51,10 +51,6 @@ A lo largo de mi carrera, he participado en proyectos de gran impacto, enfrentan
 
 <strong><li> Centro de Excelencia (CoE): </li></strong> 
 
-Como <strong>divulgador y capacitador</strong>, lideré la adopción de automatización y pruebas de rendimiento. Desarrollé e impartí talleres, sesiones de capacitación, documentación técnica y framework, apoyando a testers en su transición hacia automatización y performance testing. 
-Apoyé a testers en sus primeros proyectos de automatización y rendimiento, proporcionando guías, recursos, mentoría y asesoría personalizada, logrando una  <strong>adopción de prácticas avanzadas.</strong>
-Además, colaboro con el equipos de desarrollo, arquitectura, tecnología y stakeholders en contexto ágil para integrar metodologías de <strong>testing avanzado</strong> (<em>contract-first, shift-left testing, entre otras</em>).
-
 Como <strong>divulgador y capacitador</strong>, lideré la adopción de prácticas avanzadas en automatización y pruebas de rendimiento. Diseñé e impartí talleres, sesiones de capacitación, y desarrollé documentación técnica y frameworks, facilitando la transición de testers hacia el ámbito de automatización y performance testing.
 
 Acompañé a testers en sus primeros proyectos, brindándoles guías, recursos, mentoría y asesoramiento personalizado. Este enfoque permitió una <strong>adopción exitosa de prácticas avanzadas</strong> y una mejora significativa en las capacidades del equipo.
@@ -62,23 +58,26 @@ Acompañé a testers en sus primeros proyectos, brindándoles guías, recursos, 
 Además, colaboré con equipos de desarrollo, arquitectura, tecnología y stakeholders en un contexto ágil para integrar metodologías de  <strong>testing avanzado</strong>, como <em>contract-first y shift-left testing</em>, asegurando una mayor calidad desde las primeras etapas del desarrollo.
 
 <strong><li> Liderazgo: </li></strong> 
+
 Además, he tenido la oportunidad de liderar, durante 4 años, a un equipo de 12 profesionales en las áreas de automatización, orquestación y pruebas de rendimiento. Durante este tiempo, fomenté tanto el crecimiento profesional individual como el del equipo, formando destacados especialistas en estas disciplinas.
 
 <strong><li> Automatización de Pruebas Funcionales End-to-End: </li></strong> 
 
 Diseñé e implementé pruebas completas que cubren todo el flujo de trabajo de las aplicaciones, garantizando su funcionalidad en escenarios de producción complejos.
 
+<strong><li> Pruebas de Rendimiento (Performance Testing):</li></strong> Evalué y mejoré la eficiencia y escalabilidad de aplicaciones sometidas a distintas cargas de trabajo, asegurando su rendimiento bajo diversas condiciones.
 
-</div>
-- **Pruebas de Rendimiento (Performance Testing):** Evalué y mejoré la eficiencia y escalabilidad de aplicaciones sometidas a distintas cargas de trabajo, asegurando su rendimiento bajo diversas condiciones.
+<strong><li> Integración y Orquestación:</li></strong> Desarrollé diseños de testing que apoyan la integración y entrega continua (CI/CD-GitLabCI pipelines), optimizando los tiempos de prueba y fortaleciendo la colaboración entre equipos de desarrollo y QA.
 
-- **Integración y Orquestación:** Desarrollé diseños de testing que apoyan la integración y entrega continua (CI/CD-GitLabCI pipelines), optimizando los tiempos de prueba y fortaleciendo la colaboración entre equipos de desarrollo y QA.
+<strong><li> Otros logros a lo largo de mi carrera:</li></strong> Implementación E2E ALM Octane, HP ALM, Microfocus UFT Mobile, LoadRunner, desarrollo de winform cliente-servidor (protocolo personalizado), web y API Web y desarrollo de aplicaciones que faciliten la automatización (satelites), estrategias de mockeo.
 
-- **Otros logros a lo largo de mi carrera:** Implementación E2E ALM Octane, HP ALM, Microfocus UFT Mobile, LoadRunner, desarrollo de winform cliente-servidor (protocolo personalizado), web y API Web y desarrollo de aplicaciones que faciliten la automatización (satelites), estrategias de mockeo (WireMock).
-Co-diseñe el flujo de trabajo automático de pruebas tales como: análisis de código estático, pruebas de contrato, rendimiento, funcionalidad web y móvil, pruebas unitarias, entre otras.
+Co-diseñe el flujo de trabajo automático de pruebas tales como: análisis de código estático, pruebas de contrato, rendimiento, pruebas unitarias, entre otras.
+
 Realización de presentaciones a Gerentes internos y externos.
 
-He liderado y participado en proyectos de múltiples niveles de complejidad donde implementé mejoras significativas en procesos de testing, logrando productos más robustos y eficientes. La gama de productos en los que he participado incluye home banking, billeteras digitales, balanceadores de carga, servidores de aplicación, contenedores y bases de datos, entre otros.
+La gama de productos en los que he participado incluye home banking, billeteras digitales, balanceadores de carga, servidores de aplicación, contenedores y bases de datos, entre otros.
+
+</div>
 
 # 🛠️ Tecnologías principales
 

@@ -47,19 +47,27 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
 <br>
 <div style="text-align: left;">
 A lo largo de mi carrera, he participado en proyectos de gran impacto, enfrentando con éxito desafíos técnicos y organizativos. Algunas áreas clave de mi experiencia incluyen:
-</div>
+
 <br>
 
 <div style="text-align: left;">  
 <strong><li> Centro de Excelencia (CoE): </li></strong> 
 <br>
 Como <strong>divulgador y capacitador</strong>, lideré la adopción de automatización y pruebas de rendimiento. Desarrollé e impartí talleres, sesiones de capacitación y documentación técnica, apoyando a testers en su transición hacia automatización y performance testing. Además, colaboro con el equipos de desarrollo y stakeholders para integrar metodologías de <strong>testing avanzado</strong> (<em>contract-first, shift-left testing, entre otras</em>).
-</div>
 <br>
-- **Liderazgo y Acompañamiento:** Apoyé a testers en sus primeros proyectos de automatización y rendimiento, proporcionando guías, recursos, mentoría y asesoría personalizada, logrando una **adopción de prácticas avanzadas**.
 
-- **Automatización de Pruebas Funcionales End-to-End:** Diseñé e implementé pruebas completas que cubren todo el flujo de trabajo de las aplicaciones, garantizando su funcionalidad en escenarios de producción complejos.
+<strong><li> Liderazgo y Acompañamiento: </li></strong> 
 
+Apoyé a testers en sus primeros proyectos de automatización y rendimiento, proporcionando guías, recursos, mentoría y asesoría personalizada, logrando una  <strong>adopción de prácticas avanzadas.</strong>
+
+<br>
+
+<strong><li> Automatización de Pruebas Funcionales End-to-End: </li></strong> 
+<br>
+Diseñé e implementé pruebas completas que cubren todo el flujo de trabajo de las aplicaciones, garantizando su funcionalidad en escenarios de producción complejos.
+
+
+</div>
 - **Pruebas de Rendimiento (Performance Testing):** Evalué y mejoré la eficiencia y escalabilidad de aplicaciones sometidas a distintas cargas de trabajo, asegurando su rendimiento bajo diversas condiciones.
 
 - **Integración y Orquestación:** Desarrollé diseños de testing que apoyan la integración y entrega continua (CI/CD-GitLabCI pipelines), optimizando los tiempos de prueba y fortaleciendo la colaboración entre equipos de desarrollo y QA.

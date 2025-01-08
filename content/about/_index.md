@@ -10,7 +10,7 @@ type: page
 | ![Perfil](perfil.png) | **Mariano Imende**<br> Performance Engineer, QA Automation, Analista programador graduado |
 |------------------------|-------------------------------------------------------------------------------------|
 
-<div style="text-align: center;">
+<div style="text-align: left;">
   ## **🧑‍💼 Acerca de mí**
 </div>
 

@@ -7,7 +7,6 @@ type: page
 
 # 📜 Currículum Vitae
 
-<!-- HTML -->
 <div class="profile-container">
     <div class="profile-image">
         <img src="perfil.png" alt="Perfil">
@@ -17,6 +16,7 @@ type: page
         <p>Performance Engineer, QA Automation, Analista programador</p>
     </div>
 </div>
+
 
 
 <br>

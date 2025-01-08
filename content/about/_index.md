@@ -109,7 +109,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <strong><li>  Rest-Assured</li></strong> 
 
 <div style="text-align: left;">
-    <h2 style="display: inline; font-weight: bold; font-size: 4.5em; margin: 0;">
+    <h2 style="display: inline; font-weight: bold; font-size: 1.5em; margin: 0;">
 📚 Cursos Completados
     </h2>
 </div>
@@ -122,7 +122,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <strong><li>Planificación y Seguimiento de Pruebas de Software</li></strong> 
 <strong><li>ISTQB Foundation Level</li></strong> 
 
-<strong>🌐 Seguridad y Desarrollo</strong>
+<H3><strong>🌐 Seguridad y Desarrollo</strong></H3>
 
 <strong><li>Seguridad de la Información</li></strong> 
 <strong><li>Desarrollo Seguro</li></strong> 
@@ -134,7 +134,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <strong><li>Oracle PL/SQL</li></strong> 
 <strong><li>Fundamentos SQL</li></strong> 
 
-<strong>🚀 Metodologías Ágiles y Liderazgo</strong>
+<H3><strong>🚀 Metodologías Ágiles y Liderazgo</strong></H3>
 
 <strong><li>Introducción a la Agilidad</li></strong> 
 <strong><li>Liderazgo Ágil</li></strong> 
@@ -146,7 +146,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <strong><li>Liderazgo y Gestión de Equipos</li></strong> 
 <strong><li>Jornadas Latinoamericanas de Agilidad</li></strong> 
 
-<strong>💡 Innovación y Desarrollo Personal</strong>
+<H3><strong>💡 Innovación y Desarrollo Personal</strong></H3>
 
 <strong><li>Agilidad Emocional</li></strong> 
 <strong><li>Stress Tool Box</li></strong> 
@@ -158,7 +158,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <strong><li>Seleccionando a los mejores</li></strong> 
 <strong><li>Gimnasia Comunicaciona (Taller vivencial)</li></strong> 
 
-<strong>📈 Riesgos y Gestión</strong>
+<H3><strong>📈 Riesgos y Gestión</strong></H3>
 
 <strong><li>Riesgo Operacional</li></strong> 
 <strong><li>Gestión de Riesgos en Proyectos</li></strong> 
@@ -167,7 +167,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <strong><li>Implementación de Sistemas de Gestión de Calidad en ISO</li></strong> 
 <strong><li>Programa de Desarrollo de Líderes</li></strong> 
 
-<strong>👥 Habilidades Blandas</strong>
+<H3><strong>👥 Habilidades Blandas</strong></H3>
 
 <strong><li>Webinar: Mobbing Laboral</li></strong> 
 <strong><li>Taller de Feedback</li></strong> 
@@ -175,7 +175,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <strong><li>Taller de Negociación Estratégica</li></strong> 
 <strong><li>Feedback en Acción</li></strong> 
   
-<strong>📞 Contacto</strong>
+<H3><strong>📞 Contacto</strong></H3>
 
 <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start; margin-top: 20px;">
     <!-- Email -->

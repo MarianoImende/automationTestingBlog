@@ -118,61 +118,61 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 
 <li>Selenium con Java y Cucumber: El curso definitivo</li> 
 <li>Automation Tester Avanzado: REST Assured, Cucumber y Groovy</li>
-<strong><li>Planificación y Seguimiento de Pruebas de Software</li></strong> 
-<strong><li>ISTQB Foundation Level</li></strong> 
+<li>Planificación y Seguimiento de Pruebas de Software</li>
+<li>ISTQB Foundation Level</li>
 
 <strong>🌐 -Seguridad y Desarrollo</strong>
 
-<strong><li>Seguridad de la Información</li></strong> 
-<strong><li>Desarrollo Seguro</li></strong> 
-<strong><li>Node.js: Creando API con Express y MongoDB</li></strong> 
-<strong><li>Conceptos básicos de Virtualización</li></strong> 
-<strong><li>Monitorización y Gestión de Indicadores</li></strong> 
-<strong><li>Java Advanced Programming: Threads, Networking, J2SE</li></strong> 
-<strong><li>Java Web: Servlets, JSP, JSTL, Struts & AJAX</li></strong> 
-<strong><li>Oracle PL/SQL</li></strong> 
-<strong><li>Fundamentos SQL</li></strong> 
+<li>Seguridad de la Información</li>
+<li>Desarrollo Seguro</li>
+<li>Node.js: Creando API con Express y MongoDB</li>
+<li>Conceptos básicos de Virtualización</li>
+<li>Monitorización y Gestión de Indicadores</li>
+<li>Java Advanced Programming: Threads, Networking, J2SE</li>
+<li>Java Web: Servlets, JSP, JSTL, Struts & AJAX</li>
+<li>Oracle PL/SQL</li>
+<li>Fundamentos SQL</li>
 
 <strong>🚀 -Metodologías Ágiles y Liderazgo</strong>
 
-<strong><li>Introducción a la Agilidad</li></strong> 
-<strong><li>Liderazgo Ágil</li></strong> 
-<strong><li>Gestión Agile de Proyectos</li></strong> 
-<strong><li>Cultura Agile</li></strong> 
-<strong><li>Agilidad Organizacional</li></strong> 
-<strong><li>Planificación Agile - OKRs</li></strong> 
-<strong><li>El Líder como Coach</li></strong> 
-<strong><li>Liderazgo y Gestión de Equipos</li></strong> 
-<strong><li>Jornadas Latinoamericanas de Agilidad</li></strong> 
+<li>Introducción a la Agilidad</li>
+<li>Liderazgo Ágil</li>
+<li>Gestión Agile de Proyectos</li>
+<li>Cultura Agile</li>
+<li>Agilidad Organizacional</li>
+<li>Planificación Agile - OKRs</li>
+<li>El Líder como Coach</li>
+<li>Liderazgo y Gestión de Equipos</li>
+<li>Jornadas Latinoamericanas de Agilidad</li>
 
 <strong>💡 -Innovación y Desarrollo Personal</strong>
 
-<strong><li>Agilidad Emocional</li></strong> 
-<strong><li>Stress Tool Box</li></strong> 
-<strong><li>Innovación y Design Thinking</li></strong> 
-<strong><li>Inteligencia Colectiva</li></strong> 
-<strong><li>Sinergia ADN</li></strong> 
-<strong><li>Gestión del plan de desarrollo individual</li></strong> 
-<strong><li>Taller Objetivos SMART</li></strong> 
-<strong><li>Seleccionando a los mejores</li></strong> 
-<strong><li>Gimnasia Comunicaciona (Taller vivencial)</li></strong> 
+<li>Agilidad Emocional</li>
+<li>Stress Tool Box</li>
+<li>Innovación y Design Thinking</li>
+<li>Inteligencia Colectiva</li>
+<li>Sinergia ADN</li>
+<li>Gestión del plan de desarrollo individual</li>
+<li>Taller Objetivos SMART</li>
+<li>Seleccionando a los mejores</li>
+<strong><li>Gimnasia Comunicaciona (Taller vivencial)</li>
 
 <strong>📈 -Riesgos y Gestión</strong>
 
-<strong><li>Riesgo Operacional</li></strong> 
-<strong><li>Gestión de Riesgos en Proyectos</li></strong> 
-<strong><li>Lean Management</li></strong> 
-<strong><li>Capacitación y Presupuestación</li></strong> 
-<strong><li>Implementación de Sistemas de Gestión de Calidad en ISO</li></strong> 
-<strong><li>Programa de Desarrollo de Líderes</li></strong> 
+<li>Riesgo Operacional</li>
+<li>Gestión de Riesgos en Proyectos</li>
+<li>Lean Management</li>
+<li>Capacitación y Presupuestación</li>
+<li>Implementación de Sistemas de Gestión de Calidad en ISO</li>
+<li>Programa de Desarrollo de Líderes</li>
 
 <strong>👥 -Habilidades Blandas</strong>
 
-<strong><li>Webinar: Mobbing Laboral</li></strong> 
-<strong><li>Taller de Feedback</li></strong> 
-<strong><li>Gestión del Desempeño para Evaluadores</li></strong>
-<strong><li>Taller de Negociación Estratégica</li></strong> 
-<strong><li>Feedback en Acción</li></strong> 
+<li>Webinar: Mobbing Laboral</li>
+<li>Taller de Feedback</li>
+<li>Gestión del Desempeño para Evaluadores</li></strong>
+<li>Taller de Negociación Estratégica</li>
+<li>Feedback en Acción</li>
   
 <strong>📞 Contacto</strong>
 

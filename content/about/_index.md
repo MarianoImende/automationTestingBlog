@@ -51,7 +51,7 @@ A lo largo de mi carrera, he participado en proyectos de gran impacto, enfrentan
 <br>
 
 <div style="text-align: left;">  
-</strong><li> Centro de Excelencia (CoE): </li></strong> 
+<strong><li> Centro de Excelencia (CoE): </li></strong> 
 <br>
 Como <strong>divulgador y capacitador</strong>, lideré la adopción de automatización y pruebas de rendimiento. Desarrollé e impartí talleres, sesiones de capacitación y documentación técnica, apoyando a testers en su transición hacia automatización y performance testing. Además, colaboro con el equipos de desarrollo y stakeholders para integrar metodologías de **testing avanzado** (contract-first, shift-left testing, entre otras).
 </div>

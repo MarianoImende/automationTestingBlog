@@ -106,68 +106,78 @@ La gama de productos en los que he participado incluye home banking, billeteras 
 <strong><li>  Postman</li></strong> 
 <strong><li>  Playwright</li></strong> 
 <strong><li>  Insomnia</li></strong> 
-<strong><li> - Rest-Assured</li></strong> 
+<strong><li>  Rest-Assured</li></strong> 
 
+<div style="text-align: left;">
+    <h2 style="display: inline; font-weight: bold; font-size: 1.5em; margin: 0;">
+📚 Cursos Completados
+    </h2>
 </div>
+<br>
 
-# 📚 Cursos Completados
+<strong>🧪 Pruebas y Automatización</strong>
 
-## 🧪 **Pruebas y Automatización**
-- **Selenium con Java y Cucumber**: El curso definitivo
-- **Automation Tester Avanzado**: REST Assured, Cucumber y Groovy
-- **Planificación y Seguimiento de Pruebas de Software**
-- **ISTQB Foundation Level**
-- 
-## 🌐 **Seguridad y Desarrollo**
-- **Seguridad de la Información**
-- **Desarrollo Seguro**
-- **Node.js**: Creando API con Express y MongoDB (Incl. Deno)
-- **Conceptos básicos de Virtualización**
-- **Monitorización y Gestión de Indicadores**
-- **Java Advanced Programming**: Threads, Networking, J2SE
-- **Java Web**: Servlets, JSP, JSTL, Struts & AJAX
-- **Oracle PL/SQL**
-- **Fundamentos SQL**
-- 
-## 🚀 **Metodologías Ágiles y Liderazgo**
-- **Introducción a la Agilidad**
-- **Liderazgo Ágil**
-- **Gestión Agile de Proyectos**
-- **Cultura Agile**
-- **Agilidad Organizacional**
-- **Planificación Agile - OKRs**
-- **El Líder como Coach**
-- **Liderazgo y Gestión de Equipos**
-- **Jornadas Latinoamericanas de Agilidad**
+<strong><li>Selenium con Java y Cucumber: El curso definitivo</li></strong> 
+<strong><li>Automation Tester Avanzado: REST Assured, Cucumber y Groovy</li></strong> 
+<strong><li>Planificación y Seguimiento de Pruebas de Software</li></strong> 
+<strong><li>ISTQB Foundation Level</li></strong> 
 
-## 💡 **Innovación y Desarrollo Personal**
-- **Agilidad Emocional**
-- **Stress Tool Box**
-- **Innovación y Design Thinking**
-- **Inteligencia Colectiva**
-- **Sinergia ADN**
-- **Gestión del plan de desarrollo individual**
-- **Taller Objetivos SMART**
-- **Seleccionando a los mejores**
-- **Gimnasia Comunicacional** - Taller vivencial
+<strong>🌐 Seguridad y Desarrollo</strong>
 
-## 📈 **Riesgos y Gestión**
-- **Riesgo Operacional**
-- **Gestión de Riesgos en Proyectos**
-- **Lean Management**
-- **Capacitación y Presupuestación**
-- **Implementación de Sistemas de Gestión de Calidad en ISO**
-- **Programa de Desarrollo de Líderes**
+<strong><li>Seguridad de la Información</li></strong> 
+<strong><li>Desarrollo Seguro</li></strong> 
+<strong><li>Node.js: Creando API con Express y MongoDB</li></strong> 
+<strong><li>Conceptos básicos de Virtualización</li></strong> 
+<strong><li>Monitorización y Gestión de Indicadores</li></strong> 
+<strong><li>Java Advanced Programming: Threads, Networking, J2SE</li></strong> 
+<strong><li>Java Web: Servlets, JSP, JSTL, Struts & AJAX</li></strong> 
+<strong><li>Oracle PL/SQL</li></strong> 
+<strong><li>Fundamentos SQL</li></strong> 
 
-## 👥 **Habilidades Blandas**
-- **Webinar: Mobbing Laboral**
-- **Taller de Feedback**
-- **Gestión del Desempeño**: Evaluadores
-- **Taller de Negociación Estratégica**
-- **Feedback en Acción**
+<strong>🚀 Metodologías Ágiles y Liderazgo</strong>
 
-# 📞 Contacto
+<strong><li>Introducción a la Agilidad</li></strong> 
+<strong><li>Liderazgo Ágil</li></strong> 
+<strong><li>Gestión Agile de Proyectos</li></strong> 
+<strong><li>Cultura Agile</li></strong> 
+<strong><li>Agilidad Organizacional</li></strong> 
+<strong><li>Planificación Agile - OKRs</li></strong> 
+<strong><li>El Líder como Coach</li></strong> 
+<strong><li>Liderazgo y Gestión de Equipos</li></strong> 
+<strong><li>Jornadas Latinoamericanas de Agilidad</li></strong> 
 
+<strong>💡 Innovación y Desarrollo Personal</strong>
+
+<strong><li>Agilidad Emocional</li></strong> 
+<strong><li>Stress Tool Box</li></strong> 
+<strong><li>Innovación y Design Thinking</li></strong> 
+<strong><li>Inteligencia Colectiva</li></strong> 
+<strong><li>Sinergia ADN</li></strong> 
+<strong><li>Gestión del plan de desarrollo individual</li></strong> 
+<strong><li>Taller Objetivos SMART</li></strong> 
+<strong><li>Seleccionando a los mejores</li></strong> 
+<strong><li>Gimnasia Comunicacional</li></strong>  - Taller vivencial
+
+<strong>📈 Riesgos y Gestión</strong>
+
+<strong><li>Riesgo Operacional</li></strong> 
+<strong><li>Gestión de Riesgos en Proyectos</li></strong> 
+<strong><li>Lean Management</li></strong> 
+<strong><li>Capacitación y Presupuestación</li></strong> 
+<strong><li>Implementación de Sistemas de Gestión de Calidad en ISO</li></strong> 
+<strong><li>Programa de Desarrollo de Líderes</li></strong> 
+
+<strong>👥 Habilidades Blandas</strong>
+
+<strong><li>Webinar: Mobbing Laboral</li></strong> 
+<strong><li>Taller de Feedback</li></strong> 
+<strong><li>Gestión del Desempeño</li></strong> : Evaluadores
+<strong><li>Taller de Negociación Estratégica</li></strong> 
+<strong><li>Feedback en Acción</li></strong> 
+  
+<strong>📞 Contacto</strong>
+</div
+        >
 <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start; margin-top: 20px;">
     <!-- Email -->
     <a href="mailto:imende.mariano@gmail.com" style="text-decoration: none; color: inherit;">

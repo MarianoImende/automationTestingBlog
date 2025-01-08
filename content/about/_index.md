@@ -38,7 +38,7 @@ Soy un profesional con una sólida trayectoria en automatización de pruebas, pe
 <div style="text-align: left;">
 Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experiencia para mejorar la calidad y eficiencia en testing. Busco seguir desarrollándome en entornos dinámicos y aportar a la creación de soluciones innovadoras y efectivas en el ámbito de QA.
 </div>
-
+<br>
 <div style="text-align: left;">
     <h2 style="display: inline; font-weight: bold; font-size: 1.5em; margin: 0;">
 💼 Experiencia y Logros
@@ -51,9 +51,10 @@ A lo largo de mi carrera, he participado en proyectos de gran impacto, enfrentan
 <br>
 </strong><li> Centro de Excelencia (CoE): </li></strong> 
 <br>
-  
-Como **divulgador y capacitador**, lideré la adopción de automatización y pruebas de rendimiento. Desarrollé e impartí talleres, sesiones de capacitación y documentación técnica, apoyando a testers en su transición hacia automatización y performance testing. Además, colaboro con el equipos de desarrollo y stakeholders para integrar metodologías de **testing avanzado** (contract-first, shift-left testing, entre otras).
-
+<div style="text-align: left;">  
+Como <strong>divulgador y capacitador</strong>, lideré la adopción de automatización y pruebas de rendimiento. Desarrollé e impartí talleres, sesiones de capacitación y documentación técnica, apoyando a testers en su transición hacia automatización y performance testing. Además, colaboro con el equipos de desarrollo y stakeholders para integrar metodologías de **testing avanzado** (contract-first, shift-left testing, entre otras).
+</div>
+<br>
 - **Liderazgo y Acompañamiento:** Apoyé a testers en sus primeros proyectos de automatización y rendimiento, proporcionando guías, recursos, mentoría y asesoría personalizada, logrando una **adopción de prácticas avanzadas**.
 
 - **Automatización de Pruebas Funcionales End-to-End:** Diseñé e implementé pruebas completas que cubren todo el flujo de trabajo de las aplicaciones, garantizando su funcionalidad en escenarios de producción complejos.

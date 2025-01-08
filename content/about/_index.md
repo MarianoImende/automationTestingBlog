@@ -7,9 +7,6 @@ type: page
 
 # 📜 Currículum Vitae
 
-| ![Perfil](perfil.png) | **Mariano Imende**<br> Performance Engineer, QA Automation, Analista programador graduado |
-|------------------------|-------------------------------------------------------------------------------------|
-
 <div style="display: flex; align-items: center; background-color: #f4f4f9; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
     <div style="flex: 0 0 150px; text-align: center; margin-right: 20px;">
         <img src="perfil.png" alt="Perfil" style="width: 120px; height: 120px; border-radius: 50%; border: 2px solid #ddd;">

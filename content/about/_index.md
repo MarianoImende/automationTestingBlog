@@ -7,7 +7,7 @@ type: page
 
 # 📜 Currículum Vitae
 
-
+<hr>
 <div style="flex: 0 0 150px; text-align: center; margin-right: 20px;">
         <img src="perfil.png" alt="Perfil" style="width: 120px; height: 120px; border-radius: 50%; border: 2px solid #ddd;">
     </div>

@@ -194,8 +194,7 @@ La gama de productos en los que he participado incluye home banking, billeteras 
         GitHub
     </a>
 
-
-<a href="https://github.com/MarianoImende" style="text-decoration: none; color: inherit;">
+<a href="https://maps.app.goo.gl/uxmnJVRFk3gwoGF7A" style="text-decoration: none; color: inherit;">
         <img src="maps.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
         Caseros, PBA.
     </a>

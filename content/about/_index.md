@@ -185,10 +185,20 @@ La gama de productos en los que he participado incluye home banking, billeteras 
         <img src="icons8-whatsapp-48.png" alt="WhatsApp" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
         +54-9-11-62271394
     </a>
-    <a href="https://linkedin.com/in/mariano-imende" style="text-decoration: none; color: inherit;" target="_blank">
-        <img src="icons8-linkedin-48.png" alt="LinkedIn" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
-        LinkedIn
-    </a>
+
+<a href="https://linkedin.com/in/mariano-imende" 
+   style="text-decoration: none; color: inherit; font-weight: bold;" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Perfil de LinkedIn de Mariano Imende">
+    Visita mi perfil de LinkedIn
+</a>
+
+
+
+
+
+
     <a href="https://github.com/MarianoImende" style="text-decoration: none; color: inherit;">
         <img src="icons8-github-50.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
         GitHub

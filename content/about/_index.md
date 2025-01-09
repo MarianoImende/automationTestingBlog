@@ -175,17 +175,15 @@ La gama de productos en los que he participado incluye home banking, billeteras 
   
 <strong>📞 Contacto</strong>
 
-
-
 <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start; margin-top: 20px; font-family: Arial, sans-serif; font-size: 1em;">
     <!-- Email -->
-    <a href="mailto:imende.mariano@gmail.com" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+    <a href="mailto:imende.mariano@gmail.com" style="display: flex; align-items: center; text-decoration: none; color: #333;" target="_blank" rel="noopener noreferrer">
         <img src="icons8-gmail-48.png" alt="Email" style="width: 24px; height: 24px; margin-right: 8px;">
         <span>imende.mariano@gmail.com</span>
     </a>
 
     <!-- WhatsApp -->
-    <a href="https://wa.me/5491162271394" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+    <a href="https://wa.me/5491162271394" style="display: flex; align-items: center; text-decoration: none; color: #333;" target="_blank" rel="noopener noreferrer">
         <img src="icons8-whatsapp-48.png" alt="WhatsApp" style="width: 24px; height: 24px; margin-right: 8px;">
         <span>+54-9-11-62271394</span>
     </a>
@@ -197,13 +195,13 @@ La gama de productos en los que he participado incluye home banking, billeteras 
     </a>
 
     <!-- GitHub -->
-    <a href="https://github.com/MarianoImende" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+    <a href="https://github.com/MarianoImende" style="display: flex; align-items: center; text-decoration: none; color: #333;" target="_blank" rel="noopener noreferrer">
         <img src="icons8-github-50.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 8px;">
         <span>GitHub</span>
     </a>
 
     <!-- Location -->
-    <a href="https://maps.app.goo.gl/uxmnJVRFk3gwoGF7A" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+    <a href="https://maps.app.goo.gl/uxmnJVRFk3gwoGF7A" style="display: flex; align-items: center; text-decoration: none; color: #333;" target="_blank" rel="noopener noreferrer">
         <img src="maps.png" alt="Location" style="width: 24px; height: 24px; margin-right: 8px;">
         <span>Caseros, PBA</span>
     </a>

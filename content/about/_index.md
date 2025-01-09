@@ -5,7 +5,7 @@ omit_header_text: true
 type: page
 ---
 
-# 📜 Currículum Vitae
+# 📜 Currículum Vitaes
 
 <hr>
 <div style="flex: 0 0 150px; text-align: center; margin-right: 20px;">

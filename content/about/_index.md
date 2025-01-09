@@ -5,7 +5,7 @@ omit_header_text: true
 type: page
 ---
 
-# 📜 Currículum Vitaes
+# 📜 Currículum Vitae
 
 <hr>
 <div style="flex: 0 0 150px; text-align: center; margin-right: 20px;">
@@ -192,6 +192,12 @@ La gama de productos en los que he participado incluye home banking, billeteras 
     <a href="https://github.com/MarianoImende" style="text-decoration: none; color: inherit;">
         <img src="icons8-github-50.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
         GitHub
+    </a>
+
+
+<a href="https://github.com/MarianoImende" style="text-decoration: none; color: inherit;">
+        <img src="maps.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;">
+        Caseros, PBA.
     </a>
 </div>
 </div>

@@ -113,7 +113,6 @@ La gama de productos en los que he participado incluye home banking, billeteras 
     </h2>
 </div>
 <br>
-
 <strong>🧪 Pruebas y Automatización</strong>
 
 <li>Selenium con Java y Cucumber: El curso definitivo</li> 

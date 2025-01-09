@@ -49,7 +49,7 @@ Continuar contribuyendo al éxito de proyectos complejos, aplicando mi experienc
 A lo largo de mi carrera, he participado en proyectos de gran impacto, enfrentando con éxito desafíos técnicos y organizativos. Algunas áreas <strong>claves</strong> de mi experiencia incluyen:
 <br>
 
-<strong><li> Centro de Excelencia (CoE): </li></strong> 
+<strong><li> Práctica de QA (simil CoE): </li></strong> 
 
 Como <strong>divulgador y capacitador</strong>, lideré la adopción de prácticas avanzadas en automatización y pruebas de rendimiento. Diseñé e impartí talleres, sesiones de capacitación, y desarrollé documentación técnica y frameworks, facilitando la transición de testers hacia el ámbito de automatización y performance testing.
 

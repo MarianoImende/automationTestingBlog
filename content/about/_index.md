@@ -187,8 +187,25 @@ La gama de productos en los que he participado incluye home banking, billeteras 
             <img src="icons8-whatsapp-48.png" alt="WhatsApp">
             +54-9-11-62271394
         </a>
+    </li>   
+     <li>
+        <a href="https://linkedin.com/in/mariano-imende" class="contact-link" target="_blank" rel="noopener noreferrer">
+            <img src="icons8-linkedin-48.png" alt="LinkedIn">
+            +54-9-11-62271394
+        </a>
     </li>
-    <!-- Más enlaces -->
+    <li>
+        <a href="https://github.com/MarianoImende" class="contact-link" target="_blank" rel="noopener noreferrer">
+            <img src="icons8-github-50.png" alt="LinkedIn">
+            GitHub
+        </a>
+    </li>
+    <li>
+        <a href="https://maps.app.goo.gl/uxmnJVRFk3gwoGF7A" class="contact-link" target="_blank" rel="noopener noreferrer">
+            <img src="maps.png" alt="Ubicación">
+            Caseros, PBA.
+        </a>
+    </li>
 </ul>
 
 </div>

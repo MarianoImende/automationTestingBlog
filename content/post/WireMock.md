@@ -1,6 +1,6 @@
 ---
 date: "2024-09-04T11:25:05-04:00"
-title: "Wiremock en automatizacón de pruebas"
+title: "📤 Wiremock en automatizacón de pruebas"
 date: 2024-09-04
 tags: ["wiremock", "testing", "mock"]
 description: "Guía para utilizar Wiremock en contextos de automatización de pruebas"

@@ -26,7 +26,6 @@ EL siguiente es un ejemplo completo en entorno Linux, es decir, el script (init.
 en el cual se creo un archivo con extension **sh** (scripts de intérprete de comandos de Bash de Unix) para fasilitar la ejecución:
 
 ```
-
 export K6_WEB_DASHBOARD=true            # Habilitar el Dashboard
 export K6_WEB_DASHBOARD_PORT=5665       # Puerto de eschucha del Dashboard
 export K6_WEB_DASHBOARD_HOST=0.0.0.0    # Host al que vincular el Dashboard
@@ -35,6 +34,10 @@ export K6_WEB_DASHBOARD_PERIOD=2s       # Periodo en segundos para actualizar el
 /opt/k6/k6 run --no-connection-reuse /opt/scriptK6/init.js
 
 ```
+
+Para acceder al **Web Dashboard** por medio del navegador de tu workstation debes ingrsar a: http://IP:5665/
+**IP:** Es la dirección IP del servidor Linux donde ejecutas tu script de K6.
+
 💡 Como dato adicional, se utiliza el parámetro **--no-connection-reuse** para simular una conexión por cada petición http enviada:
 
 - Usa --no-connection-reuse si quieres simular un escenario donde cada cliente abre una conexión nueva para cada transacción, como lo harían algunos clientes sin estado. Si los clientes que acceden a tu API no reutilizan conexiones
@@ -165,3 +168,9 @@ for (let i = 0; i < statusesToCheck.length; i++) {
 }
 
 ```
+
+Luego de definir las métricas personalizadas para cada check, podemos observar en el **web-dashboard** lo siguiente:
+
+![web-dashboard](/images/k6/K6_Metric_custom)
+
+Espero que todo te funcione de maravillas, Exitos!!! 🤞

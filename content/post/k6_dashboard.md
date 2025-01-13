@@ -1,8 +1,8 @@
 ---
-date: "2024-06-12T11:13:05-04:00"
+date: "2024-07-13T11:10:04-04:00"
 title: "📈 Web dashboard en k6"
 featured_image: "/images/k6/k6.png"
-date: 2024-10-25
+date: 2024-07-13
 tags: ["stress", "performance", "testing"]
 description: "Guía para utilizar Web dashboard en K6 para pruebas de Performance"
 ---

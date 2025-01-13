@@ -1,6 +1,6 @@
 ---
 date: 2017-04-14T11:25:05-04:00
-description: "Performance"
+description: "⚡Performance"
 cascade:
    featured_image: "/images/API-Contract-Testing.png"
 tags: []
@@ -8,7 +8,6 @@ title: "Performance testing"
 disable_share: true
 omit_header_text: false #achica la imagen
 type: page
-
 ---
 
 

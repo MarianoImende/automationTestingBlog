@@ -46,7 +46,7 @@ El encabezado Connection: keep-alive es clave para comprender cómo se reutiliza
 
 # Sugerencia de script de prueba:
 
-```
+```javascript
 import { sleep } from 'k6';
 import { check } from 'k6';
 import { Counter } from 'k6/metrics';
@@ -164,4 +164,4 @@ for (let i = 0; i < statusesToCheck.length; i++) {
  
 }
 
-```
+```javascript

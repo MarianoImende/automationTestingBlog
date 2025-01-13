@@ -7,7 +7,8 @@ tags: ["stress", "performance", "testing"]
 description: "Guía para utilizar Web dashboard en K6 para pruebas de Performance"
 ---
 
-#📈 Web dashboard en K6
+# 📈 Web dashboard en K6
+
 **k6** proporciona un panel web integrado que puede habilitar para visualizar y monitorear los resultados de sus pruebas en **tiempo real**
 
 ## 1. Checks de Código de Estado

@@ -1,10 +1,10 @@
 ---
 date: "2024-06-12T11:13:05-04:00"
-title: "Performance testing con K6"
+title: "Tipos de Checks en k6"
 featured_image: "/images/k6/k6.png"
 date: 2024-10-25
 tags: ["stress", "performance", "testing"]
-description: "Guía para utilizar K6 para pruebas de Performance"
+description: "Guía para utilizar Checks en K6 para pruebas de Performance"
 ---
 
 # Tipos de Checks en k6

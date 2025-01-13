@@ -11,6 +11,9 @@ description: "Guía para utilizar Web dashboard en K6 para pruebas de Performanc
 
 **k6** proporciona un panel web integrado que puede habilitar para visualizar y monitorear los resultados de sus pruebas en **tiempo real**
 
+
+![web-dashboard](/images/k6/web-dashboard.png)
+
 ## 1. Checks de Código de Estado
 Verifica que el código de estado de la respuesta sea el esperado.
 

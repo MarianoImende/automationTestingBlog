@@ -35,10 +35,10 @@ export K6_WEB_DASHBOARD_PERIOD=2s       # Periodo en segundos para actualizar el
 /opt/k6/k6 run --no-connection-reuse /opt/scriptK6/init.js
 
 ```
-💡 Como dato adicional, se utiliza el parámetro **--no-connection-reuse** para simular una conexion por cada peticion http encviada:
+💡 Como dato adicional, se utiliza el parámetro **--no-connection-reuse** para simular una conexión por cada petición http enviada:
 
 - Usa --no-connection-reuse si quieres simular un escenario donde cada cliente abre una conexión nueva para cada transacción, como lo harían algunos clientes sin estado. Si los clientes que acceden a tu API no reutilizan conexiones
-debes utilizar el parametro **--no-connection-reuse**. Forzar nuevas conexiones aumenta artificialmente el tiempo de respuesta debido al handshake
+debes utilizar el parámetro **--no-connection-reuse**. Forzar nuevas conexiones aumenta artificialmente el tiempo de respuesta debido al handshake
 
 - No uses esta opción si buscas emular el comportamiento más eficiente de clientes modernos o aplicaciones que aprovechan conexiones persistentes. Si los clientes que acceden a tu API reutilizan conexiones (como lo hacen los navegadores con HTTP/1.1 o HTTP/2) o connection: keep-alive en los encabezados HTTP: Este encabezado es solo una solicitud del cliente (tu script) para que el servidor mantenga la conexión abierta después de completar la solicitud.
 

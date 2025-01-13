@@ -171,6 +171,6 @@ for (let i = 0; i < statusesToCheck.length; i++) {
 
 Luego de definir las métricas personalizadas para cada check, podemos observar en el **web-dashboard** lo siguiente:
 
-![web-dashboard](/images/k6/K6_Metric_custom)
+![web-dashboard](/images/k6/K6_Metric_custom.png)
 
 Espero que todo te funcione de maravillas, Exitos!!! 🤞

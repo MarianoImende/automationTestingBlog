@@ -23,9 +23,9 @@ El panel web es una función integrada de k6. se puede habilitarl configurando l
 De forma predeterminada, el panel web está disponible en el puerto localhost 5665
 
 EL siguiente es un ejemplo completo en entorno Linux, es decir, el script (init.js) se encuentra en un servidor linux
-en el cual se creo un archivo con extension **sh** (contienen código para distintos scripts que pueden utilizarse en el intérprete de comandos de Bash de Unix) para fasilitar la ejecución:
+en el cual se creo un archivo con extension **sh** (scripts de intérprete de comandos de Bash de Unix) para fasilitar la ejecución:
 
-```linux
+```
 
 export K6_WEB_DASHBOARD=true            # Habilitar el Dashboard
 export K6_WEB_DASHBOARD_PORT=5665       # Puerto de eschucha del Dashboard
@@ -34,4 +34,4 @@ export K6_WEB_DASHBOARD_PERIOD=2s       # Periodo en segundos para actualizar el
 
 /opt/k6/k6 run --no-connection-reuse /opt/scriptK6/init.js
 
-```linux
+```

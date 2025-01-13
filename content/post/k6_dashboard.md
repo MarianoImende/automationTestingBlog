@@ -7,7 +7,7 @@ tags: ["stress", "performance", "testing"]
 description: "Guía para utilizar Web dashboard en K6 para pruebas de Performance"
 ---
 
-# 📈 Web dashboard en K6
+# 📉 Web dashboard
 
 **k6** proporciona un panel web integrado que puede habilitar para visualizar y monitorear los resultados de sus pruebas en **tiempo real**
 
@@ -35,7 +35,7 @@ export K6_WEB_DASHBOARD_PERIOD=2s       # Periodo en segundos para actualizar el
 /opt/k6/k6 run --no-connection-reuse /opt/scriptK6/init.js
 
 ```
-Como dato adicional, se utiliza el parámetro **--no-connection-reuse** para simular una conexion por cada peticion http encviada:
+💡 Como dato adicional, se utiliza el parámetro **--no-connection-reuse** para simular una conexion por cada peticion http encviada:
 
 - Usa --no-connection-reuse si quieres simular un escenario donde cada cliente abre una conexión nueva para cada transacción, como lo harían algunos clientes sin estado. Si los clientes que acceden a tu API no reutilizan conexiones
 debes utilizar el parametro **--no-connection-reuse**. Forzar nuevas conexiones aumenta artificialmente el tiempo de respuesta debido al handshake

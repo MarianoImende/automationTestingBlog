@@ -100,7 +100,7 @@ insecureSkipTLSVerify: true,
                 { duration: '3s', target: 30 },
                 { duration: '3s', target: 25 },
                 { duration: '3s', target: 15 },				
-			 { duration: '3s', target: 10 },
+			  { duration: '3s', target: 10 },
                 { duration: '3s', target: 5 },
             ],
         },
@@ -123,7 +123,7 @@ const body = {
 const params = {
   headers: {
     'Content-Type': 'application/json',
-    'X-fiid': '9999',
+    'X-id': '9999',
     'X-trace-id': '123e4567-e89b-42d3-a456-556642440000',
     'Authorization': 'Bearer eyJhbGc2213.3iJ9.eyJzdWIiOiJTVl9TUEZfQ0xJRU5U46o_X7YfW0GXAd64o54CuflBgOjnqlc'
     }

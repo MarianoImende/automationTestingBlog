@@ -142,18 +142,13 @@ export default function () {
    sleep(1);
 
 for (let i = 0; i < statusesToCheck.length; i++) {
-    let status = statusesToCheck[i];
-    let result = check(response, {
-      [`is status ${status}`]: (r) => r.status === status,
-    });
-    
-    if (checkMetrics[`status_${status}`]) {
-      // Incrementar la metrica correspondiente si existe
-      checkMetrics[`status_${status}`].add(result ? 1 : 0);
-    } else {
-      // Si no existe una metrica para este codigo, incrementar "status_no_soportado"
-      checkMetrics['status_no_soportado'].add(1);
-    }
+  let status = statusesToCheck[i];
+  // Check si el status del response coincide con valor del array:
+  let result = check(response, {
+      [`is status ${status}`]: (r) => r.status === status, // uso de "template literals"
+  });
+  // actualizo el contdor de http code
+  checkMetrics[`status_${status}`].add(result ? 1 : 0); // uso de "template literals"
 }
     
   // Check Si response time NO es <= 2s

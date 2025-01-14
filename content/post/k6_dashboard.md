@@ -34,7 +34,7 @@ export K6_WEB_DASHBOARD_PERIOD=2s       # Periodo en segundos para actualizar el
 /opt/k6/k6 run --no-connection-reuse /opt/scriptK6/init.js
 
 ```
- 👉 **binario K6 listo para este ejemplo:**  [github](https://github.com/MarianoImende/binario_k6_v1/tree/main/k6v1)
+ 👉 **binario K6 listo para éste ejemplo:**  [github](https://github.com/MarianoImende/binario_k6_v1/tree/main/k6v1)
 
  👉 **compilelo usted mismo:**  [github](https://github.com/grafana/xk6-dashboard)
  

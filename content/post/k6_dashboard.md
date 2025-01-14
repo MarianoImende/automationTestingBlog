@@ -78,8 +78,7 @@ let checkMetrics = {
   'status_508': new Counter('check_status_508'), 
   
   'status_0': new Counter('check_status_0'),
-  'status_no_soportado': new Counter('status_no_soportado'),
-  
+
   'response_time_2s': new Counter('check_response_time_2s'),
   'body_login_successful': new Counter('check_body_login_successful'),
   'content_type_json': new Counter('check_content_type_json'),

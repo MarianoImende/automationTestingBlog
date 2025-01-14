@@ -34,7 +34,7 @@ export K6_WEB_DASHBOARD_PERIOD=2s       # Periodo en segundos para actualizar el
 /opt/k6/k6 run --no-connection-reuse /opt/scriptK6/init.js
 
 ```
- 👉 **binario K6:**  [binario K6](https://github.com/MarianoImende/binario_k6_v1/tree/main/k6v1)
+ 👉 **binario K6 para este ejemplo:**  [github](https://github.com/MarianoImende/binario_k6_v1/tree/main/k6v1)
 
 Para acceder al **Web Dashboard** por medio del navegador de tu workstation debes ingrsar a: http://IP:5665/
 **IP:** Es la dirección IP del servidor Linux donde ejecutas tu script de K6.

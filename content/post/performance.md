@@ -4,7 +4,7 @@ description: "⚡Performance"
 cascade:
    featured_image: "/images/API-Contract-Testing.png"
 tags: []
-title: "Performance testing"
+title: "⚡ Performance testing"
 disable_share: true
 omit_header_text: false #achica la imagen
 type: page

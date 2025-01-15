@@ -25,8 +25,9 @@ export K6_WEB_DASHBOARD=true
 De forma predeterminada, el panel web está disponible en el puerto localhost 5665
 
 EL siguiente es un ejemplo completo en Linux, es decir, el script (init.js) se encuentra en un servidor linux
-en el cual se creo un archivo con extensión **sh** (scripts de intérprete de comandos de Bash de Unix) para facilitar la ejecución:
+en el cual se creo un archivo con extensión **run.sh** (scripts de intérprete de comandos de Bash de Unix) para facilitar la ejecución:
 
+Contenido de run.sh:
 ```
 export K6_WEB_DASHBOARD=true            # Habilitar el Dashboard
 export K6_WEB_DASHBOARD_PORT=5665       # Puerto de eschucha del Dashboard

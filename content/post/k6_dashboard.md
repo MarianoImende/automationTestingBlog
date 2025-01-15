@@ -16,14 +16,16 @@ description: "Guía para utilizar Web dashboard en K6 para pruebas de Performanc
 
 # Cómo utilizar
 
-El panel web es una función integrada de k6. se puede habilitarl configurando la variable de entorno **K6_WEB_DASHBOARD** en **true** cuando ejecute su script de prueba, por ejemplo:
+El panel web es una función integrada de k6. se puede habilitar configurando la variable de entorno **K6_WEB_DASHBOARD** en **true** cuando ejecute su script de prueba, por ejemplo:
 
-**export K6_WEB_DASHBOARD=true**
+```linux
+export K6_WEB_DASHBOARD=true**
+```
 
 De forma predeterminada, el panel web está disponible en el puerto localhost 5665
 
-EL siguiente es un ejemplo completo en entorno Linux, es decir, el script (init.js) se encuentra en un servidor linux
-en el cual se creo un archivo con extension **sh** (scripts de intérprete de comandos de Bash de Unix) para fasilitar la ejecución:
+EL siguiente es un ejemplo completo en Linux, es decir, el script (init.js) se encuentra en un servidor linux
+en el cual se creo un archivo con extensión **sh** (scripts de intérprete de comandos de Bash de Unix) para facilitar la ejecución:
 
 ```
 export K6_WEB_DASHBOARD=true            # Habilitar el Dashboard

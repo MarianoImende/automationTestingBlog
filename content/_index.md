@@ -1,8 +1,8 @@
 ---
 title: "Bienvenidos a Mi Blog sobre Automation Testing y Performance Testing"
 description: "📌 En este espacio exploraremos el fascinante mundo de la automatización de pruebas y la optimización de rendimiento en el software. Como profesional con años de experiencia en la industria, mi objetivo es compartir conocimientos, técnicas y mejores prácticas para ayudar a testers y desarrolladores a mejorar la calidad y eficiencia de sus proyectos de software.  👇
-image:
- url: https://github.com/user-attachments/assets/0d19ef9e-178e-4ef0-8525-8de7c92ed698
+logo:
+  url: https://github.com/user-attachments/assets/0d19ef9e-178e-4ef0-8525-8de7c92ed698
 "
 cascade:
   featured_image: "/images/portada.jpg"  # Ruta de la imagen destacada

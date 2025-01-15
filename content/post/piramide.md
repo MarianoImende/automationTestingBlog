@@ -1,6 +1,6 @@
 ---
 date: "2023-05-14T11:25:05-04:00"
-title: "Pirámide de automatización"
+title: "🔺 Pirámide de automatización"
 cascade:
 featured_image: "/images/piramide.png"
 tags: ["Pirámide"]
@@ -9,7 +9,7 @@ omit_header_text: false
 type: post
 ---
 
-# La Pirámide de Pruebas según Mike Cohn
+# 🔺 La Pirámide de Pruebas según Mike Cohn
 
 Mike Cohn ha discutido y promovido este modelo en sus libros y presentaciones sobre desarrollo ágil y gestión de proyectos, destacando su importancia para la calidad del software y la eficiencia en las prácticas de prueba.
 

@@ -1,6 +1,6 @@
 ---
 date: "2025-01-13T11:10:04-04:00"
-title: "📈 Binario en k6"
+title: "🛠️ Construir binario de k6"
 featured_image: "/images/k6/k6.png"
 date: 2024-07-13
 tags: ["stress", "performance", "testing"]
@@ -11,7 +11,7 @@ description: "Guía paso a paso para personalizar k6 con extensiones en WSL"
 
 Esta guía te mostrará cómo instalar y personalizar k6 con extensiones, utilizando el Subsistema de Windows para Linux (WSL) y Go. Al final, podrás generar un binario personalizado de k6 con las extensiones que necesites.
 
-# Que es una Extension?
+# Que es una Extension? 🛠️
 
 Las extensiones son funcionalidades que se agregan a la version estandar de k6, Las extensiones son desarrolladas tanto por los desarrolladores de k6 como por la comunidad.
 
@@ -21,7 +21,7 @@ Ejemplos de extensiones populares::
 - k6 web dashboard (Agrega un dashboard html embebido)
 - k6-output-influxdb (Con la extensión InfluxDB , puede almacenar métricas k6 en InfluxDB v2.0 y analizar sus resultados de con Grafana u otras herramientas .
 
-![Explorar las extensiones de k6](https://grafana.com/docs/k6/latest/extensions/explore/)
+![Explorar las extensiones de k6](https://grafana.com/docs/k6/latest/extensions/explore/) 📚
 
 Para lograr este nuevo ejecutable para distribuciones de Linux es mejor generarlo desde un sistema Linux, normalmente trabajamos con una computadora con Windows (al menos es mi caso) entonces vamos a utilizar WSL para montar una distribucion de Linux en nuestro Wwindows.
 
@@ -29,20 +29,20 @@ Para lograr este nuevo ejecutable para distribuciones de Linux es mejor generarl
 
 El Subsistema de Windows para Linux (WSL) es una característica de Windows que le permite ejecutar un entorno Linux en su máquina Windows
 
-# Prerrequisitos
+# Prerrequisitos ✅
 
 Debes tener:
 
 - Windows 10 (versión 2004 o posterior, Build 19041 o superior) o Windows 11
 
-# Paso 1: Instalar el Subsistema de Windows para Linux (WSL)
+# Paso 1: Instalar el Subsistema de Windows para Linux (WSL) 🐧
 
 Abra PowerShell o el Símbolo del sistema de Windows en modo administrador haciendo clic derecho y seleccionando "Ejecutar como administrador", ingrese el comando:
 
 ```cmd
 wsl --install SUSE Linux Enterprise 15 SP6
 ```
-y luego reinicie su equipo.
+y luego reinicie su equipo 🔄
 
 Este comando habilitará las funciones necesarias para ejecutar WSL e instalar la distribución SUSE Linux Enterprise 15 SP6 de Linux.
 
@@ -50,14 +50,14 @@ Este comando habilitará las funciones necesarias para ejecutar WSL e instalar l
 
 Una vez que se haya completado el proceso de instalación de su distribución Linux con WSL, abra la distribución (SUSE Linux Enterprise 15 SP6) mediante el menú Inicio. Se le solicitará que cree un nombre de usuario y una contraseña para su distribución Linux.
 Este nombre de usuario y contraseña son específicos para cada distribución de Linux que instale y no tienen relación con su nombre de usuario de Windows.
-Tenga en cuenta que, al ingresar la contraseña , no aparecerá nada en la pantalla. Esto se denomina escritura a ciegas.
+Tenga en cuenta que, al ingresar la contraseña , no aparecerá nada en la pantalla. Esto se denomina escritura a ciegas 🔒.
 Esta cuenta será considerada como administrador de Linux, con capacidad de ejecutar sudocomandos administrativos (Super User Do).
 
-# Paso 2: Instalar Go
+# Paso 2: Instalar Go 🐹
 
 k6 está desarrollado en JavaScript y Go, por lo que es necesario instalar Go para construir un binario personalizado.
 
-![Ve al sitio oficial de Go:]((https://go.dev/))
+![Ve al sitio oficial de Go:](https://go.dev/dl/) 📥
 
 - En el presente ejemplo, vamos a descargar la versiÓn:
 ```linux
@@ -84,7 +84,7 @@ sudo rm -rf /usr/local/go**
 tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz**
 ```
 
-- Configuración de variables de entorno (temporal):
+- Configuración de variables de entorno (temporal) 🌐
 
 ```linux
 export PATH=$PATH:/usr/local/go/bin
@@ -101,7 +101,7 @@ go env GOPATH
 go version
 ```
 
-# Paso 3: Instalar xk6
+# Paso 3: Instalar xk6 🔧
 
 **¿Qué es xk6?**
 
@@ -113,7 +113,7 @@ Ejecuta el siguiente comando para instalar xk6::
 go install go.k6.io/xk6/cmd/xk6@latest**
 ```
 
-# Paso 4: Crear un binario personalizado de k6
+# Paso 4: Crear un binario personalizado de k6 🖥️
 
 Una vez que tengas xk6 instalado, puedes generar un binario personalizado de k6 con las extensiones que necesites.
 
@@ -127,7 +127,7 @@ xk6 build --verbose --with github.com/grafana/xk6-dashboard@latest --with github
 ```
 las extensiones específicas (xk6-dashboard, etc.) son opcionales y el lector puede adaptarlas según sus necesidades.
 
-Ubicación del binario generado
+Ubicación del binario generado 📁
 
 El nuevo binario de **k6** se creará en el directorio temporal:
 
@@ -135,7 +135,7 @@ El nuevo binario de **k6** se creará en el directorio temporal:
 tmp/
 ```
 
-# Paso 5: Probar el binario personalizado
+# Paso 5: Probar el binario personalizado 🧪
 
 1 Copia el binario generado a un directorio incluido en tu PATH, por ejemplo:
 
@@ -152,7 +152,7 @@ Donde test.js es un script de prueba básico.
 
 Espero que todo te funcione de maravillas, Exitos!!! 🤞
 
-## Conclusión
+## Conclusión 🎉
 
 Con estos pasos, has instalado WSL, configurado Go, instalado xk6 y generado un binario personalizado de k6 con extensiones. Ahora estás listo para ejecutar pruebas de carga avanzadas con las funcionalidades adicionales que estas extensiones proporcionan.
 

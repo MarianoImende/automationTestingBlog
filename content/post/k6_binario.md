@@ -63,7 +63,12 @@ Iniciando Debian GNU/Linux...
 Installing, this may take a few minutes...
 Please create a default UNIX user account. The username does not need to match your Windows username.
 For more information visit: https://aka.ms/wslusers
-Enter new UNIX username:
+Enter new UNIX username: nombredeusuario
+New password:
+Retype new password:
+passwd: password updated successfully
+Installation successful!
+usr@equipoUno:~$
 ```
 
 ## Paso 2: Instalar Go 🐹

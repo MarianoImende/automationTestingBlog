@@ -4,14 +4,18 @@ title: "📈 Binario en k6"
 featured_image: "/images/k6/k6.png"
 date: 2024-07-13
 tags: ["stress", "performance", "testing"]
-description: "Guía para generar un binario/ejecutable con extensiones de k6"
+description: "Guía paso a paso para personalizar k6 con extensiones en WSL"
 ---
+
+## Creando una guía detallada para instalar y personalizar k6 utilizando extensiones, WSL y Go en un sistema Windows.##
+
+Esta guía te mostrará cómo instalar y personalizar k6 con extensiones, utilizando el Subsistema de Windows para Linux (WSL) y Go. Al final, podrás generar un binario personalizado de k6 con las extensiones que necesites.
 
 # Que es una Extension?
 
-Las extenciones son funcioanlidades que se agregan a la version estandar de k6, Las extensiones son desarrolladas tanto por los desarrolladores de k6 como por la comunidad.
+Las extensiones son funcionalidades que se agregan a la version estandar de k6, Las extensiones son desarrolladas tanto por los desarrolladores de k6 como por la comunidad.
 
-Algunas de las extenciones son:
+Ejemplos de extensiones populares::
 
 - k6-chai (Chai es una biblioteca de aserciones para frameworks de JavaScript )
 - k6 web dashboard (Agrega un dashboard html embebido)
@@ -75,10 +79,10 @@ sudo rm -rf /usr/local/go**
 descomprimir y dejar en : /usr/local, se crea automaticamente la carpeta go.
 
 ```linux
-/tmp tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz**
+tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz**
 ```
 
-- Setear variables de entorno necesarias:
+- Setear (temporal) variables de entorno necesarias:
 
 ```linux
 export PATH=$PATH:/usr/local/go/bin
@@ -87,7 +91,7 @@ export GOPATH=/tmp/xk6** (chequear!!!)
 
 NOTA: GOPATH no debe ser la misma ruta que su instalación de Go. 
 
-- Chequear el valor de las cariables seteadas en el paso anterior:
+- Chequear el valor de las variables seteadas en el paso anterior:
 
 ```linux
 go env GOPATH
@@ -107,13 +111,19 @@ go install go.k6.io/xk6/cmd/xk6@latest**
 
 # Crear el binario de k6 final:
 
-Ahora si, tenemos que ejecutar la siguiente sentencias para generar nuetra verion de k6 personalizadas con las extenciones detalladas en los parametros:
+Ahora si, tenemos que ejecutar la siguiente sentencias para generar nuetra verion de k6 personalizadas con las extensiones detalladas en los parametros:
 
 ```linux
 xk6 build --verbose --with github.com/grafana/xk6-dashboard@latest --with github.com/grafana/xk6-output-influxdb --with github.com/oleiade/xk6-kv --with github.com/gpiechnik2/xk6-httpagg@latest --with github.com/avitalique/xk6-file@latest**
 
 ```
+las extensiones específicas (xk6-dashboard, etc.) son opcionales y el lector puede adaptarlas según sus necesidades.
 
+Listo, podes buscar el nuevo archivo **k6** creado en:
+
+```linux
+tmp/
+```
 Espero que todo te funcione de maravillas, Exitos!!! 🤞
 
 

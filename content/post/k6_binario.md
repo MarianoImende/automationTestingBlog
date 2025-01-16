@@ -55,6 +55,17 @@ Este nombre de usuario y contraseña son específicos para cada distribución de
 Tenga en cuenta que, al ingresar la contraseña , no aparecerá nada en la pantalla. Esto se denomina escritura a ciegas 🔒.
 Esta cuenta será considerada como administrador de Linux, con capacidad de ejecutar sudocomandos administrativos (Super User Do).
 
+```cmd
+C:\WINDOWS\system32>wsl --install Debian
+Instalando: Debian GNU/Linux
+Se ha instalado Debian GNU/Linux.
+Iniciando Debian GNU/Linux...
+Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username:
+```
+
 ## Paso 2: Instalar Go 🐹
 
 k6 está desarrollado en JavaScript y Go, por lo que es necesario instalar Go para construir un binario personalizado.

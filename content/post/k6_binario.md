@@ -23,7 +23,7 @@ Ejemplos de extensiones populares::
 - 
 - k6-output-influxdb (Con la extensión InfluxDB , puede almacenar métricas k6 en InfluxDB v2.0 y analizar sus resultados de con Grafana u otras herramientas .
 
-![Explorar las extensiones de k6](https://grafana.com/docs/k6/latest/extensions/explore/) 📚
+[Explorar las extensiones de k6](https://grafana.com/docs/k6/latest/extensions/explore/) 📚
 
 Para lograr este nuevo ejecutable para distribuciones de Linux es mejor generarlo desde un sistema Linux, normalmente trabajamos con una computadora con Windows (al menos es mi caso) entonces vamos a utilizar WSL para montar una distribucion de Linux en nuestro Wwindows.
 

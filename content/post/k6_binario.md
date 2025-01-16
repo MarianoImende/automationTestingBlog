@@ -18,7 +18,9 @@ Las extensiones son funcionalidades que se agregan a la version estandar de k6, 
 Ejemplos de extensiones populares::
 
 - k6-chai (Chai es una biblioteca de aserciones para frameworks de JavaScript )
+- 
 - k6 web dashboard (Agrega un dashboard html embebido)
+- 
 - k6-output-influxdb (Con la extensión InfluxDB , puede almacenar métricas k6 en InfluxDB v2.0 y analizar sus resultados de con Grafana u otras herramientas .
 
 ![Explorar las extensiones de k6](https://grafana.com/docs/k6/latest/extensions/explore/) 📚

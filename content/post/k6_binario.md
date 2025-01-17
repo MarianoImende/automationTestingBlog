@@ -25,7 +25,7 @@ Ejemplos de extensiones populares::
 
 [Explorar las extensiones de k6](https://grafana.com/docs/k6/latest/extensions/explore/) 📚
 
-Para lograr este nuevo ejecutable para distribuciones de Linux es mejor generarlo desde un sistema Linux, normalmente trabajamos con una computadora con Windows (al menos es mi caso) entonces vamos a utilizar WSL para montar una distribucion de Linux en nuestro Wwindows.
+Para lograr este nuevo ejecutable para distribuciones de Linux es mejor generarlo desde un sistema Linux, normalmente trabajamos con una computadora con Windows (al menos es mi caso) entonces vamos a utilizar WSL para montar una distribucion de Linux en nuestro Windows.
 
 ## ¿Qué es el subsistema de Windows para Linux (WSL)?
 

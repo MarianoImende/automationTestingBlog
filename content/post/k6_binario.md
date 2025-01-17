@@ -93,21 +93,28 @@ go1.23.4.linux-amd64.tar.gz**
 Elimina posibles instalaciones previas de Go: (es un lugar donde el administrador de un sistema operativo instala software que puede ser utilizado por todos los usuarios):
 
 ```linux
-sudo rm -rf /usr/local/go**
+sudo rm -rf /usr/local/go  1111
 ```
 
-- Descomprime el archivo descargado e instala Go en /usr/local:
+- Descomprime el archivo descargado e instala Go en /usr/local y dar permisos full:
 
 ```linux
-tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz**
+
+sudo chmod -R 777 /tmp/go1.23.4.linux-amd64.tar.gz
+sudo chmod 777 /tmp/go1.23.4.linux-amd64.tar.gz 1111
+sudo tar -C /usr/local -xzf /tmp/go1.23.4.linux-amd64.tar.gz 1111
+
+
+
 ```
+
 
 - Configuración de variables de entorno (temporal) 🌐
 
 ```linux
 export PATH=$PATH:/usr/local/go/bin
 
-export GOPATH=/tmp/xk6** (chequear!!!)
+export GOPATH=/tmp/xk6 (chequear!!!)
 ```
 
 NOTA: GOPATH no debe ser la misma ruta que su instalación de Go. 
@@ -115,8 +122,8 @@ NOTA: GOPATH no debe ser la misma ruta que su instalación de Go.
 - Verifica que Go esté instalado correctamente:
 
 ```linux
-go env GOPATH
-go version
+go env GOPATH 111
+go version 1111
 ```
 
 ## Paso 3: Instalar xk6 🔧
@@ -128,7 +135,7 @@ xk6 es una herramienta de línea de comandos que permite generar compilaciones p
 Ejecuta el siguiente comando para instalar xk6::
 
 ```linux
-go install go.k6.io/xk6/cmd/xk6@latest**
+go install go.k6.io/xk6/cmd/xk6@latest
 ```
 
 ## Paso 4: Crear un binario personalizado de k6 🖥️

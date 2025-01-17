@@ -186,10 +186,10 @@ Be sure to run './k6 run <SCRIPT_NAME>' from the '/home/<nombre de usuario>' dir
 
 ## Paso 5: Probar el binario personalizado 🧪
 
-1 Copiá el binario generado al servidor de funciona como generador de carga de k6, puedes incluido en tu PATH, por ejemplo:
+Copiá el binario generado al servidor de funciona como generador de carga de k6, puedes incluido en tu PATH, por ejemplo:
 Ejecutá un script de prueba para asegurarte de que el binario funcione correctamente:
 
-```bash
+```cmd
 
 k6 run test.js
 

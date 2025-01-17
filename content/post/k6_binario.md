@@ -177,7 +177,7 @@ las extensiones específicas (xk6-dashboard, etc.) son opcionales y el lector pu
 
 El nuevo binario de **k6** se creará en el directorio indicado al finalizar la creación (puede variar segun la distribución elegida):
 
-```bash
+```javascript
 
 xk6 has now produced a new k6 binary which may be different than the command on your system path!
 Be sure to run './k6 run <SCRIPT_NAME>' from the '/home/<nombre de usuario>' directory.

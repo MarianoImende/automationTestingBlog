@@ -70,6 +70,17 @@ passwd: password updated successfully
 Installation successful!
 usr@equipoUno:~$
 ```
+Algunos comando utiles:
+
+wsl --install <Distribution Name>
+wsl --distribution <Distribution Name> --user <User Name> :ejecutar una distribución
+wsl --update
+wsl --version
+wsl --unregister <DistributionName>
+wsl --shutdown
+wsl --terminate <Distribution Name>
+wsl --list --verbose
+wsl --list --online
 
 ## Paso 2: Instalar Go 🐹
 
@@ -79,7 +90,7 @@ k6 está desarrollado en JavaScript y Go, por lo que es necesario instalar Go pa
 
 - En el presente ejemplo, vamos a descargar la versiÓn:
 ```linux
-go1.23.4.linux-amd64.tar.gz**
+go1.23.4.linux-amd64.tar.gz
 ```
 
 - Mueve el archivo descargado al directorio /tmp en tu distribución Linux utilizando el explorador de archivos de Windows.
@@ -101,7 +112,7 @@ sudo rm -rf /usr/local/go  1111
 ```linux
 
 sudo chmod -R 777 /tmp/go1.23.4.linux-amd64.tar.gz
-sudo chmod 777 /tmp/go1.23.4.linux-amd64.tar.gz 1111
+sudo chmod 777 /tmp/go1.23.4.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf /tmp/go1.23.4.linux-amd64.tar.gz 1111
 
 
@@ -112,9 +123,9 @@ sudo tar -C /usr/local -xzf /tmp/go1.23.4.linux-amd64.tar.gz 1111
 - Configuración de variables de entorno (temporal) 🌐
 
 ```linux
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin 11111111
 
-export GOPATH=/tmp/xk6 (chequear!!!)
+export GOPATH=/tmp/xk6 (chequear!!!)  11111111
 ```
 
 NOTA: GOPATH no debe ser la misma ruta que su instalación de Go. 
@@ -137,6 +148,21 @@ Ejecuta el siguiente comando para instalar xk6::
 ```linux
 go install go.k6.io/xk6/cmd/xk6@latest
 ```
+
+Si surge un error similar a:
+
+```linux
+go: go.k6.io/xk6/cmd/xk6@latest: module go.k6.io/xk6/cmd/xk6: Get "https://proxy.golang.org/go.k6.io/xk6/cmd/xk6/@v/list": dial tcp: lookup proxy.golang.org on <IP>:53: read udp <IP>:59902->172.18.96.1:53: i/o timeout
+```
+Abra el símbolo del sistema como administrador y escriba estos comandos:
+```cmd
+netsh winsock reset 
+netsh int ip reset all
+netsh winhttp reset proxy
+ipconfig /flushdns
+```
+Reinicie su máquina.
+intente nuevamente el Paso 3.
 
 ## Paso 4: Crear un binario personalizado de k6 🖥️
 

@@ -42,45 +42,45 @@ Debes tener:
 Abra PowerShell o el Símbolo del sistema de Windows en modo administrador haciendo clic derecho y seleccionando "Ejecutar como administrador", ingrese el comando:
 
 ```cmd
-wsl --install SUSE Linux Enterprise 15 SP6
+
+wsl --install Ubuntu
+
 ```
-y luego reinicie su equipo 🔄
-
-Este comando habilitará las funciones necesarias para ejecutar WSL e instalar la distribución SUSE Linux Enterprise 15 SP6 de Linux.
-
-- Configura tu nombre de usuario y contraseña de Linux
-
-Una vez que se haya completado el proceso de instalación de su distribución Linux con WSL, abra la distribución (SUSE Linux Enterprise 15 SP6) mediante el menú Inicio. Se le solicitará que cree un nombre de usuario y una contraseña para su distribución Linux.
-Este nombre de usuario y contraseña son específicos para cada distribución de Linux que instale y no tienen relación con su nombre de usuario de Windows.
-Tenga en cuenta que, al ingresar la contraseña , no aparecerá nada en la pantalla. Esto se denomina escritura a ciegas 🔒.
-Esta cuenta será considerada como administrador de Linux, con capacidad de ejecutar sudocomandos administrativos (Super User Do).
+Este comando instalará Ubuntu (debes especificar usurio y password admin) en tu computadora con Windows:
 
 ```cmd
-C:\WINDOWS\system32>wsl --install Debian
-Instalando: Debian GNU/Linux
-Se ha instalado Debian GNU/Linux.
-Iniciando Debian GNU/Linux...
+C:\WINDOWS\system32>wsl --install Ubuntu
+Instalando: Ubuntu
+Se ha instalado Ubuntu.
+Iniciando Ubuntu...
 Installing, this may take a few minutes...
 Please create a default UNIX user account. The username does not need to match your Windows username.
 For more information visit: https://aka.ms/wslusers
-Enter new UNIX username: nombredeusuario
-New password:
-Retype new password:
+Enter new UNIX username: <nombre de usuario>
+New password:<escritura a ciegas>
+Retype new password:<escritura a ciegas>
 passwd: password updated successfully
 Installation successful!
-usr@equipoUno:~$
-```
-Algunos comando utiles:
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
 
-wsl --install <Distribution Name>
-wsl --distribution <Distribution Name> --user <User Name> :ejecutar una distribución
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
+```
+Tal vez, deba reiniciar tu equipo 🔄
+
+Algunos comando utiles WSL y algunas anotaciones:
+
+```bash
+wsl --install <Distribution Name>                         :Instalar una distribución
+wsl --distribution <Distribution Name> --user <User Name> :Ejecutar una distribución
 wsl --update
 wsl --version
-wsl --unregister <DistributionName>
+wsl --unregister <DistributionName>                       :Dar de baja una distribucón
 wsl --shutdown
 wsl --terminate <Distribution Name>
 wsl --list --verbose
 wsl --list --online
+```
 
 ## Paso 2: Instalar Go 🐹
 
@@ -88,118 +88,125 @@ k6 está desarrollado en JavaScript y Go, por lo que es necesario instalar Go pa
 
 ![Ve al sitio oficial de Go:](https://go.dev/dl/) 📥
 
-- En el presente ejemplo, vamos a descargar la versiÓn:
-```linux
+- En el presente ejemplo, vamos a descargar la versión:
+- 
+```bash
+
 go1.23.4.linux-amd64.tar.gz
+
 ```
 
-- Mueve el archivo descargado al directorio /tmp en tu distribución Linux utilizando el explorador de archivos de Windows.
+- Mové el archivo descargado al directorio /tmp en tu distribución Linux, podes usar el explorador de archivos de Windows.
 
-```linux
+```bash
+
 /tmp/go1.23.4.linux-amd64.tar.gz
-```
-
-- Abra la distribución (SUSE Linux Enterprise 15 SP6) mediante el menú Inicio y ejecuta los siguientes comandos:
-
-Elimina posibles instalaciones previas de Go: (es un lugar donde el administrador de un sistema operativo instala software que puede ser utilizado por todos los usuarios):
-
-```linux
-sudo rm -rf /usr/local/go  1111
-```
-
-- Descomprime el archivo descargado e instala Go en /usr/local y dar permisos full:
-
-```linux
-
-sudo chmod -R 777 /tmp/go1.23.4.linux-amd64.tar.gz
-sudo chmod 777 /tmp/go1.23.4.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf /tmp/go1.23.4.linux-amd64.tar.gz 1111
-
-
 
 ```
 
+Eliminá posibles instalaciones previas de Go: (" /usr/local/" es un lugar donde el administrador de un sistema operativo instala software que puede ser utilizado por todos los usuarios):
+
+```bash
+
+sudo rm -rf /usr/local/go
+
+```
+**sudo:** permite a los usuarios ejecutar programas con los privilegios de seguridad usuario root (Admin) 
+
+- Descomprimir el archivo descargado e instala Go en **/usr/local**:
+
+```bash
+
+sudo tar -C /usr/local -xzf /tmp/go1.23.4.linux-amd64.tar.gz
+
+```
 
 - Configuración de variables de entorno (temporal) 🌐
 
-```linux
-export PATH=$PATH:/usr/local/go/bin 11111111
+```bash
 
-export GOPATH=/tmp/xk6 (chequear!!!)  11111111
+export PATH=$PATH:/usr/local/go/bin
+
+export GOPATH=/tmp/xk6
+
+export PATH=$PATH:/tmp/xk6/bin
+
 ```
 
 NOTA: GOPATH no debe ser la misma ruta que su instalación de Go. 
 
-- Verifica que Go esté instalado correctamente:
+- Verificá que Go y las variables de entorno estén correctamente configurados:
 
-```linux
-go env GOPATH 111
-go version 1111
+```bash
+
+go env GOPATH
+go version
+echo $PATH
+
 ```
 
 ## Paso 3: Instalar xk6 🔧
 
 **¿Qué es xk6?**
 
-xk6 es una herramienta de línea de comandos que permite generar compilaciones personalizadas de k6, con o sin extensiones.
+xk6 es una herramienta de línea de comandos que permite generar compilaciones (ejecutables) personalizadas de k6, con o sin extensiones.
 
-Ejecuta el siguiente comando para instalar xk6::
+Ejecutá el siguiente comando para instalar **xk6**:
 
-```linux
+```bash
+
 go install go.k6.io/xk6/cmd/xk6@latest
+
 ```
+latest: Instalar la última versión disponible.
 
-Si surge un error similar a:
+## Paso 4: Crear un binario personalizado (ejecutable) de k6 🖥️
 
-```linux
-go: go.k6.io/xk6/cmd/xk6@latest: module go.k6.io/xk6/cmd/xk6: Get "https://proxy.golang.org/go.k6.io/xk6/cmd/xk6/@v/list": dial tcp: lookup proxy.golang.org on <IP>:53: read udp <IP>:59902->172.18.96.1:53: i/o timeout
-```
-Abra el símbolo del sistema como administrador y escriba estos comandos:
-```cmd
-netsh winsock reset 
-netsh int ip reset all
-netsh winhttp reset proxy
-ipconfig /flushdns
-```
-Reinicie su máquina.
-intente nuevamente el Paso 3.
+Una vez que tengas xk6 instalado, podes generar un binario personalizado de k6 con las extensiones que necesites.
 
-## Paso 4: Crear un binario personalizado de k6 🖥️
+Ejecutá el siguiente comando, especificando las extensiones que deseas incluir:
 
-Una vez que tengas xk6 instalado, puedes generar un binario personalizado de k6 con las extensiones que necesites.
+```bash
 
-Comando para generar el binario:
-Ejecuta el siguiente comando, especificando las extensiones que deseas incluir:
-
-```linux
-
-xk6 build --verbose --with github.com/grafana/xk6-dashboard@latest --with github.com/grafana/xk6-output-influxdb --with github.com/oleiade/xk6-kv --with github.com/gpiechnik2/xk6-httpagg@latest --with github.com/avitalique/xk6-file@latest**
+xk6 build --with github.com/grafana/xk6-dashboard@latest --with github.com/grafana/xk6-output-influxdb --with github.com/oleiade/xk6-kv --with github.com/gpiechnik2/xk6-httpagg@latest --with github.com/avitalique/xk6-file@latest
 
 ```
 las extensiones específicas (xk6-dashboard, etc.) son opcionales y el lector puede adaptarlas según sus necesidades.
 
-Ubicación del binario generado 📁
+**Ubicación del binario generado 📁:**
 
-El nuevo binario de **k6** se creará en el directorio temporal:
+El nuevo binario de **k6** se creará en el directorio indicado al finalizar la creación (puede variar segun la distribución elegida):
 
-```linux
-tmp/
+```bash
+
+xk6 has now produced a new k6 binary which may be different than the command on your system path!
+Be sure to run './k6 run <SCRIPT_NAME>' from the '/home/<nombre de usuario>' directory.
+
 ```
 
 ## Paso 5: Probar el binario personalizado 🧪
 
-1 Copia el binario generado a un directorio incluido en tu PATH, por ejemplo:
+1 Copiá el binario generado al servidor de funciona como generador de carga de k6, puedes incluido en tu PATH, por ejemplo:
+Ejecutá un script de prueba para asegurarte de que el binario funcione correctamente:
 
-```linux
-cp /tmp/k6 /usr/local/bin/k6
-```
+```bash
 
-2 Ejecuta un script de prueba para asegurarte de que el binario funcione correctamente:
-
-```linux
 k6 run test.js
+
 ```
-Donde test.js es un script de prueba básico.
+
+Donde test.js es un script de prueba básico incluyendo el uso de cada nueva funcionalidades implementando los ejemplo en github:
+
+https://github.com/grafana/xk6-dashboard
+
+https://github.com/grafana/xk6-output-influxdb
+
+https://github.com/dgzlopes/xk6-kv
+
+https://github.com/gpiechnik2/xk6-httpagg
+
+https://github.com/avitalique/xk6-file
+
 
 Espero que todo te funcione de maravillas, Exitos!!! 🤞
 

@@ -33,32 +33,32 @@ El Subsistema de Windows para Linux (WSL) es una característica de Windows que 
 
 ## Prerrequisitos ✅
 
-Debes tener:
+Debés tener:
 
 - Windows 10 (versión 2004 o posterior, Build 19041 o superior) o Windows 11
 
 ## Paso 1: Instalar el Subsistema de Windows para Linux (WSL) 🐧
 
-Abra PowerShell o el Símbolo del sistema de Windows en modo administrador haciendo clic derecho y seleccionando "Ejecutar como administrador", ingrese el comando:
+Abra PowerShell o el Símbolo del sistema de Windows en modo administrador haciendo clic derecho y seleccionando "Ejecutar como administrador", ingresar el comando:
 
 ```cmd
 
 wsl --install Ubuntu
 
 ```
-Este comando instalará Ubuntu (debes especificar usurio y password admin) en tu computadora con Windows:
+Este comando instalará Ubuntu (debes especificar usuario y password admin) en tu computadora con Windows:
 
 ```cmd
-C:\WINDOWS\system32>wsl --install Ubuntu
+C:\WINDOWS\system32>wsl "--install Ubuntu"
 Instalando: Ubuntu
 Se ha instalado Ubuntu.
 Iniciando Ubuntu...
 Installing, this may take a few minutes...
 Please create a default UNIX user account. The username does not need to match your Windows username.
 For more information visit: https://aka.ms/wslusers
-Enter new UNIX username: <nombre de usuario>
-New password:<escritura a ciegas>
-Retype new password:<escritura a ciegas>
+Enter new UNIX username: "<nombre de usuario>"
+New password:"<escritura a ciegas de la password>"
+Retype new password:"<escritura a ciegas de la password>"
 passwd: password updated successfully
 Installation successful!
 To run a command as administrator (user "root"), use "sudo <command>".

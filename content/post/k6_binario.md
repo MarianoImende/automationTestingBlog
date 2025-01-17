@@ -86,10 +86,10 @@ wsl --list --online
 
 k6 está desarrollado en JavaScript y Go, por lo que es necesario instalar Go para construir un binario personalizado.
 
-![Ve al sitio oficial de Go:](https://go.dev/dl/) 📥
+[Ve al sitio oficial de Go:](https://go.dev/dl/) 📥
 
-- En el presente ejemplo, vamos a descargar la versión:
-- 
+- En el presente ejemplo, vamos a descargar e instalar la versión:
+  
 ```bash
 
 go1.23.4.linux-amd64.tar.gz

@@ -49,7 +49,7 @@ wsl --install Ubuntu
 Este comando instalará Ubuntu (debes especificar usuario y password admin) en tu computadora con Windows:
 
 ```cmd
-C:\WINDOWS\system32>wsl "--install Ubuntu"
+C:\WINDOWS\system32> "wsl --install Ubuntu"
 Instalando: Ubuntu
 Se ha instalado Ubuntu.
 Iniciando Ubuntu...

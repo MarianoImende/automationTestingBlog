@@ -218,8 +218,11 @@ Con estos pasos, has instalado WSL, configurado Go, instalado xk6 y generado un 
 
 ## Recursos adicionales:
 
-Documentación oficial de k6 : https://grafana.com/docs/k6/latest/
+Documentación oficial de k6 : 
+https://grafana.com/docs/k6/latest/
 
-Extensiones de k6 : https://grafana.com/docs/k6/latest/extensions/explore/
+Extensiones de k6 : 
+https://grafana.com/docs/k6/latest/extensions/explore/
 
-Instalación de Go : https://go.dev/doc/install
+Instalación de Go :
+https://go.dev/doc/install

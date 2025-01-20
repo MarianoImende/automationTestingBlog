@@ -39,7 +39,7 @@ Atenti!
 
 Si deseas que [webdriver-manager](https://pypi.org/project/webdriver-manager/) gestione automáticamente las actualizaciones del driver de chrome y tu script va a ejecutarse en un entorno corporativo donde las conexiones a internet sales por medio de un **proxy**, debes editar el archivo **.\Lib\site-packages\webdriver_manager\core\http.py** según la imagen siguiente:
 
-[]/images/SeleniumPOM/CERTIFICATE_VERIFY_FAILED.png
+![]/images/SeleniumPOM/CERTIFICATE_VERIFY_FAILED.png
 
 ## Dónde pueden recibir ayuda los usuarios?
 

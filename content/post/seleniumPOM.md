@@ -35,8 +35,10 @@ Los siguientes pasos lo guiaran para lograr implementar el proyecto en Windows:
 
  [descargue o clone el proyecto desde aquí](https://github.com/MarianoImende/SimpleSeleniumPOM.git)
 
- EXITOS!!!
- 
+Atenti!
+
+Si deseas que [webdriver-manager](https://pypi.org/project/webdriver-manager/) gestione automáticamente las actualizaciones del driver de chrome y tu script va a ejecutarse en un entorno corporativo donde las conexiones a internet sales por medio de un **proxy**, debes editar el archivo **.\Lib\site-packages\webdriver_manager\core\http.py** según la imagen siguiente:
+
 ## Dónde pueden recibir ayuda los usuarios?
 
 Escribiendo a: [imende.mariano@gmail.com] o [contacto](https://www.automationtesting.ar/contact/)

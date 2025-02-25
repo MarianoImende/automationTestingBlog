@@ -168,7 +168,7 @@ Ejecutá el siguiente comando, especificando las extensiones que deseas incluir:
 
 ```bash
 
-xk6 build --with github.com/grafana/xk6-dashboard@latest --with github.com/grafana/xk6-output-influxdb --with github.com/oleiade/xk6-kv --with github.com/gpiechnik2/xk6-httpagg@latest --with github.com/avitalique/xk6-file@latest
+xk6 build --with github.com/grafana/xk6-dashboard@latest --with github.com/grafana/xk6-output-influxdb --with github.com/oleiade/xk6-kv --with github.com/gpiechnik2/xk6-httpagg@latest --with github.com/avitalique/xk6-file@latest --with github.com/mostafa/xk6-kafka@latest
 
 ```
 las extensiones específicas (xk6-dashboard, etc.) son opcionales y el lector puede adaptarlas según sus necesidades.
@@ -181,6 +181,20 @@ El nuevo binario de **k6** se creará en el directorio indicado al finalizar la 
 
 xk6 has now produced a new k6 binary which may be different than the command on your system path!
 Be sure to run './k6 run <SCRIPT_NAME>' from the '/home/<nombre de usuario>' directory.
+
+```
+
+## Paso 5: Chequear las extensiones del nuevo binario personalizado ☑️
+```bash
+k6 --version
+k6 v0.57.0 (go1.24.0, linux/amd64)
+Extensions:
+  github.com/avitalique/xk6-file v1.4.2, k6/x/file [js]
+  github.com/gpiechnik2/xk6-httpagg v1.0.0, k6/x/httpagg [js]
+  github.com/grafana/xk6-dashboard v0.7.5, dashboard [output]
+  github.com/grafana/xk6-output-influxdb v0.6.0, xk6-influxdb [output]
+  github.com/mostafa/xk6-kafka v0.31.1, k6/x/kafka [js]
+  github.com/oleiade/xk6-kv v1.1.0, k6/x/kv [js]
 
 ```
 

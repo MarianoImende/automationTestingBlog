@@ -63,7 +63,7 @@ No es cierto que la exploración sea puramente "manual".
 
 ## 📌 **6. Los testers no deben definirse como "manuales" o "automatizados"** 
 
-- Un **probador** no es "manual" ni "automatizado", ya que siempre utiliza una combinación de **pensamiento crítico, exploración y herramientas**.
+- Un **Tester** no es "manual" ni "automatizado", ya que siempre utiliza una combinación de **pensamiento crítico, exploración y herramientas**.
     
 - La clave está en **desarrollar habilidades para usar las herramientas de forma estratégica**.  
 
@@ -95,3 +95,6 @@ Las pruebas de software son un **proceso cognitivo y estratégico** que puede ut
 
 ✔️ **Pruebas asistidas por herramientas**  
 ✔️ **Diseñadas inteligentemente para obtener información valiosa sobre la calidad del producto**. 🚀  
+
+
+

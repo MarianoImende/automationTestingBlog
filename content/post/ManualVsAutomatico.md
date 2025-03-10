@@ -5,6 +5,7 @@ featured_image: "/images/ManualVsAutomatico/manualVSautomatico.webp"
 date: 2024-07-13
 tags: ["stress", "performance", "testing"]
 description: "🛠️ Pruebas de software: Ni manuales ni automatizadas, sino estratégicas"
+
 ---
 
 

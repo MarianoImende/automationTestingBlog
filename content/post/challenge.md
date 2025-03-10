@@ -35,8 +35,11 @@ Brindar a la comunidad de QA un recurso práctico para experimentar, aprender y 
 📢 ¡Invito a todos los testers y entusiastas a explorarlo!
 Si tienes ideas, comentarios o simplemente quieres practicar, siéntete libre de usarlo. Estaré encantado de recibir tu feedback para mejorarlo aún más.
 
+---
+---
+---
 
-**Podes tomar de base el siguiente ejemplo para tu Challenge de Pruebas y Automatización**
+## 💡 Podes tomar de base el siguiente ejemplo para tu Challenge de Pruebas y Automatización
 
 ### Referencia:
 

@@ -10,6 +10,12 @@ En este artículo, exploramos cómo utilizar **[xk6-kafka](https://github.com/mo
 `xk6-kafka` es un módulo de extensión para **k6** que permite simular **producers y consumers** de Kafka para pruebas de carga.
 
 ### ✅ **Instalar k6 y xk6-kafka**
+
+Si no dispones del binario de k6 con la extension necesaria para realizar pruebas sobre kafka, 
+[Aquí](https://www.automationtesting.ar/post/k6_binario/) te dejo el link para construirlo vos mismo.
+
+o bien, podes usar la documentacion [oficial](https://github.com/mostafa/xk6-kafka)
+
 ```sh
 # Instalar k6
 brew install k6  # MacOS

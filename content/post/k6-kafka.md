@@ -5,15 +5,12 @@ featured_image: "/images/k6-kafka/k6-kafka.webp"
 cascade:
    featured_image: "/images/k6-kafka/k6-kafka.webp"
 tags: []
-title: "🔥 Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos"
+title: "Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀"
 disable_share: true
 omit_header_text: false #achica la imagen
 type: page
 
 ---
-
-
-# 📌 Estrés en Tópicos Kafka: Clave para Evaluar la Performance de los Consumidores 🚀  
 
 En las arquitecturas basadas en **Apache Kafka**, la estabilidad del sistema no depende solo de la capacidad de los **producers** para enviar mensajes, sino también de **cómo los consumers procesan la carga en diferentes escenarios**.  
 

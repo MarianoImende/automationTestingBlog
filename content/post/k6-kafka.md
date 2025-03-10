@@ -1,3 +1,18 @@
+---
+date: 2013-01-14T11:25:05-04:00
+description: "Herramienta educativa para quienes desean practicar y mejorar sus habilidades en automatización de pruebas"
+featured_image: "/images/challenge/challenge.png"
+cascade:
+   featured_image: "/images/challenge/challenge.png"
+tags: []
+title: "Challenge automatización de pruebas"
+disable_share: true
+omit_header_text: false #achica la imagen
+type: page
+
+---
+
+
 # 📌 Estrés en Tópicos Kafka: Clave para Evaluar la Performance de los Consumidores 🚀  
 
 En las arquitecturas basadas en **Apache Kafka**, la estabilidad del sistema no depende solo de la capacidad de los **producers** para enviar mensajes, sino también de **cómo los consumers procesan la carga en diferentes escenarios**.  

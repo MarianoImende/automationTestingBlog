@@ -69,7 +69,7 @@ No es cierto que la exploración sea puramente "manual".
     
 - La clave está en **desarrollar habilidades para usar las herramientas de forma estratégica**.  
 
-## 📌 **7. Cómo Balancear Pruebas Exploratorias, Automatización y Análisis Manual
+## 📌 **7. Cómo Balancear Pruebas Exploratorias, Automatización y Análisis Manual**
 
 La clave para un enfoque de testing efectivo no está en elegir entre pruebas exploratorias, automatización o análisis manual, sino en combinar estos enfoques estratégicamente para maximizar la cobertura y la calidad del producto.
 

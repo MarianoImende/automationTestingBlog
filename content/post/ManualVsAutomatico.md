@@ -7,7 +7,6 @@ tags: ["stress", "performance", "testing"]
 description: "🛠️ Pruebas de software: Ni manuales ni automatizadas, sino estratégicas"
 ---
 
-
 # 🛠️ Pruebas de software: Ni manuales ni automatizadas, sino estratégicas
 
 En el mundo del testing de software, es común escuchar la dicotomía entre pruebas manuales y pruebas automatizadas. Sin embargo, esta clasificación es un tanto engañosa y puede llevarnos a malinterpretar el verdadero propósito del testing.

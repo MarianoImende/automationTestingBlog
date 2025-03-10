@@ -1,11 +1,11 @@
 ---
 date: 2013-01-14T11:25:05-04:00
-description: "Herramienta educativa para quienes desean practicar y mejorar sus habilidades en automatización de pruebas"
-featured_image: "/images/challenge/challenge.png"
+description: "⚔️ Producers vs. Consumers en Kafka: ¿Quién Gana la Batalla del Rendimiento? ⚔️"
+featured_image: "/images/k6-kafka/k6-kafka.webp"
 cascade:
-   featured_image: "/images/challenge/challenge.png"
+   featured_image: "/images/k6-kafka/k6-kafka.webp"
 tags: []
-title: "Challenge automatización de pruebas"
+title: "🔥 Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos"
 disable_share: true
 omit_header_text: false #achica la imagen
 type: page

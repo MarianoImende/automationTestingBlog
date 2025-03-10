@@ -93,7 +93,9 @@ Las pruebas de software son un **proceso cognitivo y estratégico** que puede ut
 
 ✅ En lugar de dividir las pruebas en **"manuales" y "automatizadas"**, es mejor hablar de:
 
-✔️ **Pruebas asistidas por herramientas**  
+✔️ **Pruebas asistidas por herramientas** 
+✔️ **Bien aplicada, la automatización expande las capacidades de los testers.**
+✔️ **Integrar la automatización sin perder el enfoque en el pensamiento crítico.**
 ✔️ **Diseñadas inteligentemente para obtener información valiosa sobre la calidad del producto**. 🚀  
 
 

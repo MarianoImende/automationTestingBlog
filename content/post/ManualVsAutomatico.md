@@ -12,7 +12,9 @@ description: "🛠️ Pruebas de software: Ni manuales ni automatizadas, sino es
 En el mundo del testing de software, es común escuchar la dicotomía entre pruebas manuales y pruebas automatizadas. Sin embargo, esta clasificación es un tanto engañosa y puede llevarnos a malinterpretar el verdadero propósito del testing.
 
 📌 ¿Acaso las pruebas manuales existen realmente?
+
 📌 ¿La automatización puede reemplazar la evaluación humana?
+
 📌 ¿Qué papel juegan las herramientas en la estrategia de pruebas?
 
 En este artículo, exploramos por qué esta distinción no solo es imprecisa, sino que también puede limitar la forma en que abordamos la calidad del software. Descubramos juntos cómo las pruebas son más que una simple verificación automatizada o una acción manual: son una actividad cognitiva, estratégica y asistida por herramientas. 🚀

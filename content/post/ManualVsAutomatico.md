@@ -2,7 +2,7 @@
 date: "2025-03-10T11:10:04-04:00"
 title: '🔍 Rompiendo el mito: "Pruebas Manuales" vs. "Pruebas Automatizadas'
 featured_image: "/images/ManualVsAutomatico/manualVSautomatico.webp"
-date: 2024-07-13
+date: 2025-03-01
 tags: ["stress", "performance", "testing"]
 description: "🛠️ Pruebas de software: Ni manuales ni automatizadas, sino estratégicas"
 ---

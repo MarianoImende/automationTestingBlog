@@ -3,7 +3,9 @@
 En las arquitecturas basadas en **Apache Kafka**, la estabilidad del sistema no depende solo de la capacidad de los **producers** para enviar mensajes, sino también de **cómo los consumers procesan la carga en diferentes escenarios**.  
 
 🔹 **¿Qué sucede si un consumer no puede mantener el ritmo de los mensajes entrantes?**  
+
 🔹 **¿Cómo afecta el lag de los consumidores al rendimiento del sistema?**  
+
 🔹 **¿Cuál es el impacto de aumentar la concurrencia en los grupos de consumo?**  
 
 Para responder estas preguntas, es clave realizar **pruebas de estrés en los tópicos** y analizar la capacidad de procesamiento de los consumidores bajo diferentes condiciones.
@@ -150,7 +152,9 @@ Podemos ver la siguiente tabla detallando las metricas de la extención:
 Para evaluar la capacidad de los consumidores, es importante monitorear:
 
 ✅ Tiempo de procesamiento por mensaje 📊
+
 ✅ Uso de CPU y memoria en los consumidores 🖥️
+
 ✅ Lag en los offsets (cuántos mensajes están en cola esperando ser procesados) ⏳
 
 Una herramienta como Prometheus + Grafana o el propio kafka-consumer-groups.sh puede ayudar a visualizar estos datos en tiempo real.
@@ -159,7 +163,9 @@ Una herramienta como Prometheus + Grafana o el propio kafka-consumer-groups.sh p
 Si bien las pruebas de performance en Kafka abarcan muchos aspectos, el estrés en los tópicos es una estrategia clave para entender la capacidad real de los consumidores.
 
 ✅ Un consumer lento o subescalado puede convertirse en el cuello de botella del sistema.
+
 ✅ Evaluar el lag de los consumers permite detectar problemas de escalabilidad antes de que afecten la producción.
+
 ✅ Simular alta carga sobre los tópicos es una práctica esencial para garantizar un Kafka estable y eficiente.
 
 🔥 Pruebas constantes = Kafka optimizado y resiliente. 🚀

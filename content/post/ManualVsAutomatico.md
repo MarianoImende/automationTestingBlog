@@ -67,16 +67,22 @@ No es cierto que la exploración sea puramente "manual".
     
 - La clave está en **desarrollar habilidades para usar las herramientas de forma estratégica**.  
 
+## 📌 **7. Cómo Balancear Pruebas Exploratorias, Automatización y Análisis Manual
+
+La clave para un enfoque de testing efectivo no está en elegir entre pruebas exploratorias, automatización o análisis manual, sino en combinar estos enfoques estratégicamente para maximizar la cobertura y la calidad del producto.
+
+En lugar de pensar en manual vs. automatizado, es mejor verlo como un triángulo de testing donde cada método complementa a los otros.
+
 ---
 
-## 📌 **7. El enfoque en la automatización puede distraer de la evaluación real de la calidad**  
+## 📌 **8. El enfoque en la automatización puede distraer de la evaluación real de la calidad**  
 - Centrarse solo en la ejecución de verificaciones automatizadas puede hacer que **se pasen por alto problemas más importantes en el producto**.
   
 - La calidad no se mide solo en términos de **verificaciones binarias (pasa/falla)**, sino en un **análisis cualitativo** más amplio.  
 
 ---
 
-## 📌 **8. Comparación con la programación**
+## 📌 **9. Comparación con la programación**
 
 No hablamos de: 
 

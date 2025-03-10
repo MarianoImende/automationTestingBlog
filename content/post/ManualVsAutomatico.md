@@ -1,4 +1,5 @@
 ---
+
 date: "2025-03-10T11:10:04-04:00"
 title: "🔍 Rompiendo el mito: "Pruebas Manuales" vs. "Pruebas Automatizadas"
 featured_image: "/images/ManualVsAutomatico/manualVSautomatico.webp"

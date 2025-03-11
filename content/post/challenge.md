@@ -35,11 +35,9 @@ Brindar a la comunidad de QA un recurso práctico para experimentar, aprender y 
 📢 ¡Invito a todos los testers y entusiastas a explorarlo!
 Si tienes ideas, comentarios o simplemente quieres practicar, siéntete libre de usarlo. Estaré encantado de recibir tu feedback para mejorarlo aún más.
 
----
----
----
 
-## 💡 Podes tomar de base el siguiente ejemplo (copiar) para tu Challenge de Pruebas y Automatización:
+
+## 💡 Podes tomar de base el siguiente ejemplo (formato markdown) para tu Challenge de Pruebas y Automatización:
 
 ---
 ---
@@ -95,7 +93,11 @@ Si tienes ideas, comentarios o simplemente quieres practicar, siéntete libre de
   sube el material a una carpeta compartida (Google Drive, GitHub, etc.) para revisión.
 
 ---
-``` markdown 
+```  
+
+---
+---
+---
 
 🔗 ¡Comparte esta publicación con quienes podrían beneficiarse de esta herramienta!
 Juntos podemos construir un ecosistema más fuerte para la calidad de software. 🚀

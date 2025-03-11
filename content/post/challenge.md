@@ -54,7 +54,7 @@ Para continuar con el proceso, te invitamos a completar el siguiente challenge, 
 
 Una vez que lo finalices, coordinaremos una entrevista donde podrás explicarnos tu enfoque y resolveremos cualquier consulta que tengas al respecto.
 
-Si necesitas más información o tienes alguna duda, escríbenos a <correo> y con gusto organizaremos una reunión para aclararlas.
+Si necesitas más información o tenes alguna duda, escribimos a <correo> y con gusto organizaremos una reunión para aclararlas.
 
 ---
 

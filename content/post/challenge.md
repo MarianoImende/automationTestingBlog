@@ -40,17 +40,21 @@ Si tienes ideas, comentarios o simplemente quieres practicar, siéntete libre de
 ---
 
 ## 💡 Podes tomar de base el siguiente ejemplo (copiar) para tu Challenge de Pruebas y Automatización:
+
 ---
+---
+---
+
 > 
 ### Referencia:
 
-  - Consulta el artículo en [Automation Testing Challenge](https://automationtesting.ar/post/challenge/) para comprender el alcance del proyecto.
+>   - Consulta el artículo en [Automation Testing Challenge](https://automationtesting.ar/post/challenge/) para comprender el alcance del proyecto.
   
 ---
 
-## 1. Conocimiento y Familiarización del Entorno
+> ## 1. Conocimiento y Familiarización del Entorno
 
-- **Revisión de Documentación y Frontend:**
+> - **Revisión de Documentación y Frontend:**
   - Explora la [Documentación de la API](https://api-challenge-wallet.onrender.com/docs) para conocer rutas, parámetros y validaciones.
 
   - Explora [Wallet Frontend](https://walletchallenge-front.onrender.com) para conocer flujos de login y consultas de cuentas.

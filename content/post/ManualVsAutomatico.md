@@ -1,6 +1,6 @@
 ---
 date: "2025-03-10T11:10:04-04:00"
-title: '🔍 Rompiendo el mito: "Pruebas Manuales" vs. "Pruebas Automatizadas'
+title: '🔍 Rompiendo el mito: "Pruebas Manuales" vs. "Pruebas Automatizadas"'
 featured_image: "/images/ManualVsAutomatico/manualVSautomatico.webp"
 date: 2025-03-01
 tags: ["stress", "performance", "testing"]
@@ -17,7 +17,7 @@ En el mundo del testing de software, es común escuchar la dicotomía entre prue
 
 📌 ¿Qué papel juegan las herramientas en la estrategia de pruebas?
 
-En este artículo, exploramos por qué esta distinción no solo es imprecisa, sino que también puede limitar la forma en que abordamos la calidad del software. Descubramos juntos cómo las pruebas son más que una simple verificación automatizada o una acción manual: son una actividad cognitiva, estratégica y asistida por herramientas. 🚀
+En este artículo, exploramos por qué esta distinción no sólo es imprecisa, sino que también puede limitar la forma en que abordamos la calidad del software. Descubramos juntos cómo las pruebas son más que una simple verificación automatizada o una acción manual: son una actividad cognitiva, estratégica y asistida por herramientas. 🚀
 
 ---
 
@@ -67,7 +67,14 @@ No es cierto que la exploración sea puramente "manual".
 
 - Un **Tester** no es "manual" ni "automatizado", ya que siempre utiliza una combinación de **pensamiento crítico, exploración y herramientas**.
     
-- La clave está en **desarrollar habilidades para usar las herramientas de forma estratégica**.  
+- La clave está en **desarrollar habilidades para usar las herramientas de forma estratégica**.
+
+- No hablamos de: 
+
+❌ **"Programación automatizada"** cuando compilamos código.  
+❌ **"Programación manual"** cuando escribimos código.  
+
+💡 De la misma manera, **las pruebas no deben dividirse artificialmente en "manuales" y "automatizadas"**.   
 
 ## 📌 **7. Cómo Balancear Pruebas Exploratorias, Automatización y Análisis Manual**
 
@@ -81,17 +88,6 @@ En lugar de pensar en manual vs. automatizado, es mejor verlo como un triángulo
 - Centrarse solo en la ejecución de verificaciones automatizadas puede hacer que **se pasen por alto problemas más importantes en el producto**.
   
 - La calidad no se mide solo en términos de **verificaciones binarias (pasa/falla)**, sino en un **análisis cualitativo** más amplio.  
-
----
-
-## 📌 **9. Comparación con la programación**
-
-No hablamos de: 
-
-❌ **"Programación automatizada"** cuando compilamos código.  
-❌ **"Programación manual"** cuando escribimos código.  
-
-💡 De la misma manera, **las pruebas no deben dividirse artificialmente en "manuales" y "automatizadas"**.  
 
 ---
 

@@ -38,7 +38,7 @@ Si tienes ideas, comentarios o simplemente quieres practicar, siéntete libre de
 
 
 
-## 💡 Podes tomar de base el siguiente ejemplo (formato markdown) para tu Challenge de Pruebas y Automatización:
+## 💡 Podes tomar de base el siguiente ejemplo (markdown) para tu Challenge de Pruebas y Automatización:
 
 ---
 ---

@@ -39,8 +39,9 @@ Si tienes ideas, comentarios o simplemente quieres practicar, siéntete libre de
 ---
 ---
 
-## 💡 Podes tomar de base el siguiente ejemplo (copiar) para tu Challenge de Pruebas y Automatización
-
+## 💡 Podes tomar de base el siguiente ejemplo (copiar) para tu Challenge de Pruebas y Automatización:
+---
+> 
 ### Referencia:
 
   - Consulta el artículo en [Automation Testing Challenge](https://automationtesting.ar/post/challenge/) para comprender el alcance del proyecto.
@@ -90,7 +91,7 @@ Si tienes ideas, comentarios o simplemente quieres practicar, siéntete libre de
   sube el material a una carpeta compartida (Google Drive, GitHub, etc.) para revisión.
 
 ---
-
+> 
 
 🔗 ¡Comparte esta publicación con quienes podrían beneficiarse de esta herramienta!
 Juntos podemos construir un ecosistema más fuerte para la calidad de software. 🚀

@@ -45,7 +45,7 @@ Si tienes ideas, comentarios o simplemente quieres practicar, siéntete libre de
 ---
 ---
 
- 
+``` markdown 
 ### Referencia:
 
   - Consulta el artículo en [Automation Testing Challenge](https://automationtesting.ar/post/challenge/) para comprender el alcance del proyecto.
@@ -95,7 +95,7 @@ Si tienes ideas, comentarios o simplemente quieres practicar, siéntete libre de
   sube el material a una carpeta compartida (Google Drive, GitHub, etc.) para revisión.
 
 ---
-> 
+``` markdown 
 
 🔗 ¡Comparte esta publicación con quienes podrían beneficiarse de esta herramienta!
 Juntos podemos construir un ecosistema más fuerte para la calidad de software. 🚀

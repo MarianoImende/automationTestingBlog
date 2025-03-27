@@ -39,15 +39,34 @@ Kafka puede manejar **millones de eventos por segundo**, pero si los consumidore
 
 ## **🔹 Simulación de Carga en un Tópico con Jmeter**  
 
-Podemos usar **jmeter** en linux para **sobrecargar un tópico** y medir cómo los consumidores manejan la carga.
+1-Pre Condición, contar con nociones básicas de jmeter, si no es tu caso, podes ver alguno de los siguientes tutoriales:
 
-### ✅ **Instalar jmeter y Jmeter plugin manager**
+[jmeter desde cero](https://www.youtube.com/results?search_query=jmeter+desde+cero)
 
-Por razones practicas, vamos a utilizar Windows para desarrollar el script y el entorno jmeter, luego ambos seran transladado a un generador de carga linux
+2-Contar con un entorno de Kafka.
+
+Continuamos:
+
+### ✅ **Instalar jmeter**
+
+Por razones practicas, vamos a utilizar Windows instalar jmeter, desarrollar el script y ejecutar la prueba.
 
 Primero, descargamos la última versión de JMeter desde el [sitio web oficial de JMeter](https://jmeter.apache.org/download_jmeter.cgi). clic en el enlace “apache-jmeter-x.x.x.tgz” para descargar el archivo zip binario de JMeter.
 
-Luego, descomprimir el archivo zip para obtener jmeter listo para ser utilizado.
+Luego, descomprimir el archivo zip para obtener jmeter listo para ser utilizado:
+
+``` BeanShell
+
+C:\apache-jmeter-x.x.x\bin
+
+```
+ejecutar con doble clic jmeter por medio de:
+
+``` BeanShell
+
+C:\apache-jmeter-x.x.x\bin\jmeter.bat
+
+```
 
 Instalar Jmeter plugin manager:
 

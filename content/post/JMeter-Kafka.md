@@ -68,8 +68,7 @@ C:\apache-jmeter-x.x.x\bin\jmeter.bat
 
 ```
 
-
-
+![Script](/images/jmeter-kafka/TestPlan.png)
 
 
 

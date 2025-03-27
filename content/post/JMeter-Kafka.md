@@ -1,5 +1,5 @@
 ---
-date: 2024-05-16T11:25:05-04:00
+date: 2025-01-06
 description: "⚔️ Producers vs. Consumers en Kafka: ¿Quién Gana la Batalla del Rendimiento? ⚔️"
 featured_image: "/images/jmeter-kafka/jmeter-kafka.webp"
 cascade:

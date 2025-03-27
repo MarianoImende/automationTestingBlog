@@ -39,11 +39,11 @@ Kafka puede manejar **millones de eventos por segundo**, pero si los consumidore
 
 ## **🔹 Simulación de Carga en un Tópico con Jmeter**  
 
-1-Pre Condición, contar con nociones básicas de jmeter, si no es tu caso, podes ver alguno de los siguientes tutoriales:
+✔️ 1-Pre Condición, contar con nociones básicas de jmeter, si no es tu caso, podes ver alguno de los siguientes tutoriales:
 
 [jmeter desde cero](https://www.youtube.com/results?search_query=jmeter+desde+cero)
 
-2-Contar con un entorno de Kafka.
+✔️ 2-Contar con un entorno de Kafka.
 
 Continuamos:
 
@@ -67,6 +67,23 @@ ejecutar con doble clic jmeter por medio de:
 C:\apache-jmeter-x.x.x\bin\jmeter.bat
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Instalar Jmeter plugin manager:
 

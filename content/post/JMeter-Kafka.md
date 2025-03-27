@@ -67,8 +67,11 @@ ejecutar con doble clic jmeter por medio de:
 C:\apache-jmeter-x.x.x\bin\jmeter.bat
 
 ```
+ddd
 
 ![Script](/images/jmeter-kafka/TestPlan.png)
+
+ddd
 
 
 

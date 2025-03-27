@@ -1,9 +1,9 @@
 ---
 date: 2025-01-06
 description: "⚔️ Producers vs. Consumers en Kafka: ¿Quién Gana la Batalla del Rendimiento? ⚔️"
-featured_image: "/images/jmeter-kafka/jmeter-kafka.webp"
+featured_image: "/images/jmeter-kafka/jmeter-kafka-portada.png"
 cascade:
-   featured_image: "/images/jmeter-kafka/jmeter-kafka.webp"
+   featured_image: "/images/jmeter-kafka/jmeter-kafka-portada.png"
 tags: []
 title: "Jmeter: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀"
 disable_share: true
@@ -36,15 +36,17 @@ Kafka puede manejar **millones de eventos por segundo**, pero si los consumidore
 
 ---
 
-## **🔹 Simulación de Carga en un Tópico con Jmeter**  
+## **🔹 Simulación de Carga en un Tópico con Jmeter utilizando 'JSR223 Sampler'**  
 
-✔️ 1-Pre Condición, contar con nociones básicas de jmeter, si no es tu caso, podes ver alguno de los siguientes tutoriales:
+✔️ 1-Configuración de Java: asegúrese de instalar la última versión de Java compatible con JMeter, es mejor instalar un JDK
+
+✔️ 2-Pre Condición, contar con nociones básicas de jmeter, si no es tu caso, podes ver alguno de los siguientes tutoriales:
 
 [jmeter desde cero](https://www.youtube.com/results?search_query=jmeter+desde+cero)
 
-✔️ 2-Descargar y depositar en "C:\apache-jmeter-5.6.3\lib\ext\"  kafka-clients para java (.jar) de [mvnrepository](https://mvnrepository.com/search?q=kafka-clients). requiere reinicio de jmeter.
+✔️ 3-Descargar y depositar en "C:\apache-jmeter-5.6.3\lib\ext\"  kafka-clients para java (.jar) de [mvnrepository](https://mvnrepository.com/search?q=kafka-clients). requiere reinicio de jmeter.
 
-✔️ 3-Contar con un entorno de Kafka.
+✔️ 4-Contar con un entorno de Kafka.
 
 Continuamos:
 
@@ -71,7 +73,9 @@ C:\apache-jmeter-x.x.x\bin\jmeter.bat
 Crear un Test Plan con:
 
 ☑ Thread Group
+
 ☑ JSR223 Sampler
+
 ☑ View Results Tree
 
 ![Script](/images/jmeter-kafka/TestPlan.png)
@@ -141,10 +145,22 @@ try {
 
 ```
 
+Luego queda ejecutar el script para validar los resultados.
 
+Ademas de poder tener un script de jmeter utilizando **JSR223 Sampler** para realizar pruebas de performance de forma directa hacia un tipico de **Kafka**, tambien se puede hacer por medio de un **plugin**
 
+## **🔹 Simulación de Carga en un Tópico con Jmeter utilizando 'JSR223 Sampler'** 
 
+✔️ Paso 1: Instalar el administrador de complementos de Jmeter
+Descarga el plugins-manager.jar y colocalo en el directorio lib/ext, luego reinicie JMeter.
 
+✔️ Paso 2: Habilitá **Kafka Producer Sampler** en el Administrador de complementos
+
+Options -> Plugin Manager:
+
+![Plugin Manager](/images/jmeter-kafka/Plugin Manager.webp)
+
+✔️ Paso 3: Crear un ‘Thread Group”
 
 
 

@@ -67,11 +67,78 @@ ejecutar con doble clic jmeter por medio de:
 C:\apache-jmeter-x.x.x\bin\jmeter.bat
 
 ```
-ddd
+Crear un Test Plan con:
+
+☑ Thread Group
+☑ JSR223 Sampler
+☑ View Results Tree
 
 ![Script](/images/jmeter-kafka/TestPlan.png)
 
-ddd
+El script de JSR223 Sampler debe contener el siguiente código:
+
+```groovy
+
+import org.apache.kafka.clients.producer.*
+import java.util.Properties
+import java.net.Socket
+import groovy.json.JsonOutput
+
+String brokerIp = "Acá va la Ip el broker de kafka"
+int brokerPort = 9092
+String topic = "miTopico"
+
+//Marcar el test como fallido por defecto (por si hay excepción)
+SampleResult.setSuccessful(false)
+
+try {
+    new Socket(brokerIp, brokerPort).withCloseable {
+        log.info("Conexión TCP abierta con Kafka en ${brokerIp}:${brokerPort}")
+    }
+} catch (Exception e) {
+    log.error("No se pudo conectar al broker", e)
+    SampleResult.setResponseMessage("No se pudo conectar al broker")
+    SampleResult.setResponseCode("500") // código de error arbitrario
+    return // salir si falla conexión
+}
+
+// Configurar Kafka Producer
+Properties props = new Properties()
+props.put("bootstrap.servers","${brokerIp}:${brokerPort}".toString())
+props.put("security.protocol", "PLAINTEXT")
+props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
+props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
+
+KafkaProducer<String, String> producer = new KafkaProducer<>(props)
+
+// Construir mensaje JSON
+    Map<String, Object> message = [
+        syskey : "test123",
+        message: "Hola desde JMeter vía Kafka!!!"
+    ]
+    
+String key = message.syskey
+String value = JsonOutput.toJson(message)
+
+ProducerRecord<String, String> record = new ProducerRecord<>(topic, key, value)
+
+try {
+    producer.send(record).get()
+    log.info("Mensaje enviado a Kafka -> Topic: ${topic} | Key: ${key} | Value: ${value}")
+    SampleResult.setSuccessful(true) // marcar como exitoso
+    SampleResult.setResponseMessage("Mensaje enviado correctamente a Kafka")
+    SampleResult.setResponseCode("200")
+} catch (Exception e) {
+    log.error("Error al enviar mensaje a Kafka", e)
+    SampleResult.setResponseMessage("Error al enviar mensaje a Kafka")
+    SampleResult.setResponseCode("500")
+} finally {
+    producer.close()
+    log.info("KafkaProducer cerrado correctamente")
+}
+
+
+```
 
 
 

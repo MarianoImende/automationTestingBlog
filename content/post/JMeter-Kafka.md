@@ -9,7 +9,6 @@ title: "Jmeter: Evaluando la Performance de los Consumers en Kafka: Estrés en l
 disable_share: true
 omit_header_text: false #achica la imagen
 type: page
-
 ---
 
 En las arquitecturas basadas en **Apache Kafka**, la estabilidad del sistema no depende solo de la capacidad de los **producers** para enviar mensajes, sino también de **cómo los consumers procesan la carga en diferentes escenarios**.  

@@ -44,7 +44,7 @@ Kafka puede manejar **millones de eventos por segundo**, pero si los consumidore
 
 [jmeter desde cero](https://www.youtube.com/results?search_query=jmeter+desde+cero)
 
-✔️ 3-Descargar y depositar en "C:\apache-jmeter-5.6.3\lib\ext\"  kafka-clients para java (.jar) de [mvnrepository](https://mvnrepository.com/search?q=kafka-clients). requiere reinicio de jmeter.
+✔️ 3-Descargar y depositar en **"C:\apache-jmeter-5.6.3\lib\ext\"** el kafka-clients para java (.jar) de [mvnrepository](https://mvnrepository.com/search?q=kafka-clients). requiere reinicio de jmeter.
 
 ✔️ 4-Contar con un entorno de Kafka.
 

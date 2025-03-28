@@ -158,7 +158,7 @@ Ademas de poder tener un script de jmeter utilizando **JSR223 Sampler** para rea
 
 Options -> Plugin Manager:
 
-[Plugin Manager](/images/jmeter-kafka/Plugins Manager.png)
+![Plugin Manager](/images/jmeter-kafka/Plugins Manager.png)
 
 
 

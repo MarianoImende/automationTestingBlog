@@ -162,8 +162,6 @@ Options -> Plugin Manager:
 
 
 
-![Plugin Manager](/images/jmeter-kafka/Plugin Manager.webp)
-
 ✔️ Paso 3: Crear un ‘Thread Group”
 
 

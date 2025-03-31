@@ -5,7 +5,7 @@ featured_image: "/images/k6-kafka/k6-kafka.webp"
 cascade:
    featured_image: "/images/k6-kafka/k6-kafka.webp"
 tags: []
-title: "Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀"
+title: "K6: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀"
 disable_share: true
 omit_header_text: false #achica la imagen
 type: page

@@ -181,6 +181,8 @@ Options -> Plugin Manager:
 
 ✔️ Paso 3: Crear el script de jmeter:
 
+Crear la siguiente estructura en jmeter y sguír las configuraciones que se ven en las imagenes:
+
 ![Plugin Manager](/images/jmeter-kafka/Kafka-Producer-config.png)
 
 ![Plugin Manager](/images/jmeter-kafka/Kafka-Producer-sample.png)

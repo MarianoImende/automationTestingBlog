@@ -164,7 +164,7 @@ Luego queda ejecutar el script para validar los resultados.
 
 ```
 
-Ademas de poder tener un script de jmeter utilizando **JSR223 Sampler** para realizar pruebas de performance de forma directa hacia un tipico de **Kafka**, tambien se puede hacer por medio de un **plugin**
+Ademas de poder tener un script de jmeter utilizando **JSR223 Sampler** para realizar pruebas de performance de forma directa hacia un tópico de **Kafka**, tambien se puede hacer por medio de un **plugin**
 
 ## **🔹 Simulación de Carga en un Tópico con Jmeter utilizando 'di-kafkameter'** 
 

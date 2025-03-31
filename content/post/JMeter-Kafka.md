@@ -89,7 +89,7 @@ import java.util.Properties
 import java.net.Socket
 import groovy.json.JsonOutput
 
-String brokerIp = "Acá va la Ip el broker de kafka"
+String brokerIp = "Acá va la Ip/Nombre el broker de kafka"
 int brokerPort = 9092
 String topic = "miTopico"
 
@@ -144,7 +144,30 @@ try {
 
 
 ```
+Además, podemos aplicar niveles de seguridad, por ejemplo: 
 
+```groovy
+import { check } from "k6";
+import {TLS_1_2, SASL_SCRAM_SHA512 ,Writer,SchemaRegistry ,SCHEMA_TYPE_STRING} from "k6/x/kafka";
+...
+const writer = new Writer({
+    brokers: ["Acá va la Ip/Nombre el broker de kafka"],
+    topic: "miTopico",
+    sasl: {
+        username: "NombreUsuario",
+        password: "PasswordDelUsuario",
+        algorithm: SASL_SCRAM_SHA512,
+    },
+    tls: {
+        clientCertPem: '/home/user/script/kafka_cert.pem', // Path del certificado
+        enableTls: true,
+        insecureSkipTlsVerify: true,
+        minVersion: TLS_1_2
+        },
+});
+...
+
+```
 Luego queda ejecutar el script para validar los resultados.
 
 Ademas de poder tener un script de jmeter utilizando **JSR223 Sampler** para realizar pruebas de performance de forma directa hacia un tipico de **Kafka**, tambien se puede hacer por medio de un **plugin**

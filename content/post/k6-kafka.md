@@ -116,6 +116,31 @@ export default function () {
 
 ```
 
+Además, podemos aplicar niveles de seguridad, por ejemplo: 
+
+```groovy
+import { check } from "k6";
+import {TLS_1_2, SASL_SCRAM_SHA512 ,Writer,SchemaRegistry ,SCHEMA_TYPE_STRING} from "k6/x/kafka";
+...
+const writer = new Writer({
+    brokers: ["Acá va la Ip/Nombre el broker de kafka"],
+    topic: "miTopico",
+    sasl: {
+        username: "NombreUsuario",
+        password: "PasswordDelUsuario",
+        algorithm: SASL_SCRAM_SHA512,
+    },
+    tls: {
+        clientCertPem: '/home/user/script/kafka_cert.pem', // Path del certificado
+        enableTls: true,
+        insecureSkipTlsVerify: true,
+        minVersion: TLS_1_2
+        },
+});
+...
+
+```
+
 ### 🔹 Monitoreando la Performance de los Consumers y Métricas emitidas
 
 Podemos ver la siguiente tabla detallando las metricas de la extención:

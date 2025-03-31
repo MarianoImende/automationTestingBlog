@@ -1,5 +1,5 @@
 ---
-date: 2013-01-14T11:25:05-04:00
+date: 2025-01-06
 description: "⚔️ Producers vs. Consumers en Kafka: ¿Quién Gana la Batalla del Rendimiento? ⚔️"
 featured_image: "/images/k6-kafka/k6-kafka.webp"
 cascade:
@@ -9,7 +9,6 @@ title: "Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópi
 disable_share: true
 omit_header_text: false #achica la imagen
 type: page
-
 ---
 
 En las arquitecturas basadas en **Apache Kafka**, la estabilidad del sistema no depende solo de la capacidad de los **producers** para enviar mensajes, sino también de **cómo los consumers procesan la carga en diferentes escenarios**.  

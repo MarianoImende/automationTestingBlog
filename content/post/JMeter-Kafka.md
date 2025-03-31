@@ -187,48 +187,9 @@ Crear la siguiente estructura en jmeter y sguír las configuraciones que se ven 
 
 ![Plugin Manager](/images/jmeter-kafka/Kafka-Producer-sample.png)
 
+Además, podemos aplicar niveles de seguridad, por ejemplo:
 
-
-
-
-
-
-
-###########################################################################################################################
-###########################################################################################################################
-###########################################################################################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Nota:
-Si estas detras de un proxy empresarial, probablemente tengas problemas de :
-problema con el SSL/TLS Handshake cuando JMeter intenta descargar los plugins del repositorio
-
-modificar el archivo \bin\user.properties:
-
-Y agregar la siguiente línea al final:
-
-jpgc.repo.address=http://jmeter-plugins.org/repo/
+![Plugin Manager](/images/jmeter-kafka/Kafka-Producer-config-seg.png)
 
 
 Para evaluar la capacidad de los consumidores, es importante monitorear:

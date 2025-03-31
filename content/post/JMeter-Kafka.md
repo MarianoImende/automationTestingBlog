@@ -164,12 +164,12 @@ Luego queda ejecutar el script para validar los resultados.
 
 ```
 
-Ademas de poder tener un script de jmeter utilizando **JSR223 Sampler** para realizar pruebas de performance de forma directa hacia un tópico de **Kafka**, tambien se puede hacer por medio de un **plugin**
+Además de poder tener un script de jmeter utilizando **JSR223 Sampler** para realizar pruebas de performance de forma directa hacia un tópico de **Kafka**, también se puede hacer por medio de un **plugin**
 
 ## **🔹 Simulación de Carga en un Tópico con Jmeter utilizando 'di-kafkameter'** 
 
 ✔️ Paso 1: Instalar el administrador de complementos de Jmeter 
-[Descarga](https://jmeter-plugins.org/get/) el plugins-manager.jar y colocalo en el directorio **lib/ext**, luego reinicie JMeter.
+[Descarga](https://jmeter-plugins.org/get/) el plugins-manager.jar y colócalo en el directorio **lib/ext**, luego reinicie JMeter.
 
 ✔️ Paso 2: Habilitá **Kafka Producer Sampler** en el Administrador de complementos
 

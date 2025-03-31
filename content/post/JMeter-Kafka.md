@@ -142,10 +142,27 @@ try {
     log.info("KafkaProducer cerrado correctamente")
 }
 
-
 ```
 
+Además, podemos aplicar niveles de seguridad, por ejemplo:
+
+```groovy
+...
+// Configurar Kafka Producer con SASL_SSL
+Properties props = new Properties()
+props.put("bootstrap.servers", "Nombre/IP:Port")
+props.put("security.protocol", "SASL_SSL")
+props.put("sasl.mechanism", "SCRAM-SHA-512")
+props.put(SaslConfigs.SASL_JAAS_CONFIG, "org.apache.kafka.common.security.scram.ScramLoginModule required username='MyUser' password='MyPassword';")
+...
+// Configurar SSL con archivo PEM
+props.put("ssl.truststore.type", "PEM")
+props.put("ssl.truststore.location", "E:\\kafka_cert.pem")
+props.put("ssl.endpoint.identification.algorithm", "")
 Luego queda ejecutar el script para validar los resultados.
+...
+
+```
 
 Ademas de poder tener un script de jmeter utilizando **JSR223 Sampler** para realizar pruebas de performance de forma directa hacia un tipico de **Kafka**, tambien se puede hacer por medio de un **plugin**
 
@@ -162,7 +179,12 @@ Options -> Plugin Manager:
 
 ![Plugin Manager](/images/jmeter-kafka/plugins-install.jpeg)
 
-✔️ Paso 3: Crear un ‘Thread Group”
+✔️ Paso 3: Crear el script de jmeter:
+
+![Plugin Manager](/images/jmeter-kafka/Kafka-Producer-config.png)
+
+![Plugin Manager](/images/jmeter-kafka/Kafka-Producer-sample.png)
+
 
 
 

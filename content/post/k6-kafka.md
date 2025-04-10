@@ -51,15 +51,17 @@ o bien, podes usar la documentación [oficial](https://github.com/mostafa/xk6-ka
 ### ✅ **Ejemplo de generación de alta carga en un tópico**
 ```javascript
 
-import { Writer,SchemaRegistry ,SCHEMA_TYPE_STRING} from "k6/x/kafka";
+import { check, fail } from "k6";
+import { Counter } from 'k6/metrics';
+import { Writer, SchemaRegistry, SCHEMA_TYPE_STRING } from "k6/x/kafka";
 
-const brokers = ["localhost:9092"];
-const topic = "topico";
-
-const writer = new Writer({
-    brokers: brokers,
-    topic: topic,
-});
+const success = new Counter('kafka_success');
+const timeout = new Counter('kafka_timeout_errors');
+const unexpectedErrors = new Counter('kafka_Unexpected_errors');
+const connectionRefusedErrors = new Counter('kafka_connection_refused_errors');
+const ioPipeErrors = new Counter('kafka_io_pipe_errors');
+const response_time_2s = new Counter('kafka_response_time_2s');
+const topic_or_partition  = new Counter('kafka_topic_or_partition_not_exist');
 
 const schemaRegistry = new SchemaRegistry();
 
@@ -70,15 +72,10 @@ export let options = {
             executor: 'ramping-arrival-rate',
             startRate: 1,
             timeUnit: '1s',
-            preAllocatedVUs: 10,
-            maxVUs: 100,
+            preAllocatedVUs: 3,
+            maxVUs: 10,
             stages: [
-                { duration: '5s', target: 2 },
-                { duration: '5s', target: 6 },
-                { duration: '5s', target: 10 },
-                { duration: '60s', target: 20 },
-                { duration: '5s', target: 10 },
-                { duration: '5s', target: 5 }
+                { duration: '2m', target: 1 },
             ],
         },
     },
@@ -86,31 +83,74 @@ export let options = {
 
 export default function () {
 
-    let numero = Math.floor(Math.random() * 500000) + 1;
-    let milisegundos = Date.now(); // milisegundos
-    let id = `${numero}${milisegundos}`;
+const writer = new Writer({
+    brokers: ["localhost:9092"],
+    topic: "miTopico",
+});
+
+    const message = { syskey: "test-key", foo: "bar" };
+
+    const key = schemaRegistry.serialize({ data: message.syskey, schemaType: SCHEMA_TYPE_STRING });
+    const value = schemaRegistry.serialize({ data: JSON.stringify(message), schemaType: SCHEMA_TYPE_STRING });
+
+    try {
+        
+        const start = Date.now(); //inicia cronometro
+        
+        const error = writer.produce({
+            messages: [{ key, value }],
+        });
+        
+        // writer.produce() retorna "undefined" cuando todo salio bien! caso contrario, devuelve mensaje de error
+
+        // Opcional:
+        //const success = check(error, { "mensaje enviado sin error": (err) => err === undefined,});        
+
+        if (error !== undefined && error.message) {
+        
+          clasificarError(error.message);
+            
+        } else {
+            success.add(1);
+            const end = Date.now(); //termina cronometro
+            const produceDuration = (end - start);
+            if (produceDuration >= 1500){
+              response_time_2s.add(1)
+            }          
+        }
+               
+    //K6 lanza una excepcion (GoError)
+    } catch (e) {
     
-    console.log(syskey.toString())
+        clasificarError(e.message);
+        
+        fail(`Fallo la ejecucion: ${e.message}`);
+        
+    } finally {
+        writer.close();
+    }
+}
 
-    const message = {
-        id: id,
-        accountId: "2",
-        transactionDate: "25/02/2022",
-        transactionTime: "14:30:00",
-        transactionType: "PAGO",
-        amount: "1.124,56"
-    };
+function clasificarError(msg) {
+    msg = msg.toLowerCase();
 
-    let key = message.id
-    const messageString = JSON.stringify(message); 
-
-    //Enviar tipo string
-    writer.produce({
-        messages: [{
-            key: schemaRegistry.serialize({data: key,schemaType: SCHEMA_TYPE_STRING}),
-            value: schemaRegistry.serialize({data: messageString,schemaType: SCHEMA_TYPE_STRING})
-            }]
-    });
+    switch (true) {
+        case msg.includes("read/write on closed pipe"):
+            ioPipeErrors.add(1);
+            break;
+        case msg.includes("connection refused"):
+            connectionRefusedErrors.add(1);
+            break;
+        case msg.includes("timeout"):
+            timeout.add(1);
+            break;
+        case msg.includes("a topic or partition that does not exist on this broker"):
+            topic_or_partition.add(1);
+            break;
+        default:
+            unexpectedErrors.add(1);
+            break;
+    }
 }
 
 ```
@@ -122,7 +162,7 @@ import { check } from "k6";
 import {TLS_1_2, SASL_SCRAM_SHA512 ,Writer,SchemaRegistry ,SCHEMA_TYPE_STRING} from "k6/x/kafka";
 ...
 const writer = new Writer({
-    brokers: ["Acá va la Ip/Nombre el broker de kafka"],
+    brokers: ["localhost:9092"],
     topic: "miTopico",
     sasl: {
         username: "NombreUsuario",

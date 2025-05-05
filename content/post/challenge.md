@@ -70,25 +70,25 @@ Si necesitas más información o tenes alguna duda, escribimos a <correo> y con 
 ## 🔹 **2. Pruebas Exploratorias**
 
 - **Ejecución de Pruebas Manuales:**
-  - Realiza pruebas exploratorias sobre la API (Swagger) y el frontend (login y consultas de cuentas) para identificar posibles incidencias.
+  - Realiza pruebas exploratorias sobre la API (Swagger) y el frontend (login y consultas de cuentas) para identificar posibles errores o mejoras.
 
 ---
 
-## 🔹 **3. Automatización de Pruebas**
+## 🔹 **3. Automatización de Pruebas de Back-End**
 
 - **Automatización de Escenarios Críticos:**
   - Automatiza los escenarios clave de **sesión y movimientos**, verificando el correcto funcionamiento del login y la consulta de movimientos.
   - Realiza todas las validaciones necesarias para garantizar la calidad del sistema.
 
 - **Elección Tecnológica:**
-  - Utiliza la tecnología y framework de tu preferencia para la automatización.
+  - Utiliza la tecnología o framework de tu preferencia para la automatización.
 
 ---
 
 ## 🔹 **4. Generación de Reportes y Documentación**
 
 - **Reporte de Pruebas Automatizadas:**
-  - Configura la suite de pruebas para generar un reporte detallado (HTML, PDF, etc.).
+  - Configura la suite de pruebas para generar un reporte HTML detallando el resultado de las pruebas.
 
 - **Documentación Complementaria:**
   - Adjunta un informe describiendo los escenarios evaluados, herramientas utilizadas y decisiones tomadas.

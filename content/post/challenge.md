@@ -26,7 +26,7 @@ Este proyecto fue creado como una herramienta de entrenamiento para quienes dese
 **Backend:** openapi: 3.1.0 [Swagger]
 
 **Frontend:** Login (usuario: **challenge**, password **challenge**). 
-(Por el momento funciona el login y la consulta de cuentas para la cuál se debe ingresar el número de tarjeta en el texbox "Cuentas")
+(Por el momento funciona el login y la consulta de cuentas para la cuál se debe ingresar el número de tarjeta en el textbox "Cuentas")
 
 Escenarios diseñados para probar validaciones y flujos de negocio.
 Perfecto para practicar con herramientas como Selenium, Postman, insomnia, Cypress, playwright entre otras.

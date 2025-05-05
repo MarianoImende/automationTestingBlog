@@ -1,6 +1,6 @@
 ---
 date: 2013-01-14T11:25:05-04:00
-description: "Herramienta educativa para quienes desean practicar y mejorar sus habilidades en automatización de pruebas"
+description: "Herramienta de entrenamiento para quienes desean practicar y mejorar sus habilidades en automatización de pruebas"
 featured_image: "/images/challenge/challenge.png"
 cascade:
    featured_image: "/images/challenge/challenge.png"

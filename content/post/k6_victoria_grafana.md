@@ -11,17 +11,34 @@ omit_header_text: false #achica la imagen
 type: page
 ---
 
-En las arquitecturas basadas en **Apache Kafka**, la estabilidad del sistema no depende solo de la capacidad de los **producers** para enviar mensajes, sino también de **cómo los consumers procesan la carga en diferentes escenarios**.  
+## **🔹 Contexto **
 
-🔹 **¿Qué sucede si un consumer no puede mantener el ritmo de los mensajes entrantes?**  
+Procedimiento probado en linux Ubuntu 24.04 y SUSE Linux Enterprise Server 15 SP6.
 
-🔹 **¿Cómo afecta el lag de los consumidores al rendimiento del sistema?**  
+## **🔹 Instalacion de Victoria Metrics **
 
-🔹 **¿Cuál es el impacto de aumentar la concurrencia en los grupos de consumo?**  
+VictoriaMetrics es una solución de monitorización y base de datos de series temporales rápida, rentable y escalable.
 
-Para responder estas preguntas, es clave realizar **pruebas de estrés en los tópicos** y analizar la capacidad de procesamiento de los consumidores bajo diferentes condiciones.
+Instalacion de la Versión de un solo nodo:
+Single-node version: binario todo en uno fácil de ejecutar y mantener. Se escala verticalmente a la perfección y gestiona fácilmente millones de métricas.
 
----
+descargar 
+https://github.com/VictoriaMetrics/VictoriaMetrics/releases/latest
+
+al momento del presente tutorial (07-2025), se utilizo la version "victoria-metrics-linux-amd64-v1.120.0.tar.gz"
+
+luego ejecutar:
+tar -zxvf victoria-metrics-linux-amd64-v1.120.0.tar.gz
+
+luego ejecutar victoria metric de la siguiente manera:
+
+./victoria-metrics-prod -retentionPeriod=1 -storageDataPath=./victoria-metrics-data
+
+🔹 **storageDataPath** VictoriaMetrics almacena todos los datos en este directorio. La ruta predeterminada es victoria-metrics-data el directorio de trabajo actual.
+
+🔹 **retentionPeriod** Retención de datos almacenados. Los datos antiguos se eliminan automáticamente. El periodo de retención predeterminado es de 1 mes (31 días). El periodo mínimo de retención es de 24 horas o 1 dí
+
+
 
 ## **🔹 Pruebas de Carga en los Tópicos: ¿Por qué Importan?**  
 

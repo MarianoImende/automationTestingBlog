@@ -48,16 +48,21 @@ http://IP:8428/
 
 ✅ **2. Instalar Grafana**
 
-Descargar **Standalone Linux Binaries** desde https://grafana.com/grafana/download el instalador 
+Descargar **Standalone Linux Binaries** desde https://grafana.com/grafana/download
+
 grafana-12.0.2.linux-amd64.tar.gz (la versión puede variar)
 
-El siguiente paso es:
+El siguiente paso es ejecutar:
+
 tar -xzf grafana-12.0.2.linux-amd64.tar.gz
 
 ![path](/images/k6-vms-grafana/path_grafana.png)
 
+Listo!!! deberias poder entrar desde la url:  
 
+http://localhost:3000/
 
+![path](/images/k6-vms-grafana/site_grafana.png)
 
 
 ## **🔹 Pruebas de Carga en los Tópicos: ¿Por qué Importan?**  

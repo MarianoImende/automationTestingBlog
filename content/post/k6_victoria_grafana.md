@@ -15,7 +15,7 @@ type: page
 
 Procedimiento probado en linux Ubuntu 24.04 y SUSE Linux Enterprise Server 15 SP6.
 
-## **🔹 Instalacion de Victoria Metrics **
+✅ **1. Instalacion de Victoria Metrics**
 
 VictoriaMetrics es una solución de monitorización y base de datos de series temporales rápida, rentable y escalable.
 
@@ -36,9 +36,28 @@ luego ejecutar victoria metric de la siguiente manera:
 
 🔹 **storageDataPath** VictoriaMetrics almacena todos los datos en este directorio. La ruta predeterminada es victoria-metrics-data el directorio de trabajo actual.
 
-🔹 **retentionPeriod** Retención de datos almacenados. Los datos antiguos se eliminan automáticamente. El periodo de retención predeterminado es de 1 mes (31 días). El periodo mínimo de retención es de 24 horas o 1 dí
+🔹 **retentionPeriod** Retención de datos almacenados. Los datos antiguos se eliminan automáticamente. El periodo de retención predeterminado es de 1 mes (31 días). El periodo mínimo de retención es de 24 horas o 1 día.
 
 ![path](/images/k6-vms-grafana/path_victoriametrics.png)
+
+Podes chequear que victoria metrics quedo funcionando asi:
+
+http://IP:8428/
+
+![path](/images/k6-vms-grafana/site_vms.png)
+
+✅ **2. Instalar Grafana**
+
+Descargar **Standalone Linux Binaries** desde https://grafana.com/grafana/download el instalador 
+grafana-12.0.2.linux-amd64.tar.gz (la versión puede variar)
+
+El siguiente paso es:
+tar -xzf grafana-12.0.2.linux-amd64.tar.gz
+
+![path](/images/k6-vms-grafana/path_grafana.png)
+
+
+
 
 
 ## **🔹 Pruebas de Carga en los Tópicos: ¿Por qué Importan?**  

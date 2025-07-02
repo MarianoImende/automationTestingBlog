@@ -38,6 +38,7 @@ luego ejecutar victoria metric de la siguiente manera:
 
 🔹 **retentionPeriod** Retención de datos almacenados. Los datos antiguos se eliminan automáticamente. El periodo de retención predeterminado es de 1 mes (31 días). El periodo mínimo de retención es de 24 horas o 1 dí
 
+![path](/images/k6-vms-grafana/path_victoriametrics.png)
 
 
 ## **🔹 Pruebas de Carga en los Tópicos: ¿Por qué Importan?**  

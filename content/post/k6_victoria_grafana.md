@@ -64,6 +64,56 @@ http://localhost:3000/
 
 ![path](/images/k6-vms-grafana/site_grafana.png)
 
+**user: admin**
+**password: admin**
+
+
+✅ **3. Crear la conexión desde grafana a VictoriaMetrics**
+
+Se debe crear realizando los siguientes pasos:
+
+![path](/images/k6-vms-grafana/ds_grafana.png)
+
+![path](/images/k6-vms-grafana/new_ds_grafana.png)
+
+En principio, solo setear los siguientes parametros, luego podes editar el resto en base a criterios propios
+
+![path](/images/k6-vms-grafana/prop_ds_grafana.png)
+
+✅ **4. Script de K6**
+
+A modo de sugerencia, el script de K6 debe tener el **tag "name"** que nos ayudara a identificar cada peticion http 
+en grafana:
+
+```javascript
+import http from 'k6/http';
+import { sleep } from 'k6';
+
+// Lista de endpoints de ejemplo
+const endpoints = [
+    '/api/foo',
+    '/api/bar',
+    '/api/baz',
+];
+
+// Config
+export const options = {
+    vus: 1,
+    duration: '30s',
+};
+
+export default function () {
+    // Elegir endpoint random
+    const ep = endpoints[Math.floor(Math.random() * endpoints.length)];
+
+    // Hacer request con tag `name`
+    http.get(`https://httpbin.test.k6.io${ep}`, {
+        tags: { name: ep }
+    });
+
+    sleep(1);
+}
+```
 
 ## **🔹 Pruebas de Carga en los Tópicos: ¿Por qué Importan?**  
 

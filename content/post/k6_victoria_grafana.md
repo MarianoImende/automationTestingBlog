@@ -99,8 +99,8 @@ const endpoints = [
 
 // Config
 export const options = {
-    vus: 1,
-    duration: '30s',
+    vus: 4,
+    duration: '60s',
 };
 
 export default function () {
@@ -114,6 +114,25 @@ export default function () {
 
     sleep(1);
 }
+```
+
+Además, podemos tener un bash para facilitar la ejecucion del script de k6 junto a toda la integracion realizada:
+
+```bash
+#!/bin/bash
+
+PROM_URL="http://<IP_De_VictoriaMetrics>:8428/api/v1/write"
+TREND_STATS="min,avg,med,p(90),p(95),p(99),max"
+
+(
+  export K6_PROMETHEUS_RW_TREND_STATS="$TREND_STATS"
+  export K6_PROMETHEUS_RW_SERVER_URL="$PROM_URL"
+  export K6_PROMETHEUS_RW_PUSH_INTERVAL=1s
+
+  ./k6 run --no-connection-reuse -o experimental-prometheus-rw script.js
+)
+wait
+
 ```
 
 ## **🔹 Pruebas de Carga en los Tópicos: ¿Por qué Importan?**  

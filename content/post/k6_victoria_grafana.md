@@ -56,6 +56,8 @@ Ejemplo usado: grafana-12.0.2.linux-amd64.tar.gz
 
 tar -xzf grafana-12.0.2.linux-amd64.tar.gz
 
+/grafana-v12.0.2$ ./bin/grafana server
+
 ```
 
 ![path](/images/k6-vms-grafana/path_grafana.png)

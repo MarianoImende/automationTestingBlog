@@ -2,9 +2,9 @@
 date: 2025-01-06
 title: "K6 + Victoria Metrics + Grafana 🚀"
 description: "⚔️ Integración de K6, Victoria Metrics y Grafana para monitoreo de performance ⚔️"
-featured_image: "/images/k6-kafka/k6-kafka.webp"
+featured_image: "/images/k6-vms-grafana/portada.png"
 cascade:
-  featured_image: "/images/k6-kafka/k6-kafka.webp"
+  featured_image: "/images/k6-vms-grafana/portada.png"
 tags: []
 disable_share: true
 omit_header_text: false

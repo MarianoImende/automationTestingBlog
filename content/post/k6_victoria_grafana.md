@@ -65,6 +65,7 @@ http://localhost:3000/
 ![path](/images/k6-vms-grafana/site_grafana.png)
 
 **user: admin**
+
 **password: admin**
 
 

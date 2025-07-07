@@ -11,6 +11,10 @@ omit_header_text: false
 type: page
 ---
 
+🧩 En este tutorial dejo mi procedimiento comprobado para integrar K6, Victoria Metrics y Grafana, ideal para stress testing y monitoreo serio de cargas.
+Un solo flujo, claro y sin sorpresas: de la instalación al dashboard listo para producción.
+Dale poder a tus métricas.
+
 ## 🔹 **Contexto**
 
 Procedimiento probado en **Ubuntu 24.04** y **SUSE Linux Enterprise Server 15 SP6**.
@@ -68,13 +72,13 @@ http://localhost:3000/
 
 ✅ **3.  Conectar Grafana a Victoria Metrics**
 
-**🔹Crear nuevo Data Source.
+- 📌 **Crear nuevo Data Source.**
 
-**🔹Usar VictoriaMetrics como tipo.
+- 📌 **Usar VictoriaMetrics como tipo.**
 
-Configurar los parámetros básicos.
+- 📌 **Configurar los parámetros básicos.**
 
-Guardar y testear.
+- 📌 **Guardar y testear.**
 
 Se debe crear realizando los siguientes pasos:
 
@@ -82,14 +86,13 @@ Se debe crear realizando los siguientes pasos:
 
 ![path](/images/k6-vms-grafana/new_ds_grafana.png)
 
-En principio, solo setear los siguientes parametros, luego podes editar el resto en base a criterios propios
+En principio, solo setear los siguientes parámetros, luego podes editar el resto en base a criterios propios
 
 ![path](/images/k6-vms-grafana/prop_ds_grafana.png)
 
 ✅ **4. Script de K6**
 
-A modo de sugerencia, el script de K6 debe tener el **tag "name"** que nos ayudara a identificar cada peticion http 
-en grafana:
+Sugerencia: usar el **tag "name"** para identificar cada request en Grafana:
 
 ```javascript
 import http from 'k6/http';
@@ -121,9 +124,10 @@ export default function () {
 }
 ```
 
-Además, podemos tener un bash para facilitar la ejecucion del script de k6 junto a toda la integracion realizada:
+✅ **5. Bash para ejecución**
 
 ```bash
+
 #!/bin/bash
 
 PROM_URL="http://<IP_De_VictoriaMetrics>:8428/api/v1/write"
@@ -140,20 +144,29 @@ wait
 
 ```
 
-Los siguientes recursos pueden ser de mucha utilidad para enriquecer todo los visto en este post:
-
-**🔹Dashboard de grafana:**
-
-https://github.com/MarianoImende/k6/blob/main/dashboard_grafana/K6%20VictoriaMetrics.json
-
-**🔹full script de k6:**
-
-https://github.com/MarianoImende/k6.git
-
-
 **📊 Vista del Dashboard de grafana:**  
 
 ![path](/images/k6-vms-grafana/dashboard_grafana.png)
+
+✅ **Recursos útiles**
+
+**🔹Dashboard de grafana:**
+
+[K6 VictoriaMetrics JSON](https://github.com/MarianoImende/k6/blob/main/dashboard_grafana/K6%20VictoriaMetrics.json)
+
+
+**🔹 Script completo de K6:**
+
+[Script](https://github.com/MarianoImende/k6.git)
+
+
+✅ **Tips finales**
+
+📌 Revisá puertos abiertos (8428 para VictoriaMetrics, 3000 para Grafana).
+
+📌 Personalizá retención y paths según tu entorno productivo.
+
+📌 Probá tus dashboards y ajustá filtros/tags para optimizar métricas.
 
 
 🔥 Muchisimos exitos en tu implementación. 🚀

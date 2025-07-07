@@ -1,46 +1,42 @@
 ---
 date: 2025-01-06
-description: "⚔️ K6 + Victoria Metrics + Grafana ⚔️"
+title: "K6 + Victoria Metrics + Grafana 🚀"
+description: "⚔️ Integración de K6, Victoria Metrics y Grafana para monitoreo de performance ⚔️"
 featured_image: "/images/k6-kafka/k6-kafka.webp"
 cascade:
-   featured_image: "/images/k6-kafka/k6-kafka.webp"
+  featured_image: "/images/k6-kafka/k6-kafka.webp"
 tags: []
-title: "K6 + Victoria Metrics + Grafana 🚀"
 disable_share: true
-omit_header_text: false #achica la imagen
+omit_header_text: false
 type: page
 ---
 
-## **🔹 Contexto **
+## 🔹 **Contexto**
 
-Procedimiento probado en linux Ubuntu 24.04 y SUSE Linux Enterprise Server 15 SP6.
+Procedimiento probado en **Ubuntu 24.04** y **SUSE Linux Enterprise Server 15 SP6**.
 
-✅ **1. Instalacion de Victoria Metrics**
+---
 
-VictoriaMetrics es una solución de monitorización y base de datos de series temporales rápida, rentable y escalable.
+## ✅ **1. Instalar Victoria Metrics**
 
-Instalacion de la Versión de un solo nodo:
-Single-node version: binario todo en uno fácil de ejecutar y mantener. Se escala verticalmente a la perfección y gestiona fácilmente millones de métricas.
+**VictoriaMetrics** es una base de datos de series temporales, rápida, escalable y económica.
 
-descargar 
-https://github.com/VictoriaMetrics/VictoriaMetrics/releases/latest
+- Descargá la versión *single-node*: [Releases](https://github.com/VictoriaMetrics/VictoriaMetrics/releases/latest)  
+- Para este ejemplo (julio 2025) se usó: `victoria-metrics-linux-amd64-v1.120.0.tar.gz`
 
-al momento del presente tutorial (07-2025), se utilizo la version "victoria-metrics-linux-amd64-v1.120.0.tar.gz"
+```bash
 
-luego ejecutar:
 tar -zxvf victoria-metrics-linux-amd64-v1.120.0.tar.gz
-
-luego ejecutar victoria metric de la siguiente manera:
-
 ./victoria-metrics-prod -retentionPeriod=1 -storageDataPath=./victoria-metrics-data
 
+```
 🔹 **storageDataPath** VictoriaMetrics almacena todos los datos en este directorio. La ruta predeterminada es victoria-metrics-data el directorio de trabajo actual.
 
 🔹 **retentionPeriod** Retención de datos almacenados. Los datos antiguos se eliminan automáticamente. El periodo de retención predeterminado es de 1 mes (31 días). El periodo mínimo de retención es de 24 horas o 1 día.
 
 ![path](/images/k6-vms-grafana/path_victoriametrics.png)
 
-Podes chequear que victoria metrics quedo funcionando asi:
+Verificá que esté corriendo:
 
 http://IP:8428/
 
@@ -48,17 +44,19 @@ http://IP:8428/
 
 ✅ **2. Instalar Grafana**
 
-Descargar **Standalone Linux Binaries** desde https://grafana.com/grafana/download
+Descargar **Standalone Linux Binaries** desde [Grafana Downloads](https://grafana.com/grafana/download)
 
-grafana-12.0.2.linux-amd64.tar.gz (la versión puede variar)
+Ejemplo usado: grafana-12.0.2.linux-amd64.tar.gz
 
-El siguiente paso es ejecutar:
+```bash
 
 tar -xzf grafana-12.0.2.linux-amd64.tar.gz
 
+```
+
 ![path](/images/k6-vms-grafana/path_grafana.png)
 
-Listo!!! deberias poder entrar desde la url:  
+Accedé a Grafana:
 
 http://localhost:3000/
 
@@ -68,8 +66,15 @@ http://localhost:3000/
 
 **password: admin**
 
+✅ **3.  Conectar Grafana a Victoria Metrics**
 
-✅ **3. Crear la conexión desde grafana a VictoriaMetrics**
+**🔹Crear nuevo Data Source.
+
+**🔹Usar VictoriaMetrics como tipo.
+
+Configurar los parámetros básicos.
+
+Guardar y testear.
 
 Se debe crear realizando los siguientes pasos:
 

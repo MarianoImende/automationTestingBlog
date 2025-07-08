@@ -150,16 +150,17 @@ wait
 
 ```
 
+**🔹Dashboard de grafana:**
+
+Tenes que importar el siguiente json en tu grafana:
+
+[grafana dashboard JSON](https://github.com/MarianoImende/k6/blob/main/dashboard_grafana/K6%20VictoriaMetrics.json)
+
 **📊 Vista del Dashboard de grafana:**  
 
 ![path](/images/k6-vms-grafana/dashboard_grafana.png)
 
 ✅ **Recursos útiles**
-
-**🔹Dashboard de grafana:**
-
-[grafana dashboard JSON](https://github.com/MarianoImende/k6/blob/main/dashboard_grafana/K6%20VictoriaMetrics.json)
-
 
 **🔹 Script completo de K6:**
 

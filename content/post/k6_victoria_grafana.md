@@ -28,10 +28,12 @@ Procedimiento probado en **Ubuntu 24.04** y **SUSE Linux Enterprise Server 15 SP
 - Descargá la versión *single-node*: [Releases](https://github.com/VictoriaMetrics/VictoriaMetrics/releases/latest)  
 - Para este ejemplo (julio 2025) se usó: `victoria-metrics-linux-amd64-v1.120.0.tar.gz`
 
+Deja corriendo y recupera la terminal:
+
 ```bash
 
 tar -zxvf victoria-metrics-linux-amd64-v1.120.0.tar.gz
-./victoria-metrics-prod -retentionPeriod=1 -storageDataPath=./victoria-metrics-data
+./victoria-metrics-prod -retentionPeriod=1 -storageDataPath=./victoria-metrics-data &
 
 ```
 🔹 **storageDataPath** VictoriaMetrics almacena todos los datos en este directorio. La ruta predeterminada es victoria-metrics-data el directorio de trabajo actual.
@@ -42,7 +44,7 @@ tar -zxvf victoria-metrics-linux-amd64-v1.120.0.tar.gz
 
 Verificá que esté corriendo:
 
-http://IP:8428/
+http://localhost:8428/
 
 ![path](/images/k6-vms-grafana/site_vms.png)
 
@@ -52,11 +54,13 @@ Descargar **Standalone Linux Binaries** desde [Grafana Downloads](https://grafan
 
 Ejemplo usado: grafana-12.0.2.linux-amd64.tar.gz
 
+Deja corriendo y recupera la terminal:
+
 ```bash
 
 tar -xzf grafana-12.0.2.linux-amd64.tar.gz
 
-/grafana-v12.0.2$ ./bin/grafana server
+/grafana-v12.0.2$ ./bin/grafana server &
 
 ```
 
@@ -109,8 +113,8 @@ const endpoints = [
 
 // Config
 export const options = {
-    vus: 4,
-    duration: '60s',
+    vus: 10,
+    duration: '120s',
 };
 
 export default function () {
@@ -118,7 +122,7 @@ export default function () {
     const ep = endpoints[Math.floor(Math.random() * endpoints.length)];
 
     // Hacer request con tag `name`
-    http.get(`https://httpbin.test.k6.io${ep}`, {
+    http.get(`https://server${ep}`, {
         tags: { name: ep }
     });
 
@@ -126,13 +130,13 @@ export default function () {
 }
 ```
 
-✅ **5. Bash para ejecución**
+✅ **5. Bash para ejecución el script de k6**
 
 ```bash
 
 #!/bin/bash
 
-PROM_URL="http://<IP_De_VictoriaMetrics>:8428/api/v1/write"
+PROM_URL="http://localhost:8428/api/v1/write"
 TREND_STATS="min,avg,med,p(90),p(95),p(99),max"
 
 (
@@ -154,7 +158,7 @@ wait
 
 **🔹Dashboard de grafana:**
 
-[K6 VictoriaMetrics JSON](https://github.com/MarianoImende/k6/blob/main/dashboard_grafana/K6%20VictoriaMetrics.json)
+[grafana dashboard JSON](https://github.com/MarianoImende/k6/blob/main/dashboard_grafana/K6%20VictoriaMetrics.json)
 
 
 **🔹 Script completo de K6:**
@@ -170,6 +174,7 @@ wait
 
 📌 Probá tus dashboards y ajustá filtros/tags para optimizar métricas.
 
+---------------------------------------------------------------
 
 🔥 Muchisimos exitos en tu implementación. 🚀
 

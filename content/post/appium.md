@@ -26,12 +26,13 @@ Guía completa para preparar una laptop nueva y dejarla lista para automatizar t
 
 - Instalar un **JDK** (OpenJDK/Temurin 11 o 17). (ruta de instalación opcional, por ejemplo: C:\jdk-21.0.10.7-hotspot)
   (https://adoptium.net/es/temurin/releases)
+  
 - Configurar variables de entorno de usuario:
   rundll32.exe sysdm.cpl,EditEnvironmentVariables
 
   - `JAVA_HOME`
   - Agregar `%JAVA_HOME%\bin` a `PATH`
-  - 
+    
 ![ANDROID_HOME](/images/appium/1.png)
 
 ![ANDROID_HOME](/images/appium/2.png)
@@ -43,15 +44,16 @@ Guía completa para preparar una laptop nueva y dejarla lista para automatizar t
 
 ![ANDROID_HOME](/images/appium/3.png)
 
- es probable que la carpeta AppData se encuentre oculta:
+ "Es probable que la carpeta AppData se encuentre oculta":
 
 ![ANDROID_HOME](/images/appium/4.png)
-  
+
+
 - Agregar `%ANDROID_HOME%\platform-tools` al `PATH`
 
 ![ANDROID_HOME](/images/appium/5.png)
 
-Verificar que funciona:
+- Verificar que funciona:
 
 ```bash
 adb version
@@ -64,7 +66,7 @@ adb version
   
 ![ANDROID_HOME](/images/appium/7.png)
 
-Validar instalación
+- Validar instalación
 
 ```bash
 node --version
@@ -78,7 +80,7 @@ npm install -g appium
 ```
 ![ANDROID_HOME](/images/appium/8.png)
 
-validar instalacion:
+- validar instalacion:
 
 ```bash
 appium -v
@@ -106,7 +108,7 @@ appium
 - Activar Depuración USB en Opciones de desarrollador.
   Conectar el celular por USB a la laptop y aceptar el mensaje de “Permitir depuración USB”.
 
--Verificar que ADB lo ve:
+- Verificar que ADB lo ve:
 
 ```bash
 adb devices
@@ -162,9 +164,15 @@ Si al momento de iniciar sesión se presenta un error del tipo:
 
 ```
 Error
-WebDriverError: Error getting device platform version. Original error: Error executing adbExec. Original error: 'Command ''C:\Users\pepe\AppData\Local\Android\Sdk\platform-
-tools\adb.exe' -P 5037 -s R5CW82BQSYD shell getprop ro.build.version.release' exited with code 1'; Command output: adb.exe: device unauthorized. This adb server's $ADB_VENDOR_KEYS is not set Try 'adb kill-server' if that seems wrong. Otherwise check for a confirmation dialog on your device. when running "http://127.1.1.1:4723/session" with method "POST"
+WebDriverError: Error getting device platform version. Original error: Error executing adbExec.
+Original error: 'Command ''C:\Users\pepe\AppData\Local\Android\Sdk\platform-
+tools\adb.exe' -P 5037 -s R5CW82BQSYD shell getprop ro.build.version.release'
+exited with code 1'; Command output: adb.exe: device unauthorized. This adb server's
+$ADB_VENDOR_KEYS is not set Try 'adb kill-server' if that seems wrong. Otherwise check
+for a confirmation dialog on your device. when running "http://127.1.1.1:4723/session"
+ with method "POST"
 ```
+
 Debemos “permitir depuración por USB” en el celular conectado por medio de un cable USB a nuestra computadora.
 ---
 

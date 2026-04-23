@@ -6,7 +6,6 @@ tags: ["appium", "performance", "automatizacion"]
 description: "Guía completa para preparar una laptop nueva y dejarla lista para automatizar tests con Python + Pytest + Appium (Android)."
 ---
 
-
 # 📱 Setup Appium con Python + Pytest (Android)
 
 Guía completa para preparar una laptop nueva y dejarla lista para automatizar tests con **Python + Pytest + Appium (Android)**.
@@ -22,6 +21,8 @@ Guía completa para preparar una laptop nueva y dejarla lista para automatizar t
 
 - Instalar **Visual Studio Code**
 
+---
+
 ## 3. Java + Android SDK (para poder usar UiAutomator2)
 
 - Instalar un **JDK** (OpenJDK/Temurin 11 o 17). (ruta de instalación opcional, por ejemplo: C:\jdk-21.0.10.7-hotspot)
@@ -35,8 +36,11 @@ Guía completa para preparar una laptop nueva y dejarla lista para automatizar t
     
 ![ANDROID_HOME](/images/appium/1.png)
 
+
 ![ANDROID_HOME](/images/appium/2.png)
-  
+
+---
+
 ## 4. Instalar Android Studio
 
 - https://developer.android.com/
@@ -59,6 +63,8 @@ Guía completa para preparar una laptop nueva y dejarla lista para automatizar t
 adb version
 ```
 ![ANDROID_HOME](/images/appium/6.png)
+
+---
  
 ## 5. Node.js
 
@@ -72,6 +78,7 @@ adb version
 node --version
 v24.4.1
 ```
+---
 
 ## 6. Instalar Appium Server
 
@@ -85,12 +92,16 @@ npm install -g appium
 ```bash
 appium -v
 ```
+---
+
 ## 7. Instalar el driver de Android:
 
 ```bash
 appium driver install uiautomator2
 ```
 ![ANDROID_HOME](/images/appium/9.png)
+
+---
 
 ## 8. Ejecutar Appium
 
@@ -99,6 +110,7 @@ appium
 ```
 ![ANDROID_HOME](/images/appium/10.png)
 
+---
 
 ## 9. Configurar celular Android
 
@@ -119,6 +131,8 @@ adb devices
 - Dejar un PIN numérico simple si querés usar unlock automático con Appium.
 - Desactivar biometría (huella) si te molesta para los tests.
 
+---
+
 ## 10. Entorno Python para los tests
 
 ```bash
@@ -128,6 +142,8 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
+---
+
 ## 11. Dependencias
 
 ```bash
@@ -135,6 +151,7 @@ pip install --upgrade pip
 pip install appium-python-client selenium pytest
 pip freeze > requirements.txt
 ```
+---
 
 ## 12. Appium Inspector
 
@@ -174,6 +191,7 @@ for a confirmation dialog on your device. when running "http://127.1.1.1:4723/se
 ```
 
 Debemos “permitir depuración por USB” en el celular conectado por medio de un cable USB a nuestra computadora.
+
 ---
 
 ✅ Entorno listo para automatizar.

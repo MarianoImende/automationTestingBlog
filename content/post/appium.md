@@ -1,3 +1,11 @@
+---
+title: "📱 Setup Appium con Python + Pytest (Android)"
+featured_image: "/images/appium/0.webp"
+date: 2024-07-13
+tags: ["appium", "performance", "automatizacion"]
+description: "Guía completa para preparar una laptop nueva y dejarla lista para automatizar tests con Python + Pytest + Appium (Android)."
+---
+
 
 # 📱 Setup Appium con Python + Pytest (Android)
 

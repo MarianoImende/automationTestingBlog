@@ -24,38 +24,40 @@ Guía completa para preparar una laptop nueva y dejarla lista para automatizar t
   - `JAVA_HOME`
   - Agregar `%JAVA_HOME%\bin` a `PATH`
   - 
-  ![ANDROID_HOME](images/appium/1.png)
+![ANDROID_HOME](/images/appium/1.png)
 
-  ![ANDROID_HOME](images/appium/2.png)
+![ANDROID_HOME](/images/appium/2.png)
   
 ## 4. Instalar Android Studio
 
 - https://developer.android.com/
 - Configurar `ANDROID_HOME` apuntando al SDK
 
- ![ANDROID_HOME](images/appium/3.png)
+![ANDROID_HOME](/images/appium/3.png)
 
  es probable que la carpeta AppData se encuentre oculta:
 
- ![ANDROID_HOME](images/appium/4.png)
+![ANDROID_HOME](/images/appium/4.png)
   
 - Agregar `%ANDROID_HOME%\platform-tools` al `PATH`
 
- ![ANDROID_HOME](images/appium/5.png)
+![ANDROID_HOME](/images/appium/5.png)
 
 Verificar que funciona:
 
 ```bash
 adb version
 ```
- ![ANDROID_HOME](images/appium/6.png)
+![ANDROID_HOME](/images/appium/6.png)
  
 ## 5. Node.js
 
 - Instalar **Node.js LTS**
- ![ANDROID_HOME](images/appium/7.png)
+  
+![ANDROID_HOME](/images/appium/7.png)
 
 Validar instalación
+
 ```bash
 node --version
 v24.4.1
@@ -66,7 +68,7 @@ v24.4.1
 ```bash
 npm install -g appium
 ```
-![ANDROID_HOME](images/appium/8.png)
+![ANDROID_HOME](/images/appium/8.png)
 
 validar instalacion:
 
@@ -78,14 +80,14 @@ appium -v
 ```bash
 appium driver install uiautomator2
 ```
-![ANDROID_HOME](images/appium/9.png)
+![ANDROID_HOME](/images/appium/9.png)
 
 ## 8. Ejecutar Appium
 
 ```bash
 appium
 ```
-![ANDROID_HOME](images/appium/10.png)
+![ANDROID_HOME](/images/appium/10.png)
 
 
 ## 9. Configurar celular Android
@@ -101,7 +103,7 @@ appium
 ```bash
 adb devices
 ```
-![ANDROID_HOME](images/appium/11.png)
+![ANDROID_HOME](/images/appium/11.png)
 
 (Opcional) Ajustar bloqueo de pantalla:
 - Dejar un PIN numérico simple si querés usar unlock automático con Appium.
@@ -160,4 +162,4 @@ Debemos “permitir depuración por USB” en el celular conectado por medio de 
 
 ✅ Entorno listo para automatizar.
 
-![ANDROID_HOME](images/appium/12.png)
+![ANDROID_HOME](/images/appium/12.png)

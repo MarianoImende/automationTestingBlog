@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Wiremock on Automation
+&amp;
+Performance
+testing</title>
+		<link>https://automationtesting.ar/tags/wiremock/</link>
+		<description>Recent content in Wiremock on Automation
+&amp;
+Performance
+testing</description>
+		<generator>Hugo</generator>
+		<language>es-ar</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 25 Oct 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://automationtesting.ar/tags/wiremock/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>💻 Wiremock como Servicio en Windows</title>
+				<link>https://automationtesting.ar/post/mssn-wiremock/</link>
+				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/post/mssn-wiremock/</guid>
+				<description>&lt;h1 id=&#34;wiremock-como-servicio-en-windows&#34;&gt;Wiremock como Servicio en Windows&lt;/h1&gt;&#xA;&lt;p&gt;En esta guía, veremos cómo configurar &lt;strong&gt;Wiremock&lt;/strong&gt; como un servicio en Windows, utilizando la herramienta &lt;strong&gt;NSSM (Non-Sucking Service Manager)&lt;/strong&gt;, que facilita la instalación y administración de servicios.&#xA;&lt;strong&gt;Para el presente ejemplo, WireMock y NSSM deben estar instalados en la misma computadora con sistema operativo Windows y además, respetando los nombres de los directorios de este tutorial.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;instalación-del-servicio&#34;&gt;Instalación del Servicio&lt;/h2&gt;&#xA;&lt;p&gt;Para instalar Wiremock como un servicio, utilizaremos &lt;strong&gt;NSSM&lt;/strong&gt;. Puedes descargar NSSM desde su sitio oficial: &lt;a href=&#34;https://nssm.cc/download&#34;&gt;nssm.cc/download&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>📤 Wiremock en automatizacón de pruebas</title>
+				<link>https://automationtesting.ar/post/wiremock/</link>
+				<pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/post/wiremock/</guid>
+				<description>&lt;p&gt;WireMock es útil en testing automatizado porque permite simular servicios y APIs externas de manera controlada, sin depender de sistemas externos reales. Con WireMock, puedes configurar respuestas predefinidas (stubs) para distintas solicitudes HTTP, lo que facilita probar cómo responde tu aplicación en diferentes escenarios, incluyendo casos de errores y latencia. Esto permite hacer pruebas más rápidas, repetibles y aisladas, ideal para entornos de CI/CD donde la consistencia y el tiempo de ejecución son cruciales.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

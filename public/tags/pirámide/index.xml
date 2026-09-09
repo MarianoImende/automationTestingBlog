@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Pirámide on Automation
+&amp;
+Performance
+testing</title>
+		<link>http://localhost:1313/tags/pir%C3%A1mide/</link>
+		<description>Recent content in Pirámide on Automation
+&amp;
+Performance
+testing</description>
+		<generator>Hugo</generator>
+		<language>es-ar</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 14 May 2023 11:25:05 -0400</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/pir%C3%A1mide/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>🔺 Pirámide de automatización</title>
+				<link>http://localhost:1313/post/piramide/</link>
+				<pubDate>Sun, 14 May 2023 11:25:05 -0400</pubDate>
+				<guid>http://localhost:1313/post/piramide/</guid>
+				<description>&lt;h1 id=&#34;-la-pirámide-de-pruebas-según-mike-cohn&#34;&gt;🔺 La Pirámide de Pruebas según Mike Cohn&lt;/h1&gt;&#xA;&lt;p&gt;Mike Cohn ha discutido y promovido este modelo en sus libros y presentaciones sobre desarrollo ágil y gestión de proyectos, destacando su importancia para la calidad del software y la eficiencia en las prácticas de prueba.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/piramide.png&#34; alt=&#34;Pirámide&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;base-de-la-pirámide---pruebas-unitarias&#34;&gt;Base de la pirámide - Pruebas Unitarias&lt;/h2&gt;&#xA;&lt;p&gt;Las pruebas unitarias constituyen la base de la pirámide. Son pruebas automatizadas que verifican el funcionamiento correcto de unidades individuales de código, como funciones, métodos o componentes pequeños.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

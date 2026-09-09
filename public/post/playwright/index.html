@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>🎭 Playwright con Python: Base UI Automation (POM) | Automation
+&amp;
+Performance
+testing</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Guía didáctica para implementar automatización de pruebas UI con Playwright y Python usando Page Object Model.">
+    <meta name="generator" content="Hugo 0.165.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="Mariano Imende">
+    
+
+    <link rel="stylesheet" href="/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous"><link rel="stylesheet" href="/css/custom.css">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://automationtesting.ar/post/playwright/">
+    
+
+    <meta property="og:url" content="https://automationtesting.ar/post/playwright/">
+	<meta property="og:site_name" content="Automation
+&
+Performance
+testing">
+	<meta property="og:title" content="🎭 Playwright con Python: Base UI Automation (POM)">
+	<meta property="og:description" content="Guía didáctica para implementar automatización de pruebas UI con Playwright y Python usando Page Object Model.">
+	<meta property="og:locale" content="es_ar">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="post">
+		<meta property="article:published_time" content="2024-08-20T00:00:00+00:00">
+		<meta property="article:modified_time" content="2024-08-20T00:00:00+00:00">
+		<meta property="article:tag" content="Playwright">
+		<meta property="article:tag" content="Python">
+		<meta property="article:tag" content="Pom">
+		<meta property="article:tag" content="Automatizacion">
+		<meta property="article:tag" content="Testing">
+
+	<meta itemprop="name" content="🎭 Playwright con Python: Base UI Automation (POM)">
+	<meta itemprop="description" content="Guía didáctica para implementar automatización de pruebas UI con Playwright y Python usando Page Object Model.">
+	<meta itemprop="datePublished" content="2024-08-20T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2024-08-20T00:00:00+00:00">
+	<meta itemprop="wordCount" content="362">
+	<meta itemprop="keywords" content="Playwright,Python,Pom,Automatizacion,Testing">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="🎭 Playwright con Python: Base UI Automation (POM)">
+	<meta name="twitter:description" content="Guía didáctica para implementar automatización de pruebas UI con Playwright y Python usando Page Object Model.">
+
+      
+    
+    
+<script>
+  (function() {
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+  </head>
+
+  <body class="site-body kind-page type-post">
+    
+  
+  <div id="reading-progress-container" class="reading-progress-container">
+    <div id="reading-progress-bar" class="reading-progress-bar"></div>
+  </div>
+  <nav class="modern-navbar" role="navigation">
+  <div class="nav-container">
+    <a href="/" class="nav-brand">
+      <span class="brand-icon">⚡</span>
+      <span class="brand-text">Automation<span class="brand-accent">&amp;</span>Performance</span>
+    </a>
+
+    <div class="nav-menu-wrapper">
+      
+        <ul class="nav-links">
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/">
+              Inicio
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/post/">
+              Artículos y Tutoriales
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/about/">
+              Sobre Mí (CV)
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/contact/">
+              Contacto
+            </a>
+          </li>
+          
+        </ul>
+      
+
+      <div class="nav-actions">
+        
+        <button type="button" class="search-trigger-btn" id="search-trigger-btn" aria-label="Buscar en el blog" title="Buscar (Ctrl + K)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="search-kbd">Ctrl K</span>
+        </button>
+
+        
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema de color" title="Alternar Modo Oscuro/Claro">
+          <i class="fa-solid fa-moon theme-icon-moon"></i>
+          <i class="fa-solid fa-sun theme-icon-sun"></i>
+        </button>
+
+        
+        <div class="nav-socials">
+          
+            <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          
+          
+            <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          
+          
+            <a href="mailto:imende.mariano@gmail.com" class="social-icon-btn" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <main role="main" class="site-main">
+      
+  <article class="single-post-container">
+    
+    <header class="single-post-header">
+      <div class="post-breadcrumb">
+        <a href="/" class="breadcrumb-link"><i class="fa-solid fa-house"></i> Inicio</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="/post/" class="breadcrumb-link">Artículos</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">🎭 Playwright con Python: Base UI Automation (POM)</span>
+      </div>
+
+      <h1 class="single-post-title">🎭 Playwright con Python: Base UI Automation (POM)</h1>
+
+      <div class="single-post-meta">
+        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 20/08/2024</span>
+        <span class="meta-item"><i class="fa-regular fa-clock"></i> 2 min de lectura</span>
+        <span class="meta-item"><i class="fa-solid fa-user-pen"></i> Mariano Imende</span>
+      </div>
+
+      
+        <div class="single-post-tags">
+          
+            <a href="/tags/playwright/" class="tag-chip tag-playwright">#playwright</a>
+          
+            <a href="/tags/python/" class="tag-chip tag-python">#python</a>
+          
+            <a href="/tags/pom/" class="tag-chip tag-pom">#pom</a>
+          
+            <a href="/tags/automatizacion/" class="tag-chip tag-automatizacion">#automatizacion</a>
+          
+            <a href="/tags/testing/" class="tag-chip tag-testing">#testing</a>
+          
+        </div>
+      
+
+      
+        <div class="single-post-featured-image-wrap">
+          <img src="https://automationtesting.ar/images/posts.jpg" alt="🎭 Playwright con Python: Base UI Automation (POM)" class="single-post-featured-image" />
+        </div>
+      
+    </header>
+
+    
+    <div class="single-post-layout">
+      
+      <main class="single-post-content post-content" id="article-body">
+        <h1 id="base-ui-automation-con-playwright--python">Base UI Automation con Playwright + Python</h1>
+<p>Este proyecto es una <strong>base simple y didáctica</strong> usando Page Object Model para automatizar:</p>
+<ul>
+<li><a href="https://walletchallenge-front.onrender.com/">https://walletchallenge-front.onrender.com/</a></li>
+</ul>
+<p>La idea es que el código sea fácil de leer para personas que recién empiezan.</p>
+<p>El objetivo del ejercicio es automatizar, el login, (usuario y password &ldquo;challenge&rdquo;), cuentas y saldos utilizando el patron de diseño Page Object Model.</p>
+<h2 id="instalación-del-entorno-windows--wslubuntu--vscode">Instalación del entorno (Windows / WSL(Ubuntu) / VSCode)</h2>
+<ul>
+<li>Solo si estas en Ubuntu:</li>
+</ul>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install python3-venv</span></span></code></pre></div>
+  </div><ul>
+<li>Crear entorno virtual</li>
+</ul>
+<p>Windows:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python -m venv venv</span></span></code></pre></div>
+  </div><p>Ubuntu:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 -m venv venv</span></span></code></pre></div>
+  </div><p>Esto crea la carpeta venv/ dentro del proyecto.</p>
+<ul>
+<li>Activar entorno virtual</li>
+</ul>
+<p>Ubuntu:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>      source venv/bin/activate</span></span></code></pre></div>
+  </div><p>Windows:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>      venv/bin/activate</span></span></code></pre></div>
+  </div><p>Si salió bien, vas a ver el prefijo (venv) en la consola:</p>
+<p>(venv) ruta del proyecto/proyecto$</p>
+<ul>
+<li>Actualizar pip (recomendado) (Windows y Ubuntu)</li>
+</ul>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>      pip install --upgrade pip</span></span></code></pre></div>
+  </div><ul>
+<li>Instalar dependencias necesarias (Windows y Ubuntu)</li>
+</ul>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>      pip install playwright
+</span></span><span style="display:flex;"><span>      pip install pytest-playwright
+</span></span><span style="display:flex;"><span>      pip install pytest
+</span></span><span style="display:flex;"><span>      pip install pytest-html</span></span></code></pre></div>
+  </div><p>Alternativa:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install -r requirements.txt</span></span></code></pre></div>
+  </div><ul>
+<li>Instalar navegadores(Windows y Ubuntu):</li>
+</ul>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>      playwright install</span></span></code></pre></div>
+  </div><p>Este paso descarga los navegadores que usa Playwright (Chromium, Firefox, WebKit).
+Si no lo ejecutás, la automatización no va a funcionar.</p>
+<ul>
+<li>instala libs del sistema solo en ubuntu:</li>
+</ul>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>      playwright install-deps</span></span></code></pre></div>
+  </div><h2 id="notas-importantes">Notas importantes</h2>
+<p>Todos los comandos deben ejecutarse desde la terminal de VSCode.
+Siempre verificar que el entorno virtual esté activado ((venv) visible).</p>
+<h2 id="estructura-base-recomendada-de-un-proyecto">Estructura base &ldquo;recomendada&rdquo; de un proyecto</h2>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>venv/
+</span></span><span style="display:flex;"><span>pages/
+</span></span><span style="display:flex;"><span>  base_page.py
+</span></span><span style="display:flex;"><span>  login_page.py
+</span></span><span style="display:flex;"><span>  home_page.py
+</span></span><span style="display:flex;"><span>tests/
+</span></span><span style="display:flex;"><span>  test_login.py
+</span></span><span style="display:flex;"><span>  test_home.py  
+</span></span><span style="display:flex;"><span>requirements.txt
+</span></span><span style="display:flex;"><span>README.md</span></span></code></pre></div>
+  </div><h2 id="diseño-general">Diseño general</h2>
+<h3 id="1-basepage">1) <code>BasePage</code></h3>
+<p>Responsabilidad: centralizar acciones comunes de UI.</p>
+<p>Funciones incluidas:</p>
+<ul>
+<li><code>abrir_url(url)</code></li>
+<li><code>click(selector)</code></li>
+<li><code>escribir(selector, texto)</code></li>
+<li><code>esperar_visible(selector)</code></li>
+<li><code>obtener_texto(selector)</code></li>
+<li><code>seleccionar_opcion(selector, valor)</code></li>
+<li><code>scroll_hasta_elemento(selector)</code></li>
+<li><code>capturar_pantalla(nombre_archivo)</code></li>
+<li><code>etc</code></li>
+<li></li>
+</ul>
+<p>Criterio de errores:</p>
+<ul>
+<li>En acciones principales se usa <code>try/except</code>.</li>
+<li>Cuando falla una acción, se intenta capturar screenshot.</li>
+<li>Se imprime un mensaje claro.</li>
+<li>Se relanza la excepción para <strong>no ocultar fallas</strong>.</li>
+</ul>
+<h3 id="2-loginpage">2) <code>LoginPage</code></h3>
+<p>Responsabilidad: modelar el comportamiento de la pantalla de login.</p>
+<p>Funciones incluidas:</p>
+<ul>
+<li><code>abrir()</code></li>
+<li><code>validar_pagina_login()</code></li>
+<li><code>completar_usuario(usuario)</code></li>
+<li><code>completar_password(password)</code></li>
+<li><code>click_iniciar_sesion()</code></li>
+<li><code>iniciar_sesion(usuario, password)</code></li>
+</ul>
+<p>Selectores:</p>
+<ul>
+<li>Prioridad a <code>data-testid</code>:
+<ul>
+<li><code>login-form</code></li>
+<li><code>username-input</code></li>
+<li><code>password-input</code></li>
+<li><code>login-button</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-homepage">3) <code>HomePage</code></h3>
+<p>Responsabilidad: modelar acciones y validaciones de Home.</p>
+<p>Funciones incluidas:</p>
+<ul>
+<li><code>validar_home()</code></li>
+<li><code>seleccionar_tarjeta(valor)</code></li>
+<li><code>consultar_cuentas()</code></li>
+<li><code>validar_cuentas_visibles()</code></li>
+<li><code>ver_saldo_primera_cuenta()</code></li>
+<li><code>validar_saldo_visible()</code></li>
+<li><code>click_salir()</code></li>
+</ul>
+<p>Selectores:</p>
+<ul>
+<li>Prioridad a <code>data-testid</code> (locator) cuando existe.</li>
+</ul>
+<h2 id="diseño-general-1">Diseño general</h2>
+<p>Recomendación de ejecución de los test:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python -m pytest tests/test_login.py</span></span></code></pre></div>
+  </div>
+      </main>
+
+      
+      <aside class="single-post-sidebar">
+        <div class="sticky-sidebar-content">
+          
+            <div class="toc-card">
+              <div class="toc-header">
+                <i class="fa-solid fa-list-ul"></i>
+                <span>En este artículo</span>
+              </div>
+              <nav id="TableOfContents" class="toc-nav">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#instalación-del-entorno-windows--wslubuntu--vscode">Instalación del entorno (Windows / WSL(Ubuntu) / VSCode)</a></li>
+    <li><a href="#notas-importantes">Notas importantes</a></li>
+    <li><a href="#estructura-base-recomendada-de-un-proyecto">Estructura base &ldquo;recomendada&rdquo; de un proyecto</a></li>
+    <li><a href="#diseño-general">Diseño general</a>
+      <ul>
+        <li><a href="#1-basepage">1) <code>BasePage</code></a></li>
+        <li><a href="#2-loginpage">2) <code>LoginPage</code></a></li>
+        <li><a href="#3-homepage">3) <code>HomePage</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#diseño-general-1">Diseño general</a></li>
+  </ul>
+</nav>
+              </nav>
+            </div>
+          
+
+          <div class="sidebar-actions-card">
+            <button type="button" class="btn-sidebar-action" id="btn-back-to-top" title="Volver arriba">
+              <i class="fa-solid fa-arrow-up"></i>
+              <span>Volver arriba</span>
+            </button>
+            <a href="/post/" class="btn-sidebar-action" title="Ver todos los artículos">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Todos los artículos</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+    </main>
+    <footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <span class="footer-logo">⚡ Automation &amp; Performance</span>
+      <p class="footer-tagline">Espacio dedicado al testing estratégico, automatización y performance engineering.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="/" class="footer-link">Inicio</a>
+      <a href="/post/" class="footer-link">Artículos</a>
+      <a href="/about/" class="footer-link">Sobre Mí (CV)</a>
+      <a href="/contact/" class="footer-link">Contacto</a>
+    </div>
+
+    <div class="footer-socials">
+      
+        <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      
+      
+        <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      
+      
+        <a href="https://www.instagram.com/mariano_imende/?igsh=ZnU0YTJrNTYxcTM3" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      
+      
+        <a href="https://www.youtube.com/results?search_query=performance&#43;and&#43;automation&#43;testing" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      
+      
+        <a href="mailto:imende.mariano@gmail.com" class="footer-social-btn" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 <strong>Mariano Imende</strong>. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Búsqueda rápida">
+  <div class="search-modal-dialog">
+    <div class="search-input-header">
+      <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
+      <input type="text" id="search-input" class="search-input" placeholder="Buscar por tema, tecnología o comando (ej. k6, kafka, pom)..." autocomplete="off" />
+      <button type="button" id="search-close-btn" class="search-close-btn" aria-label="Cerrar búsqueda">
+        <span class="esc-badge">ESC</span>
+      </button>
+    </div>
+
+    <div id="search-results" class="search-results-list">
+      <div class="search-placeholder">
+        Escribí una palabra clave para buscar tutoriales, código o herramientas...
+      </div>
+    </div>
+
+    <div class="search-modal-footer">
+      <span class="search-hint"><kbd>↑</kbd> <kbd>↓</kbd> para navegar</span>
+      <span class="search-hint"><kbd>↵</kbd> para seleccionar</span>
+      <span class="search-hint"><kbd>ESC</kbd> para cerrar</span>
+    </div>
+  </div>
+</div>
+
+
+<script src="/js/main.js"></script>
+
+  </body>
+</html>

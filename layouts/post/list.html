@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <article class="posts-page-wrapper">
+    {{ with .Content }}
+      <header class="section-intro">
+        {{ . }}
+      </header>
+    {{ end }}
+    
+    <div class="cards-grid">
+      {{ range .Paginator.Pages }}
+        {{ .Render "summary-with-image" }}
+      {{ end }}
+    </div>
+
+    <div class="pagination-wrap">
+      {{ partial "pagination.html" . }}
+    </div>
+  </article>
+{{ end }}

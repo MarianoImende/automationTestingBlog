@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Python on Automation
+&amp;
+Performance
+testing</title>
+		<link>https://automationtesting.ar/tags/python/</link>
+		<description>Recent content in Python on Automation
+&amp;
+Performance
+testing</description>
+		<generator>Hugo</generator>
+		<language>es-ar</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 25 Oct 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://automationtesting.ar/tags/python/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>🤖 Selenium POM</title>
+				<link>https://automationtesting.ar/post/seleniumpom/</link>
+				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/post/seleniumpom/</guid>
+				<description>&lt;h1 id=&#34;imlementación&#34;&gt;Imlementación&lt;/h1&gt;&#xA;&lt;h2 id=&#34;de-que-trata-este-post&#34;&gt;De que trata este post:&lt;/h2&gt;&#xA;&lt;p&gt;Se presenta un proyecto en base a un &amp;ldquo;modelo&amp;rdquo; que implementa POM &lt;strong&gt;(Page Object Model)&lt;/strong&gt; con selenium, python y pytest.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/&#34;&gt;Page Objecto Model&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.selenium.dev/&#34;&gt;selenium&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.python.org/&#34;&gt;python&lt;/a&gt;&#xA;&lt;a href=&#34;http://pytest.org/&#34;&gt;pytest&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;por-qué-el-proyecto-es-útil&#34;&gt;Por qué el proyecto es útil&lt;/h2&gt;&#xA;&lt;p&gt;Descargando e implementando este proyecto puede lograr disponer en muy corto tiempo la posibilidad de automatizar sus pruebas de frontend.&lt;/p&gt;&#xA;&lt;p&gt;Este proyecto, le otorga un marco de trabajo simple y a la vez robusto que le ayudará a comenzar rápidamente sus automatizaciones de pruebas. El mismo, contiene los ejemplos de &lt;strong&gt;Page, Test y BasePage&lt;/strong&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>🎭 Playwright con Python: Base UI Automation (POM)</title>
+				<link>https://automationtesting.ar/post/playwright/</link>
+				<pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/post/playwright/</guid>
+				<description>&lt;h1 id=&#34;base-ui-automation-con-playwright--python&#34;&gt;Base UI Automation con Playwright + Python&lt;/h1&gt;&#xA;&lt;p&gt;Este proyecto es una &lt;strong&gt;base simple y didáctica&lt;/strong&gt; usando Page Object Model para automatizar:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://walletchallenge-front.onrender.com/&#34;&gt;https://walletchallenge-front.onrender.com/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;La idea es que el código sea fácil de leer para personas que recién empiezan.&lt;/p&gt;&#xA;&lt;p&gt;El objetivo del ejercicio es automatizar, el login, (usuario y password &amp;ldquo;challenge&amp;rdquo;), cuentas y saldos utilizando el patron de diseño Page Object Model.&lt;/p&gt;&#xA;&lt;h2 id=&#34;instalación-del-entorno-windows--wslubuntu--vscode&#34;&gt;Instalación del entorno (Windows / WSL(Ubuntu) / VSCode)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Solo si estas en Ubuntu:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;code-block&#34;&gt;&#xD;&#xA;    &lt;button class=&#34;code-copy&#34; type=&#34;button&#34; hidden aria-label=&#34;Copy code to clipboard&#34;&gt;&#xD;&#xA;      &lt;span class=&#34;code-copy-label&#34; aria-hidden=&#34;true&#34;&gt;Copy&lt;/span&gt;&#xD;&#xA;    &lt;/button&gt;&#xD;&#xA;    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt update&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install python3-venv&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xD;&#xA;  &lt;/div&gt;&lt;ul&gt;&#xA;&lt;li&gt;Crear entorno virtual&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Windows:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>👩‍💻 Introducción a la Programación Orientada a Objetos (POO) TypeScript</title>
+				<link>https://automationtesting.ar/post/poo/</link>
+				<pubDate>Sun, 14 Apr 2024 11:25:05 -0400</pubDate>
+				<guid>https://automationtesting.ar/post/poo/</guid>
+				<description>&lt;p&gt;&amp;lt;/&amp;gt; Un tema muy importante a la hora de comenzar el camino de la automatización de pruebas es la programación orientada a objetos.&lt;/p&gt;&#xA;&lt;p&gt;La Programación Orientada a Objetos (POO) es un estilo de programación que organiza el código en torno a objetos. Estos objetos representan entidades del mundo real o del dominio del problema, y tienen características (llamadas propiedades) y comportamientos (llamados métodos). El objetivo de la POO es hacer que el código sea más fácil de entender, mantener y reutilizar. Es una forma natural de pensar en los problemas y cómo resolverlos.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

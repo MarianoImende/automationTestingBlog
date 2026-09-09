@@ -1,0 +1,28 @@
+<div class="contact-card-wrapper">
+  <form action="{{ .Get "action" }}" method="POST" class="modern-contact-form">
+    <div class="form-group">
+      <label class="form-label" for="name">
+        <i class="fa-solid fa-user"></i> Nombre completo
+      </label>
+      <input class="form-input" type="text" name="name" id="name" required placeholder="Ej. Juan Pérez">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="email">
+        <i class="fa-solid fa-envelope"></i> Correo electrónico
+      </label>
+      <input class="form-input" type="email" name="_replyto" id="email" required placeholder="tu@email.com">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="message">
+        <i class="fa-solid fa-comment-dots"></i> Mensaje o Consulta
+      </label>
+      <textarea class="form-input form-textarea" name="message" id="message" rows="5" required placeholder="Contame sobre tu proyecto, consulta o propuesta..."></textarea>
+    </div>
+
+    <button type="submit" class="btn-primary-hero form-submit-btn">
+      <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje
+    </button>
+  </form>
+</div>

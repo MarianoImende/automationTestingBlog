@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Jmeter: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀 | Automation
+&amp;
+Performance
+testing</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="⚔️ Producers vs. Consumers en Kafka: ¿Quién Gana la Batalla del Rendimiento? ⚔️">
+    <meta name="generator" content="Hugo 0.165.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="Mariano Imende">
+    
+
+    <link rel="stylesheet" href="/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous"><link rel="stylesheet" href="/css/custom.css">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://automationtesting.ar/post/jmeter-kafka/">
+    
+
+    <meta property="og:url" content="https://automationtesting.ar/post/jmeter-kafka/">
+	<meta property="og:site_name" content="Automation
+&
+Performance
+testing">
+	<meta property="og:title" content="Jmeter: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀">
+	<meta property="og:description" content="⚔️ Producers vs. Consumers en Kafka: ¿Quién Gana la Batalla del Rendimiento? ⚔️">
+	<meta property="og:locale" content="es_ar">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="post">
+		<meta property="article:published_time" content="2025-01-06T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-01-06T00:00:00+00:00">
+		<meta property="article:tag" content="Jmeter">
+		<meta property="article:tag" content="Kafka">
+		<meta property="article:tag" content="Performance">
+		<meta property="article:tag" content="Stress">
+		<meta property="article:tag" content="Testing">
+
+	<meta itemprop="name" content="Jmeter: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀">
+	<meta itemprop="description" content="⚔️ Producers vs. Consumers en Kafka: ¿Quién Gana la Batalla del Rendimiento? ⚔️">
+	<meta itemprop="datePublished" content="2025-01-06T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2025-01-06T00:00:00+00:00">
+	<meta itemprop="wordCount" content="921">
+	<meta itemprop="keywords" content="Jmeter,Kafka,Performance,Stress,Testing">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Jmeter: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀">
+	<meta name="twitter:description" content="⚔️ Producers vs. Consumers en Kafka: ¿Quién Gana la Batalla del Rendimiento? ⚔️">
+
+      
+    
+    
+<script>
+  (function() {
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+  </head>
+
+  <body class="site-body kind-page type-post">
+    
+  
+  <div id="reading-progress-container" class="reading-progress-container">
+    <div id="reading-progress-bar" class="reading-progress-bar"></div>
+  </div>
+  <nav class="modern-navbar" role="navigation">
+  <div class="nav-container">
+    <a href="/" class="nav-brand">
+      <span class="brand-icon">⚡</span>
+      <span class="brand-text">Automation<span class="brand-accent">&amp;</span>Performance</span>
+    </a>
+
+    <div class="nav-menu-wrapper">
+      
+        <ul class="nav-links">
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/">
+              Inicio
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/post/">
+              Artículos y Tutoriales
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/about/">
+              Sobre Mí (CV)
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/contact/">
+              Contacto
+            </a>
+          </li>
+          
+        </ul>
+      
+
+      <div class="nav-actions">
+        
+        <button type="button" class="search-trigger-btn" id="search-trigger-btn" aria-label="Buscar en el blog" title="Buscar (Ctrl + K)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="search-kbd">Ctrl K</span>
+        </button>
+
+        
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema de color" title="Alternar Modo Oscuro/Claro">
+          <i class="fa-solid fa-moon theme-icon-moon"></i>
+          <i class="fa-solid fa-sun theme-icon-sun"></i>
+        </button>
+
+        
+        <div class="nav-socials">
+          
+            <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          
+          
+            <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          
+          
+            <a href="mailto:imende.mariano@gmail.com" class="social-icon-btn" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <main role="main" class="site-main">
+      
+  <article class="single-post-container">
+    
+    <header class="single-post-header">
+      <div class="post-breadcrumb">
+        <a href="/" class="breadcrumb-link"><i class="fa-solid fa-house"></i> Inicio</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="/post/" class="breadcrumb-link">Artículos</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Jmeter: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀</span>
+      </div>
+
+      <h1 class="single-post-title">Jmeter: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀</h1>
+
+      <div class="single-post-meta">
+        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 06/01/2025</span>
+        <span class="meta-item"><i class="fa-regular fa-clock"></i> 5 min de lectura</span>
+        <span class="meta-item"><i class="fa-solid fa-user-pen"></i> Mariano Imende</span>
+      </div>
+
+      
+        <div class="single-post-tags">
+          
+            <a href="/tags/jmeter/" class="tag-chip tag-jmeter">#jmeter</a>
+          
+            <a href="/tags/kafka/" class="tag-chip tag-kafka">#kafka</a>
+          
+            <a href="/tags/performance/" class="tag-chip tag-performance">#performance</a>
+          
+            <a href="/tags/stress/" class="tag-chip tag-stress">#stress</a>
+          
+            <a href="/tags/testing/" class="tag-chip tag-testing">#testing</a>
+          
+        </div>
+      
+
+      
+        <div class="single-post-featured-image-wrap">
+          <img src="https://automationtesting.ar/images/jmeter-kafka/jmeter-kafka-portada.png" alt="Jmeter: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀" class="single-post-featured-image" />
+        </div>
+      
+    </header>
+
+    
+    <div class="single-post-layout">
+      
+      <main class="single-post-content post-content" id="article-body">
+        <p>En las arquitecturas basadas en <strong>Apache Kafka</strong>, la estabilidad del sistema no depende solo de la capacidad de los <strong>producers</strong> para enviar mensajes, sino también de <strong>cómo los consumers procesan la carga en diferentes escenarios</strong>.</p>
+<p>🔹 <strong>¿Qué sucede si un consumer no puede mantener el ritmo de los mensajes entrantes?</strong></p>
+<p>🔹 <strong>¿Cómo afecta el lag de los consumidores al rendimiento del sistema?</strong></p>
+<p>🔹 <strong>¿Cuál es el impacto de aumentar la concurrencia en los grupos de consumo?</strong></p>
+<p>Para responder estas preguntas, es clave realizar <strong>pruebas de estrés en los tópicos</strong> y analizar la capacidad de procesamiento de los consumidores bajo diferentes condiciones.</p>
+<hr>
+<h2 id="-pruebas-de-carga-en-los-tópicos-por-qué-importan"><strong>🔹 Pruebas de Carga en los Tópicos: ¿Por qué Importan?</strong></h2>
+<p>Kafka puede manejar <strong>millones de eventos por segundo</strong>, pero si los consumidores no pueden procesar los mensajes a la misma velocidad que se producen, se generará <strong>lag en los offsets</strong>, afectando la latencia y la estabilidad del sistema.</p>
+<p><strong>📊 Factores a evaluar al estresar un tópico:</strong></p>
+<ul>
+<li>📌 <strong>Capacidad de consumo</strong>: ¿Cuántos mensajes puede procesar el consumer por segundo antes de saturarse?</li>
+<li>📌 <strong>Manejo del lag</strong>: ¿Cómo responde Kafka cuando los consumidores no pueden mantener el ritmo?</li>
+<li>📌 <strong>Efecto de la concurrencia</strong>: ¿Cuántos consumers en paralelo mejoran el rendimiento?</li>
+<li>📌 <strong>Impacto del tamaño del mensaje</strong>: ¿Cómo afecta la performance aumentar el payload?</li>
+</ul>
+<hr>
+<h2 id="-simulación-de-carga-en-un-tópico-con-jmeter-utilizando"><strong>🔹 Simulación de Carga en un Tópico con Jmeter utilizando &lsquo;JSR223 Sampler&rsquo;</strong></h2>
+<p>✔️ 1-Configuración de Java: asegúrese de instalar la última versión de Java compatible con JMeter, es mejor instalar un JDK</p>
+<p>✔️ 2-Pre Condición, contar con nociones básicas de jmeter, si no es tu caso, podes ver alguno de los siguientes tutoriales:</p>
+<p><a href="https://www.youtube.com/results?search_query=jmeter+desde+cero">jmeter desde cero</a></p>
+<p>✔️ 3-Descargar y depositar en <strong>&ldquo;C:\apache-jmeter-5.6.3\lib\ext&quot;</strong> el kafka-clients para java (.jar) de <a href="https://mvnrepository.com/search?q=kafka-clients">mvnrepository</a>. requiere reinicio de jmeter.</p>
+<p>✔️ 4-Contar con un entorno de Kafka.</p>
+<p>Continuamos:</p>
+<h3 id="-instalar-jmeter">✅ <strong>Instalar jmeter</strong></h3>
+<p>Por razones practicas, vamos a utilizar Windows instalar jmeter, desarrollar el script y ejecutar la prueba.</p>
+<p>Primero, descargamos la última versión de JMeter desde el <a href="https://jmeter.apache.org/download_jmeter.cgi">sitio web oficial de JMeter</a>. clic en el enlace “apache-jmeter-x.x.x.tgz” para descargar el archivo zip binario de JMeter.</p>
+<p>Luego, descomprimir el archivo zip para obtener jmeter listo para ser utilizado:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code class="language-BeanShell" data-lang="BeanShell">
+C:\apache-jmeter-x.x.x\bin</code></pre>
+  </div><p>ejecutar con doble clic jmeter por medio de:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code class="language-BeanShell" data-lang="BeanShell">
+C:\apache-jmeter-x.x.x\bin\jmeter.bat</code></pre>
+  </div><p>Crear un Test Plan con:</p>
+<p>☑ Thread Group</p>
+<p>☑ JSR223 Sampler</p>
+<p>☑ View Results Tree</p>
+<p><img src="/images/jmeter-kafka/TestPlan.png" alt="Script"></p>
+<p>El script de JSR223 Sampler debe contener el siguiente código:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.kafka.clients.producer.*
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Properties
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.net.Socket
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> groovy.json.JsonOutput
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>String brokerIp <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Acá va la Ip/Nombre el broker de kafka&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> brokerPort <span style="color:#f92672">=</span> <span style="color:#ae81ff">9092</span>
+</span></span><span style="display:flex;"><span>String topic <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;miTopico&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Marcar el test como fallido por defecto (por si hay excepción)
+</span></span></span><span style="display:flex;"><span>SampleResult<span style="color:#f92672">.</span><span style="color:#a6e22e">setSuccessful</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Socket</span><span style="color:#f92672">(</span>brokerIp<span style="color:#f92672">,</span> brokerPort<span style="color:#f92672">).</span><span style="color:#a6e22e">withCloseable</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Conexión TCP abierta con Kafka en ${brokerIp}:${brokerPort}&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    log<span style="color:#f92672">.</span><span style="color:#a6e22e">error</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;No se pudo conectar al broker&#34;</span><span style="color:#f92672">,</span> e<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    SampleResult<span style="color:#f92672">.</span><span style="color:#a6e22e">setResponseMessage</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;No se pudo conectar al broker&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    SampleResult<span style="color:#f92672">.</span><span style="color:#a6e22e">setResponseCode</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;500&#34;</span><span style="color:#f92672">)</span> <span style="color:#75715e">// código de error arbitrario
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#75715e">// salir si falla conexión
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Configurar Kafka Producer
+</span></span></span><span style="display:flex;"><span>Properties props <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Properties<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;bootstrap.servers&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;${brokerIp}:${brokerPort}&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">())</span>
+</span></span><span style="display:flex;"><span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;security.protocol&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;PLAINTEXT&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;key.serializer&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;org.apache.kafka.common.serialization.StringSerializer&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;value.serializer&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;org.apache.kafka.common.serialization.StringSerializer&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>KafkaProducer<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> producer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> KafkaProducer<span style="color:#f92672">&lt;&gt;(</span>props<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Construir mensaje JSON
+</span></span></span><span style="display:flex;"><span>    Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> message <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>        syskey <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;test123&#34;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>        message: <span style="color:#e6db74">&#34;Hola desde JMeter vía Kafka!!!&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>String key <span style="color:#f92672">=</span> message<span style="color:#f92672">.</span><span style="color:#a6e22e">syskey</span>
+</span></span><span style="display:flex;"><span>String value <span style="color:#f92672">=</span> JsonOutput<span style="color:#f92672">.</span><span style="color:#a6e22e">toJson</span><span style="color:#f92672">(</span>message<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ProducerRecord<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">record</span> <span style="color:#960050;background-color:#1e0010">= </span><span style="color:#a6e22e">new</span> ProducerRecord<span style="color:#f92672">&lt;&gt;(</span>topic<span style="color:#f92672">,</span> key<span style="color:#f92672">,</span> value<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    producer<span style="color:#f92672">.</span><span style="color:#a6e22e">send</span><span style="color:#f92672">(</span>record<span style="color:#f92672">).</span><span style="color:#a6e22e">get</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Mensaje enviado a Kafka -&gt; Topic: ${topic} | Key: ${key} | Value: ${value}&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    SampleResult<span style="color:#f92672">.</span><span style="color:#a6e22e">setSuccessful</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span> <span style="color:#75715e">// marcar como exitoso
+</span></span></span><span style="display:flex;"><span>    SampleResult<span style="color:#f92672">.</span><span style="color:#a6e22e">setResponseMessage</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Mensaje enviado correctamente a Kafka&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    SampleResult<span style="color:#f92672">.</span><span style="color:#a6e22e">setResponseCode</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;200&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    log<span style="color:#f92672">.</span><span style="color:#a6e22e">error</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Error al enviar mensaje a Kafka&#34;</span><span style="color:#f92672">,</span> e<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    SampleResult<span style="color:#f92672">.</span><span style="color:#a6e22e">setResponseMessage</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Error al enviar mensaje a Kafka&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    SampleResult<span style="color:#f92672">.</span><span style="color:#a6e22e">setResponseCode</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;500&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    producer<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;KafkaProducer cerrado correctamente&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div>
+  </div><p>Además, podemos aplicar niveles de seguridad, por ejemplo:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Configurar Kafka Producer con SASL_SSL
+</span></span></span><span style="display:flex;"><span>Properties props <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Properties<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;bootstrap.servers&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Nombre/IP:Port&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;security.protocol&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;SASL_SSL&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sasl.mechanism&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;SCRAM-SHA-512&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>SaslConfigs<span style="color:#f92672">.</span><span style="color:#a6e22e">SASL_JAAS_CONFIG</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;org.apache.kafka.common.security.scram.ScramLoginModule required username=&#39;MyUser&#39; password=&#39;MyPassword&#39;;&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Configurar SSL con archivo PEM
+</span></span></span><span style="display:flex;"><span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ssl.truststore.type&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;PEM&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ssl.truststore.location&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;E:\\kafka_cert.pem&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ssl.endpoint.identification.algorithm&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Luego queda ejecutar el script para validar los resultados<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span></span></span></code></pre></div>
+  </div><p>Además de poder tener un script de jmeter utilizando <strong>JSR223 Sampler</strong> para realizar pruebas de performance de forma directa hacia un tópico de <strong>Kafka</strong>, también se puede hacer por medio de un <strong>plugin</strong></p>
+<h2 id="-simulación-de-carga-en-un-tópico-con-jmeter-utilizando-1"><strong>🔹 Simulación de Carga en un Tópico con Jmeter utilizando &lsquo;di-kafkameter&rsquo;</strong></h2>
+<p>✔️ Paso 1: Instalar el administrador de complementos de Jmeter
+<a href="https://jmeter-plugins.org/get/">Descarga</a> el plugins-manager.jar y colócalo en el directorio <strong>lib/ext</strong>, luego reinicie JMeter.</p>
+<p>✔️ Paso 2: Habilitá <strong>Kafka Producer Sampler</strong> en el Administrador de complementos</p>
+<p>Options -&gt; Plugin Manager:</p>
+<p><img src="/images/jmeter-kafka/PluginsManager.png" alt="Plugin Manager"></p>
+<p><img src="/images/jmeter-kafka/plugins-install.jpeg" alt="Plugin Manager"></p>
+<p>✔️ Paso 3: Crear el script de jmeter:</p>
+<p>Crear la siguiente estructura en jmeter y sguír las configuraciones que se ven en las imagenes:</p>
+<p><img src="/images/jmeter-kafka/Kafka-Producer-config.png" alt="Plugin Manager"></p>
+<p><img src="/images/jmeter-kafka/Kafka-Producer-sample.png" alt="Plugin Manager"></p>
+<p>Además, podemos aplicar niveles de seguridad, por ejemplo:</p>
+<p><img src="/images/jmeter-kafka/Kafka-Producer-config-seg.png" alt="Plugin Manager"></p>
+<p>Para evaluar la capacidad de los consumidores, es importante monitorear:</p>
+<p>✅ Tiempo de procesamiento por mensaje 📊</p>
+<p>✅ Uso de CPU y memoria en los consumidores 🖥️</p>
+<p>✅ Lag en los offsets (cuántos mensajes están en cola esperando ser procesados) ⏳</p>
+<p>Una herramienta como Prometheus + Grafana o el propio kafka-consumer-groups.sh puede ayudar a visualizar estos datos en tiempo real.</p>
+<p>🎯 Conclusión
+Si bien las pruebas de performance en Kafka abarcan muchos aspectos, el estrés en los tópicos es una estrategia clave para entender la capacidad real de los consumidores.</p>
+<p>✅ Un consumer lento o subescalado puede convertirse en el cuello de botella del sistema.</p>
+<p>✅ Evaluar el lag de los consumers permite detectar problemas de escalabilidad antes de que afecten la producción.</p>
+<p>✅ Simular alta carga sobre los tópicos es una práctica esencial para garantizar un Kafka estable y eficiente.</p>
+<p>🔥 Pruebas constantes = Kafka optimizado y resiliente. 🚀</p>
+<p>🔥 ¿Tus consumidores están preparados para manejar una sobrecarga de mensajes? Solo lo sabrás si los estresas. 🚀</p>
+
+      </main>
+
+      
+      <aside class="single-post-sidebar">
+        <div class="sticky-sidebar-content">
+          
+            <div class="toc-card">
+              <div class="toc-header">
+                <i class="fa-solid fa-list-ul"></i>
+                <span>En este artículo</span>
+              </div>
+              <nav id="TableOfContents" class="toc-nav">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-pruebas-de-carga-en-los-tópicos-por-qué-importan"><strong>🔹 Pruebas de Carga en los Tópicos: ¿Por qué Importan?</strong></a></li>
+    <li><a href="#-simulación-de-carga-en-un-tópico-con-jmeter-utilizando"><strong>🔹 Simulación de Carga en un Tópico con Jmeter utilizando ‘JSR223 Sampler’</strong></a>
+      <ul>
+        <li><a href="#-instalar-jmeter">✅ <strong>Instalar jmeter</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#-simulación-de-carga-en-un-tópico-con-jmeter-utilizando-1"><strong>🔹 Simulación de Carga en un Tópico con Jmeter utilizando ‘di-kafkameter’</strong></a></li>
+  </ul>
+</nav>
+              </nav>
+            </div>
+          
+
+          <div class="sidebar-actions-card">
+            <button type="button" class="btn-sidebar-action" id="btn-back-to-top" title="Volver arriba">
+              <i class="fa-solid fa-arrow-up"></i>
+              <span>Volver arriba</span>
+            </button>
+            <a href="/post/" class="btn-sidebar-action" title="Ver todos los artículos">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Todos los artículos</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+    </main>
+    <footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <span class="footer-logo">⚡ Automation &amp; Performance</span>
+      <p class="footer-tagline">Espacio dedicado al testing estratégico, automatización y performance engineering.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="/" class="footer-link">Inicio</a>
+      <a href="/post/" class="footer-link">Artículos</a>
+      <a href="/about/" class="footer-link">Sobre Mí (CV)</a>
+      <a href="/contact/" class="footer-link">Contacto</a>
+    </div>
+
+    <div class="footer-socials">
+      
+        <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      
+      
+        <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      
+      
+        <a href="https://www.instagram.com/mariano_imende/?igsh=ZnU0YTJrNTYxcTM3" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      
+      
+        <a href="https://www.youtube.com/results?search_query=performance&#43;and&#43;automation&#43;testing" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      
+      
+        <a href="mailto:imende.mariano@gmail.com" class="footer-social-btn" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 <strong>Mariano Imende</strong>. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Búsqueda rápida">
+  <div class="search-modal-dialog">
+    <div class="search-input-header">
+      <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
+      <input type="text" id="search-input" class="search-input" placeholder="Buscar por tema, tecnología o comando (ej. k6, kafka, pom)..." autocomplete="off" />
+      <button type="button" id="search-close-btn" class="search-close-btn" aria-label="Cerrar búsqueda">
+        <span class="esc-badge">ESC</span>
+      </button>
+    </div>
+
+    <div id="search-results" class="search-results-list">
+      <div class="search-placeholder">
+        Escribí una palabra clave para buscar tutoriales, código o herramientas...
+      </div>
+    </div>
+
+    <div class="search-modal-footer">
+      <span class="search-hint"><kbd>↑</kbd> <kbd>↓</kbd> para navegar</span>
+      <span class="search-hint"><kbd>↵</kbd> para seleccionar</span>
+      <span class="search-hint"><kbd>ESC</kbd> para cerrar</span>
+    </div>
+  </div>
+</div>
+
+
+<script src="/js/main.js"></script>
+
+  </body>
+</html>

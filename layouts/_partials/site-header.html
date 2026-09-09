@@ -1,0 +1,49 @@
+{{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
+<header class="modern-header {{ if .IsHome }}modern-header-home{{ else }}modern-header-page{{ end }}">
+  {{ partials.Include "site-navigation.html" . }}
+  
+  {{ if .IsHome }}
+    <div class="hero-container">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Blog Profesional de QA &amp; Performance Engineering</span>
+      </div>
+      
+      <h1 class="hero-title">
+        Ingeniería de <span class="gradient-text">Performance</span> &amp; <span class="gradient-text">Automatización</span>
+      </h1>
+      
+      <p class="hero-subtitle">
+        Guías prácticas, arquitecturas de pruebas de carga, frameworks con Python, Playwright, K6, Kafka y metodologías ágiles de testing.
+      </p>
+
+      <div class="hero-actions">
+        <a href="/post/" class="btn-primary-hero">
+          <i class="fa-solid fa-book-open"></i> Explorar Artículos
+        </a>
+        <a href="/about/" class="btn-secondary-hero">
+          <i class="fa-solid fa-user-tie"></i> Sobre Mí (CV)
+        </a>
+      </div>
+
+      <div class="hero-topics">
+        <span class="topics-label">Temas destacados:</span>
+        <a href="/tags/k6/" class="topic-pill"><i class="fa-solid fa-bolt"></i> K6</a>
+        <a href="/tags/playwright/" class="topic-pill"><i class="fa-solid fa-robot"></i> Playwright</a>
+        <a href="/tags/jmeter/" class="topic-pill"><i class="fa-solid fa-gauge-high"></i> JMeter</a>
+        <a href="/tags/kafka/" class="topic-pill"><i class="fa-solid fa-envelope"></i> Kafka</a>
+        <a href="/tags/wiremock/" class="topic-pill"><i class="fa-solid fa-network-wired"></i> WireMock</a>
+        <a href="/tags/python/" class="topic-pill"><i class="fa-brands fa-python"></i> Python</a>
+      </div>
+    </div>
+  {{ else }}
+    <div class="page-header-container">
+      <h1 class="page-header-title">
+        {{ .Title | compare.Default .Site.Title }}
+      </h1>
+      {{ with .Params.description }}
+        <p class="page-header-description">{{ . }}</p>
+      {{ end }}
+    </div>
+  {{ end }}
+</header>

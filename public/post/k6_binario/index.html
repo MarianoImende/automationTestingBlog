@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>🛠️ Construir binario de k6 | Automation
+&amp;
+Performance
+testing</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Guía paso a paso para personalizar k6 con extensiones en WSL">
+    <meta name="generator" content="Hugo 0.165.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="Mariano Imende">
+    
+
+    <link rel="stylesheet" href="/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous"><link rel="stylesheet" href="/css/custom.css">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://automationtesting.ar/post/k6_binario/">
+    
+
+    <meta property="og:url" content="https://automationtesting.ar/post/k6_binario/">
+	<meta property="og:site_name" content="Automation
+&
+Performance
+testing">
+	<meta property="og:title" content="🛠️ Construir binario de k6">
+	<meta property="og:description" content="Guía paso a paso para personalizar k6 con extensiones en WSL">
+	<meta property="og:locale" content="es_ar">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="post">
+		<meta property="article:published_time" content="2025-01-13T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-01-13T00:00:00+00:00">
+		<meta property="article:tag" content="Stress">
+		<meta property="article:tag" content="Performance">
+		<meta property="article:tag" content="K6">
+		<meta property="article:tag" content="Testing">
+
+	<meta itemprop="name" content="🛠️ Construir binario de k6">
+	<meta itemprop="description" content="Guía paso a paso para personalizar k6 con extensiones en WSL">
+	<meta itemprop="datePublished" content="2025-01-13T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2025-01-13T00:00:00+00:00">
+	<meta itemprop="wordCount" content="1411">
+	<meta itemprop="keywords" content="Stress,Performance,K6,Testing">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="🛠️ Construir binario de k6">
+	<meta name="twitter:description" content="Guía paso a paso para personalizar k6 con extensiones en WSL">
+
+      
+    
+    
+<script>
+  (function() {
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+  </head>
+
+  <body class="site-body kind-page type-post">
+    
+  
+  <div id="reading-progress-container" class="reading-progress-container">
+    <div id="reading-progress-bar" class="reading-progress-bar"></div>
+  </div>
+  <nav class="modern-navbar" role="navigation">
+  <div class="nav-container">
+    <a href="/" class="nav-brand">
+      <span class="brand-icon">⚡</span>
+      <span class="brand-text">Automation<span class="brand-accent">&amp;</span>Performance</span>
+    </a>
+
+    <div class="nav-menu-wrapper">
+      
+        <ul class="nav-links">
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/">
+              Inicio
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/post/">
+              Artículos y Tutoriales
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/about/">
+              Sobre Mí (CV)
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/contact/">
+              Contacto
+            </a>
+          </li>
+          
+        </ul>
+      
+
+      <div class="nav-actions">
+        
+        <button type="button" class="search-trigger-btn" id="search-trigger-btn" aria-label="Buscar en el blog" title="Buscar (Ctrl + K)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="search-kbd">Ctrl K</span>
+        </button>
+
+        
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema de color" title="Alternar Modo Oscuro/Claro">
+          <i class="fa-solid fa-moon theme-icon-moon"></i>
+          <i class="fa-solid fa-sun theme-icon-sun"></i>
+        </button>
+
+        
+        <div class="nav-socials">
+          
+            <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          
+          
+            <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          
+          
+            <a href="mailto:imende.mariano@gmail.com" class="social-icon-btn" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <main role="main" class="site-main">
+      
+  <article class="single-post-container">
+    
+    <header class="single-post-header">
+      <div class="post-breadcrumb">
+        <a href="/" class="breadcrumb-link"><i class="fa-solid fa-house"></i> Inicio</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="/post/" class="breadcrumb-link">Artículos</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">🛠️ Construir binario de k6</span>
+      </div>
+
+      <h1 class="single-post-title">🛠️ Construir binario de k6</h1>
+
+      <div class="single-post-meta">
+        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 13/01/2025</span>
+        <span class="meta-item"><i class="fa-regular fa-clock"></i> 7 min de lectura</span>
+        <span class="meta-item"><i class="fa-solid fa-user-pen"></i> Mariano Imende</span>
+      </div>
+
+      
+        <div class="single-post-tags">
+          
+            <a href="/tags/stress/" class="tag-chip tag-stress">#stress</a>
+          
+            <a href="/tags/performance/" class="tag-chip tag-performance">#performance</a>
+          
+            <a href="/tags/k6/" class="tag-chip tag-k6">#k6</a>
+          
+            <a href="/tags/testing/" class="tag-chip tag-testing">#testing</a>
+          
+        </div>
+      
+
+      
+        <div class="single-post-featured-image-wrap">
+          <img src="https://automationtesting.ar/images/k6/k6.png" alt="🛠️ Construir binario de k6" class="single-post-featured-image" />
+        </div>
+      
+    </header>
+
+    
+    <div class="single-post-layout">
+      
+      <main class="single-post-content post-content" id="article-body">
+        <h1 id="creando-una-guía-detallada-para-instalar-y-personalizar-k6-utilizando-extensiones-wsl-y-go-en-un-sistema-windows">Creando una guía detallada para instalar y personalizar k6 utilizando extensiones, WSL y Go en un sistema Windows.</h1>
+<p>Esta guía te mostrará cómo instalar y personalizar k6 con extensiones, utilizando el Subsistema de Windows para Linux (WSL) y Go. Al final, podrás generar un binario personalizado de k6 con las extensiones que necesites.</p>
+<h2 id="que-es-una-extension-">Que es una Extension? 🛠️</h2>
+<p>Las extensiones son funcionalidades que se agregan a la version estandar de k6, Las extensiones son desarrolladas tanto por los desarrolladores de k6 como por la comunidad.</p>
+<p>Ejemplos de extensiones populares::</p>
+<ul>
+<li>
+<p>k6-chai (Chai es una biblioteca de aserciones para frameworks de JavaScript )</p>
+</li>
+<li>
+<p>k6 web dashboard (Agrega un dashboard html embebido)</p>
+</li>
+<li>
+<p>k6-output-influxdb (Con la extensión InfluxDB , puede almacenar métricas k6 en InfluxDB v2.0 y analizar sus resultados de con Grafana u otras herramientas .</p>
+</li>
+</ul>
+<p><a href="https://grafana.com/docs/k6/latest/extensions/explore/">Explorar las extensiones de k6</a> 📚</p>
+<p>Para lograr este nuevo ejecutable para distribuciones de Linux es mejor generarlo desde un sistema Linux, normalmente trabajamos con una computadora con Windows (al menos es mi caso) entonces vamos a utilizar WSL para montar una distribucion de Linux en nuestro Windows.</p>
+<h2 id="qué-es-el-subsistema-de-windows-para-linux-wsl">¿Qué es el subsistema de Windows para Linux (WSL)?</h2>
+<p>El Subsistema de Windows para Linux (WSL) es una característica de Windows que le permite ejecutar un entorno Linux en su máquina Windows</p>
+<h2 id="prerrequisitos-">Prerrequisitos ✅</h2>
+<p>Debés tener:</p>
+<ul>
+<li>Windows 10 (versión 2004 o posterior, Build 19041 o superior) o Windows 11</li>
+</ul>
+<h2 id="paso-1-instalar-el-subsistema-de-windows-para-linux-wsl-">Paso 1: Instalar el Subsistema de Windows para Linux (WSL) 🐧</h2>
+<p>Abra PowerShell o el Símbolo del sistema de Windows en modo administrador haciendo clic derecho y seleccionando &ldquo;Ejecutar como administrador&rdquo;, ingresar el comando:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wsl --install Ubuntu</span></span></code></pre></div>
+  </div><p>Este comando instalará Ubuntu (debes especificar usuario y password admin) en tu computadora con Windows:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>C:\WINDOWS\system32<span style="color:#75715e">&gt; &#34;wsl --install Ubuntu&#34;</span>
+</span></span><span style="display:flex;"><span>Instalando: Ubuntu
+</span></span><span style="display:flex;"><span>Se ha instalado Ubuntu.
+</span></span><span style="display:flex;"><span>Iniciando Ubuntu...
+</span></span><span style="display:flex;"><span>Installing, this may take a few minutes...
+</span></span><span style="display:flex;"><span>Please create a default UNIX user account. The username does not need to match your Windows username.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">For</span> more information visit: https://aka.ms/wslusers
+</span></span><span style="display:flex;"><span>Enter new UNIX username: <span style="color:#e6db74">&#34;&lt;nombre de usuario&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>New password:<span style="color:#e6db74">&#34;&lt;escritura a ciegas de la password&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>Retype new password:<span style="color:#e6db74">&#34;&lt;escritura a ciegas de la password&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>passwd: password updated successfully
+</span></span><span style="display:flex;"><span>Installation successful!
+</span></span><span style="display:flex;"><span>To run a command as administrator (user <span style="color:#e6db74">&#34;root&#34;</span>), use <span style="color:#e6db74">&#34;sudo &lt;command&gt;&#34;</span>.
+</span></span><span style="display:flex;"><span>See <span style="color:#e6db74">&#34;man sudo_root&#34;</span> for details.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)</span></span></code></pre></div>
+  </div><p>Tal vez, deba reiniciar tu equipo 🔄</p>
+<p>Algunos comando utiles WSL y algunas anotaciones:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl --install &lt;Distribution Name&gt;                         :Instalar una distribución
+</span></span><span style="display:flex;"><span>wsl --distribution &lt;Distribution Name&gt; --user &lt;User Name&gt; :Ejecutar una distribución
+</span></span><span style="display:flex;"><span>wsl --update
+</span></span><span style="display:flex;"><span>wsl --version
+</span></span><span style="display:flex;"><span>wsl --unregister &lt;DistributionName&gt;                       :Dar de baja una distribucón
+</span></span><span style="display:flex;"><span>wsl --shutdown
+</span></span><span style="display:flex;"><span>wsl --terminate &lt;Distribution Name&gt;
+</span></span><span style="display:flex;"><span>wsl --list --verbose
+</span></span><span style="display:flex;"><span>wsl --list --online</span></span></code></pre></div>
+  </div><h2 id="paso-2-instalar-go-">Paso 2: Instalar Go 🐹</h2>
+<p>k6 está desarrollado en JavaScript y Go, por lo que es necesario instalar Go para construir un binario personalizado.</p>
+<p><a href="https://go.dev/dl/">Ve al sitio oficial de Go:</a> 📥</p>
+<ul>
+<li>En el presente ejemplo, vamos a descargar e instalar la versión:</li>
+</ul>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>go1.23.4.linux-amd64.tar.gz</span></span></code></pre></div>
+  </div><ul>
+<li>Mové el archivo descargado al directorio /tmp en tu distribución Linux, podes usar el explorador de archivos de Windows.</li>
+</ul>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>/tmp/go1.23.4.linux-amd64.tar.gz</span></span></code></pre></div>
+  </div><p>Eliminá posibles instalaciones previas de Go: (&quot; /usr/local/&quot; es un lugar donde el administrador de un sistema operativo instala software que puede ser utilizado por todos los usuarios):</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo rm -rf /usr/local/go</span></span></code></pre></div>
+  </div><p><strong>sudo:</strong> permite a los usuarios ejecutar programas con los privilegios de seguridad usuario root (Admin)</p>
+<ul>
+<li>Descomprimir el archivo descargado e instala Go en <strong>/usr/local</strong>:</li>
+</ul>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo tar -C /usr/local -xzf /tmp/go1.23.4.linux-amd64.tar.gz</span></span></code></pre></div>
+  </div><ul>
+<li>Configuración de variables de entorno (temporal) 🌐</li>
+</ul>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:/usr/local/go/bin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export GOPATH<span style="color:#f92672">=</span>/tmp/xk6
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:/tmp/xk6/bin</span></span></code></pre></div>
+  </div><p>NOTA: GOPATH no debe ser la misma ruta que su instalación de Go.</p>
+<ul>
+<li>Verificá que Go y las variables de entorno estén correctamente configurados:</li>
+</ul>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>go env GOPATH
+</span></span><span style="display:flex;"><span>go version
+</span></span><span style="display:flex;"><span>echo $PATH</span></span></code></pre></div>
+  </div><h2 id="paso-3-instalar-xk6-">Paso 3: Instalar xk6 🔧</h2>
+<p><strong>¿Qué es xk6?</strong></p>
+<p>xk6 es una herramienta de línea de comandos que permite generar compilaciones (ejecutables) personalizadas de k6, con o sin extensiones.</p>
+<p>Ejecutá el siguiente comando para instalar <strong>xk6</strong>:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>go install go.k6.io/xk6/cmd/xk6@latest</span></span></code></pre></div>
+  </div><p>latest: Instalar la última versión disponible.</p>
+<h2 id="paso-4-crear-un-binario-personalizado-ejecutable-de-k6-">Paso 4: Crear un binario personalizado (ejecutable) de k6 🖥️</h2>
+<p>Una vez que tengas xk6 instalado, podes generar un binario personalizado de k6 con las extensiones que necesites.</p>
+<p>Ejecutá el siguiente comando, especificando las extensiones que deseas incluir:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>xk6 build --with github.com/grafana/xk6-dashboard@latest --with github.com/grafana/xk6-output-influxdb --with github.com/oleiade/xk6-kv --with github.com/gpiechnik2/xk6-httpagg@latest --with github.com/avitalique/xk6-file@latest --with github.com/mostafa/xk6-kafka@latest</span></span></code></pre></div>
+  </div><p>las extensiones específicas (xk6-dashboard, etc.) son opcionales y el lector puede adaptarlas según sus necesidades.</p>
+<p><strong>Ubicación del binario generado 📁:</strong></p>
+<p>El nuevo binario de <strong>k6</strong> se creará en el directorio indicado al finalizar la creación (puede variar segun la distribución elegida):</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xk6</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">now</span> <span style="color:#a6e22e">produced</span> <span style="color:#a6e22e">a</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">k6</span> <span style="color:#a6e22e">binary</span> <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">may</span> <span style="color:#a6e22e">be</span> <span style="color:#a6e22e">different</span> <span style="color:#a6e22e">than</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">command</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">system</span> <span style="color:#a6e22e">path</span><span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Be</span> <span style="color:#a6e22e">sure</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">run</span> <span style="color:#e6db74">&#39;./k6 run &lt;SCRIPT_NAME&gt;&#39;</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">the</span> <span style="color:#e6db74">&#39;/home/&lt;nombre de usuario&gt;&#39;</span> <span style="color:#a6e22e">directory</span>.</span></span></code></pre></div>
+  </div><h2 id="paso-5-chequear-las-extensiones-del-nuevo-binario-personalizado-">Paso 5: Chequear las extensiones del nuevo binario personalizado ☑️</h2>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>k6 --version
+</span></span><span style="display:flex;"><span>k6 v0.57.0 <span style="color:#f92672">(</span>go1.24.0, linux/amd64<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Extensions:
+</span></span><span style="display:flex;"><span>  github.com/avitalique/xk6-file v1.4.2, k6/x/file <span style="color:#f92672">[</span>js<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  github.com/gpiechnik2/xk6-httpagg v1.0.0, k6/x/httpagg <span style="color:#f92672">[</span>js<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  github.com/grafana/xk6-dashboard v0.7.5, dashboard <span style="color:#f92672">[</span>output<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  github.com/grafana/xk6-output-influxdb v0.6.0, xk6-influxdb <span style="color:#f92672">[</span>output<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  github.com/mostafa/xk6-kafka v0.31.1, k6/x/kafka <span style="color:#f92672">[</span>js<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  github.com/oleiade/xk6-kv v1.1.0, k6/x/kv <span style="color:#f92672">[</span>js<span style="color:#f92672">]</span></span></span></code></pre></div>
+  </div><h2 id="paso-5-probar-el-binario-personalizado-">Paso 5: Probar el binario personalizado 🧪</h2>
+<p>Copiá el binario generado al servidor de funciona como generador de carga de k6, puedes incluido en tu PATH, por ejemplo:
+Ejecutá un script de prueba para asegurarte de que el binario funcione correctamente:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>k6 run test.js</span></span></code></pre></div>
+  </div><p>Donde test.js es un script de prueba básico:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">sleep</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;k6&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">check</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;k6&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Counter</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;k6/metrics&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">http</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;k6/http&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">httpagg</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;k6/x/httpagg&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Define metricas personalizadas para cada check
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">checkMetrics</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_200&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_200&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_201&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_201&#39;</span>),
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_400&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_400&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_401&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_401&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_403&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_403&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_404&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_404&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_408&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_408&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_418&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_418&#39;</span>),
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_500&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_500&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_502&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_502&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_503&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_503&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_504&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_504&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_507&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_507&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_508&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_508&#39;</span>), 
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_0&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_0&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_no_soportado&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;status_no_soportado&#39;</span>),
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;response_time_2s&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_response_time_2s&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;body_login_successful&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_body_login_successful&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;content_type_json&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_content_type_json&#39;</span>),
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">insecureSkipTLSVerify</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scenarios</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ramp_up_and_constant_rate</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">executor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ramping-arrival-rate&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">startRate</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">timeUnit</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1s&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">preAllocatedVUs</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">maxVUs</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">stages</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span> },
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> },
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;30s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15</span> },
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> },
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span> }
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;solution&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ATO&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;customerid&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;namortest&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;brand&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;BEE20_Web_Empresas&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;accountid&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;accountopendate&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;yearOfBirth&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1990&#34;</span>
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">params</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;X-fiid&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;9499&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;X-trace-id&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;123e4567-e89b-42d3-a456-556642440000&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;Authorization&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Bear.er LHyQxKKb3K03Gy0XRS4vx8eO5ELc6sO8kl4jDb9Y&#39;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">statusesToCheck</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">201</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">401</span>, <span style="color:#ae81ff">403</span>, <span style="color:#ae81ff">404</span>, <span style="color:#ae81ff">408</span>, <span style="color:#ae81ff">418</span>, <span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">502</span>, <span style="color:#ae81ff">503</span>, <span style="color:#ae81ff">504</span>, <span style="color:#ae81ff">507</span>, <span style="color:#ae81ff">508</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> () {  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;https://walletfic.com.ar/middleware/init&#39;</span>,<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">body</span>),<span style="color:#a6e22e">params</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">statusesToCheck</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">statusesToCheck</span>[<span style="color:#a6e22e">i</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Check si el status del response coincide con valor del array:
+</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">check</span>(<span style="color:#a6e22e">response</span>, {[<span style="color:#e6db74">`is status </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">status</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>]<span style="color:#f92672">:</span> (<span style="color:#a6e22e">r</span>) =&gt; <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">status</span>});<span style="color:#75715e">//la variable de status sera falsa porque la asercion interna no fue cumplida
+</span></span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">checkMetrics</span>[<span style="color:#e6db74">`status_</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">status</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>].<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">result</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>); <span style="color:#75715e">// uso de &#34;template literals, actualizo el contdor de http code
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">result</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">true</span>) {
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Validar si la respuesta no es exitosa
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">200</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">httpagg</span>.<span style="color:#a6e22e">checkRequest</span>(<span style="color:#a6e22e">response</span>, <span style="color:#66d9ef">false</span>, {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">fileName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;httpagg.json&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">aggregateLevel</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;onError&#34;</span>,
+</span></span><span style="display:flex;"><span>   });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Check si el response time es  &lt;= 2s
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">resultResponseTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">check</span>(<span style="color:#a6e22e">response</span>, { <span style="color:#e6db74">&#39;is response time &lt;= 2s&#39;</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">r</span>) =&gt; <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">timings</span>.<span style="color:#a6e22e">duration</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2000</span> });
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">checkMetrics</span>[<span style="color:#e6db74">&#39;response_time_2s&#39;</span>].<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">resultResponseTime</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Check if body does NOT contain &#34;Login successful&#34;
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">resultBodyLogin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">check</span>(<span style="color:#a6e22e">response</span>, { <span style="color:#e6db74">&#39;body contains Login successful&#39;</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">r</span>) =&gt; <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">body</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;initiated&#39;</span>) });
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">checkMetrics</span>[<span style="color:#e6db74">&#39;body_login_successful&#39;</span>].<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">resultBodyLogin</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Check if Content-Type is NOT application/json
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">resultContentType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">check</span>(<span style="color:#a6e22e">response</span>, { <span style="color:#e6db74">&#39;Content-Type is application/json&#39;</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">r</span>) =&gt; <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">headers</span>[<span style="color:#e6db74">&#39;Content-Type&#39;</span>] <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">checkMetrics</span>[<span style="color:#e6db74">&#39;content_type_json&#39;</span>].<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">resultContentType</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">teardown</span>(<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">httpagg</span>.<span style="color:#a6e22e">generateRaport</span>(<span style="color:#e6db74">&#34;httpagg.json&#34;</span>, <span style="color:#e6db74">&#34;index.html&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// or (without the optional fields)
+</span></span></span><span style="display:flex;"><span>    <span style="color:#75715e">//httpagg.generateRaport() // the default name of the html report that will be created 
+</span></span></span><span style="display:flex;"><span>    <span style="color:#75715e">// is &#34;httpaggReport.html&#34;. In turn, the name of the request results file that will 
+</span></span></span><span style="display:flex;"><span>    <span style="color:#75715e">// be checked is &#34;httpagg.json&#34;
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+  </div><p>Además, podes incluir el uso de cada nueva funcionalidades implementando los ejemplo en github:</p>
+<p><a href="https://github.com/grafana/xk6-dashboard">https://github.com/grafana/xk6-dashboard</a></p>
+<p><a href="https://github.com/grafana/xk6-output-influxdb">https://github.com/grafana/xk6-output-influxdb</a></p>
+<p><a href="https://github.com/dgzlopes/xk6-kv">https://github.com/dgzlopes/xk6-kv</a></p>
+<p><a href="https://github.com/gpiechnik2/xk6-httpagg">https://github.com/gpiechnik2/xk6-httpagg</a></p>
+<p><a href="https://github.com/avitalique/xk6-file">https://github.com/avitalique/xk6-file</a></p>
+<p>Espero que todo te funcione de maravillas, Exitos!!! 🤞</p>
+<h2 id="conclusión-">Conclusión 🎉</h2>
+<p>Con estos pasos, has instalado WSL, configurado Go, instalado xk6 y generado un binario personalizado de k6 con extensiones. Ahora estás listo para ejecutar pruebas de carga avanzadas con las funcionalidades adicionales que estas extensiones proporcionan.</p>
+<p>¡Buena suerte y éxito en tus pruebas! 🙏</p>
+<h2 id="recursos-adicionales">Recursos adicionales:</h2>
+<p>Documentación oficial de k6 :
+<a href="https://grafana.com/docs/k6/latest/">https://grafana.com/docs/k6/latest/</a></p>
+<p>Extensiones de k6 :
+<a href="https://grafana.com/docs/k6/latest/extensions/explore/">https://grafana.com/docs/k6/latest/extensions/explore/</a></p>
+<p>Instalación de Go :
+<a href="https://go.dev/doc/install">https://go.dev/doc/install</a></p>
+
+      </main>
+
+      
+      <aside class="single-post-sidebar">
+        <div class="sticky-sidebar-content">
+          
+            <div class="toc-card">
+              <div class="toc-header">
+                <i class="fa-solid fa-list-ul"></i>
+                <span>En este artículo</span>
+              </div>
+              <nav id="TableOfContents" class="toc-nav">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#que-es-una-extension-">Que es una Extension? 🛠️</a></li>
+    <li><a href="#qué-es-el-subsistema-de-windows-para-linux-wsl">¿Qué es el subsistema de Windows para Linux (WSL)?</a></li>
+    <li><a href="#prerrequisitos-">Prerrequisitos ✅</a></li>
+    <li><a href="#paso-1-instalar-el-subsistema-de-windows-para-linux-wsl-">Paso 1: Instalar el Subsistema de Windows para Linux (WSL) 🐧</a></li>
+    <li><a href="#paso-2-instalar-go-">Paso 2: Instalar Go 🐹</a></li>
+    <li><a href="#paso-3-instalar-xk6-">Paso 3: Instalar xk6 🔧</a></li>
+    <li><a href="#paso-4-crear-un-binario-personalizado-ejecutable-de-k6-">Paso 4: Crear un binario personalizado (ejecutable) de k6 🖥️</a></li>
+    <li><a href="#paso-5-chequear-las-extensiones-del-nuevo-binario-personalizado-">Paso 5: Chequear las extensiones del nuevo binario personalizado ☑️</a></li>
+    <li><a href="#paso-5-probar-el-binario-personalizado-">Paso 5: Probar el binario personalizado 🧪</a></li>
+    <li><a href="#conclusión-">Conclusión 🎉</a></li>
+    <li><a href="#recursos-adicionales">Recursos adicionales:</a></li>
+  </ul>
+</nav>
+              </nav>
+            </div>
+          
+
+          <div class="sidebar-actions-card">
+            <button type="button" class="btn-sidebar-action" id="btn-back-to-top" title="Volver arriba">
+              <i class="fa-solid fa-arrow-up"></i>
+              <span>Volver arriba</span>
+            </button>
+            <a href="/post/" class="btn-sidebar-action" title="Ver todos los artículos">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Todos los artículos</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+    </main>
+    <footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <span class="footer-logo">⚡ Automation &amp; Performance</span>
+      <p class="footer-tagline">Espacio dedicado al testing estratégico, automatización y performance engineering.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="/" class="footer-link">Inicio</a>
+      <a href="/post/" class="footer-link">Artículos</a>
+      <a href="/about/" class="footer-link">Sobre Mí (CV)</a>
+      <a href="/contact/" class="footer-link">Contacto</a>
+    </div>
+
+    <div class="footer-socials">
+      
+        <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      
+      
+        <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      
+      
+        <a href="https://www.instagram.com/mariano_imende/?igsh=ZnU0YTJrNTYxcTM3" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      
+      
+        <a href="https://www.youtube.com/results?search_query=performance&#43;and&#43;automation&#43;testing" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      
+      
+        <a href="mailto:imende.mariano@gmail.com" class="footer-social-btn" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 <strong>Mariano Imende</strong>. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Búsqueda rápida">
+  <div class="search-modal-dialog">
+    <div class="search-input-header">
+      <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
+      <input type="text" id="search-input" class="search-input" placeholder="Buscar por tema, tecnología o comando (ej. k6, kafka, pom)..." autocomplete="off" />
+      <button type="button" id="search-close-btn" class="search-close-btn" aria-label="Cerrar búsqueda">
+        <span class="esc-badge">ESC</span>
+      </button>
+    </div>
+
+    <div id="search-results" class="search-results-list">
+      <div class="search-placeholder">
+        Escribí una palabra clave para buscar tutoriales, código o herramientas...
+      </div>
+    </div>
+
+    <div class="search-modal-footer">
+      <span class="search-hint"><kbd>↑</kbd> <kbd>↓</kbd> para navegar</span>
+      <span class="search-hint"><kbd>↵</kbd> para seleccionar</span>
+      <span class="search-hint"><kbd>ESC</kbd> para cerrar</span>
+    </div>
+  </div>
+</div>
+
+
+<script src="/js/main.js"></script>
+
+  </body>
+</html>

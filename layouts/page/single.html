@@ -1,0 +1,19 @@
+{{ define "header" }}
+  {{ partial "site-navigation.html" . }}
+  {{ if not .Params.omit_header_text }}
+    <div class="page-header-container">
+      <h1 class="page-header-title">{{ .Title }}</h1>
+      {{ with .Description }}
+        <p class="page-header-description">{{ . }}</p>
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}
+
+{{ define "main" }}
+  <div class="page-content-wrapper">
+    <article class="page-content-body">
+      {{ .Content }}
+    </article>
+  </div>
+{{ end }}

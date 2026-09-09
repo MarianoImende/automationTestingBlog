@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>🔍 Rompiendo el mito: &#34;Pruebas Manuales&#34; vs. &#34;Pruebas Automatizadas&#34; | Automation
+&amp;
+Performance
+testing</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="🛠️ Pruebas de software: Ni manuales ni automatizadas, sino estratégicas">
+    <meta name="generator" content="Hugo 0.165.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="Mariano Imende">
+    
+
+    <link rel="stylesheet" href="/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous"><link rel="stylesheet" href="/css/custom.css">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://automationtesting.ar/post/manualvsautomatico/">
+    
+
+    <meta property="og:url" content="https://automationtesting.ar/post/manualvsautomatico/">
+	<meta property="og:site_name" content="Automation
+&
+Performance
+testing">
+	<meta property="og:title" content="🔍 Rompiendo el mito: &#34;Pruebas Manuales&#34; vs. &#34;Pruebas Automatizadas&#34;">
+	<meta property="og:description" content="🛠️ Pruebas de software: Ni manuales ni automatizadas, sino estratégicas">
+	<meta property="og:locale" content="es_ar">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="post">
+		<meta property="article:published_time" content="2024-11-01T00:00:00+00:00">
+		<meta property="article:modified_time" content="2024-11-01T00:00:00+00:00">
+		<meta property="article:tag" content="Testing">
+		<meta property="article:tag" content="Metodologia">
+		<meta property="article:tag" content="Automatizacion">
+
+	<meta itemprop="name" content="🔍 Rompiendo el mito: &#34;Pruebas Manuales&#34; vs. &#34;Pruebas Automatizadas&#34;">
+	<meta itemprop="description" content="🛠️ Pruebas de software: Ni manuales ni automatizadas, sino estratégicas">
+	<meta itemprop="datePublished" content="2024-11-01T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2024-11-01T00:00:00+00:00">
+	<meta itemprop="wordCount" content="611">
+	<meta itemprop="keywords" content="Testing,Metodologia,Automatizacion">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="🔍 Rompiendo el mito: &#34;Pruebas Manuales&#34; vs. &#34;Pruebas Automatizadas&#34;">
+	<meta name="twitter:description" content="🛠️ Pruebas de software: Ni manuales ni automatizadas, sino estratégicas">
+
+      
+    
+    
+<script>
+  (function() {
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+  </head>
+
+  <body class="site-body kind-page type-post">
+    
+  
+  <div id="reading-progress-container" class="reading-progress-container">
+    <div id="reading-progress-bar" class="reading-progress-bar"></div>
+  </div>
+  <nav class="modern-navbar" role="navigation">
+  <div class="nav-container">
+    <a href="/" class="nav-brand">
+      <span class="brand-icon">⚡</span>
+      <span class="brand-text">Automation<span class="brand-accent">&amp;</span>Performance</span>
+    </a>
+
+    <div class="nav-menu-wrapper">
+      
+        <ul class="nav-links">
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/">
+              Inicio
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/post/">
+              Artículos y Tutoriales
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/about/">
+              Sobre Mí (CV)
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/contact/">
+              Contacto
+            </a>
+          </li>
+          
+        </ul>
+      
+
+      <div class="nav-actions">
+        
+        <button type="button" class="search-trigger-btn" id="search-trigger-btn" aria-label="Buscar en el blog" title="Buscar (Ctrl + K)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="search-kbd">Ctrl K</span>
+        </button>
+
+        
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema de color" title="Alternar Modo Oscuro/Claro">
+          <i class="fa-solid fa-moon theme-icon-moon"></i>
+          <i class="fa-solid fa-sun theme-icon-sun"></i>
+        </button>
+
+        
+        <div class="nav-socials">
+          
+            <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          
+          
+            <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          
+          
+            <a href="mailto:imende.mariano@gmail.com" class="social-icon-btn" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <main role="main" class="site-main">
+      
+  <article class="single-post-container">
+    
+    <header class="single-post-header">
+      <div class="post-breadcrumb">
+        <a href="/" class="breadcrumb-link"><i class="fa-solid fa-house"></i> Inicio</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="/post/" class="breadcrumb-link">Artículos</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">🔍 Rompiendo el mito: &#34;Pruebas Manuales&#34; vs. &#34;Pruebas Automatizadas&#34;</span>
+      </div>
+
+      <h1 class="single-post-title">🔍 Rompiendo el mito: &#34;Pruebas Manuales&#34; vs. &#34;Pruebas Automatizadas&#34;</h1>
+
+      <div class="single-post-meta">
+        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 01/11/2024</span>
+        <span class="meta-item"><i class="fa-regular fa-clock"></i> 3 min de lectura</span>
+        <span class="meta-item"><i class="fa-solid fa-user-pen"></i> Mariano Imende</span>
+      </div>
+
+      
+        <div class="single-post-tags">
+          
+            <a href="/tags/testing/" class="tag-chip tag-testing">#testing</a>
+          
+            <a href="/tags/metodologia/" class="tag-chip tag-metodologia">#metodologia</a>
+          
+            <a href="/tags/automatizacion/" class="tag-chip tag-automatizacion">#automatizacion</a>
+          
+        </div>
+      
+
+      
+        <div class="single-post-featured-image-wrap">
+          <img src="https://automationtesting.ar/images/ManualVsAutomatico/manualVSautomatico.webp" alt="🔍 Rompiendo el mito: &#34;Pruebas Manuales&#34; vs. &#34;Pruebas Automatizadas&#34;" class="single-post-featured-image" />
+        </div>
+      
+    </header>
+
+    
+    <div class="single-post-layout">
+      
+      <main class="single-post-content post-content" id="article-body">
+        <p>En el mundo del testing de software, es común escuchar la dicotomía entre pruebas manuales y pruebas automatizadas. Sin embargo, esta clasificación es un tanto engañosa y puede llevarnos a malinterpretar el verdadero propósito del testing.</p>
+<p>📌 ¿Acaso las pruebas manuales existen realmente?</p>
+<p>📌 ¿La automatización puede reemplazar la evaluación humana?</p>
+<p>📌 ¿Qué papel juegan las herramientas en la estrategia de pruebas?</p>
+<p>En este artículo, exploramos por qué esta distinción no sólo es imprecisa, sino que también puede limitar la forma en que abordamos la calidad del software. Descubramos juntos cómo las pruebas son más que una simple verificación automatizada o una acción manual: son una actividad cognitiva, estratégica y asistida por herramientas. 🚀</p>
+<hr>
+<h2 id="-1-la-dicotomía-entre">📌 <strong>1. La dicotomía entre &ldquo;pruebas manuales&rdquo; y &ldquo;pruebas automatizadas&rdquo; es falsa</strong></h2>
+<p>No tiene sentido dividir las pruebas en estas dos categorías porque en la realidad, las pruebas siempre involucran un componente cognitivo humano que no puede ser automatizado por completo.</p>
+<hr>
+<h2 id="-2-el-término">📌 <strong>2. El término &ldquo;prueba manual&rdquo; es engañoso</strong></h2>
+<ul>
+<li>Usamos herramientas y tecnología constantemente en las pruebas, incluso cuando realizamos tareas que algunos llaman &ldquo;manuales&rdquo;.</li>
+<li>Llamarlas &ldquo;manuales&rdquo; minimiza la importancia del <strong>pensamiento crítico</strong> en las pruebas.</li>
+</ul>
+<hr>
+<h2 id="-3-las-pruebas-no-pueden-ser-completamente-automatizadas">📌 <strong>3. Las pruebas no pueden ser completamente automatizadas</strong></h2>
+<p>Podemos automatizar la <strong>ejecución de verificaciones</strong>, pero:</p>
+<p>✔️ <strong>El análisis de riesgos</strong><br>
+✔️ <strong>La interpretación de resultados</strong><br>
+✔️ <strong>El diseño de pruebas</strong></p>
+<p>Siguen siendo actividades humanas.</p>
+<p>🔹 La <strong>verificación</strong> puede ser automatizada, pero la <strong>prueba en sí misma</strong> sigue siendo una actividad cognitiva.</p>
+<hr>
+<h2 id="-4-las-herramientas-amplifican-nuestras-capacidades-pero-no-reemplazan-la-inteligencia-humana">📌 <strong>4. Las herramientas amplifican nuestras capacidades, pero no reemplazan la inteligencia humana</strong></h2>
+<ul>
+<li>
+<p>Las herramientas ayudan a hacer pruebas más rápido y eficientemente, pero también pueden <strong>amplificar malas prácticas</strong> si no se usan con criterio.</p>
+</li>
+<li>
+<p><strong>La automatización no convierte automáticamente a las pruebas en algo más efectivo</strong> si no hay una estrategia sólida detrás.</p>
+</li>
+</ul>
+<hr>
+<h2 id="-5-las-pruebas-exploratorias-también-hacen-uso-de-herramientas">📌 <strong>5. Las pruebas exploratorias también hacen uso de herramientas</strong></h2>
+<p>No es cierto que la exploración sea puramente &ldquo;manual&rdquo;.<br>
+✔️ Existen múltiples herramientas que pueden apoyar la exploración y mejorar la eficiencia.</p>
+<hr>
+<h2 id="-6-los-testers-no-deben-definirse-como">📌 <strong>6. Los testers no deben definirse como &ldquo;manuales&rdquo; o &ldquo;automatizados&rdquo;</strong></h2>
+<ul>
+<li>
+<p>Un <strong>Tester</strong> no es &ldquo;manual&rdquo; ni &ldquo;automatizado&rdquo;, ya que siempre utiliza una combinación de <strong>pensamiento crítico, exploración y herramientas</strong>.</p>
+</li>
+<li>
+<p>La clave está en <strong>desarrollar habilidades para usar las herramientas de forma estratégica</strong>.</p>
+</li>
+<li>
+<p>No hablamos de:</p>
+</li>
+</ul>
+<p>❌ <strong>&ldquo;Programación automatizada&rdquo;</strong> cuando compilamos código.<br>
+❌ <strong>&ldquo;Programación manual&rdquo;</strong> cuando escribimos código.</p>
+<p>💡 De la misma manera, <strong>las pruebas no deben dividirse artificialmente en &ldquo;manuales&rdquo; y &ldquo;automatizadas&rdquo;</strong>.</p>
+<h2 id="-7-cómo-balancear-pruebas-exploratorias-automatización-y-análisis-manual">📌 <strong>7. Cómo Balancear Pruebas Exploratorias, Automatización y Análisis Manual</strong></h2>
+<p>La clave para un enfoque de testing efectivo no está en elegir entre pruebas exploratorias, automatización o análisis manual, sino en combinar estos enfoques estratégicamente para maximizar la cobertura y la calidad del producto.</p>
+<p>En lugar de pensar en manual vs. automatizado, es mejor verlo como un triángulo de testing donde cada método complementa a los otros.</p>
+<hr>
+<h2 id="-8-el-enfoque-en-la-automatización-puede-distraer-de-la-evaluación-real-de-la-calidad">📌 <strong>8. El enfoque en la automatización puede distraer de la evaluación real de la calidad</strong></h2>
+<ul>
+<li>
+<p>Centrarse solo en la ejecución de verificaciones automatizadas puede hacer que <strong>se pasen por alto problemas más importantes en el producto</strong>.</p>
+</li>
+<li>
+<p>La calidad no se mide solo en términos de <strong>verificaciones binarias (pasa/falla)</strong>, sino en un <strong>análisis cualitativo</strong> más amplio.</p>
+</li>
+</ul>
+<hr>
+<h2 id="-conclusión-final"><strong>🎯 Conclusión final</strong></h2>
+<p>Las pruebas de software son un <strong>proceso cognitivo y estratégico</strong> que puede utilizar herramientas y automatización, pero que en su esencia sigue dependiendo del <strong>juicio y análisis humano</strong>.</p>
+<p>✅ En lugar de dividir las pruebas en <strong>&ldquo;manuales&rdquo; y &ldquo;automatizadas&rdquo;</strong>, es mejor hablar de:</p>
+<p>✔️ <strong>Pruebas asistidas por herramientas</strong></p>
+<p>✔️ <strong>Bien aplicada, la automatización expande las capacidades de los testers.</strong></p>
+<p>✔️ <strong>Integrar la automatización sin perder el enfoque en el pensamiento crítico.</strong></p>
+<p>✔️ <strong>Diseñadas inteligentemente para obtener información valiosa sobre la calidad del producto</strong>. 🚀</p>
+<hr>
+
+      </main>
+
+      
+      <aside class="single-post-sidebar">
+        <div class="sticky-sidebar-content">
+          
+            <div class="toc-card">
+              <div class="toc-header">
+                <i class="fa-solid fa-list-ul"></i>
+                <span>En este artículo</span>
+              </div>
+              <nav id="TableOfContents" class="toc-nav">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-1-la-dicotomía-entre">📌 <strong>1. La dicotomía entre “pruebas manuales” y “pruebas automatizadas” es falsa</strong></a></li>
+    <li><a href="#-2-el-término">📌 <strong>2. El término “prueba manual” es engañoso</strong></a></li>
+    <li><a href="#-3-las-pruebas-no-pueden-ser-completamente-automatizadas">📌 <strong>3. Las pruebas no pueden ser completamente automatizadas</strong></a></li>
+    <li><a href="#-4-las-herramientas-amplifican-nuestras-capacidades-pero-no-reemplazan-la-inteligencia-humana">📌 <strong>4. Las herramientas amplifican nuestras capacidades, pero no reemplazan la inteligencia humana</strong></a></li>
+    <li><a href="#-5-las-pruebas-exploratorias-también-hacen-uso-de-herramientas">📌 <strong>5. Las pruebas exploratorias también hacen uso de herramientas</strong></a></li>
+    <li><a href="#-6-los-testers-no-deben-definirse-como">📌 <strong>6. Los testers no deben definirse como “manuales” o “automatizados”</strong></a></li>
+    <li><a href="#-7-cómo-balancear-pruebas-exploratorias-automatización-y-análisis-manual">📌 <strong>7. Cómo Balancear Pruebas Exploratorias, Automatización y Análisis Manual</strong></a></li>
+    <li><a href="#-8-el-enfoque-en-la-automatización-puede-distraer-de-la-evaluación-real-de-la-calidad">📌 <strong>8. El enfoque en la automatización puede distraer de la evaluación real de la calidad</strong></a></li>
+    <li><a href="#-conclusión-final"><strong>🎯 Conclusión final</strong></a></li>
+  </ul>
+</nav>
+              </nav>
+            </div>
+          
+
+          <div class="sidebar-actions-card">
+            <button type="button" class="btn-sidebar-action" id="btn-back-to-top" title="Volver arriba">
+              <i class="fa-solid fa-arrow-up"></i>
+              <span>Volver arriba</span>
+            </button>
+            <a href="/post/" class="btn-sidebar-action" title="Ver todos los artículos">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Todos los artículos</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+    </main>
+    <footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <span class="footer-logo">⚡ Automation &amp; Performance</span>
+      <p class="footer-tagline">Espacio dedicado al testing estratégico, automatización y performance engineering.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="/" class="footer-link">Inicio</a>
+      <a href="/post/" class="footer-link">Artículos</a>
+      <a href="/about/" class="footer-link">Sobre Mí (CV)</a>
+      <a href="/contact/" class="footer-link">Contacto</a>
+    </div>
+
+    <div class="footer-socials">
+      
+        <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      
+      
+        <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      
+      
+        <a href="https://www.instagram.com/mariano_imende/?igsh=ZnU0YTJrNTYxcTM3" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      
+      
+        <a href="https://www.youtube.com/results?search_query=performance&#43;and&#43;automation&#43;testing" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      
+      
+        <a href="mailto:imende.mariano@gmail.com" class="footer-social-btn" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 <strong>Mariano Imende</strong>. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Búsqueda rápida">
+  <div class="search-modal-dialog">
+    <div class="search-input-header">
+      <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
+      <input type="text" id="search-input" class="search-input" placeholder="Buscar por tema, tecnología o comando (ej. k6, kafka, pom)..." autocomplete="off" />
+      <button type="button" id="search-close-btn" class="search-close-btn" aria-label="Cerrar búsqueda">
+        <span class="esc-badge">ESC</span>
+      </button>
+    </div>
+
+    <div id="search-results" class="search-results-list">
+      <div class="search-placeholder">
+        Escribí una palabra clave para buscar tutoriales, código o herramientas...
+      </div>
+    </div>
+
+    <div class="search-modal-footer">
+      <span class="search-hint"><kbd>↑</kbd> <kbd>↓</kbd> para navegar</span>
+      <span class="search-hint"><kbd>↵</kbd> para seleccionar</span>
+      <span class="search-hint"><kbd>ESC</kbd> para cerrar</span>
+    </div>
+  </div>
+</div>
+
+
+<script src="/js/main.js"></script>
+
+  </body>
+</html>

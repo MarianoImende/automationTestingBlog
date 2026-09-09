@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <section class="home-intro-section">
+    <div class="home-intro-content">
+      {{ .Content }}
+    </div>
+  </section>
+
+  {{ $mainSections := site.Params.mainSections | compare.Default (collections.Slice "post") }}
+  {{ $section := collections.Where $.Site.RegularPages "Section" "in" $mainSections }}
+  {{ $section_count := len $section }}
+
+  {{ if compare.Ge $section_count 1 }}
+    <section class="home-posts-section">
+      <div class="section-header">
+        <h2 class="section-title">✨ Últimos Artículos y Tutoriales</h2>
+        <a href="/post/" class="section-more-link">Ver todos los artículos &rarr;</a>
+      </div>
+
+      {{ $n_posts := $.Param "recent_posts_number" | compare.Default 6 }}
+      <div class="cards-grid">
+        {{ range (collections.First $n_posts $section) }}
+          {{ .Render "summary-with-image" }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

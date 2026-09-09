@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Challenge on Automation
+&amp;
+Performance
+testing</title>
+		<link>https://automationtesting.ar/tags/challenge/</link>
+		<description>Recent content in Challenge on Automation
+&amp;
+Performance
+testing</description>
+		<generator>Hugo</generator>
+		<language>es-ar</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 14 Jan 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://automationtesting.ar/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Challenge automatización de pruebas</title>
+				<link>https://automationtesting.ar/post/challenge/</link>
+				<pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/post/challenge/</guid>
+				<description>&lt;h2 id=&#34;-proyecto-para-entrenamiento-de-tester-automatizadores&#34;&gt;🎉 ¡Proyecto para entrenamiento de tester automatizadores!&lt;/h2&gt;&#xA;&lt;p&gt;💻 &lt;strong&gt;Backend:&lt;/strong&gt;  &lt;a href=&#34;https://walletchallenge-back.onrender.com/docs&#34;&gt;Wallet Challenge Backend&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;🌐 &lt;strong&gt;Frontend:&lt;/strong&gt; &lt;a href=&#34;https://walletchallenge-front.onrender.com/&#34;&gt;Wallet Challenge Frontend&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Este proyecto fue creado como una herramienta de entrenamiento para quienes desean practicar y mejorar sus habilidades en automatización de pruebas. Es ideal tanto para testers principiantes como avanzados que buscan un entorno controlado y realista para probar técnicas y herramientas de automatización.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-características-del-proyecto&#34;&gt;🔑 Características del proyecto:&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Backend:&lt;/strong&gt; openapi: 3.1.0 [Swagger]&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Frontend:&lt;/strong&gt; Login (usuario: &lt;strong&gt;challenge&lt;/strong&gt;, password &lt;strong&gt;challenge&lt;/strong&gt;).&#xA;(Por el momento funciona el login y la consulta de cuentas para la cuál se debe ingresar el número de tarjeta en el textbox &amp;ldquo;Cuentas&amp;rdquo;)&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,80 @@
+{{ define "header" }}
+  <!-- Barra de progreso de lectura fijada en el tope -->
+  <div id="reading-progress-container" class="reading-progress-container">
+    <div id="reading-progress-bar" class="reading-progress-bar"></div>
+  </div>
+  {{ partial "site-navigation.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  <article class="single-post-container">
+    <!-- Header del Post -->
+    <header class="single-post-header">
+      <div class="post-breadcrumb">
+        <a href="/" class="breadcrumb-link"><i class="fa-solid fa-house"></i> Inicio</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="/post/" class="breadcrumb-link">Artículos</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">{{ .Title }}</span>
+      </div>
+
+      <h1 class="single-post-title">{{ .Title }}</h1>
+
+      <div class="single-post-meta">
+        <span class="meta-item"><i class="fa-regular fa-calendar"></i> {{ .Date.Format "02/01/2006" }}</span>
+        <span class="meta-item"><i class="fa-regular fa-clock"></i> {{ .ReadingTime }} min de lectura</span>
+        <span class="meta-item"><i class="fa-solid fa-user-pen"></i> {{ .Params.author | compare.Default .Site.Params.author }}</span>
+      </div>
+
+      {{ with .Params.tags }}
+        <div class="single-post-tags">
+          {{ range . }}
+            <a href="/tags/{{ . | urlize }}/" class="tag-chip tag-{{ . | urlize }}">#{{ . }}</a>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{ with .Params.featured_image }}
+        <div class="single-post-featured-image-wrap">
+          <img src="{{ . | absURL }}" alt="{{ $.Title }}" class="single-post-featured-image" />
+        </div>
+      {{ end }}
+    </header>
+
+    <!-- Cuerpo con Layout 2 Columnas (Contenido Principal + ToC Lateral) -->
+    <div class="single-post-layout">
+      <!-- Columna Principal -->
+      <main class="single-post-content post-content" id="article-body">
+        {{ .Content }}
+      </main>
+
+      <!-- Barra Lateral Sticky con Table of Contents -->
+      <aside class="single-post-sidebar">
+        <div class="sticky-sidebar-content">
+          {{ if .TableOfContents }}
+            <div class="toc-card">
+              <div class="toc-header">
+                <i class="fa-solid fa-list-ul"></i>
+                <span>En este artículo</span>
+              </div>
+              <nav id="TableOfContents" class="toc-nav">
+                {{ .TableOfContents }}
+              </nav>
+            </div>
+          {{ end }}
+
+          <div class="sidebar-actions-card">
+            <button type="button" class="btn-sidebar-action" id="btn-back-to-top" title="Volver arriba">
+              <i class="fa-solid fa-arrow-up"></i>
+              <span>Volver arriba</span>
+            </button>
+            <a href="/post/" class="btn-sidebar-action" title="Ver todos los artículos">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Todos los artículos</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+{{ end }}

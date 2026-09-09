@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>📈 Web dashboard en k6 | Automation
+&amp;
+Performance
+testing</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Guía para utilizar Web dashboard en K6 para pruebas de Performance">
+    <meta name="generator" content="Hugo 0.165.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="Mariano Imende">
+    
+
+    <link rel="stylesheet" href="/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous"><link rel="stylesheet" href="/css/custom.css">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://automationtesting.ar/post/k6_dashboard/">
+    
+
+    <meta property="og:url" content="https://automationtesting.ar/post/k6_dashboard/">
+	<meta property="og:site_name" content="Automation
+&
+Performance
+testing">
+	<meta property="og:title" content="📈 Web dashboard en k6">
+	<meta property="og:description" content="Guía para utilizar Web dashboard en K6 para pruebas de Performance">
+	<meta property="og:locale" content="es_ar">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="post">
+		<meta property="article:published_time" content="2024-07-13T00:00:00+00:00">
+		<meta property="article:modified_time" content="2024-07-13T00:00:00+00:00">
+		<meta property="article:tag" content="Stress">
+		<meta property="article:tag" content="Performance">
+		<meta property="article:tag" content="K6">
+		<meta property="article:tag" content="Testing">
+
+	<meta itemprop="name" content="📈 Web dashboard en k6">
+	<meta itemprop="description" content="Guía para utilizar Web dashboard en K6 para pruebas de Performance">
+	<meta itemprop="datePublished" content="2024-07-13T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2024-07-13T00:00:00+00:00">
+	<meta itemprop="wordCount" content="811">
+	<meta itemprop="keywords" content="Stress,Performance,K6,Testing">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="📈 Web dashboard en k6">
+	<meta name="twitter:description" content="Guía para utilizar Web dashboard en K6 para pruebas de Performance">
+
+      
+    
+    
+<script>
+  (function() {
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+  </head>
+
+  <body class="site-body kind-page type-post">
+    
+  
+  <div id="reading-progress-container" class="reading-progress-container">
+    <div id="reading-progress-bar" class="reading-progress-bar"></div>
+  </div>
+  <nav class="modern-navbar" role="navigation">
+  <div class="nav-container">
+    <a href="/" class="nav-brand">
+      <span class="brand-icon">⚡</span>
+      <span class="brand-text">Automation<span class="brand-accent">&amp;</span>Performance</span>
+    </a>
+
+    <div class="nav-menu-wrapper">
+      
+        <ul class="nav-links">
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/">
+              Inicio
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/post/">
+              Artículos y Tutoriales
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/about/">
+              Sobre Mí (CV)
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/contact/">
+              Contacto
+            </a>
+          </li>
+          
+        </ul>
+      
+
+      <div class="nav-actions">
+        
+        <button type="button" class="search-trigger-btn" id="search-trigger-btn" aria-label="Buscar en el blog" title="Buscar (Ctrl + K)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="search-kbd">Ctrl K</span>
+        </button>
+
+        
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema de color" title="Alternar Modo Oscuro/Claro">
+          <i class="fa-solid fa-moon theme-icon-moon"></i>
+          <i class="fa-solid fa-sun theme-icon-sun"></i>
+        </button>
+
+        
+        <div class="nav-socials">
+          
+            <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          
+          
+            <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          
+          
+            <a href="mailto:imende.mariano@gmail.com" class="social-icon-btn" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <main role="main" class="site-main">
+      
+  <article class="single-post-container">
+    
+    <header class="single-post-header">
+      <div class="post-breadcrumb">
+        <a href="/" class="breadcrumb-link"><i class="fa-solid fa-house"></i> Inicio</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="/post/" class="breadcrumb-link">Artículos</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">📈 Web dashboard en k6</span>
+      </div>
+
+      <h1 class="single-post-title">📈 Web dashboard en k6</h1>
+
+      <div class="single-post-meta">
+        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 13/07/2024</span>
+        <span class="meta-item"><i class="fa-regular fa-clock"></i> 4 min de lectura</span>
+        <span class="meta-item"><i class="fa-solid fa-user-pen"></i> Mariano Imende</span>
+      </div>
+
+      
+        <div class="single-post-tags">
+          
+            <a href="/tags/stress/" class="tag-chip tag-stress">#stress</a>
+          
+            <a href="/tags/performance/" class="tag-chip tag-performance">#performance</a>
+          
+            <a href="/tags/k6/" class="tag-chip tag-k6">#k6</a>
+          
+            <a href="/tags/testing/" class="tag-chip tag-testing">#testing</a>
+          
+        </div>
+      
+
+      
+        <div class="single-post-featured-image-wrap">
+          <img src="https://automationtesting.ar/images/k6/k6.png" alt="📈 Web dashboard en k6" class="single-post-featured-image" />
+        </div>
+      
+    </header>
+
+    
+    <div class="single-post-layout">
+      
+      <main class="single-post-content post-content" id="article-body">
+        <h1 id="-web-dashboard">📉 Web dashboard</h1>
+<p><strong>k6</strong> proporciona un panel web integrado que puede habilitar para visualizar y monitorear los resultados de sus pruebas en <strong>tiempo real</strong></p>
+<p><img src="/images/k6/web-dashboard.png" alt="web-dashboard"></p>
+<h1 id="cómo-utilizar">Cómo utilizar</h1>
+<p>El panel web es una función integrada de k6. se puede habilitar configurando la variable de entorno <strong>K6_WEB_DASHBOARD</strong> en <strong>true</strong> cuando ejecute su script de prueba, por ejemplo:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code class="language-linux" data-lang="linux">export K6_WEB_DASHBOARD=true</code></pre>
+  </div><p>De forma predeterminada, el panel web está disponible en el puerto localhost 5665</p>
+<p>EL siguiente es un ejemplo completo en Linux, es decir, el script (init.js) se encuentra en un servidor linux
+en el cual se creo un archivo con extensión <strong>run.sh</strong> (scripts de intérprete de comandos de Bash de Unix) para facilitar la ejecución:</p>
+<p>Contenido de run.sh:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code>export K6_WEB_DASHBOARD=true            # Habilitar el Dashboard
+export K6_WEB_DASHBOARD_PORT=5665       # Puerto de eschucha del Dashboard
+export K6_WEB_DASHBOARD_HOST=0.0.0.0    # Host al que vincular el Dashboard
+export K6_WEB_DASHBOARD_PERIOD=2s       # Periodo en segundos para actualizar el Dashboard
+
+/opt/k6/k6 run --no-connection-reuse /opt/scriptK6/init.js</code></pre>
+  </div><p>Ejecución del scrip:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code>./run.sh</code></pre>
+  </div><p>👉 <strong>binario K6 listo para éste ejemplo:</strong>  <a href="https://github.com/MarianoImende/binario_k6_v1/tree/main/k6v1">github</a></p>
+<p>👉 <strong>compilelo usted mismo:</strong>  <a href="https://github.com/grafana/xk6-dashboard">github</a></p>
+<p>Para acceder al <strong>Web Dashboard</strong> por medio del navegador de tu workstation debes ingrsar a: http://IP:5665/
+<strong>IP:</strong> Es la dirección IP del servidor Linux donde ejecutas tu script de K6.</p>
+<p>💡 Como dato adicional, se utiliza el parámetro <strong>&ndash;no-connection-reuse</strong> para simular una conexión por cada petición http enviada:</p>
+<ul>
+<li>
+<p>Usa &ndash;no-connection-reuse si quieres simular un escenario donde cada cliente abre una conexión nueva para cada transacción, como lo harían algunos clientes sin estado. Si los clientes que acceden a tu API no reutilizan conexiones
+debes utilizar el parámetro <strong>&ndash;no-connection-reuse</strong>. Forzar nuevas conexiones aumenta artificialmente el tiempo de respuesta debido al handshake</p>
+</li>
+<li>
+<p>No uses esta opción si buscas emular el comportamiento más eficiente de clientes modernos o aplicaciones que aprovechan conexiones persistentes. Si los clientes que acceden a tu API reutilizan conexiones (como lo hacen los navegadores con HTTP/1.1 o HTTP/2) o connection: keep-alive en los encabezados HTTP: Este encabezado es solo una solicitud del cliente (tu script) para que el servidor mantenga la conexión abierta después de completar la solicitud.</p>
+</li>
+</ul>
+<p>El encabezado Connection: keep-alive es clave para comprender cómo se reutilizan las conexiones TCP en HTTP, y tiene un impacto directo en cómo se comportan los clientes y servidores en términos de manejo de conexiones.</p>
+<h1 id="sugerencia-de-script-de-prueba">Sugerencia de script de prueba:</h1>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">sleep</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;k6&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">check</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;k6&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Counter</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;k6/metrics&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">http</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;k6/http&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Define metricas personalizadas para cada check
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">checkMetrics</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_200&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_200&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_201&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_201&#39;</span>),
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_400&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_400&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_401&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_401&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_403&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_403&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_404&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_404&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_408&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_408&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_418&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_418&#39;</span>),
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_500&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_500&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_502&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_502&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_503&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_503&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_504&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_504&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_507&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_507&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_508&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_508&#39;</span>), 
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;status_0&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_status_0&#39;</span>),
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;response_time_2s&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_response_time_2s&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;body_login_successful&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_body_login_successful&#39;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;content_type_json&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;check_content_type_json&#39;</span>),
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">insecureSkipTLSVerify</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scenarios</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ramp_up_and_constant_rate</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">executor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ramping-arrival-rate&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">startRate</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">timeUnit</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1s&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">preAllocatedVUs</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1000</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">maxVUs</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10000</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">stages</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span> },
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> },
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15</span> },
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span> },
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">25</span> },
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;5s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">30</span> },
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;30s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">35</span> },
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;3s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">30</span> },
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;3s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">25</span> },
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;3s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15</span> },
+</span></span><span style="display:flex;"><span>		{ <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;3s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> },
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;3s&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span> },
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Array de status code
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">statusesToCheck</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">201</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">401</span>, <span style="color:#ae81ff">403</span>, <span style="color:#ae81ff">404</span>, <span style="color:#ae81ff">408</span>, <span style="color:#ae81ff">418</span>, <span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">502</span>, <span style="color:#ae81ff">503</span>, <span style="color:#ae81ff">504</span>, <span style="color:#ae81ff">507</span>, <span style="color:#ae81ff">508</span>];
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;solution&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;AJT&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;customerid&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;123&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;activitytype&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;LOGIN&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;biometriclogin1&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;language&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Spanish&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;loginMethod&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;password&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;usercountry&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;PY&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">params</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;X-id&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;9999&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;X-trace-id&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;123e4567-e89b-42d3-a456-556642440000&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;Authorization&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Bearer eyJhbGc2213.3iJ9.eyJzdWIiOiJTVl9TUEZfQ0xJRU5U46o_X7YfW0GXAd64o54CuflBgOjnqlc&#39;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> () {  
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;https://miurl&#39;</span>,<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">body</span>),<span style="color:#a6e22e">params</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">sleep</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">statusesToCheck</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">statusesToCheck</span>[<span style="color:#a6e22e">i</span>];
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Check si el status del response coincide con valor del array:
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">check</span>(<span style="color:#a6e22e">response</span>, {
+</span></span><span style="display:flex;"><span>      [<span style="color:#e6db74">`is status </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">status</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>]<span style="color:#f92672">:</span> (<span style="color:#a6e22e">r</span>) =&gt; <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">status</span>, <span style="color:#75715e">// uso de &#34;template literals&#34;
+</span></span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// actualizo el contdor de http code
+</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">checkMetrics</span>[<span style="color:#e6db74">`status_</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">status</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>].<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">result</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>); <span style="color:#75715e">// uso de &#34;template literals&#34;
+</span></span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Check Si response time NO es &lt;= 2s
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">resultResponseTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">check</span>(<span style="color:#a6e22e">response</span>, { <span style="color:#e6db74">&#39;is response time &lt;= 2s&#39;</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">r</span>) =&gt; <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">timings</span>.<span style="color:#a6e22e">duration</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2000</span> });
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">checkMetrics</span>[<span style="color:#e6db74">&#39;response_time_2s&#39;</span>].<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">resultResponseTime</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Check Si el body NO contiene &#34;Login successful&#34;
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">resultBodyLogin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">check</span>(<span style="color:#a6e22e">response</span>, { <span style="color:#e6db74">&#39;body contains Login successful&#39;</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">r</span>) =&gt; <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">body</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;initiated&#39;</span>) });
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">checkMetrics</span>[<span style="color:#e6db74">&#39;body_login_successful&#39;</span>].<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">resultBodyLogin</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Check si Content-Type NO es application/json
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">resultContentType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">check</span>(<span style="color:#a6e22e">response</span>, { <span style="color:#e6db74">&#39;Content-Type is application/json&#39;</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">r</span>) =&gt; <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">headers</span>[<span style="color:#e6db74">&#39;Content-Type&#39;</span>] <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;application/json&#39;</span> });
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">checkMetrics</span>[<span style="color:#e6db74">&#39;content_type_json&#39;</span>].<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">resultContentType</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+  </div><p>Luego de definir las métricas personalizadas para cada check, podemos observar en el <strong>web-dashboard</strong> lo siguiente:</p>
+<p><img src="/images/k6/K6_Metric_custom.png" alt="web-dashboard"></p>
+<p>Espero que todo te funcione de maravillas, Exitos!!! 🤞</p>
+
+      </main>
+
+      
+      <aside class="single-post-sidebar">
+        <div class="sticky-sidebar-content">
+          
+            <div class="toc-card">
+              <div class="toc-header">
+                <i class="fa-solid fa-list-ul"></i>
+                <span>En este artículo</span>
+              </div>
+              <nav id="TableOfContents" class="toc-nav">
+                <nav id="TableOfContents"></nav>
+              </nav>
+            </div>
+          
+
+          <div class="sidebar-actions-card">
+            <button type="button" class="btn-sidebar-action" id="btn-back-to-top" title="Volver arriba">
+              <i class="fa-solid fa-arrow-up"></i>
+              <span>Volver arriba</span>
+            </button>
+            <a href="/post/" class="btn-sidebar-action" title="Ver todos los artículos">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Todos los artículos</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+    </main>
+    <footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <span class="footer-logo">⚡ Automation &amp; Performance</span>
+      <p class="footer-tagline">Espacio dedicado al testing estratégico, automatización y performance engineering.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="/" class="footer-link">Inicio</a>
+      <a href="/post/" class="footer-link">Artículos</a>
+      <a href="/about/" class="footer-link">Sobre Mí (CV)</a>
+      <a href="/contact/" class="footer-link">Contacto</a>
+    </div>
+
+    <div class="footer-socials">
+      
+        <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      
+      
+        <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      
+      
+        <a href="https://www.instagram.com/mariano_imende/?igsh=ZnU0YTJrNTYxcTM3" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      
+      
+        <a href="https://www.youtube.com/results?search_query=performance&#43;and&#43;automation&#43;testing" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      
+      
+        <a href="mailto:imende.mariano@gmail.com" class="footer-social-btn" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 <strong>Mariano Imende</strong>. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Búsqueda rápida">
+  <div class="search-modal-dialog">
+    <div class="search-input-header">
+      <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
+      <input type="text" id="search-input" class="search-input" placeholder="Buscar por tema, tecnología o comando (ej. k6, kafka, pom)..." autocomplete="off" />
+      <button type="button" id="search-close-btn" class="search-close-btn" aria-label="Cerrar búsqueda">
+        <span class="esc-badge">ESC</span>
+      </button>
+    </div>
+
+    <div id="search-results" class="search-results-list">
+      <div class="search-placeholder">
+        Escribí una palabra clave para buscar tutoriales, código o herramientas...
+      </div>
+    </div>
+
+    <div class="search-modal-footer">
+      <span class="search-hint"><kbd>↑</kbd> <kbd>↓</kbd> para navegar</span>
+      <span class="search-hint"><kbd>↵</kbd> para seleccionar</span>
+      <span class="search-hint"><kbd>ESC</kbd> para cerrar</span>
+    </div>
+  </div>
+</div>
+
+
+<script src="/js/main.js"></script>
+
+  </body>
+</html>

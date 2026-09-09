@@ -1,0 +1,55 @@
+<nav class="modern-navbar" role="navigation">
+  <div class="nav-container">
+    <a href="{{ .Site.Home.RelPermalink }}" class="nav-brand">
+      <span class="brand-icon">⚡</span>
+      <span class="brand-text">Automation<span class="brand-accent">&amp;</span>Performance</span>
+    </a>
+
+    <div class="nav-menu-wrapper">
+      {{ if .Site.Menus.main }}
+        <ul class="nav-links">
+          {{ range .Site.Menus.main }}
+          <li class="nav-item">
+            <a class="nav-link {{ if $.IsMenuCurrent "main" . }}nav-link-active{{ end }}" href="{{ .URL }}">
+              {{ .Name }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+
+      <div class="nav-actions">
+        <!-- Botón de Búsqueda Instantánea -->
+        <button type="button" class="search-trigger-btn" id="search-trigger-btn" aria-label="Buscar en el blog" title="Buscar (Ctrl + K)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="search-kbd">Ctrl K</span>
+        </button>
+
+        <!-- Botón de Modo Oscuro / Claro -->
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema de color" title="Alternar Modo Oscuro/Claro">
+          <i class="fa-solid fa-moon theme-icon-moon"></i>
+          <i class="fa-solid fa-sun theme-icon-sun"></i>
+        </button>
+
+        <!-- Redes Sociales -->
+        <div class="nav-socials">
+          {{ with .Site.Params.github }}
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          {{ end }}
+          {{ with .Site.Params.linkedin }}
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          {{ end }}
+          {{ with .Site.Params.email }}
+            <a href="mailto:{{ . }}" class="social-icon-btn" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

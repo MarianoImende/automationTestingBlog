@@ -1,0 +1,56 @@
+{{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
+{{ $show_date := partials.Include "func/ShowDate.html" . }}
+<article class="modern-card">
+  {{ if $featured_image }}
+    <div class="card-image-wrap">
+      <a href="{{ .RelPermalink }}" class="card-image-link" aria-label="{{ .Title }}">
+        <img src="{{ $featured_image }}" class="card-image" alt="{{ .Title }}" loading="lazy">
+      </a>
+    </div>
+  {{ else }}
+    <div class="card-image-wrap card-image-placeholder">
+      <div class="placeholder-pattern"></div>
+      <span class="placeholder-icon">🚀</span>
+    </div>
+  {{ end }}
+  <div class="card-content">
+    <div class="card-meta">
+      {{ if $show_date }}
+        <time class="card-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+          📅 {{ .Date.Format "02/01/2006" }}
+        </time>
+      {{ end }}
+      {{ if .ReadingTime }}
+        <span class="card-reading-time">⏱️ {{ .ReadingTime }} min</span>
+      {{ end }}
+    </div>
+
+    <h2 class="card-title">
+      <a href="{{ .RelPermalink }}" class="card-title-link">
+        {{ .Title }}
+      </a>
+    </h2>
+
+    <p class="card-description">
+      {{ with .Description }}
+        {{ . }}
+      {{ else }}
+        {{ .Summary | plainify | truncate 140 }}
+      {{ end }}
+    </p>
+
+    {{ with .Params.tags }}
+      <div class="card-tags">
+        {{ range . }}
+          <span class="tag-chip tag-{{ . | urlize }}">{{ . }}</span>
+        {{ end }}
+      </div>
+    {{ end }}
+
+    <div class="card-footer">
+      <a href="{{ .RelPermalink }}" class="card-readmore">
+        Leer artículo <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</article>

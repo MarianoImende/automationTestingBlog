@@ -1,0 +1,9 @@
+{{ define "header" }}
+  {{ partial "site-navigation.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  <div class="about-page-wrapper">
+    {{ .Content }}
+  </div>
+{{ end }}

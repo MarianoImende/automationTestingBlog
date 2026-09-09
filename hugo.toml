@@ -1,0 +1,75 @@
+baseURL = "https://automationtesting.ar/"
+locale = "es-ar"
+title = """Automation
+&
+Performance
+testing"""
+theme = "ananke"
+resourceDir = "resources"
+MetaDataFormat         = "yaml" # Formato cabeceras
+DefaultContentLanguage = "es"   # Idioma por defecto del contenido
+Paginate               = 15      # Posts por página en main
+googleAnalytics        = ""     # Código para estadísticas web
+enableRobotsTXT        = true   # Buscadores
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+      
+[params.contact]
+    email = 'imende.mariano@gmail.com'
+    phone = '+54-1162271394'
+
+
+[params]
+  env = "production"
+  toc = true
+  max_content_width = "90%"
+  show_reading_time = true
+  commentoEnable = true
+  recent_posts_number = 12
+  site_logo = ""
+  email = "imende.mariano@gmail.com"
+  instagram = "https://www.instagram.com/mariano_imende/?igsh=ZnU0YTJrNTYxcTM3"
+  youtube = "https://www.youtube.com/results?search_query=performance+and+automation+testing"
+  github = "https://github.com/MarianoImende"
+  linkedin = "https://www.linkedin.com/in/mariano-imende"
+  read_more_copy = "Leer artículo"
+  text_color = "black"
+  author = "Mariano Imende"
+  description = "Blog personal sobre testing de software, automatización de pruebas y performance testing"
+  dateFormat = "02/01/2006"
+  background_color_class = "bg-dark-gray"
+  featured_image = "/images/portada.jpg"
+
+[params.ananke]
+  custom_css = ["css/custom.css"]
+  [params.ananke.pages]
+    show_list_images = true
+
+[services.disqus]
+  shortname = 'Mariano Imende'
+
+[menu]
+  [[menu.main]]
+    name = "Inicio"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Artículos y Tutoriales"
+    url = "/post/"
+    weight = 2
+  [[menu.main]]
+    name = "Sobre Mí (CV)"
+    url = "/about/"
+    weight = 3
+  [[menu.main]]
+    name = "Contacto"
+    url = "/contact/"
+    weight = 4
+
+

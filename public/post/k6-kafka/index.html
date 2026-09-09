@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>K6: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀 | Automation
+&amp;
+Performance
+testing</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="⚔️ Producers vs. Consumers en Kafka: ¿Quién Gana la Batalla del Rendimiento? ⚔️">
+    <meta name="generator" content="Hugo 0.165.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="Mariano Imende">
+    
+
+    <link rel="stylesheet" href="/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous"><link rel="stylesheet" href="/css/custom.css">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://automationtesting.ar/post/k6-kafka/">
+    
+
+    <meta property="og:url" content="https://automationtesting.ar/post/k6-kafka/">
+	<meta property="og:site_name" content="Automation
+&
+Performance
+testing">
+	<meta property="og:title" content="K6: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀">
+	<meta property="og:description" content="⚔️ Producers vs. Consumers en Kafka: ¿Quién Gana la Batalla del Rendimiento? ⚔️">
+	<meta property="og:locale" content="es_ar">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="post">
+		<meta property="article:published_time" content="2025-01-06T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-01-06T00:00:00+00:00">
+		<meta property="article:tag" content="K6">
+		<meta property="article:tag" content="Kafka">
+		<meta property="article:tag" content="Performance">
+		<meta property="article:tag" content="Stress">
+		<meta property="article:tag" content="Testing">
+
+	<meta itemprop="name" content="K6: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀">
+	<meta itemprop="description" content="⚔️ Producers vs. Consumers en Kafka: ¿Quién Gana la Batalla del Rendimiento? ⚔️">
+	<meta itemprop="datePublished" content="2025-01-06T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2025-01-06T00:00:00+00:00">
+	<meta itemprop="wordCount" content="1134">
+	<meta itemprop="keywords" content="K6,Kafka,Performance,Stress,Testing">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="K6: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀">
+	<meta name="twitter:description" content="⚔️ Producers vs. Consumers en Kafka: ¿Quién Gana la Batalla del Rendimiento? ⚔️">
+
+      
+    
+    
+<script>
+  (function() {
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+  </head>
+
+  <body class="site-body kind-page type-post">
+    
+  
+  <div id="reading-progress-container" class="reading-progress-container">
+    <div id="reading-progress-bar" class="reading-progress-bar"></div>
+  </div>
+  <nav class="modern-navbar" role="navigation">
+  <div class="nav-container">
+    <a href="/" class="nav-brand">
+      <span class="brand-icon">⚡</span>
+      <span class="brand-text">Automation<span class="brand-accent">&amp;</span>Performance</span>
+    </a>
+
+    <div class="nav-menu-wrapper">
+      
+        <ul class="nav-links">
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/">
+              Inicio
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/post/">
+              Artículos y Tutoriales
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/about/">
+              Sobre Mí (CV)
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/contact/">
+              Contacto
+            </a>
+          </li>
+          
+        </ul>
+      
+
+      <div class="nav-actions">
+        
+        <button type="button" class="search-trigger-btn" id="search-trigger-btn" aria-label="Buscar en el blog" title="Buscar (Ctrl + K)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="search-kbd">Ctrl K</span>
+        </button>
+
+        
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema de color" title="Alternar Modo Oscuro/Claro">
+          <i class="fa-solid fa-moon theme-icon-moon"></i>
+          <i class="fa-solid fa-sun theme-icon-sun"></i>
+        </button>
+
+        
+        <div class="nav-socials">
+          
+            <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          
+          
+            <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          
+          
+            <a href="mailto:imende.mariano@gmail.com" class="social-icon-btn" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <main role="main" class="site-main">
+      
+  <article class="single-post-container">
+    
+    <header class="single-post-header">
+      <div class="post-breadcrumb">
+        <a href="/" class="breadcrumb-link"><i class="fa-solid fa-house"></i> Inicio</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="/post/" class="breadcrumb-link">Artículos</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">K6: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀</span>
+      </div>
+
+      <h1 class="single-post-title">K6: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀</h1>
+
+      <div class="single-post-meta">
+        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 06/01/2025</span>
+        <span class="meta-item"><i class="fa-regular fa-clock"></i> 6 min de lectura</span>
+        <span class="meta-item"><i class="fa-solid fa-user-pen"></i> Mariano Imende</span>
+      </div>
+
+      
+        <div class="single-post-tags">
+          
+            <a href="/tags/k6/" class="tag-chip tag-k6">#k6</a>
+          
+            <a href="/tags/kafka/" class="tag-chip tag-kafka">#kafka</a>
+          
+            <a href="/tags/performance/" class="tag-chip tag-performance">#performance</a>
+          
+            <a href="/tags/stress/" class="tag-chip tag-stress">#stress</a>
+          
+            <a href="/tags/testing/" class="tag-chip tag-testing">#testing</a>
+          
+        </div>
+      
+
+      
+        <div class="single-post-featured-image-wrap">
+          <img src="https://automationtesting.ar/images/k6-kafka/k6-kafka.webp" alt="K6: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀" class="single-post-featured-image" />
+        </div>
+      
+    </header>
+
+    
+    <div class="single-post-layout">
+      
+      <main class="single-post-content post-content" id="article-body">
+        <p>En las arquitecturas basadas en <strong>Apache Kafka</strong>, la estabilidad del sistema no depende solo de la capacidad de los <strong>producers</strong> para enviar mensajes, sino también de <strong>cómo los consumers procesan la carga en diferentes escenarios</strong>.</p>
+<p>🔹 <strong>¿Qué sucede si un consumer no puede mantener el ritmo de los mensajes entrantes?</strong></p>
+<p>🔹 <strong>¿Cómo afecta el lag de los consumidores al rendimiento del sistema?</strong></p>
+<p>🔹 <strong>¿Cuál es el impacto de aumentar la concurrencia en los grupos de consumo?</strong></p>
+<p>Para responder estas preguntas, es clave realizar <strong>pruebas de estrés en los tópicos</strong> y analizar la capacidad de procesamiento de los consumidores bajo diferentes condiciones.</p>
+<hr>
+<h2 id="-pruebas-de-carga-en-los-tópicos-por-qué-importan"><strong>🔹 Pruebas de Carga en los Tópicos: ¿Por qué Importan?</strong></h2>
+<p>Kafka puede manejar <strong>millones de eventos por segundo</strong>, pero si los consumidores no pueden procesar los mensajes a la misma velocidad que se producen, se generará <strong>lag en los offsets</strong>, afectando la latencia y la estabilidad del sistema.</p>
+<p><strong>📊 Factores a evaluar al estresar un tópico:</strong></p>
+<ul>
+<li>📌 <strong>Capacidad de consumo</strong>: ¿Cuántos mensajes puede procesar el consumer por segundo antes de saturarse?</li>
+<li>📌 <strong>Manejo del lag</strong>: ¿Cómo responde Kafka cuando los consumidores no pueden mantener el ritmo?</li>
+<li>📌 <strong>Efecto de la concurrencia</strong>: ¿Cuántos consumers en paralelo mejoran el rendimiento?</li>
+<li>📌 <strong>Impacto del tamaño del mensaje</strong>: ¿Cómo afecta la performance aumentar el payload?</li>
+</ul>
+<hr>
+<h2 id="-simulación-de-carga-en-un-tópico-con-xk6-kafka"><strong>🔹 Simulación de Carga en un Tópico con xk6-kafka</strong></h2>
+<p>Podemos usar <strong>xk6-kafka</strong> para <strong>sobrecargar un tópico</strong> y medir cómo los consumidores manejan la carga.</p>
+<h3 id="-instalar-k6-y-xk6-kafka">✅ <strong>Instalar k6 y xk6-kafka</strong></h3>
+<p>Si no dispones del binario de k6 con la extension necesaria para realizar pruebas sobre kafka,
+<a href="https://www.automationtesting.ar/post/k6_binario/">Aquí</a> te dejo el link para construirlo vos mismo.</p>
+<p>o bien, podes usar la documentación <a href="https://github.com/mostafa/xk6-kafka">oficial</a></p>
+<h3 id="-ejemplo-de-generación-de-alta-carga-en-un-tópico">✅ <strong>Ejemplo de generación de alta carga en un tópico</strong></h3>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">check</span>, <span style="color:#a6e22e">fail</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;k6&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Counter</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;k6/metrics&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Writer</span>, <span style="color:#a6e22e">SchemaRegistry</span>, <span style="color:#a6e22e">SCHEMA_TYPE_STRING</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;k6/x/kafka&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">success</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;kafka_success&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">timeout</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;kafka_timeout_errors&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">unexpectedErrors</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;kafka_Unexpected_errors&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">connectionRefusedErrors</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;kafka_connection_refused_errors&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ioPipeErrors</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;kafka_io_pipe_errors&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response_time_2s</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;kafka_response_time_2s&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">topic_or_partition</span>  <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Counter</span>(<span style="color:#e6db74">&#39;kafka_topic_or_partition_not_exist&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">schemaRegistry</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SchemaRegistry</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">insecureSkipTLSVerify</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scenarios</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ramp_up_and_constant_rate</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">executor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ramping-arrival-rate&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">startRate</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">timeUnit</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1s&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">preAllocatedVUs</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">maxVUs</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">stages</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>                { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2m&#39;</span>, <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> },
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">writer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Writer</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">brokers</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;localhost:9092&#34;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">topic</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;miTopico&#34;</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">syskey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;test-key&#34;</span>, <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bar&#34;</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">schemaRegistry</span>.<span style="color:#a6e22e">serialize</span>({ <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">syskey</span>, <span style="color:#a6e22e">schemaType</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SCHEMA_TYPE_STRING</span> });
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">schemaRegistry</span>.<span style="color:#a6e22e">serialize</span>({ <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">message</span>), <span style="color:#a6e22e">schemaType</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SCHEMA_TYPE_STRING</span> });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">start</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>(); <span style="color:#75715e">//inicia cronometro
+</span></span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">error</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">writer</span>.<span style="color:#a6e22e">produce</span>({
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">messages</span><span style="color:#f92672">:</span> [{ <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">value</span> }],
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// writer.produce() retorna &#34;undefined&#34; cuando todo salio bien! caso contrario, devuelve mensaje de error
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Opcional:
+</span></span></span><span style="display:flex;"><span>        <span style="color:#75715e">//const success = check(error, { &#34;mensaje enviado sin error&#34;: (err) =&gt; err === undefined,});        
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">message</span>) {
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">clasificarError</span>(<span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">message</span>);
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">success</span>.<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">end</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>(); <span style="color:#75715e">//termina cronometro
+</span></span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">produceDuration</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">end</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">start</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">produceDuration</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1500</span>){
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">response_time_2s</span>.<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            }          
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>               
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//K6 lanza una excepcion (GoError)
+</span></span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">clasificarError</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">message</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fail</span>(<span style="color:#e6db74">`Fallo la ejecucion: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">finally</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">writer</span>.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">clasificarError</span>(<span style="color:#a6e22e">msg</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">msg</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">msg</span>.<span style="color:#a6e22e">toLowerCase</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (<span style="color:#66d9ef">true</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">msg</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#34;read/write on closed pipe&#34;</span>)<span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ioPipeErrors</span>.<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">msg</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#34;connection refused&#34;</span>)<span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">connectionRefusedErrors</span>.<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">msg</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#34;timeout&#34;</span>)<span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">timeout</span>.<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">msg</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#34;a topic or partition that does not exist on this broker&#34;</span>)<span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">topic_or_partition</span>.<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">unexpectedErrors</span>.<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+  </div><p>Además, podemos aplicar niveles de seguridad, por ejemplo:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#960050;background-color:#1e0010">{ </span>check <span style="color:#f92672">}</span> from <span style="color:#e6db74">&#34;k6&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#960050;background-color:#1e0010">{</span>TLS_1_2<span style="color:#f92672">,</span> SASL_SCRAM_SHA512 <span style="color:#f92672">,</span>Writer<span style="color:#f92672">,</span>SchemaRegistry <span style="color:#f92672">,</span>SCHEMA_TYPE_STRING<span style="color:#f92672">}</span> from <span style="color:#e6db74">&#34;k6/x/kafka&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> writer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Writer<span style="color:#f92672">({</span>
+</span></span><span style="display:flex;"><span>    brokers: <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;localhost:9092&#34;</span><span style="color:#f92672">],</span>
+</span></span><span style="display:flex;"><span>    topic: <span style="color:#e6db74">&#34;miTopico&#34;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>    sasl: <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        username: <span style="color:#e6db74">&#34;NombreUsuario&#34;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>        password: <span style="color:#e6db74">&#34;PasswordDelUsuario&#34;</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>        algorithm: SASL_SCRAM_SHA512<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">},</span>
+</span></span><span style="display:flex;"><span>    tls: <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        clientCertPem: <span style="color:#e6db74">&#39;/home/user/script/kafka_cert.pem&#39;</span><span style="color:#f92672">,</span> <span style="color:#75715e">// Path del certificado
+</span></span></span><span style="display:flex;"><span>        enableTls: <span style="color:#66d9ef">true</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>        insecureSkipTlsVerify: <span style="color:#66d9ef">true</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>        minVersion: TLS_1_2
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">},</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">});</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span></span></span></code></pre></div>
+  </div><h3 id="-monitoreando-la-performance-de-los-consumers-y-métricas-emitidas">🔹 Monitoreando la Performance de los Consumers y Métricas emitidas</h3>
+<p>Podemos ver la siguiente tabla detallando las metricas de la extención:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Metric</th>
+					<th>Type</th>
+					<th>Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>kafka_reader_dial_count</td>
+					<td>Counter</td>
+					<td>Total number of times the reader tries to connect.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_fetches_count</td>
+					<td>Counter</td>
+					<td>Total number of times the reader fetches batches of messages.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_message_count</td>
+					<td>Counter</td>
+					<td>Total number of messages consumed.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_message_bytes</td>
+					<td>Counter</td>
+					<td>Total bytes consumed.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_rebalance_count</td>
+					<td>Counter</td>
+					<td>Total number of rebalances of a topic in a consumer group (deprecated).</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_timeouts_count</td>
+					<td>Counter</td>
+					<td>Total number of timeouts occurred when reading.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_error_count</td>
+					<td>Counter</td>
+					<td>Total number of errors occurred when reading.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_dial_seconds</td>
+					<td>Trend</td>
+					<td>The time it takes to connect to the leader in a Kafka cluster.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_read_seconds</td>
+					<td>Trend</td>
+					<td>The time it takes to read a batch of message.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_wait_seconds</td>
+					<td>Trend</td>
+					<td>Waiting time before read a batch of messages.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_fetch_size</td>
+					<td>Counter</td>
+					<td>Total messages fetched.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_fetch_bytes</td>
+					<td>Counter</td>
+					<td>Total bytes fetched.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_offset</td>
+					<td>Gauge</td>
+					<td>Number of messages read after the given offset in a batch.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_lag</td>
+					<td>Gauge</td>
+					<td>The lag between the last message offset and the current read offset.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_fetch_bytes_min</td>
+					<td>Gauge</td>
+					<td>Minimum number of bytes fetched.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_fetch_bytes_max</td>
+					<td>Gauge</td>
+					<td>Maximum number of bytes fetched.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_fetch_wait_max</td>
+					<td>Gauge</td>
+					<td>The maximum time it takes to fetch a batch of messages.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_queue_length</td>
+					<td>Gauge</td>
+					<td>The queue length while reading batch of messages.</td>
+			</tr>
+			<tr>
+					<td>kafka_reader_queue_capacity</td>
+					<td>Gauge</td>
+					<td>The queue capacity while reading batch of messages.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_write_count</td>
+					<td>Counter</td>
+					<td>Total number of times the writer writes batches of messages.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_message_count</td>
+					<td>Counter</td>
+					<td>Total number of messages produced.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_message_bytes</td>
+					<td>Counter</td>
+					<td>Total bytes produced.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_error_count</td>
+					<td>Counter</td>
+					<td>Total number of errors occurred when writing.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_batch_seconds</td>
+					<td>Trend</td>
+					<td>The time it takes to write a batch of messages.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_batch_queue_seconds</td>
+					<td>Trend</td>
+					<td>The time it takes to queue a batch of messages.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_write_seconds</td>
+					<td>Trend</td>
+					<td>The time it takes writing messages.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_wait_seconds</td>
+					<td>Trend</td>
+					<td>Waiting time before writing messages.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_retries_count</td>
+					<td>Counter</td>
+					<td>Total number of attempts at writing messages.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_batch_size</td>
+					<td>Counter</td>
+					<td>Total batch size.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_batch_bytes</td>
+					<td>Counter</td>
+					<td>Total number of bytes in a batch of messages.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_attempts_max</td>
+					<td>Gauge</td>
+					<td>Maximum number of attempts at writing messages.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_batch_max</td>
+					<td>Gauge</td>
+					<td>Maximum batch size.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_batch_timeout</td>
+					<td>Gauge</td>
+					<td>Batch timeout.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_read_timeout</td>
+					<td>Gauge</td>
+					<td>Batch read timeout.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_write_timeout</td>
+					<td>Gauge</td>
+					<td>Batch write timeout.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_acks_required</td>
+					<td>Gauge</td>
+					<td>Required Acks.</td>
+			</tr>
+			<tr>
+					<td>kafka_writer_async</td>
+					<td>Rate</td>
+					<td>Async writer.</td>
+			</tr>
+	</tbody>
+</table>
+<p>Para evaluar la capacidad de los consumidores, es importante monitorear:</p>
+<p>✅ Tiempo de procesamiento por mensaje 📊</p>
+<p>✅ Uso de CPU y memoria en los consumidores 🖥️</p>
+<p>✅ Lag en los offsets (cuántos mensajes están en cola esperando ser procesados) ⏳</p>
+<p>Una herramienta como Prometheus + Grafana o el propio kafka-consumer-groups.sh puede ayudar a visualizar estos datos en tiempo real.</p>
+<p>🎯 Conclusión
+Si bien las pruebas de performance en Kafka abarcan muchos aspectos, el estrés en los tópicos es una estrategia clave para entender la capacidad real de los consumidores.</p>
+<p>✅ Un consumer lento o subescalado puede convertirse en el cuello de botella del sistema.</p>
+<p>✅ Evaluar el lag de los consumers permite detectar problemas de escalabilidad antes de que afecten la producción.</p>
+<p>✅ Simular alta carga sobre los tópicos es una práctica esencial para garantizar un Kafka estable y eficiente.</p>
+<p>🔥 Pruebas constantes = Kafka optimizado y resiliente. 🚀</p>
+<p>🔥 ¿Tus consumidores están preparados para manejar una sobrecarga de mensajes? Solo lo sabrás si los estresas. 🚀</p>
+
+      </main>
+
+      
+      <aside class="single-post-sidebar">
+        <div class="sticky-sidebar-content">
+          
+            <div class="toc-card">
+              <div class="toc-header">
+                <i class="fa-solid fa-list-ul"></i>
+                <span>En este artículo</span>
+              </div>
+              <nav id="TableOfContents" class="toc-nav">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-pruebas-de-carga-en-los-tópicos-por-qué-importan"><strong>🔹 Pruebas de Carga en los Tópicos: ¿Por qué Importan?</strong></a></li>
+    <li><a href="#-simulación-de-carga-en-un-tópico-con-xk6-kafka"><strong>🔹 Simulación de Carga en un Tópico con xk6-kafka</strong></a>
+      <ul>
+        <li><a href="#-instalar-k6-y-xk6-kafka">✅ <strong>Instalar k6 y xk6-kafka</strong></a></li>
+        <li><a href="#-ejemplo-de-generación-de-alta-carga-en-un-tópico">✅ <strong>Ejemplo de generación de alta carga en un tópico</strong></a></li>
+        <li><a href="#-monitoreando-la-performance-de-los-consumers-y-métricas-emitidas">🔹 Monitoreando la Performance de los Consumers y Métricas emitidas</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+              </nav>
+            </div>
+          
+
+          <div class="sidebar-actions-card">
+            <button type="button" class="btn-sidebar-action" id="btn-back-to-top" title="Volver arriba">
+              <i class="fa-solid fa-arrow-up"></i>
+              <span>Volver arriba</span>
+            </button>
+            <a href="/post/" class="btn-sidebar-action" title="Ver todos los artículos">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Todos los artículos</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+    </main>
+    <footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <span class="footer-logo">⚡ Automation &amp; Performance</span>
+      <p class="footer-tagline">Espacio dedicado al testing estratégico, automatización y performance engineering.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="/" class="footer-link">Inicio</a>
+      <a href="/post/" class="footer-link">Artículos</a>
+      <a href="/about/" class="footer-link">Sobre Mí (CV)</a>
+      <a href="/contact/" class="footer-link">Contacto</a>
+    </div>
+
+    <div class="footer-socials">
+      
+        <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      
+      
+        <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      
+      
+        <a href="https://www.instagram.com/mariano_imende/?igsh=ZnU0YTJrNTYxcTM3" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      
+      
+        <a href="https://www.youtube.com/results?search_query=performance&#43;and&#43;automation&#43;testing" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      
+      
+        <a href="mailto:imende.mariano@gmail.com" class="footer-social-btn" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 <strong>Mariano Imende</strong>. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Búsqueda rápida">
+  <div class="search-modal-dialog">
+    <div class="search-input-header">
+      <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
+      <input type="text" id="search-input" class="search-input" placeholder="Buscar por tema, tecnología o comando (ej. k6, kafka, pom)..." autocomplete="off" />
+      <button type="button" id="search-close-btn" class="search-close-btn" aria-label="Cerrar búsqueda">
+        <span class="esc-badge">ESC</span>
+      </button>
+    </div>
+
+    <div id="search-results" class="search-results-list">
+      <div class="search-placeholder">
+        Escribí una palabra clave para buscar tutoriales, código o herramientas...
+      </div>
+    </div>
+
+    <div class="search-modal-footer">
+      <span class="search-hint"><kbd>↑</kbd> <kbd>↓</kbd> para navegar</span>
+      <span class="search-hint"><kbd>↵</kbd> para seleccionar</span>
+      <span class="search-hint"><kbd>ESC</kbd> para cerrar</span>
+    </div>
+  </div>
+</div>
+
+
+<script src="/js/main.js"></script>
+
+  </body>
+</html>

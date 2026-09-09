@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Kafka on Automation
+&amp;
+Performance
+testing</title>
+		<link>https://automationtesting.ar/tags/kafka/</link>
+		<description>Recent content in Kafka on Automation
+&amp;
+Performance
+testing</description>
+		<generator>Hugo</generator>
+		<language>es-ar</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 06 Jan 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://automationtesting.ar/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Jmeter: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀</title>
+				<link>https://automationtesting.ar/post/jmeter-kafka/</link>
+				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/post/jmeter-kafka/</guid>
+				<description>&lt;p&gt;En las arquitecturas basadas en &lt;strong&gt;Apache Kafka&lt;/strong&gt;, la estabilidad del sistema no depende solo de la capacidad de los &lt;strong&gt;producers&lt;/strong&gt; para enviar mensajes, sino también de &lt;strong&gt;cómo los consumers procesan la carga en diferentes escenarios&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Qué sucede si un consumer no puede mantener el ritmo de los mensajes entrantes?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Cómo afecta el lag de los consumidores al rendimiento del sistema?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Cuál es el impacto de aumentar la concurrencia en los grupos de consumo?&lt;/strong&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>K6: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀</title>
+				<link>https://automationtesting.ar/post/k6-kafka/</link>
+				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/post/k6-kafka/</guid>
+				<description>&lt;p&gt;En las arquitecturas basadas en &lt;strong&gt;Apache Kafka&lt;/strong&gt;, la estabilidad del sistema no depende solo de la capacidad de los &lt;strong&gt;producers&lt;/strong&gt; para enviar mensajes, sino también de &lt;strong&gt;cómo los consumers procesan la carga en diferentes escenarios&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Qué sucede si un consumer no puede mantener el ritmo de los mensajes entrantes?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Cómo afecta el lag de los consumidores al rendimiento del sistema?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Cuál es el impacto de aumentar la concurrencia en los grupos de consumo?&lt;/strong&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <article class="posts-page-wrapper">
+    <header class="section-intro" style="text-align: center; margin: 30px 0 20px;">
+      <div class="hero-badge" style="margin-bottom: 10px;">
+        <span class="badge-dot"></span>
+        <span>Filtrado por Tema</span>
+      </div>
+      <h1 class="section-title" style="font-size: 2.2rem; margin-top: 5px; text-transform: capitalize;">
+        🏷️ {{ .Title }}
+      </h1>
+      <p style="color: #64748b; font-size: 1rem; margin-top: 8px;">
+        Mostrando todos los artículos y guías sobre <strong>{{ .Title }}</strong>
+      </p>
+    </header>
+    
+    <div class="cards-grid">
+      {{ range .Paginator.Pages }}
+        {{ .Render "summary-with-image" }}
+      {{ end }}
+    </div>
+
+    <div class="pagination-wrap">
+      {{ partial "pagination.html" . }}
+    </div>
+  </article>
+{{ end }}

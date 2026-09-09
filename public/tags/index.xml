@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Tags on Automation
+&amp;
+Performance
+testing</title>
+		<link>https://automationtesting.ar/tags/</link>
+		<description>Recent content in Tags on Automation
+&amp;
+Performance
+testing</description>
+		<generator>Hugo</generator>
+		<language>es-ar</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 13 Jan 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://automationtesting.ar/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>K6</title>
+				<link>https://automationtesting.ar/tags/k6/</link>
+				<pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/k6/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Performance</title>
+				<link>https://automationtesting.ar/tags/performance/</link>
+				<pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/performance/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Stress</title>
+				<link>https://automationtesting.ar/tags/stress/</link>
+				<pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/stress/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Testing</title>
+				<link>https://automationtesting.ar/tags/testing/</link>
+				<pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/testing/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Grafana</title>
+				<link>https://automationtesting.ar/tags/grafana/</link>
+				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/grafana/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Jmeter</title>
+				<link>https://automationtesting.ar/tags/jmeter/</link>
+				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/jmeter/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Kafka</title>
+				<link>https://automationtesting.ar/tags/kafka/</link>
+				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/kafka/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Victoriametrics</title>
+				<link>https://automationtesting.ar/tags/victoriametrics/</link>
+				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/victoriametrics/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Automatizacion</title>
+				<link>https://automationtesting.ar/tags/automatizacion/</link>
+				<pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/automatizacion/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Metodologia</title>
+				<link>https://automationtesting.ar/tags/metodologia/</link>
+				<pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/metodologia/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Pom</title>
+				<link>https://automationtesting.ar/tags/pom/</link>
+				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/pom/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Pytest</title>
+				<link>https://automationtesting.ar/tags/pytest/</link>
+				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/pytest/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Python</title>
+				<link>https://automationtesting.ar/tags/python/</link>
+				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/python/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Selenium</title>
+				<link>https://automationtesting.ar/tags/selenium/</link>
+				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/selenium/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Servicios</title>
+				<link>https://automationtesting.ar/tags/servicios/</link>
+				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/servicios/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Windows</title>
+				<link>https://automationtesting.ar/tags/windows/</link>
+				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/windows/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Wiremock</title>
+				<link>https://automationtesting.ar/tags/wiremock/</link>
+				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/wiremock/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Mock</title>
+				<link>https://automationtesting.ar/tags/mock/</link>
+				<pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/mock/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Playwright</title>
+				<link>https://automationtesting.ar/tags/playwright/</link>
+				<pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/playwright/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Android</title>
+				<link>https://automationtesting.ar/tags/android/</link>
+				<pubDate>Sat, 13 Jul 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/android/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Appium</title>
+				<link>https://automationtesting.ar/tags/appium/</link>
+				<pubDate>Sat, 13 Jul 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/appium/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Api</title>
+				<link>https://automationtesting.ar/tags/api/</link>
+				<pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/api/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Contractfirst</title>
+				<link>https://automationtesting.ar/tags/contractfirst/</link>
+				<pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/contractfirst/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Openapi</title>
+				<link>https://automationtesting.ar/tags/openapi/</link>
+				<pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/openapi/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Swagger</title>
+				<link>https://automationtesting.ar/tags/swagger/</link>
+				<pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/swagger/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Fundamentos</title>
+				<link>https://automationtesting.ar/tags/fundamentos/</link>
+				<pubDate>Sun, 14 Apr 2024 11:25:05 -0400</pubDate>
+				<guid>https://automationtesting.ar/tags/fundamentos/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Poo</title>
+				<link>https://automationtesting.ar/tags/poo/</link>
+				<pubDate>Sun, 14 Apr 2024 11:25:05 -0400</pubDate>
+				<guid>https://automationtesting.ar/tags/poo/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Qa</title>
+				<link>https://automationtesting.ar/tags/qa/</link>
+				<pubDate>Sun, 14 Apr 2024 11:25:05 -0400</pubDate>
+				<guid>https://automationtesting.ar/tags/qa/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Challenge</title>
+				<link>https://automationtesting.ar/tags/challenge/</link>
+				<pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/tags/challenge/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Piramide</title>
+				<link>https://automationtesting.ar/tags/piramide/</link>
+				<pubDate>Sun, 14 May 2023 11:25:05 -0400</pubDate>
+				<guid>https://automationtesting.ar/tags/piramide/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

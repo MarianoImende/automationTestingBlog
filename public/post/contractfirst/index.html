@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>🤝 Contract First y testing | Automation
+&amp;
+Performance
+testing</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Implementación de la Metodología Contract First en Pruebas de Software">
+    <meta name="generator" content="Hugo 0.165.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="Mariano Imende">
+    
+
+    <link rel="stylesheet" href="/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous"><link rel="stylesheet" href="/css/custom.css">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://automationtesting.ar/post/contractfirst/">
+    
+
+    <meta property="og:url" content="https://automationtesting.ar/post/contractfirst/">
+	<meta property="og:site_name" content="Automation
+&
+Performance
+testing">
+	<meta property="og:title" content="🤝 Contract First y testing">
+	<meta property="og:description" content="Implementación de la Metodología Contract First en Pruebas de Software">
+	<meta property="og:locale" content="es_ar">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="post">
+		<meta property="article:published_time" content="2024-05-15T00:00:00+00:00">
+		<meta property="article:modified_time" content="2024-05-15T00:00:00+00:00">
+		<meta property="article:tag" content="Contractfirst">
+		<meta property="article:tag" content="Api">
+		<meta property="article:tag" content="Swagger">
+		<meta property="article:tag" content="Openapi">
+		<meta property="article:tag" content="Testing">
+
+	<meta itemprop="name" content="🤝 Contract First y testing">
+	<meta itemprop="description" content="Implementación de la Metodología Contract First en Pruebas de Software">
+	<meta itemprop="datePublished" content="2024-05-15T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2024-05-15T00:00:00+00:00">
+	<meta itemprop="wordCount" content="607">
+	<meta itemprop="keywords" content="Contractfirst,Api,Swagger,Openapi,Testing">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="🤝 Contract First y testing">
+	<meta name="twitter:description" content="Implementación de la Metodología Contract First en Pruebas de Software">
+
+      
+    
+    
+<script>
+  (function() {
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+  </head>
+
+  <body class="site-body kind-page type-post">
+    
+  
+  <div id="reading-progress-container" class="reading-progress-container">
+    <div id="reading-progress-bar" class="reading-progress-bar"></div>
+  </div>
+  <nav class="modern-navbar" role="navigation">
+  <div class="nav-container">
+    <a href="/" class="nav-brand">
+      <span class="brand-icon">⚡</span>
+      <span class="brand-text">Automation<span class="brand-accent">&amp;</span>Performance</span>
+    </a>
+
+    <div class="nav-menu-wrapper">
+      
+        <ul class="nav-links">
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/">
+              Inicio
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/post/">
+              Artículos y Tutoriales
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/about/">
+              Sobre Mí (CV)
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/contact/">
+              Contacto
+            </a>
+          </li>
+          
+        </ul>
+      
+
+      <div class="nav-actions">
+        
+        <button type="button" class="search-trigger-btn" id="search-trigger-btn" aria-label="Buscar en el blog" title="Buscar (Ctrl + K)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="search-kbd">Ctrl K</span>
+        </button>
+
+        
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema de color" title="Alternar Modo Oscuro/Claro">
+          <i class="fa-solid fa-moon theme-icon-moon"></i>
+          <i class="fa-solid fa-sun theme-icon-sun"></i>
+        </button>
+
+        
+        <div class="nav-socials">
+          
+            <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          
+          
+            <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          
+          
+            <a href="mailto:imende.mariano@gmail.com" class="social-icon-btn" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <main role="main" class="site-main">
+      
+  <article class="single-post-container">
+    
+    <header class="single-post-header">
+      <div class="post-breadcrumb">
+        <a href="/" class="breadcrumb-link"><i class="fa-solid fa-house"></i> Inicio</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="/post/" class="breadcrumb-link">Artículos</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">🤝 Contract First y testing</span>
+      </div>
+
+      <h1 class="single-post-title">🤝 Contract First y testing</h1>
+
+      <div class="single-post-meta">
+        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 15/05/2024</span>
+        <span class="meta-item"><i class="fa-regular fa-clock"></i> 3 min de lectura</span>
+        <span class="meta-item"><i class="fa-solid fa-user-pen"></i> Mariano Imende</span>
+      </div>
+
+      
+        <div class="single-post-tags">
+          
+            <a href="/tags/contractfirst/" class="tag-chip tag-contractfirst">#contractfirst</a>
+          
+            <a href="/tags/api/" class="tag-chip tag-api">#api</a>
+          
+            <a href="/tags/swagger/" class="tag-chip tag-swagger">#swagger</a>
+          
+            <a href="/tags/openapi/" class="tag-chip tag-openapi">#openapi</a>
+          
+            <a href="/tags/testing/" class="tag-chip tag-testing">#testing</a>
+          
+        </div>
+      
+
+      
+        <div class="single-post-featured-image-wrap">
+          <img src="https://automationtesting.ar/images/contractfirst/contract.png" alt="🤝 Contract First y testing" class="single-post-featured-image" />
+        </div>
+      
+    </header>
+
+    
+    <div class="single-post-layout">
+      
+      <main class="single-post-content post-content" id="article-body">
+        <h2 id="-implementación-de-la-metodología-contract-first-en-pruebas-de-software">🧰 Implementación de la Metodología Contract First en Pruebas de Software.</h2>
+<p>Este post tiene la intención de mostrar cómo adoptar la metodología Contract First en el contexto de pruebas de software. Implementar esta metodología implica una serie de pasos que facilitan la integración de contratos en el proceso de pruebas, abarcando desde la educación y la capacitación hasta la automatización y la colaboración continua. Al usar herramientas como Postman y generadores de clientes API, los testers pueden crear y ejecutar pruebas de manera eficiente y consistente, asegurando que las APIs cumplan con las especificaciones definidas en los contratos.</p>
+<h3 id="-concepto-de-contract-first">📋 Concepto de &ldquo;Contract First&rdquo;</h3>
+<p>Contract First (o &ldquo;Contrato Primero&rdquo;) es un enfoque en el desarrollo de servicios web y APIs donde el contrato, que define la interfaz y las interacciones del servicio, se diseña y establece antes de que se implemente la lógica del servicio. Este contrato usualmente se especifica utilizando lenguajes de definición de interfaces como WSDL (Web Services Description Language) para servicios SOAP, o OpenAPI/Swagger para APIs RESTful.</p>
+<p>Si bien JSON es probablemente el formato más popular para intercambiar datos, JSON Schema es el vocabulario que permite la coherencia, validez e interoperabilidad de los datos JSON a escala.</p>
+<h3 id="ventajas-del-enfoque-contract-first">Ventajas del Enfoque Contract First</h3>
+<p><strong>Claridad y Consistencia:</strong></p>
+<p>Definir el contrato primero asegura que todas las partes involucradas (desarrolladores, clientes, testers, etc.) tengan una comprensión clara y consistente de cómo deben interactuar con el servicio desde el principio.</p>
+<p><strong>Interoperabilidad:</strong></p>
+<p>Un contrato bien definido facilita la interoperabilidad entre diferentes sistemas y plataformas. Los clientes pueden generar automáticamente el código del cliente (stubs) y los servidores pueden generar el esqueleto del servicio (skeletons) basándose en el contrato.</p>
+<p><strong>Desarrollo Paralelo:</strong></p>
+<p>Los equipos pueden trabajar en paralelo. Mientras un equipo trabaja en la implementación del servicio, otro equipo puede trabajar en el desarrollo del cliente o en las pruebas, todos utilizando el contrato como referencia.</p>
+<p><strong>Validación y Documentación:</strong></p>
+<p>El contrato actúa como una fuente única de verdad y puede utilizarse para validar las interacciones y como documentación de la API. Herramientas como Swagger/OpenAPI pueden generar documentación interactiva automáticamente a partir del contrato.</p>
+<p><img src="/images/contractfirst/swagger.png" alt="swagger"></p>
+<p><img src="/images/contractfirst/yaml.png" alt="yaml"></p>
+<p><img src="/images/contractfirst/swagger1.png" alt="swagger1"></p>
+<h3 id="integrar-el-contrato-en-las-herramientas-de-pruebas">Integrar el Contrato en las Herramientas de Pruebas</h3>
+<p><strong>Uso de Postman:</strong></p>
+<ol>
+<li>
+<p><strong>Importar el Contrato:</strong></p>
+<ul>
+<li>Importar el archivo OpenAPI/Swagger directamente en Postman para generar automáticamente las colecciones de pruebas.</li>
+<li>En Postman, seleccionar <code>Import &gt; File</code> y cargar el archivo OpenAPI (YAML o JSON).</li>
+</ul>
+</li>
+<li>
+<p><strong>Generación de Pruebas:</strong></p>
+<ul>
+<li>Postman generará automáticamente las solicitudes de API en base al contrato, lo que facilita la creación de pruebas.</li>
+</ul>
+</li>
+</ol>
+<h3 id="colaboración-y-comunicación">Colaboración y Comunicación</h3>
+<p><strong>Colaborar con Desarrolladores:</strong></p>
+<ul>
+<li>Trabajar estrechamente con los desarrolladores para asegurarte de que el contrato esté actualizado y refleje correctamente las expectativas del sistema. (Atributo de testeabilidad: La testeabilidad se refiere al grado en que un artefacto de software puede ser probado. Para que un artefacto sea testeable, debe ser posible controlar sus entradas y observar sus salidas.)</li>
+<li>Participa en las revisiones del contrato para garantizar que todas las partes interesadas (Desarrolladores, Testers, Otros) estén alineadas.</li>
+</ul>
+<p><strong>Utilizar Repositorios Compartidos:</strong></p>
+<ul>
+<li>Resguardar los contratos en repositorios compartidos accesibles a todos los miembros del equipo.</li>
+<li>Configura un proceso para actualizar los contratos y generar automáticamente los stubs y colecciones de Postman a partir de estos contratos.</li>
+</ul>
+<h3 id="implementar-pruebas-de-integración-y-validación">Implementar Pruebas de Integración y Validación</h3>
+<p><strong>Pruebas de Integración:</strong></p>
+<ul>
+<li>Implementar pruebas de integración que verifiquen que las diferentes partes del sistema interactúan correctamente según lo definido en el contrato.</li>
+<li>Utiliza herramientas de mocking para simular partes del sistema que aún no están implementadas.</li>
+</ul>
+<p><strong>Validación Continua:</strong></p>
+<ul>
+<li>Configurar validación continua de contratos en el pipeline de CI/CD para asegurar que cualquier cambio en el contrato se refleje en las implementaciones y pruebas.</li>
+</ul>
+<h3 id="utilidades">Utilidades:</h3>
+<ul>
+<li><a href="https://www.liquid-technologies.com/online-json-to-schema-converter">JSON to Schema Converter</a></li>
+<li><a href="https://regex-generator.olafneumann.org">Regex Generator</a></li>
+<li><a href="https://codebeautify.org/json-to-json-schema-generator">JSON to JSON Schema Generator</a></li>
+</ul>
+
+      </main>
+
+      
+      <aside class="single-post-sidebar">
+        <div class="sticky-sidebar-content">
+          
+            <div class="toc-card">
+              <div class="toc-header">
+                <i class="fa-solid fa-list-ul"></i>
+                <span>En este artículo</span>
+              </div>
+              <nav id="TableOfContents" class="toc-nav">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-implementación-de-la-metodología-contract-first-en-pruebas-de-software">🧰 Implementación de la Metodología Contract First en Pruebas de Software.</a>
+      <ul>
+        <li><a href="#-concepto-de-contract-first">📋 Concepto de &ldquo;Contract First&rdquo;</a></li>
+        <li><a href="#ventajas-del-enfoque-contract-first">Ventajas del Enfoque Contract First</a></li>
+        <li><a href="#integrar-el-contrato-en-las-herramientas-de-pruebas">Integrar el Contrato en las Herramientas de Pruebas</a></li>
+        <li><a href="#colaboración-y-comunicación">Colaboración y Comunicación</a></li>
+        <li><a href="#implementar-pruebas-de-integración-y-validación">Implementar Pruebas de Integración y Validación</a></li>
+        <li><a href="#utilidades">Utilidades:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+              </nav>
+            </div>
+          
+
+          <div class="sidebar-actions-card">
+            <button type="button" class="btn-sidebar-action" id="btn-back-to-top" title="Volver arriba">
+              <i class="fa-solid fa-arrow-up"></i>
+              <span>Volver arriba</span>
+            </button>
+            <a href="/post/" class="btn-sidebar-action" title="Ver todos los artículos">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Todos los artículos</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+    </main>
+    <footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <span class="footer-logo">⚡ Automation &amp; Performance</span>
+      <p class="footer-tagline">Espacio dedicado al testing estratégico, automatización y performance engineering.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="/" class="footer-link">Inicio</a>
+      <a href="/post/" class="footer-link">Artículos</a>
+      <a href="/about/" class="footer-link">Sobre Mí (CV)</a>
+      <a href="/contact/" class="footer-link">Contacto</a>
+    </div>
+
+    <div class="footer-socials">
+      
+        <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      
+      
+        <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      
+      
+        <a href="https://www.instagram.com/mariano_imende/?igsh=ZnU0YTJrNTYxcTM3" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      
+      
+        <a href="https://www.youtube.com/results?search_query=performance&#43;and&#43;automation&#43;testing" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      
+      
+        <a href="mailto:imende.mariano@gmail.com" class="footer-social-btn" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 <strong>Mariano Imende</strong>. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Búsqueda rápida">
+  <div class="search-modal-dialog">
+    <div class="search-input-header">
+      <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
+      <input type="text" id="search-input" class="search-input" placeholder="Buscar por tema, tecnología o comando (ej. k6, kafka, pom)..." autocomplete="off" />
+      <button type="button" id="search-close-btn" class="search-close-btn" aria-label="Cerrar búsqueda">
+        <span class="esc-badge">ESC</span>
+      </button>
+    </div>
+
+    <div id="search-results" class="search-results-list">
+      <div class="search-placeholder">
+        Escribí una palabra clave para buscar tutoriales, código o herramientas...
+      </div>
+    </div>
+
+    <div class="search-modal-footer">
+      <span class="search-hint"><kbd>↑</kbd> <kbd>↓</kbd> para navegar</span>
+      <span class="search-hint"><kbd>↵</kbd> para seleccionar</span>
+      <span class="search-hint"><kbd>ESC</kbd> para cerrar</span>
+    </div>
+  </div>
+</div>
+
+
+<script src="/js/main.js"></script>
+
+  </body>
+</html>

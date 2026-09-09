@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Android on Automation
+&amp;
+Performance
+testing</title>
+		<link>https://automationtesting.ar/tags/android/</link>
+		<description>Recent content in Android on Automation
+&amp;
+Performance
+testing</description>
+		<generator>Hugo</generator>
+		<language>es-ar</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 13 Jul 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://automationtesting.ar/tags/android/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>📱 Setup Appium con Python &#43; Pytest (Android)</title>
+				<link>https://automationtesting.ar/post/appium/</link>
+				<pubDate>Sat, 13 Jul 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/post/appium/</guid>
+				<description>&lt;h1 id=&#34;-setup-appium-con-python--pytest-android&#34;&gt;📱 Setup Appium con Python + Pytest (Android)&lt;/h1&gt;&#xA;&lt;p&gt;Guía completa para preparar una laptop nueva y dejarla lista para automatizar tests con &lt;strong&gt;Python + Pytest + Appium (Android)&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-preparar-la-máquina&#34;&gt;1. Preparar la máquina&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Instalar &lt;strong&gt;Python 3.x&lt;/strong&gt; desde la página oficial&lt;/li&gt;&#xA;&lt;li&gt;Marcar &lt;strong&gt;Add Python to PATH&lt;/strong&gt; durante la instalación&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;2-ide--editor&#34;&gt;2. IDE / Editor&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Instalar &lt;strong&gt;Visual Studio Code&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;3-java--android-sdk-para-poder-usar-uiautomator2&#34;&gt;3. Java + Android SDK (para poder usar UiAutomator2)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Instalar un &lt;strong&gt;JDK&lt;/strong&gt;, preferentemente Temurin. (ruta de instalación opcional, por ejemplo: C:\jdk-21.0.10.7-hotspot)&#xA;(&lt;a href=&#34;https://adoptium.net/es/temurin/releases&#34;&gt;https://adoptium.net/es/temurin/releases&lt;/a&gt;)&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

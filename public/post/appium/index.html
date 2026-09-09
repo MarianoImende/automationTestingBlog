@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>📱 Setup Appium con Python &#43; Pytest (Android) | Automation
+&amp;
+Performance
+testing</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Guía completa para preparar una laptop nueva y dejarla lista para automatizar tests con Python &#43; Pytest &#43; Appium (Android).">
+    <meta name="generator" content="Hugo 0.165.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    <meta name="author" content="Mariano Imende">
+    
+
+    <link rel="stylesheet" href="/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous"><link rel="stylesheet" href="/css/custom.css">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://automationtesting.ar/post/appium/">
+    
+
+    <meta property="og:url" content="https://automationtesting.ar/post/appium/">
+	<meta property="og:site_name" content="Automation
+&
+Performance
+testing">
+	<meta property="og:title" content="📱 Setup Appium con Python &#43; Pytest (Android)">
+	<meta property="og:description" content="Guía completa para preparar una laptop nueva y dejarla lista para automatizar tests con Python &#43; Pytest &#43; Appium (Android).">
+	<meta property="og:locale" content="es_ar">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="post">
+		<meta property="article:published_time" content="2024-07-13T00:00:00+00:00">
+		<meta property="article:modified_time" content="2024-07-13T00:00:00+00:00">
+		<meta property="article:tag" content="Appium">
+		<meta property="article:tag" content="Android">
+		<meta property="article:tag" content="Pytest">
+		<meta property="article:tag" content="Automatizacion">
+
+	<meta itemprop="name" content="📱 Setup Appium con Python &#43; Pytest (Android)">
+	<meta itemprop="description" content="Guía completa para preparar una laptop nueva y dejarla lista para automatizar tests con Python &#43; Pytest &#43; Appium (Android).">
+	<meta itemprop="datePublished" content="2024-07-13T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2024-07-13T00:00:00+00:00">
+	<meta itemprop="wordCount" content="841">
+	<meta itemprop="keywords" content="Appium,Android,Pytest,Automatizacion">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="📱 Setup Appium con Python &#43; Pytest (Android)">
+	<meta name="twitter:description" content="Guía completa para preparar una laptop nueva y dejarla lista para automatizar tests con Python &#43; Pytest &#43; Appium (Android).">
+
+      
+    
+    
+<script>
+  (function() {
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+  </head>
+
+  <body class="site-body kind-page type-post">
+    
+  
+  <div id="reading-progress-container" class="reading-progress-container">
+    <div id="reading-progress-bar" class="reading-progress-bar"></div>
+  </div>
+  <nav class="modern-navbar" role="navigation">
+  <div class="nav-container">
+    <a href="/" class="nav-brand">
+      <span class="brand-icon">⚡</span>
+      <span class="brand-text">Automation<span class="brand-accent">&amp;</span>Performance</span>
+    </a>
+
+    <div class="nav-menu-wrapper">
+      
+        <ul class="nav-links">
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/">
+              Inicio
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/post/">
+              Artículos y Tutoriales
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/about/">
+              Sobre Mí (CV)
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="/contact/">
+              Contacto
+            </a>
+          </li>
+          
+        </ul>
+      
+
+      <div class="nav-actions">
+        
+        <button type="button" class="search-trigger-btn" id="search-trigger-btn" aria-label="Buscar en el blog" title="Buscar (Ctrl + K)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="search-kbd">Ctrl K</span>
+        </button>
+
+        
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema de color" title="Alternar Modo Oscuro/Claro">
+          <i class="fa-solid fa-moon theme-icon-moon"></i>
+          <i class="fa-solid fa-sun theme-icon-sun"></i>
+        </button>
+
+        
+        <div class="nav-socials">
+          
+            <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          
+          
+            <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          
+          
+            <a href="mailto:imende.mariano@gmail.com" class="social-icon-btn" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <main role="main" class="site-main">
+      
+  <article class="single-post-container">
+    
+    <header class="single-post-header">
+      <div class="post-breadcrumb">
+        <a href="/" class="breadcrumb-link"><i class="fa-solid fa-house"></i> Inicio</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="/post/" class="breadcrumb-link">Artículos</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">📱 Setup Appium con Python &#43; Pytest (Android)</span>
+      </div>
+
+      <h1 class="single-post-title">📱 Setup Appium con Python &#43; Pytest (Android)</h1>
+
+      <div class="single-post-meta">
+        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 13/07/2024</span>
+        <span class="meta-item"><i class="fa-regular fa-clock"></i> 4 min de lectura</span>
+        <span class="meta-item"><i class="fa-solid fa-user-pen"></i> Mariano Imende</span>
+      </div>
+
+      
+        <div class="single-post-tags">
+          
+            <a href="/tags/appium/" class="tag-chip tag-appium">#appium</a>
+          
+            <a href="/tags/android/" class="tag-chip tag-android">#android</a>
+          
+            <a href="/tags/pytest/" class="tag-chip tag-pytest">#pytest</a>
+          
+            <a href="/tags/automatizacion/" class="tag-chip tag-automatizacion">#automatizacion</a>
+          
+        </div>
+      
+
+      
+        <div class="single-post-featured-image-wrap">
+          <img src="https://automationtesting.ar/images/appium/0.webp" alt="📱 Setup Appium con Python &#43; Pytest (Android)" class="single-post-featured-image" />
+        </div>
+      
+    </header>
+
+    
+    <div class="single-post-layout">
+      
+      <main class="single-post-content post-content" id="article-body">
+        <h1 id="-setup-appium-con-python--pytest-android">📱 Setup Appium con Python + Pytest (Android)</h1>
+<p>Guía completa para preparar una laptop nueva y dejarla lista para automatizar tests con <strong>Python + Pytest + Appium (Android)</strong>.</p>
+<hr>
+<h2 id="1-preparar-la-máquina">1. Preparar la máquina</h2>
+<ul>
+<li>Instalar <strong>Python 3.x</strong> desde la página oficial</li>
+<li>Marcar <strong>Add Python to PATH</strong> durante la instalación</li>
+</ul>
+<h2 id="2-ide--editor">2. IDE / Editor</h2>
+<ul>
+<li>Instalar <strong>Visual Studio Code</strong></li>
+</ul>
+<hr>
+<h2 id="3-java--android-sdk-para-poder-usar-uiautomator2">3. Java + Android SDK (para poder usar UiAutomator2)</h2>
+<ul>
+<li>
+<p>Instalar un <strong>JDK</strong>, preferentemente Temurin. (ruta de instalación opcional, por ejemplo: C:\jdk-21.0.10.7-hotspot)
+(<a href="https://adoptium.net/es/temurin/releases">https://adoptium.net/es/temurin/releases</a>)</p>
+</li>
+<li>
+<p>Configurar variables de entorno de usuario. Presiona las teclas <strong>Windows + R</strong> en tu teclado:
+rundll32.exe sysdm.cpl,EditEnvironmentVariables</p>
+<ul>
+<li>JAVA_HOME</li>
+<li>PATH</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/appium/1.png" alt="ANDROID_HOME"></p>
+<hr>
+<p><img src="/images/appium/2.png" alt="ANDROID_HOME"></p>
+<hr>
+<h2 id="4-instalar-sdk-de-android-y-sus-herramientas-de-línea-de-comandos">4. Instalar SDK de Android y sus herramientas de línea de comandos</h2>
+<h3 id="opción-1-instalar-android-studio-solo-si-necesitas-emular-dispositivos-caso-contrario-busca-más-abajo-opción-2">Opción 1: Instalar Android Studio (Solo si necesitas emular dispositivos, caso contrario busca más abajo opción 2)</h3>
+<p>Android Studio (Solo si necesitas emular dispositivos).
+El Gestor de Emuladores (AVD Manager): Si no tenes un teléfono Android real conectado por USB y necesitas crear dispositivos virtuales (emuladores) para correr tus pruebas, Android Studio te permite crearlos y configurarlos con tres clics.</p>
+<ul>
+<li>
+<p>1 <a href="https://developer.android.com/">https://developer.android.com/</a></p>
+</li>
+<li>
+<p>2 Configurar las variable de entorno <code>ANDROID_HOME</code> apuntando al SDK</p>
+</li>
+</ul>
+<p>Si se instala Android Studio, normalmente el SDK queda en:
+C:\Users&lt;usuario&gt;\AppData\Local\Android\Sdk</p>
+<p><img src="/images/appium/3.png" alt="ANDROID_HOME"></p>
+<p>&ldquo;Es probable que la carpeta AppData se encuentre oculta&rdquo;:</p>
+<p><img src="/images/appium/4.png" alt="ANDROID_HOME"></p>
+<ul>
+<li>Agregar <code>%ANDROID_HOME%\platform-tools</code> al <code>PATH</code></li>
+</ul>
+<p><img src="/images/appium/5.png" alt="ANDROID_HOME"></p>
+<ul>
+<li>Verificar que funciona:</li>
+</ul>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>adb version</span></span></code></pre></div>
+  </div><p><img src="/images/appium/6.png" alt="ANDROID_HOME"></p>
+<p>El estado correcto del dispositivo debe ser <code>device</code>.
+Si aparece <code>unauthorized</code> u <code>offline</code>, Appium no podrá iniciar la sesión.</p>
+<hr>
+<h3 id="opción-2-instalar-android-sdk-platform-tools-para-utilizar-teléfonos-reales">Opción 2: Instalar Android SDK Platform Tools (Para utilizar teléfonos reales)</h3>
+<p>No es necesario instalar Android Studio completo.
+Se debe descargar Android SDK Platform Tools desde la web oficial de Android Developers.</p>
+<p>Buscar en el navegador: <strong>Android SDK Platform Tools</strong> o buscarlo en <a href="https://developer.android.com/tools/releases/platform-tools">https://developer.android.com/tools/releases/platform-tools</a>
+(Descargar la versión para Windows y descomprimir el archivo .zip: platform-tools-latest-windows.zip&quot;)</p>
+<p>Ruta recomendada:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code>C:\Android\platform-tools</code></pre>
+  </div><p>Dentro de esa carpeta debe existir el archivo:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code>adb.exe</code></pre>
+  </div><p>Ejemplo:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code>C:\Android\platform-tools\adb.exe</code></pre>
+  </div><p>Configurar variables de entorno:
+Appium necesita conocer dónde está instalado el SDK de Android.</p>
+<p>Hay que crear estas variables de entorno:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code>ANDROID_HOME=C:\Android
+ANDROID_SDK_ROOT=C:\Android</code></pre>
+  </div><p>Y agregar a la variable Path:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code>C:\Android\platform-tools</code></pre>
+  </div><p>Importante: ANDROID_HOME y ANDROID_SDK_ROOT no deben apuntar a platform-tools, sino a la carpeta raíz:</p>
+<p>Correcto: ANDROID_HOME=C:\Android
+Incorrecto: ANDROID_HOME=C:\Android\platform-tools</p>
+<p>Validar instalación de ADB:
+Abrir PowerShell y ejecutar:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code>adb version</code></pre>
+  </div><p>Debe responder algo similar a:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code>Android Debug Bridge version ...</code></pre>
+  </div><p>El estado correcto del dispositivo debe ser <code>device</code>.
+Si aparece <code>unauthorized</code> u <code>offline</code>, Appium no podrá iniciar la sesión.</p>
+<h2 id="5-nodejs">5. Node.js</h2>
+<ul>
+<li>Instalar <strong>Node.js LTS</strong></li>
+</ul>
+<p><img src="/images/appium/7.png" alt="ANDROID_HOME"></p>
+<ul>
+<li>Validar instalación</li>
+</ul>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>node --version
+</span></span><span style="display:flex;"><span>v24.4.1</span></span></code></pre></div>
+  </div><hr>
+<h2 id="6-instalar-appium-server">6. Instalar Appium Server</h2>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g appium</span></span></code></pre></div>
+  </div><p><img src="/images/appium/8.png" alt="ANDROID_HOME"></p>
+<ul>
+<li>validar instalación:</li>
+</ul>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>appium -v</span></span></code></pre></div>
+  </div><hr>
+<h2 id="7-instalar-el-driver-de-android">7. Instalar el driver de Android:</h2>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>appium driver install uiautomator2</span></span></code></pre></div>
+  </div><p><img src="/images/appium/9.png" alt="ANDROID_HOME"></p>
+<hr>
+<h2 id="8-ejecutar-appium">8. Ejecutar Appium</h2>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>appium</span></span></code></pre></div>
+  </div><p><img src="/images/appium/10.png" alt="ANDROID_HOME"></p>
+<hr>
+<h2 id="9-configurar-celular-android">9. Configurar celular Android</h2>
+<ul>
+<li>
+<p>Activar Opciones de desarrollador:
+Ajustes → Acerca del teléfono → tocar varias veces “Número de compilación”.</p>
+</li>
+<li>
+<p>Activar Depuración USB en Opciones de desarrollador.
+Conectar el celular por USB a la laptop y aceptar el mensaje de “Permitir depuración USB”.</p>
+</li>
+<li>
+<p>Verificar que ADB lo ve:</p>
+</li>
+</ul>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>adb devices</span></span></code></pre></div>
+  </div><p><img src="/images/appium/11.png" alt="ANDROID_HOME"></p>
+<p>(Opcional) Ajustar bloqueo de pantalla:</p>
+<ul>
+<li>Dejar un PIN numérico simple si querés usar unlock automático con Appium.</li>
+<li>Desactivar biometría (huella) si te molesta para los tests.</li>
+</ul>
+<hr>
+<h2 id="10-entorno-python-para-los-tests">10. Entorno Python para los tests</h2>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir appium-tests
+</span></span><span style="display:flex;"><span>cd appium-tests
+</span></span><span style="display:flex;"><span>python -m venv venv
+</span></span><span style="display:flex;"><span>venv<span style="color:#ae81ff">\S</span>cripts<span style="color:#ae81ff">\a</span>ctivate</span></span></code></pre></div>
+  </div><hr>
+<h2 id="11-dependencias">11. Dependencias</h2>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install --upgrade pip
+</span></span><span style="display:flex;"><span>pip install appium-python-client selenium pytest
+</span></span><span style="display:flex;"><span>pip freeze &gt; requirements.txt</span></span></code></pre></div>
+  </div><hr>
+<h2 id="12-appium-inspector">12. Appium Inspector</h2>
+<ul>
+<li>
+<p>Descargar Appium Inspector (release oficial: <a href="https://github.com/appium/appium-inspector/releases)">https://github.com/appium/appium-inspector/releases)</a>.
+Por ejemplo: Appium-Inspector-2026.2.1-win-x64.exe</p>
+</li>
+<li>
+<p>Abrir el Inspector y configurar la conexión:</p>
+</li>
+</ul>
+<p>Server:
+Remote host: 127.0.0.1
+Remote port: 4723
+Desired capabilities (JSON), algo tipo:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;platformName&#34;</span>: <span style="color:#e6db74">&#34;Android&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;appium:automationName&#34;</span>: <span style="color:#e6db74">&#34;UiAutomator2&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;appium:deviceName&#34;</span>: <span style="color:#e6db74">&#34;R5CW82BQSYD&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;appium:platformVersion&#34;</span>: <span style="color:#e6db74">&#34;16&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;appium:appPackage&#34;</span>: <span style="color:#e6db74">&#34;com.sec.android.app.launcher&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;appium:appActivity&#34;</span>: <span style="color:#e6db74">&#34;com.sec.android.app.launcher.activities.LauncherActivity&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;appium:noReset&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;appium:newCommandTimeout&#34;</span>: <span style="color:#ae81ff">900</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+  </div><p>appPackage y appActivity deben ajustarse según la aplicación que se quiera automatizar.
+El ejemplo anterior abre el launcher de Android.</p>
+<h2 id="problemas-frecuentes">Problemas frecuentes</h2>
+<p>Si al momento de iniciar sesión en Appium Inspector se presenta un error del tipo:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code>Error
+WebDriverError: Error getting device platform version. Original error: Error executing adbExec.
+Original error: &#39;Command &#39;&#39;C:\Users\pepe\AppData\Local\Android\Sdk\platform-
+tools\adb.exe&#39; -P 5037 -s R5CW82BQSYD shell getprop ro.build.version.release&#39;
+exited with code 1&#39;; Command output: adb.exe: device unauthorized. This adb server&#39;s
+$ADB_VENDOR_KEYS is not set Try &#39;adb kill-server&#39; if that seems wrong. Otherwise check
+for a confirmation dialog on your device. when running &#34;http://127.1.1.1:4723/session&#34;
+ with method &#34;POST&#34;</code></pre>
+  </div><p>Debemos “permitir depuración por USB” en el celular conectado por medio de un cable USB a nuestra computadora.</p>
+<hr>
+<p>Si al momento de ejecutar un test nos encontramos con el siguiente error:</p>
+<h3 id="error-neither-android_home-nor-android_sdk_root-environment-variable-was-exported">Error: Neither ANDROID_HOME nor ANDROID_SDK_ROOT environment variable was exported</h3>
+<p>Este error indica que Appium no encuentra la raíz del SDK de Android.</p>
+<p>Validar:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>echo $env:ANDROID_HOME
+</span></span><span style="display:flex;"><span>echo $env:ANDROID_SDK_ROOT</span></span></code></pre></div>
+  </div><p>Si no devuelve una ruta válida, configurar:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code>ANDROID_HOME=C:\Android
+ANDROID_SDK_ROOT=C:\Android
+Path=C:\Android\platform-tools</code></pre>
+  </div><p>Cerrar y volver a abrir PowerShell, VS Code y Appium.</p>
+<hr>
+<h3 id="adb-devices-muestra-unauthorized">adb devices muestra unauthorized</h3>
+<p>Aceptar el mensaje de autorización USB en el celular.</p>
+<hr>
+<p>Si no aparece:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code>adb kill-server
+adb start-server
+adb devices</code></pre>
+  </div><p>También se puede revocar desde el celular:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code>Opciones de desarrollador → Revocar autorizaciones de depuración USB</code></pre>
+  </div><hr>
+<h3 id="adb-devices-muestra-offline">adb devices muestra offline</h3>
+<p>Desconectar y reconectar el cable USB, reiniciar ADB y revisar que el cable sea de datos, no solo de carga.</p>
+<hr>
+<p>✅ Entorno listo para automatizar.</p>
+<p><img src="/images/appium/12.png" alt="ANDROID_HOME"></p>
+
+      </main>
+
+      
+      <aside class="single-post-sidebar">
+        <div class="sticky-sidebar-content">
+          
+            <div class="toc-card">
+              <div class="toc-header">
+                <i class="fa-solid fa-list-ul"></i>
+                <span>En este artículo</span>
+              </div>
+              <nav id="TableOfContents" class="toc-nav">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-preparar-la-máquina">1. Preparar la máquina</a></li>
+    <li><a href="#2-ide--editor">2. IDE / Editor</a></li>
+    <li><a href="#3-java--android-sdk-para-poder-usar-uiautomator2">3. Java + Android SDK (para poder usar UiAutomator2)</a></li>
+    <li><a href="#4-instalar-sdk-de-android-y-sus-herramientas-de-línea-de-comandos">4. Instalar SDK de Android y sus herramientas de línea de comandos</a>
+      <ul>
+        <li><a href="#opción-1-instalar-android-studio-solo-si-necesitas-emular-dispositivos-caso-contrario-busca-más-abajo-opción-2">Opción 1: Instalar Android Studio (Solo si necesitas emular dispositivos, caso contrario busca más abajo opción 2)</a></li>
+        <li><a href="#opción-2-instalar-android-sdk-platform-tools-para-utilizar-teléfonos-reales">Opción 2: Instalar Android SDK Platform Tools (Para utilizar teléfonos reales)</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-nodejs">5. Node.js</a></li>
+    <li><a href="#6-instalar-appium-server">6. Instalar Appium Server</a></li>
+    <li><a href="#7-instalar-el-driver-de-android">7. Instalar el driver de Android:</a></li>
+    <li><a href="#8-ejecutar-appium">8. Ejecutar Appium</a></li>
+    <li><a href="#9-configurar-celular-android">9. Configurar celular Android</a></li>
+    <li><a href="#10-entorno-python-para-los-tests">10. Entorno Python para los tests</a></li>
+    <li><a href="#11-dependencias">11. Dependencias</a></li>
+    <li><a href="#12-appium-inspector">12. Appium Inspector</a></li>
+    <li><a href="#problemas-frecuentes">Problemas frecuentes</a>
+      <ul>
+        <li><a href="#error-neither-android_home-nor-android_sdk_root-environment-variable-was-exported">Error: Neither ANDROID_HOME nor ANDROID_SDK_ROOT environment variable was exported</a></li>
+        <li><a href="#adb-devices-muestra-unauthorized">adb devices muestra unauthorized</a></li>
+        <li><a href="#adb-devices-muestra-offline">adb devices muestra offline</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+              </nav>
+            </div>
+          
+
+          <div class="sidebar-actions-card">
+            <button type="button" class="btn-sidebar-action" id="btn-back-to-top" title="Volver arriba">
+              <i class="fa-solid fa-arrow-up"></i>
+              <span>Volver arriba</span>
+            </button>
+            <a href="/post/" class="btn-sidebar-action" title="Ver todos los artículos">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Todos los artículos</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+    </main>
+    <footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <span class="footer-logo">⚡ Automation &amp; Performance</span>
+      <p class="footer-tagline">Espacio dedicado al testing estratégico, automatización y performance engineering.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="/" class="footer-link">Inicio</a>
+      <a href="/post/" class="footer-link">Artículos</a>
+      <a href="/about/" class="footer-link">Sobre Mí (CV)</a>
+      <a href="/contact/" class="footer-link">Contacto</a>
+    </div>
+
+    <div class="footer-socials">
+      
+        <a href="https://github.com/MarianoImende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      
+      
+        <a href="https://www.linkedin.com/in/mariano-imende" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      
+      
+        <a href="https://www.instagram.com/mariano_imende/?igsh=ZnU0YTJrNTYxcTM3" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      
+      
+        <a href="https://www.youtube.com/results?search_query=performance&#43;and&#43;automation&#43;testing" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      
+      
+        <a href="mailto:imende.mariano@gmail.com" class="footer-social-btn" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 <strong>Mariano Imende</strong>. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Búsqueda rápida">
+  <div class="search-modal-dialog">
+    <div class="search-input-header">
+      <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
+      <input type="text" id="search-input" class="search-input" placeholder="Buscar por tema, tecnología o comando (ej. k6, kafka, pom)..." autocomplete="off" />
+      <button type="button" id="search-close-btn" class="search-close-btn" aria-label="Cerrar búsqueda">
+        <span class="esc-badge">ESC</span>
+      </button>
+    </div>
+
+    <div id="search-results" class="search-results-list">
+      <div class="search-placeholder">
+        Escribí una palabra clave para buscar tutoriales, código o herramientas...
+      </div>
+    </div>
+
+    <div class="search-modal-footer">
+      <span class="search-hint"><kbd>↑</kbd> <kbd>↓</kbd> para navegar</span>
+      <span class="search-hint"><kbd>↵</kbd> para seleccionar</span>
+      <span class="search-hint"><kbd>ESC</kbd> para cerrar</span>
+    </div>
+  </div>
+</div>
+
+
+<script src="/js/main.js"></script>
+
+  </body>
+</html>

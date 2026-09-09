@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Qa on Automation
+&amp;
+Performance
+testing</title>
+		<link>https://automationtesting.ar/tags/qa/</link>
+		<description>Recent content in Qa on Automation
+&amp;
+Performance
+testing</description>
+		<generator>Hugo</generator>
+		<language>es-ar</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 14 Apr 2024 11:25:05 -0400</lastBuildDate>
+		
+			<atom:link href="https://automationtesting.ar/tags/qa/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>👩‍💻 Introducción a la Programación Orientada a Objetos (POO) TypeScript</title>
+				<link>https://automationtesting.ar/post/poo/</link>
+				<pubDate>Sun, 14 Apr 2024 11:25:05 -0400</pubDate>
+				<guid>https://automationtesting.ar/post/poo/</guid>
+				<description>&lt;p&gt;&amp;lt;/&amp;gt; Un tema muy importante a la hora de comenzar el camino de la automatización de pruebas es la programación orientada a objetos.&lt;/p&gt;&#xA;&lt;p&gt;La Programación Orientada a Objetos (POO) es un estilo de programación que organiza el código en torno a objetos. Estos objetos representan entidades del mundo real o del dominio del problema, y tienen características (llamadas propiedades) y comportamientos (llamados métodos). El objetivo de la POO es hacer que el código sea más fácil de entender, mantener y reutilizar. Es una forma natural de pensar en los problemas y cómo resolverlos.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Challenge automatización de pruebas</title>
+				<link>https://automationtesting.ar/post/challenge/</link>
+				<pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>https://automationtesting.ar/post/challenge/</guid>
+				<description>&lt;h2 id=&#34;-proyecto-para-entrenamiento-de-tester-automatizadores&#34;&gt;🎉 ¡Proyecto para entrenamiento de tester automatizadores!&lt;/h2&gt;&#xA;&lt;p&gt;💻 &lt;strong&gt;Backend:&lt;/strong&gt;  &lt;a href=&#34;https://walletchallenge-back.onrender.com/docs&#34;&gt;Wallet Challenge Backend&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;🌐 &lt;strong&gt;Frontend:&lt;/strong&gt; &lt;a href=&#34;https://walletchallenge-front.onrender.com/&#34;&gt;Wallet Challenge Frontend&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Este proyecto fue creado como una herramienta de entrenamiento para quienes desean practicar y mejorar sus habilidades en automatización de pruebas. Es ideal tanto para testers principiantes como avanzados que buscan un entorno controlado y realista para probar técnicas y herramientas de automatización.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-características-del-proyecto&#34;&gt;🔑 Características del proyecto:&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Backend:&lt;/strong&gt; openapi: 3.1.0 [Swagger]&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Frontend:&lt;/strong&gt; Login (usuario: &lt;strong&gt;challenge&lt;/strong&gt;, password &lt;strong&gt;challenge&lt;/strong&gt;).&#xA;(Por el momento funciona el login y la consulta de cuentas para la cuál se debe ingresar el número de tarjeta en el textbox &amp;ldquo;Cuentas&amp;rdquo;)&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>🔺 Pirámide de automatización</title>
+				<link>https://automationtesting.ar/post/piramide/</link>
+				<pubDate>Sun, 14 May 2023 11:25:05 -0400</pubDate>
+				<guid>https://automationtesting.ar/post/piramide/</guid>
+				<description>&lt;h1 id=&#34;-la-pirámide-de-pruebas-según-mike-cohn&#34;&gt;🔺 La Pirámide de Pruebas según Mike Cohn&lt;/h1&gt;&#xA;&lt;p&gt;Mike Cohn ha discutido y promovido este modelo en sus libros y presentaciones sobre desarrollo ágil y gestión de proyectos, destacando su importancia para la calidad del software y la eficiencia en las prácticas de prueba.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://automationtesting.ar/images/piramide.png&#34; alt=&#34;Pirámide&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;base-de-la-pirámide---pruebas-unitarias&#34;&gt;Base de la pirámide - Pruebas Unitarias&lt;/h2&gt;&#xA;&lt;p&gt;Las pruebas unitarias constituyen la base de la pirámide. Son pruebas automatizadas que verifican el funcionamiento correcto de unidades individuales de código, como funciones, métodos o componentes pequeños.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

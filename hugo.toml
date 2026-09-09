@@ -8,7 +8,8 @@ theme = "ananke"
 resourceDir = "resources"
 MetaDataFormat         = "yaml" # Formato cabeceras
 DefaultContentLanguage = "es"   # Idioma por defecto del contenido
-Paginate               = 15      # Posts por página en main
+[pagination]
+pagerSize = 15
 googleAnalytics        = ""     # Código para estadísticas web
 enableRobotsTXT        = true   # Buscadores
 

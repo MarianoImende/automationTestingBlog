@@ -2350,3 +2350,34 @@ code:not(pre code) {
     padding: 4px 10px;
   }
 }
+
+@media (max-width: 600px) {
+  .nav-container {
+    padding: 0 8px;
+    gap: 6px;
+  }
+
+  .nav-brand {
+    font-size: 0.88rem;
+    gap: 5px;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .brand-icon {
+    font-size: 1.1rem;
+  }
+
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .search-trigger-btn,
+  .theme-toggle-btn,
+  .mobile-menu-toggle {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    justify-content: center;
+  }
+}

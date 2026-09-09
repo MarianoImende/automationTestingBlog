@@ -5,7 +5,7 @@
 &amp;
 Performance
 testing</title>
-		<link>https://automationtesting.ar/tags/performance/</link>
+		<link>http://localhost:1313/tags/performance/</link>
 		<description>Recent content in Performance on Automation
 &amp;
 Performance
@@ -18,54 +18,54 @@ testing</description>
 		
 			<lastBuildDate>Mon, 13 Jan 2025 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://automationtesting.ar/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/performance/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>🛠️ Construir binario de k6</title>
-				<link>https://automationtesting.ar/post/k6_binario/</link>
+				<link>http://localhost:1313/post/k6_binario/</link>
 				<pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/k6_binario/</guid>
+				<guid>http://localhost:1313/post/k6_binario/</guid>
 				<description>&lt;h1 id=&#34;creando-una-guía-detallada-para-instalar-y-personalizar-k6-utilizando-extensiones-wsl-y-go-en-un-sistema-windows&#34;&gt;Creando una guía detallada para instalar y personalizar k6 utilizando extensiones, WSL y Go en un sistema Windows.&lt;/h1&gt;&#xA;&lt;p&gt;Esta guía te mostrará cómo instalar y personalizar k6 con extensiones, utilizando el Subsistema de Windows para Linux (WSL) y Go. Al final, podrás generar un binario personalizado de k6 con las extensiones que necesites.&lt;/p&gt;&#xA;&lt;h2 id=&#34;que-es-una-extension-&#34;&gt;Que es una Extension? 🛠️&lt;/h2&gt;&#xA;&lt;p&gt;Las extensiones son funcionalidades que se agregan a la version estandar de k6, Las extensiones son desarrolladas tanto por los desarrolladores de k6 como por la comunidad.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Jmeter: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀</title>
-				<link>https://automationtesting.ar/post/jmeter-kafka/</link>
+				<link>http://localhost:1313/post/jmeter-kafka/</link>
 				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/jmeter-kafka/</guid>
+				<guid>http://localhost:1313/post/jmeter-kafka/</guid>
 				<description>&lt;p&gt;En las arquitecturas basadas en &lt;strong&gt;Apache Kafka&lt;/strong&gt;, la estabilidad del sistema no depende solo de la capacidad de los &lt;strong&gt;producers&lt;/strong&gt; para enviar mensajes, sino también de &lt;strong&gt;cómo los consumers procesan la carga en diferentes escenarios&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Qué sucede si un consumer no puede mantener el ritmo de los mensajes entrantes?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Cómo afecta el lag de los consumidores al rendimiento del sistema?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Cuál es el impacto de aumentar la concurrencia en los grupos de consumo?&lt;/strong&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>K6 &#43; Victoria Metrics &#43; Grafana 🚀</title>
-				<link>https://automationtesting.ar/post/k6_victoria_grafana/</link>
+				<link>http://localhost:1313/post/k6_victoria_grafana/</link>
 				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/k6_victoria_grafana/</guid>
+				<guid>http://localhost:1313/post/k6_victoria_grafana/</guid>
 				<description>&lt;p&gt;🧩 En este tutorial dejo mi procedimiento comprobado para integrar K6, Victoria Metrics y Grafana, ideal para stress testing y monitoreo serio de cargas.&#xA;Un solo flujo, claro y sin sorpresas: de la instalación al dashboard listo para producción.&#xA;Dale poder a tus métricas.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-contexto&#34;&gt;🔹 &lt;strong&gt;Contexto&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Procedimiento probado en &lt;strong&gt;Ubuntu 24.04&lt;/strong&gt; y &lt;strong&gt;SUSE Linux Enterprise Server 15 SP6&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-instalar-victoria-metrics&#34;&gt;✅ &lt;strong&gt;1. Instalar Victoria Metrics&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;VictoriaMetrics&lt;/strong&gt; es una base de datos de series temporales, rápida, escalable y económica.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>K6: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀</title>
-				<link>https://automationtesting.ar/post/k6-kafka/</link>
+				<link>http://localhost:1313/post/k6-kafka/</link>
 				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/k6-kafka/</guid>
+				<guid>http://localhost:1313/post/k6-kafka/</guid>
 				<description>&lt;p&gt;En las arquitecturas basadas en &lt;strong&gt;Apache Kafka&lt;/strong&gt;, la estabilidad del sistema no depende solo de la capacidad de los &lt;strong&gt;producers&lt;/strong&gt; para enviar mensajes, sino también de &lt;strong&gt;cómo los consumers procesan la carga en diferentes escenarios&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Qué sucede si un consumer no puede mantener el ritmo de los mensajes entrantes?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Cómo afecta el lag de los consumidores al rendimiento del sistema?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Cuál es el impacto de aumentar la concurrencia en los grupos de consumo?&lt;/strong&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>📈 Web dashboard en k6</title>
-				<link>https://automationtesting.ar/post/k6_dashboard/</link>
+				<link>http://localhost:1313/post/k6_dashboard/</link>
 				<pubDate>Sat, 13 Jul 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/k6_dashboard/</guid>
-				<description>&lt;h1 id=&#34;-web-dashboard&#34;&gt;📉 Web dashboard&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;k6&lt;/strong&gt; proporciona un panel web integrado que puede habilitar para visualizar y monitorear los resultados de sus pruebas en &lt;strong&gt;tiempo real&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://automationtesting.ar/images/k6/web-dashboard.png&#34; alt=&#34;web-dashboard&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;cómo-utilizar&#34;&gt;Cómo utilizar&lt;/h1&gt;&#xA;&lt;p&gt;El panel web es una función integrada de k6. se puede habilitar configurando la variable de entorno &lt;strong&gt;K6_WEB_DASHBOARD&lt;/strong&gt; en &lt;strong&gt;true&lt;/strong&gt; cuando ejecute su script de prueba, por ejemplo:&lt;/p&gt;&#xA;&lt;div class=&#34;code-block&#34;&gt;&#xD;&#xA;    &lt;button class=&#34;code-copy&#34; type=&#34;button&#34; hidden aria-label=&#34;Copy code to clipboard&#34;&gt;&#xD;&#xA;      &lt;span class=&#34;code-copy-label&#34; aria-hidden=&#34;true&#34;&gt;Copy&lt;/span&gt;&#xD;&#xA;    &lt;/button&gt;&#xD;&#xA;    &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-linux&#34; data-lang=&#34;linux&#34;&gt;export K6_WEB_DASHBOARD=true&lt;/code&gt;&lt;/pre&gt;&#xD;&#xA;  &lt;/div&gt;&lt;p&gt;De forma predeterminada, el panel web está disponible en el puerto localhost 5665&lt;/p&gt;</description>
+				<guid>http://localhost:1313/post/k6_dashboard/</guid>
+				<description>&lt;h1 id=&#34;-web-dashboard&#34;&gt;📉 Web dashboard&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;k6&lt;/strong&gt; proporciona un panel web integrado que puede habilitar para visualizar y monitorear los resultados de sus pruebas en &lt;strong&gt;tiempo real&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/k6/web-dashboard.png&#34; alt=&#34;web-dashboard&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;cómo-utilizar&#34;&gt;Cómo utilizar&lt;/h1&gt;&#xA;&lt;p&gt;El panel web es una función integrada de k6. se puede habilitar configurando la variable de entorno &lt;strong&gt;K6_WEB_DASHBOARD&lt;/strong&gt; en &lt;strong&gt;true&lt;/strong&gt; cuando ejecute su script de prueba, por ejemplo:&lt;/p&gt;&#xA;&lt;div class=&#34;code-block&#34;&gt;&#xD;&#xA;    &lt;button class=&#34;code-copy&#34; type=&#34;button&#34; hidden aria-label=&#34;Copy code to clipboard&#34;&gt;&#xD;&#xA;      &lt;span class=&#34;code-copy-label&#34; aria-hidden=&#34;true&#34;&gt;Copy&lt;/span&gt;&#xD;&#xA;    &lt;/button&gt;&#xD;&#xA;    &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-linux&#34; data-lang=&#34;linux&#34;&gt;export K6_WEB_DASHBOARD=true&lt;/code&gt;&lt;/pre&gt;&#xD;&#xA;  &lt;/div&gt;&lt;p&gt;De forma predeterminada, el panel web está disponible en el puerto localhost 5665&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>✅ Tipos de Checks en k6</title>
-				<link>https://automationtesting.ar/post/k6_checks/</link>
+				<link>http://localhost:1313/post/k6_checks/</link>
 				<pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/k6_checks/</guid>
+				<guid>http://localhost:1313/post/k6_checks/</guid>
 				<description>&lt;h1 id=&#34;tipos-de-checks-en-k6&#34;&gt;Tipos de Checks en k6&lt;/h1&gt;&#xA;&lt;p&gt;En &lt;strong&gt;k6&lt;/strong&gt;, los &lt;strong&gt;checks&lt;/strong&gt; son aserciones que permiten validar las respuestas de tus solicitudes HTTP. A continuación, se describen los tipos comunes de checks que puedes usar:&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-checks-de-código-de-estado&#34;&gt;1. Checks de Código de Estado&lt;/h2&gt;&#xA;&lt;p&gt;Verifica que el código de estado de la respuesta sea el esperado.&lt;/p&gt;&#xA;&lt;div class=&#34;code-block&#34;&gt;&#xD;&#xA;    &lt;button class=&#34;code-copy&#34; type=&#34;button&#34; hidden aria-label=&#34;Copy code to clipboard&#34;&gt;&#xD;&#xA;      &lt;span class=&#34;code-copy-label&#34; aria-hidden=&#34;true&#34;&gt;Copy&lt;/span&gt;&#xD;&#xA;    &lt;/button&gt;&#xD;&#xA;    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;check&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;, {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;el código de estado es 200&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;) =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xD;&#xA;  &lt;/div&gt;&lt;h2 id=&#34;checks-de-tiempo-de-respuesta&#34;&gt;Checks de Tiempo de Respuesta&lt;/h2&gt;&#xA;&lt;p&gt;Comprueba que el tiempo de respuesta esté dentro de los límites aceptables.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>⚡ Performance testing</title>
-				<link>https://automationtesting.ar/post/performance/</link>
+				<link>http://localhost:1313/post/performance/</link>
 				<pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/performance/</guid>
+				<guid>http://localhost:1313/post/performance/</guid>
 				<description>&lt;h2 id=&#34;-la-importancia-de-un-plan-en-las-pruebas-de-rendimiento&#34;&gt;📊 La importancia de un plan en las pruebas de rendimiento&lt;/h2&gt;&#xA;&lt;p&gt;Las pruebas de rendimiento son cruciales para evaluar el comportamiento de un sistema bajo carga, identificando cuellos de botella y garantizando una experiencia de usuario satisfactoria. Sin embargo, para sacar el máximo provecho de estas pruebas y obtener resultados confiables, es fundamental contar con un plan bien definido.&lt;/p&gt;&#xA;&lt;p&gt;Un plan de pruebas de rendimiento sirve como una hoja de ruta detallada, estableciendo objetivos claros, metodologías, herramientas, recursos y responsabilidades. A continuación, se destacan algunos puntos clave que resaltan la importancia de contar con un plan:&lt;/p&gt;</description>
 			</item>
 	</channel>

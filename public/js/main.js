@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initCodeCopyButtons();
   initSearchModal();
   initBackToTop();
+  initMobileMenu();
 });
 
 /* ==========================================================================
@@ -313,3 +314,65 @@ function initSearchModal() {
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 }
+
+/* ==========================================================================
+   7. Mobile Navigation Drawer & Hamburger Toggle
+   ========================================================================== */
+function initMobileMenu() {
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const drawer = document.getElementById('mobile-drawer');
+  const backdrop = document.getElementById('mobile-drawer-backdrop');
+  if (!toggleBtn || !drawer) return;
+
+  function openMenu() {
+    toggleBtn.classList.add('is-active');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    drawer.classList.add('drawer-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    if (backdrop) backdrop.classList.add('backdrop-open');
+    document.body.classList.add('mobile-menu-lock');
+  }
+
+  function closeMenu() {
+    toggleBtn.classList.remove('is-active');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    drawer.classList.remove('drawer-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    if (backdrop) backdrop.classList.remove('backdrop-open');
+    document.body.classList.remove('mobile-menu-lock');
+  }
+
+  toggleBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (drawer.classList.contains('drawer-open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  if (backdrop) {
+    backdrop.addEventListener('click', closeMenu);
+  }
+
+  // Cerrar al clickear cualquier link dentro del drawer
+  const links = drawer.querySelectorAll('a');
+  links.forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Cerrar con tecla Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && drawer.classList.contains('drawer-open')) {
+      closeMenu();
+    }
+  });
+
+  // Cerrar si redimensionan la ventana hacia desktop
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 992 && drawer.classList.contains('drawer-open')) {
+      closeMenu();
+    }
+  });
+}
+

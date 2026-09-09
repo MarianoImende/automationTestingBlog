@@ -1,11 +1,13 @@
-<nav class="modern-navbar" role="navigation">
+<nav class="modern-navbar" role="navigation" aria-label="Navegación principal">
   <div class="nav-container">
+    <!-- Brand / Logotipo -->
     <a href="{{ .Site.Home.RelPermalink }}" class="nav-brand">
       <span class="brand-icon">⚡</span>
       <span class="brand-text">Automation<span class="brand-accent">&amp;</span>Performance</span>
     </a>
 
-    <div class="nav-menu-wrapper">
+    <!-- Menú Desktop -->
+    <div class="nav-desktop-menu">
       {{ if .Site.Menus.main }}
         <ul class="nav-links">
           {{ range .Site.Menus.main }}
@@ -17,35 +19,87 @@
           {{ end }}
         </ul>
       {{ end }}
+    </div>
 
-      <div class="nav-actions">
-        <!-- Botón de Búsqueda Instantánea -->
-        <button type="button" class="search-trigger-btn" id="search-trigger-btn" aria-label="Buscar en el blog" title="Buscar (Ctrl + K)">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <span class="search-kbd">Ctrl K</span>
-        </button>
+    <!-- Acciones Rápidas (Búsqueda, Tema, Redes, Botón Hamburguesa) -->
+    <div class="nav-actions">
+      <!-- Botón de Búsqueda Instantánea -->
+      <button type="button" class="search-trigger-btn" id="search-trigger-btn" aria-label="Buscar en el blog" title="Buscar (Ctrl + K)">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span class="search-kbd">Ctrl K</span>
+      </button>
 
-        <!-- Botón de Modo Oscuro / Claro -->
-        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema de color" title="Alternar Modo Oscuro/Claro">
-          <i class="fa-solid fa-moon theme-icon-moon"></i>
-          <i class="fa-solid fa-sun theme-icon-sun"></i>
-        </button>
+      <!-- Botón de Modo Oscuro / Claro -->
+      <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema de color" title="Alternar Modo Oscuro/Claro">
+        <i class="fa-solid fa-moon theme-icon-moon"></i>
+        <i class="fa-solid fa-sun theme-icon-sun"></i>
+      </button>
 
-        <!-- Redes Sociales -->
-        <div class="nav-socials">
-          {{ with .Site.Params.github }}
-            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
-              <i class="fa-brands fa-github"></i>
+      <!-- Redes Sociales Desktop -->
+      <div class="nav-socials">
+        {{ with .Site.Params.github }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        {{ end }}
+        {{ with .Site.Params.linkedin }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        {{ end }}
+        {{ with .Site.Params.email }}
+          <a href="mailto:{{ . }}" class="social-icon-btn" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        {{ end }}
+      </div>
+
+      <!-- Botón Hamburguesa Mobile -->
+      <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-drawer">
+        <span class="hamburger-line line-1"></span>
+        <span class="hamburger-line line-2"></span>
+        <span class="hamburger-line line-3"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Drawer / Menú Desplegable Mobile -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer-content">
+      {{ if .Site.Menus.main }}
+        <ul class="mobile-nav-links">
+          {{ range .Site.Menus.main }}
+          <li class="mobile-nav-item">
+            <a class="mobile-nav-link {{ if $.IsMenuCurrent "main" . }}mobile-link-active{{ end }}" href="{{ .URL }}">
+              {{ if eq .URL "/" }}<i class="fa-solid fa-house"></i>
+              {{ else if eq .URL "/post/" }}<i class="fa-solid fa-layer-group"></i>
+              {{ else if eq .URL "/about/" }}<i class="fa-solid fa-user-tie"></i>
+              {{ else if eq .URL "/contact/" }}<i class="fa-solid fa-paper-plane"></i>
+              {{ else }}<i class="fa-solid fa-chevron-right"></i>
+              {{ end }}
+              <span>{{ .Name }}</span>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+
+      <div class="mobile-drawer-footer">
+        <div class="mobile-socials-label">Conectemos:</div>
+        <div class="mobile-socials-grid">
+          {{ with .Site.Params.linkedin }}
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="mobile-social-chip" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
             </a>
           {{ end }}
-          {{ with .Site.Params.linkedin }}
-            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin"></i>
+          {{ with .Site.Params.github }}
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="mobile-social-chip" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i> GitHub
             </a>
           {{ end }}
           {{ with .Site.Params.email }}
-            <a href="mailto:{{ . }}" class="social-icon-btn" aria-label="Email">
-              <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:{{ . }}" class="mobile-social-chip" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i> Contacto
             </a>
           {{ end }}
         </div>
@@ -53,3 +107,4 @@
     </div>
   </div>
 </nav>
+<div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>

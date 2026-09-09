@@ -5,7 +5,7 @@
 &amp;
 Performance
 testing</title>
-		<link>https://automationtesting.ar/tags/grafana/</link>
+		<link>http://localhost:1313/tags/grafana/</link>
 		<description>Recent content in Grafana on Automation
 &amp;
 Performance
@@ -18,12 +18,12 @@ testing</description>
 		
 			<lastBuildDate>Mon, 06 Jan 2025 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://automationtesting.ar/tags/grafana/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/grafana/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>K6 &#43; Victoria Metrics &#43; Grafana 🚀</title>
-				<link>https://automationtesting.ar/post/k6_victoria_grafana/</link>
+				<link>http://localhost:1313/post/k6_victoria_grafana/</link>
 				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/k6_victoria_grafana/</guid>
+				<guid>http://localhost:1313/post/k6_victoria_grafana/</guid>
 				<description>&lt;p&gt;🧩 En este tutorial dejo mi procedimiento comprobado para integrar K6, Victoria Metrics y Grafana, ideal para stress testing y monitoreo serio de cargas.&#xA;Un solo flujo, claro y sin sorpresas: de la instalación al dashboard listo para producción.&#xA;Dale poder a tus métricas.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-contexto&#34;&gt;🔹 &lt;strong&gt;Contexto&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Procedimiento probado en &lt;strong&gt;Ubuntu 24.04&lt;/strong&gt; y &lt;strong&gt;SUSE Linux Enterprise Server 15 SP6&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-instalar-victoria-metrics&#34;&gt;✅ &lt;strong&gt;1. Instalar Victoria Metrics&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;VictoriaMetrics&lt;/strong&gt; es una base de datos de series temporales, rápida, escalable y económica.&lt;/p&gt;</description>
 			</item>
 	</channel>

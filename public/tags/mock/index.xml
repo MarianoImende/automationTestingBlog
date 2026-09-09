@@ -5,7 +5,7 @@
 &amp;
 Performance
 testing</title>
-		<link>https://automationtesting.ar/tags/mock/</link>
+		<link>http://localhost:1313/tags/mock/</link>
 		<description>Recent content in Mock on Automation
 &amp;
 Performance
@@ -18,12 +18,12 @@ testing</description>
 		
 			<lastBuildDate>Wed, 04 Sep 2024 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://automationtesting.ar/tags/mock/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/mock/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>📤 Wiremock en automatizacón de pruebas</title>
-				<link>https://automationtesting.ar/post/wiremock/</link>
+				<link>http://localhost:1313/post/wiremock/</link>
 				<pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/wiremock/</guid>
+				<guid>http://localhost:1313/post/wiremock/</guid>
 				<description>&lt;p&gt;WireMock es útil en testing automatizado porque permite simular servicios y APIs externas de manera controlada, sin depender de sistemas externos reales. Con WireMock, puedes configurar respuestas predefinidas (stubs) para distintas solicitudes HTTP, lo que facilita probar cómo responde tu aplicación en diferentes escenarios, incluyendo casos de errores y latencia. Esto permite hacer pruebas más rápidas, repetibles y aisladas, ideal para entornos de CI/CD donde la consistencia y el tiempo de ejecución son cruciales.&lt;/p&gt;</description>
 			</item>
 	</channel>

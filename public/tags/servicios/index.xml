@@ -5,7 +5,7 @@
 &amp;
 Performance
 testing</title>
-		<link>https://automationtesting.ar/tags/servicios/</link>
+		<link>http://localhost:1313/tags/servicios/</link>
 		<description>Recent content in Servicios on Automation
 &amp;
 Performance
@@ -18,12 +18,12 @@ testing</description>
 		
 			<lastBuildDate>Fri, 25 Oct 2024 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://automationtesting.ar/tags/servicios/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/servicios/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>💻 Wiremock como Servicio en Windows</title>
-				<link>https://automationtesting.ar/post/mssn-wiremock/</link>
+				<link>http://localhost:1313/post/mssn-wiremock/</link>
 				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/mssn-wiremock/</guid>
+				<guid>http://localhost:1313/post/mssn-wiremock/</guid>
 				<description>&lt;h1 id=&#34;wiremock-como-servicio-en-windows&#34;&gt;Wiremock como Servicio en Windows&lt;/h1&gt;&#xA;&lt;p&gt;En esta guía, veremos cómo configurar &lt;strong&gt;Wiremock&lt;/strong&gt; como un servicio en Windows, utilizando la herramienta &lt;strong&gt;NSSM (Non-Sucking Service Manager)&lt;/strong&gt;, que facilita la instalación y administración de servicios.&#xA;&lt;strong&gt;Para el presente ejemplo, WireMock y NSSM deben estar instalados en la misma computadora con sistema operativo Windows y además, respetando los nombres de los directorios de este tutorial.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;instalación-del-servicio&#34;&gt;Instalación del Servicio&lt;/h2&gt;&#xA;&lt;p&gt;Para instalar Wiremock como un servicio, utilizaremos &lt;strong&gt;NSSM&lt;/strong&gt;. Puedes descargar NSSM desde su sitio oficial: &lt;a href=&#34;https://nssm.cc/download&#34;&gt;nssm.cc/download&lt;/a&gt;.&lt;/p&gt;</description>
 			</item>
 	</channel>

@@ -5,7 +5,7 @@
 &amp;
 Performance
 testing</title>
-		<link>https://automationtesting.ar/tags/</link>
+		<link>http://localhost:1313/tags/</link>
 		<description>Recent content in Tags on Automation
 &amp;
 Performance
@@ -18,215 +18,215 @@ testing</description>
 		
 			<lastBuildDate>Mon, 13 Jan 2025 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://automationtesting.ar/tags/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>K6</title>
-				<link>https://automationtesting.ar/tags/k6/</link>
+				<link>http://localhost:1313/tags/k6/</link>
 				<pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/k6/</guid>
+				<guid>http://localhost:1313/tags/k6/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Performance</title>
-				<link>https://automationtesting.ar/tags/performance/</link>
+				<link>http://localhost:1313/tags/performance/</link>
 				<pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/performance/</guid>
+				<guid>http://localhost:1313/tags/performance/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Stress</title>
-				<link>https://automationtesting.ar/tags/stress/</link>
+				<link>http://localhost:1313/tags/stress/</link>
 				<pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/stress/</guid>
+				<guid>http://localhost:1313/tags/stress/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Testing</title>
-				<link>https://automationtesting.ar/tags/testing/</link>
+				<link>http://localhost:1313/tags/testing/</link>
 				<pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/testing/</guid>
+				<guid>http://localhost:1313/tags/testing/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Grafana</title>
-				<link>https://automationtesting.ar/tags/grafana/</link>
+				<link>http://localhost:1313/tags/grafana/</link>
 				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/grafana/</guid>
+				<guid>http://localhost:1313/tags/grafana/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Jmeter</title>
-				<link>https://automationtesting.ar/tags/jmeter/</link>
+				<link>http://localhost:1313/tags/jmeter/</link>
 				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/jmeter/</guid>
+				<guid>http://localhost:1313/tags/jmeter/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Kafka</title>
-				<link>https://automationtesting.ar/tags/kafka/</link>
+				<link>http://localhost:1313/tags/kafka/</link>
 				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/kafka/</guid>
+				<guid>http://localhost:1313/tags/kafka/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Victoriametrics</title>
-				<link>https://automationtesting.ar/tags/victoriametrics/</link>
+				<link>http://localhost:1313/tags/victoriametrics/</link>
 				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/victoriametrics/</guid>
+				<guid>http://localhost:1313/tags/victoriametrics/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Automatizacion</title>
-				<link>https://automationtesting.ar/tags/automatizacion/</link>
+				<link>http://localhost:1313/tags/automatizacion/</link>
 				<pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/automatizacion/</guid>
+				<guid>http://localhost:1313/tags/automatizacion/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Metodologia</title>
-				<link>https://automationtesting.ar/tags/metodologia/</link>
+				<link>http://localhost:1313/tags/metodologia/</link>
 				<pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/metodologia/</guid>
+				<guid>http://localhost:1313/tags/metodologia/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Pom</title>
-				<link>https://automationtesting.ar/tags/pom/</link>
+				<link>http://localhost:1313/tags/pom/</link>
 				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/pom/</guid>
+				<guid>http://localhost:1313/tags/pom/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Pytest</title>
-				<link>https://automationtesting.ar/tags/pytest/</link>
+				<link>http://localhost:1313/tags/pytest/</link>
 				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/pytest/</guid>
+				<guid>http://localhost:1313/tags/pytest/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Python</title>
-				<link>https://automationtesting.ar/tags/python/</link>
+				<link>http://localhost:1313/tags/python/</link>
 				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/python/</guid>
+				<guid>http://localhost:1313/tags/python/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Selenium</title>
-				<link>https://automationtesting.ar/tags/selenium/</link>
+				<link>http://localhost:1313/tags/selenium/</link>
 				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/selenium/</guid>
+				<guid>http://localhost:1313/tags/selenium/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Servicios</title>
-				<link>https://automationtesting.ar/tags/servicios/</link>
+				<link>http://localhost:1313/tags/servicios/</link>
 				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/servicios/</guid>
+				<guid>http://localhost:1313/tags/servicios/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Windows</title>
-				<link>https://automationtesting.ar/tags/windows/</link>
+				<link>http://localhost:1313/tags/windows/</link>
 				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/windows/</guid>
+				<guid>http://localhost:1313/tags/windows/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Wiremock</title>
-				<link>https://automationtesting.ar/tags/wiremock/</link>
+				<link>http://localhost:1313/tags/wiremock/</link>
 				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/wiremock/</guid>
+				<guid>http://localhost:1313/tags/wiremock/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Mock</title>
-				<link>https://automationtesting.ar/tags/mock/</link>
+				<link>http://localhost:1313/tags/mock/</link>
 				<pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/mock/</guid>
+				<guid>http://localhost:1313/tags/mock/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Playwright</title>
-				<link>https://automationtesting.ar/tags/playwright/</link>
+				<link>http://localhost:1313/tags/playwright/</link>
 				<pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/playwright/</guid>
+				<guid>http://localhost:1313/tags/playwright/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Android</title>
-				<link>https://automationtesting.ar/tags/android/</link>
+				<link>http://localhost:1313/tags/android/</link>
 				<pubDate>Sat, 13 Jul 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/android/</guid>
+				<guid>http://localhost:1313/tags/android/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Appium</title>
-				<link>https://automationtesting.ar/tags/appium/</link>
+				<link>http://localhost:1313/tags/appium/</link>
 				<pubDate>Sat, 13 Jul 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/appium/</guid>
+				<guid>http://localhost:1313/tags/appium/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Api</title>
-				<link>https://automationtesting.ar/tags/api/</link>
+				<link>http://localhost:1313/tags/api/</link>
 				<pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/api/</guid>
+				<guid>http://localhost:1313/tags/api/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Contractfirst</title>
-				<link>https://automationtesting.ar/tags/contractfirst/</link>
+				<link>http://localhost:1313/tags/contractfirst/</link>
 				<pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/contractfirst/</guid>
+				<guid>http://localhost:1313/tags/contractfirst/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Openapi</title>
-				<link>https://automationtesting.ar/tags/openapi/</link>
+				<link>http://localhost:1313/tags/openapi/</link>
 				<pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/openapi/</guid>
+				<guid>http://localhost:1313/tags/openapi/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Swagger</title>
-				<link>https://automationtesting.ar/tags/swagger/</link>
+				<link>http://localhost:1313/tags/swagger/</link>
 				<pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/swagger/</guid>
+				<guid>http://localhost:1313/tags/swagger/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Fundamentos</title>
-				<link>https://automationtesting.ar/tags/fundamentos/</link>
+				<link>http://localhost:1313/tags/fundamentos/</link>
 				<pubDate>Sun, 14 Apr 2024 11:25:05 -0400</pubDate>
-				<guid>https://automationtesting.ar/tags/fundamentos/</guid>
+				<guid>http://localhost:1313/tags/fundamentos/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Poo</title>
-				<link>https://automationtesting.ar/tags/poo/</link>
+				<link>http://localhost:1313/tags/poo/</link>
 				<pubDate>Sun, 14 Apr 2024 11:25:05 -0400</pubDate>
-				<guid>https://automationtesting.ar/tags/poo/</guid>
+				<guid>http://localhost:1313/tags/poo/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Qa</title>
-				<link>https://automationtesting.ar/tags/qa/</link>
+				<link>http://localhost:1313/tags/qa/</link>
 				<pubDate>Sun, 14 Apr 2024 11:25:05 -0400</pubDate>
-				<guid>https://automationtesting.ar/tags/qa/</guid>
+				<guid>http://localhost:1313/tags/qa/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Challenge</title>
-				<link>https://automationtesting.ar/tags/challenge/</link>
+				<link>http://localhost:1313/tags/challenge/</link>
 				<pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/tags/challenge/</guid>
+				<guid>http://localhost:1313/tags/challenge/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Piramide</title>
-				<link>https://automationtesting.ar/tags/piramide/</link>
+				<link>http://localhost:1313/tags/piramide/</link>
 				<pubDate>Sun, 14 May 2023 11:25:05 -0400</pubDate>
-				<guid>https://automationtesting.ar/tags/piramide/</guid>
+				<guid>http://localhost:1313/tags/piramide/</guid>
 				<description></description>
 			</item>
 	</channel>

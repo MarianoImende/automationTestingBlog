@@ -5,7 +5,7 @@
 &amp;
 Performance
 testing</title>
-		<link>https://automationtesting.ar/tags/metodologia/</link>
+		<link>http://localhost:1313/tags/metodologia/</link>
 		<description>Recent content in Metodologia on Automation
 &amp;
 Performance
@@ -18,20 +18,20 @@ testing</description>
 		
 			<lastBuildDate>Fri, 01 Nov 2024 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://automationtesting.ar/tags/metodologia/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/metodologia/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>🔍 Rompiendo el mito: &#34;Pruebas Manuales&#34; vs. &#34;Pruebas Automatizadas&#34;</title>
-				<link>https://automationtesting.ar/post/manualvsautomatico/</link>
+				<link>http://localhost:1313/post/manualvsautomatico/</link>
 				<pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/manualvsautomatico/</guid>
+				<guid>http://localhost:1313/post/manualvsautomatico/</guid>
 				<description>&lt;p&gt;En el mundo del testing de software, es común escuchar la dicotomía entre pruebas manuales y pruebas automatizadas. Sin embargo, esta clasificación es un tanto engañosa y puede llevarnos a malinterpretar el verdadero propósito del testing.&lt;/p&gt;&#xA;&lt;p&gt;📌 ¿Acaso las pruebas manuales existen realmente?&lt;/p&gt;&#xA;&lt;p&gt;📌 ¿La automatización puede reemplazar la evaluación humana?&lt;/p&gt;&#xA;&lt;p&gt;📌 ¿Qué papel juegan las herramientas en la estrategia de pruebas?&lt;/p&gt;&#xA;&lt;p&gt;En este artículo, exploramos por qué esta distinción no sólo es imprecisa, sino que también puede limitar la forma en que abordamos la calidad del software. Descubramos juntos cómo las pruebas son más que una simple verificación automatizada o una acción manual: son una actividad cognitiva, estratégica y asistida por herramientas. 🚀&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>🔺 Pirámide de automatización</title>
-				<link>https://automationtesting.ar/post/piramide/</link>
+				<link>http://localhost:1313/post/piramide/</link>
 				<pubDate>Sun, 14 May 2023 11:25:05 -0400</pubDate>
-				<guid>https://automationtesting.ar/post/piramide/</guid>
-				<description>&lt;h1 id=&#34;-la-pirámide-de-pruebas-según-mike-cohn&#34;&gt;🔺 La Pirámide de Pruebas según Mike Cohn&lt;/h1&gt;&#xA;&lt;p&gt;Mike Cohn ha discutido y promovido este modelo en sus libros y presentaciones sobre desarrollo ágil y gestión de proyectos, destacando su importancia para la calidad del software y la eficiencia en las prácticas de prueba.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://automationtesting.ar/images/piramide.png&#34; alt=&#34;Pirámide&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;base-de-la-pirámide---pruebas-unitarias&#34;&gt;Base de la pirámide - Pruebas Unitarias&lt;/h2&gt;&#xA;&lt;p&gt;Las pruebas unitarias constituyen la base de la pirámide. Son pruebas automatizadas que verifican el funcionamiento correcto de unidades individuales de código, como funciones, métodos o componentes pequeños.&lt;/p&gt;</description>
+				<guid>http://localhost:1313/post/piramide/</guid>
+				<description>&lt;h1 id=&#34;-la-pirámide-de-pruebas-según-mike-cohn&#34;&gt;🔺 La Pirámide de Pruebas según Mike Cohn&lt;/h1&gt;&#xA;&lt;p&gt;Mike Cohn ha discutido y promovido este modelo en sus libros y presentaciones sobre desarrollo ágil y gestión de proyectos, destacando su importancia para la calidad del software y la eficiencia en las prácticas de prueba.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/piramide.png&#34; alt=&#34;Pirámide&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;base-de-la-pirámide---pruebas-unitarias&#34;&gt;Base de la pirámide - Pruebas Unitarias&lt;/h2&gt;&#xA;&lt;p&gt;Las pruebas unitarias constituyen la base de la pirámide. Son pruebas automatizadas que verifican el funcionamiento correcto de unidades individuales de código, como funciones, métodos o componentes pequeños.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

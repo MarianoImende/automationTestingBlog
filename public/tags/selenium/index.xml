@@ -5,7 +5,7 @@
 &amp;
 Performance
 testing</title>
-		<link>https://automationtesting.ar/tags/selenium/</link>
+		<link>http://localhost:1313/tags/selenium/</link>
 		<description>Recent content in Selenium on Automation
 &amp;
 Performance
@@ -18,12 +18,12 @@ testing</description>
 		
 			<lastBuildDate>Fri, 25 Oct 2024 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://automationtesting.ar/tags/selenium/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/selenium/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>🤖 Selenium POM</title>
-				<link>https://automationtesting.ar/post/seleniumpom/</link>
+				<link>http://localhost:1313/post/seleniumpom/</link>
 				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/seleniumpom/</guid>
+				<guid>http://localhost:1313/post/seleniumpom/</guid>
 				<description>&lt;h1 id=&#34;imlementación&#34;&gt;Imlementación&lt;/h1&gt;&#xA;&lt;h2 id=&#34;de-que-trata-este-post&#34;&gt;De que trata este post:&lt;/h2&gt;&#xA;&lt;p&gt;Se presenta un proyecto en base a un &amp;ldquo;modelo&amp;rdquo; que implementa POM &lt;strong&gt;(Page Object Model)&lt;/strong&gt; con selenium, python y pytest.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/&#34;&gt;Page Objecto Model&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.selenium.dev/&#34;&gt;selenium&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.python.org/&#34;&gt;python&lt;/a&gt;&#xA;&lt;a href=&#34;http://pytest.org/&#34;&gt;pytest&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;por-qué-el-proyecto-es-útil&#34;&gt;Por qué el proyecto es útil&lt;/h2&gt;&#xA;&lt;p&gt;Descargando e implementando este proyecto puede lograr disponer en muy corto tiempo la posibilidad de automatizar sus pruebas de frontend.&lt;/p&gt;&#xA;&lt;p&gt;Este proyecto, le otorga un marco de trabajo simple y a la vez robusto que le ayudará a comenzar rápidamente sus automatizaciones de pruebas. El mismo, contiene los ejemplos de &lt;strong&gt;Page, Test y BasePage&lt;/strong&gt;&lt;/p&gt;</description>
 			</item>
 	</channel>

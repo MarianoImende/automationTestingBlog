@@ -5,7 +5,7 @@
 &amp;
 Performance
 testing</title>
-		<link>https://automationtesting.ar/categories/</link>
+		<link>http://localhost:1313/categories/</link>
 		<description>Recent content in Categories on Automation
 &amp;
 Performance
@@ -16,6 +16,6 @@ testing</description>
 		
 		
 		
-			<atom:link href="https://automationtesting.ar/categories/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
 	</channel>
 </rss>

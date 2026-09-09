@@ -5,7 +5,7 @@
 &amp;
 Performance
 testing</title>
-		<link>https://automationtesting.ar/tags/api/</link>
+		<link>http://localhost:1313/tags/api/</link>
 		<description>Recent content in Api on Automation
 &amp;
 Performance
@@ -18,12 +18,12 @@ testing</description>
 		
 			<lastBuildDate>Wed, 15 May 2024 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://automationtesting.ar/tags/api/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/api/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>🤝 Contract First y testing</title>
-				<link>https://automationtesting.ar/post/contractfirst/</link>
+				<link>http://localhost:1313/post/contractfirst/</link>
 				<pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/contractfirst/</guid>
+				<guid>http://localhost:1313/post/contractfirst/</guid>
 				<description>&lt;h2 id=&#34;-implementación-de-la-metodología-contract-first-en-pruebas-de-software&#34;&gt;🧰 Implementación de la Metodología Contract First en Pruebas de Software.&lt;/h2&gt;&#xA;&lt;p&gt;Este post tiene la intención de mostrar cómo adoptar la metodología Contract First en el contexto de pruebas de software. Implementar esta metodología implica una serie de pasos que facilitan la integración de contratos en el proceso de pruebas, abarcando desde la educación y la capacitación hasta la automatización y la colaboración continua. Al usar herramientas como Postman y generadores de clientes API, los testers pueden crear y ejecutar pruebas de manera eficiente y consistente, asegurando que las APIs cumplan con las especificaciones definidas en los contratos.&lt;/p&gt;</description>
 			</item>
 	</channel>

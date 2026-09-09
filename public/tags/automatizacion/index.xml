@@ -5,7 +5,7 @@
 &amp;
 Performance
 testing</title>
-		<link>https://automationtesting.ar/tags/automatizacion/</link>
+		<link>http://localhost:1313/tags/automatizacion/</link>
 		<description>Recent content in Automatizacion on Automation
 &amp;
 Performance
@@ -18,33 +18,33 @@ testing</description>
 		
 			<lastBuildDate>Fri, 01 Nov 2024 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://automationtesting.ar/tags/automatizacion/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/automatizacion/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>🔍 Rompiendo el mito: &#34;Pruebas Manuales&#34; vs. &#34;Pruebas Automatizadas&#34;</title>
-				<link>https://automationtesting.ar/post/manualvsautomatico/</link>
+				<link>http://localhost:1313/post/manualvsautomatico/</link>
 				<pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/manualvsautomatico/</guid>
+				<guid>http://localhost:1313/post/manualvsautomatico/</guid>
 				<description>&lt;p&gt;En el mundo del testing de software, es común escuchar la dicotomía entre pruebas manuales y pruebas automatizadas. Sin embargo, esta clasificación es un tanto engañosa y puede llevarnos a malinterpretar el verdadero propósito del testing.&lt;/p&gt;&#xA;&lt;p&gt;📌 ¿Acaso las pruebas manuales existen realmente?&lt;/p&gt;&#xA;&lt;p&gt;📌 ¿La automatización puede reemplazar la evaluación humana?&lt;/p&gt;&#xA;&lt;p&gt;📌 ¿Qué papel juegan las herramientas en la estrategia de pruebas?&lt;/p&gt;&#xA;&lt;p&gt;En este artículo, exploramos por qué esta distinción no sólo es imprecisa, sino que también puede limitar la forma en que abordamos la calidad del software. Descubramos juntos cómo las pruebas son más que una simple verificación automatizada o una acción manual: son una actividad cognitiva, estratégica y asistida por herramientas. 🚀&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>🎭 Playwright con Python: Base UI Automation (POM)</title>
-				<link>https://automationtesting.ar/post/playwright/</link>
+				<link>http://localhost:1313/post/playwright/</link>
 				<pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/playwright/</guid>
+				<guid>http://localhost:1313/post/playwright/</guid>
 				<description>&lt;h1 id=&#34;base-ui-automation-con-playwright--python&#34;&gt;Base UI Automation con Playwright + Python&lt;/h1&gt;&#xA;&lt;p&gt;Este proyecto es una &lt;strong&gt;base simple y didáctica&lt;/strong&gt; usando Page Object Model para automatizar:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://walletchallenge-front.onrender.com/&#34;&gt;https://walletchallenge-front.onrender.com/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;La idea es que el código sea fácil de leer para personas que recién empiezan.&lt;/p&gt;&#xA;&lt;p&gt;El objetivo del ejercicio es automatizar, el login, (usuario y password &amp;ldquo;challenge&amp;rdquo;), cuentas y saldos utilizando el patron de diseño Page Object Model.&lt;/p&gt;&#xA;&lt;h2 id=&#34;instalación-del-entorno-windows--wslubuntu--vscode&#34;&gt;Instalación del entorno (Windows / WSL(Ubuntu) / VSCode)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Solo si estas en Ubuntu:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;code-block&#34;&gt;&#xD;&#xA;    &lt;button class=&#34;code-copy&#34; type=&#34;button&#34; hidden aria-label=&#34;Copy code to clipboard&#34;&gt;&#xD;&#xA;      &lt;span class=&#34;code-copy-label&#34; aria-hidden=&#34;true&#34;&gt;Copy&lt;/span&gt;&#xD;&#xA;    &lt;/button&gt;&#xD;&#xA;    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt update&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install python3-venv&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xD;&#xA;  &lt;/div&gt;&lt;ul&gt;&#xA;&lt;li&gt;Crear entorno virtual&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Windows:&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>📱 Setup Appium con Python &#43; Pytest (Android)</title>
-				<link>https://automationtesting.ar/post/appium/</link>
+				<link>http://localhost:1313/post/appium/</link>
 				<pubDate>Sat, 13 Jul 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/appium/</guid>
+				<guid>http://localhost:1313/post/appium/</guid>
 				<description>&lt;h1 id=&#34;-setup-appium-con-python--pytest-android&#34;&gt;📱 Setup Appium con Python + Pytest (Android)&lt;/h1&gt;&#xA;&lt;p&gt;Guía completa para preparar una laptop nueva y dejarla lista para automatizar tests con &lt;strong&gt;Python + Pytest + Appium (Android)&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-preparar-la-máquina&#34;&gt;1. Preparar la máquina&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Instalar &lt;strong&gt;Python 3.x&lt;/strong&gt; desde la página oficial&lt;/li&gt;&#xA;&lt;li&gt;Marcar &lt;strong&gt;Add Python to PATH&lt;/strong&gt; durante la instalación&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;2-ide--editor&#34;&gt;2. IDE / Editor&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Instalar &lt;strong&gt;Visual Studio Code&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;3-java--android-sdk-para-poder-usar-uiautomator2&#34;&gt;3. Java + Android SDK (para poder usar UiAutomator2)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Instalar un &lt;strong&gt;JDK&lt;/strong&gt;, preferentemente Temurin. (ruta de instalación opcional, por ejemplo: C:\jdk-21.0.10.7-hotspot)&#xA;(&lt;a href=&#34;https://adoptium.net/es/temurin/releases&#34;&gt;https://adoptium.net/es/temurin/releases&lt;/a&gt;)&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Challenge automatización de pruebas</title>
-				<link>https://automationtesting.ar/post/challenge/</link>
+				<link>http://localhost:1313/post/challenge/</link>
 				<pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/challenge/</guid>
+				<guid>http://localhost:1313/post/challenge/</guid>
 				<description>&lt;h2 id=&#34;-proyecto-para-entrenamiento-de-tester-automatizadores&#34;&gt;🎉 ¡Proyecto para entrenamiento de tester automatizadores!&lt;/h2&gt;&#xA;&lt;p&gt;💻 &lt;strong&gt;Backend:&lt;/strong&gt;  &lt;a href=&#34;https://walletchallenge-back.onrender.com/docs&#34;&gt;Wallet Challenge Backend&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;🌐 &lt;strong&gt;Frontend:&lt;/strong&gt; &lt;a href=&#34;https://walletchallenge-front.onrender.com/&#34;&gt;Wallet Challenge Frontend&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Este proyecto fue creado como una herramienta de entrenamiento para quienes desean practicar y mejorar sus habilidades en automatización de pruebas. Es ideal tanto para testers principiantes como avanzados que buscan un entorno controlado y realista para probar técnicas y herramientas de automatización.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-características-del-proyecto&#34;&gt;🔑 Características del proyecto:&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Backend:&lt;/strong&gt; openapi: 3.1.0 [Swagger]&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Frontend:&lt;/strong&gt; Login (usuario: &lt;strong&gt;challenge&lt;/strong&gt;, password &lt;strong&gt;challenge&lt;/strong&gt;).&#xA;(Por el momento funciona el login y la consulta de cuentas para la cuál se debe ingresar el número de tarjeta en el textbox &amp;ldquo;Cuentas&amp;rdquo;)&lt;/p&gt;</description>
 			</item>
 	</channel>

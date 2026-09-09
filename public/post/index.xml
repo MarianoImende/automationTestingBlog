@@ -5,7 +5,7 @@
 &amp;
 Performance
 testing</title>
-		<link>https://automationtesting.ar/post/</link>
+		<link>http://localhost:1313/post/</link>
 		<description>Recent content on Automation
 &amp;
 Performance
@@ -18,125 +18,125 @@ testing</description>
 		
 			<lastBuildDate>Mon, 13 Jan 2025 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://automationtesting.ar/post/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>🛠️ Construir binario de k6</title>
-				<link>https://automationtesting.ar/post/k6_binario/</link>
+				<link>http://localhost:1313/post/k6_binario/</link>
 				<pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/k6_binario/</guid>
+				<guid>http://localhost:1313/post/k6_binario/</guid>
 				<description>&lt;h1 id=&#34;creando-una-guía-detallada-para-instalar-y-personalizar-k6-utilizando-extensiones-wsl-y-go-en-un-sistema-windows&#34;&gt;Creando una guía detallada para instalar y personalizar k6 utilizando extensiones, WSL y Go en un sistema Windows.&lt;/h1&gt;&#xA;&lt;p&gt;Esta guía te mostrará cómo instalar y personalizar k6 con extensiones, utilizando el Subsistema de Windows para Linux (WSL) y Go. Al final, podrás generar un binario personalizado de k6 con las extensiones que necesites.&lt;/p&gt;&#xA;&lt;h2 id=&#34;que-es-una-extension-&#34;&gt;Que es una Extension? 🛠️&lt;/h2&gt;&#xA;&lt;p&gt;Las extensiones son funcionalidades que se agregan a la version estandar de k6, Las extensiones son desarrolladas tanto por los desarrolladores de k6 como por la comunidad.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Jmeter: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀</title>
-				<link>https://automationtesting.ar/post/jmeter-kafka/</link>
+				<link>http://localhost:1313/post/jmeter-kafka/</link>
 				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/jmeter-kafka/</guid>
+				<guid>http://localhost:1313/post/jmeter-kafka/</guid>
 				<description>&lt;p&gt;En las arquitecturas basadas en &lt;strong&gt;Apache Kafka&lt;/strong&gt;, la estabilidad del sistema no depende solo de la capacidad de los &lt;strong&gt;producers&lt;/strong&gt; para enviar mensajes, sino también de &lt;strong&gt;cómo los consumers procesan la carga en diferentes escenarios&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Qué sucede si un consumer no puede mantener el ritmo de los mensajes entrantes?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Cómo afecta el lag de los consumidores al rendimiento del sistema?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Cuál es el impacto de aumentar la concurrencia en los grupos de consumo?&lt;/strong&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>K6 &#43; Victoria Metrics &#43; Grafana 🚀</title>
-				<link>https://automationtesting.ar/post/k6_victoria_grafana/</link>
+				<link>http://localhost:1313/post/k6_victoria_grafana/</link>
 				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/k6_victoria_grafana/</guid>
+				<guid>http://localhost:1313/post/k6_victoria_grafana/</guid>
 				<description>&lt;p&gt;🧩 En este tutorial dejo mi procedimiento comprobado para integrar K6, Victoria Metrics y Grafana, ideal para stress testing y monitoreo serio de cargas.&#xA;Un solo flujo, claro y sin sorpresas: de la instalación al dashboard listo para producción.&#xA;Dale poder a tus métricas.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-contexto&#34;&gt;🔹 &lt;strong&gt;Contexto&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Procedimiento probado en &lt;strong&gt;Ubuntu 24.04&lt;/strong&gt; y &lt;strong&gt;SUSE Linux Enterprise Server 15 SP6&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-instalar-victoria-metrics&#34;&gt;✅ &lt;strong&gt;1. Instalar Victoria Metrics&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;VictoriaMetrics&lt;/strong&gt; es una base de datos de series temporales, rápida, escalable y económica.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>K6: Evaluando la Performance de los Consumers en Kafka: Estrés en los Tópicos  🚀</title>
-				<link>https://automationtesting.ar/post/k6-kafka/</link>
+				<link>http://localhost:1313/post/k6-kafka/</link>
 				<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/k6-kafka/</guid>
+				<guid>http://localhost:1313/post/k6-kafka/</guid>
 				<description>&lt;p&gt;En las arquitecturas basadas en &lt;strong&gt;Apache Kafka&lt;/strong&gt;, la estabilidad del sistema no depende solo de la capacidad de los &lt;strong&gt;producers&lt;/strong&gt; para enviar mensajes, sino también de &lt;strong&gt;cómo los consumers procesan la carga en diferentes escenarios&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Qué sucede si un consumer no puede mantener el ritmo de los mensajes entrantes?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Cómo afecta el lag de los consumidores al rendimiento del sistema?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;¿Cuál es el impacto de aumentar la concurrencia en los grupos de consumo?&lt;/strong&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>🔍 Rompiendo el mito: &#34;Pruebas Manuales&#34; vs. &#34;Pruebas Automatizadas&#34;</title>
-				<link>https://automationtesting.ar/post/manualvsautomatico/</link>
+				<link>http://localhost:1313/post/manualvsautomatico/</link>
 				<pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/manualvsautomatico/</guid>
+				<guid>http://localhost:1313/post/manualvsautomatico/</guid>
 				<description>&lt;p&gt;En el mundo del testing de software, es común escuchar la dicotomía entre pruebas manuales y pruebas automatizadas. Sin embargo, esta clasificación es un tanto engañosa y puede llevarnos a malinterpretar el verdadero propósito del testing.&lt;/p&gt;&#xA;&lt;p&gt;📌 ¿Acaso las pruebas manuales existen realmente?&lt;/p&gt;&#xA;&lt;p&gt;📌 ¿La automatización puede reemplazar la evaluación humana?&lt;/p&gt;&#xA;&lt;p&gt;📌 ¿Qué papel juegan las herramientas en la estrategia de pruebas?&lt;/p&gt;&#xA;&lt;p&gt;En este artículo, exploramos por qué esta distinción no sólo es imprecisa, sino que también puede limitar la forma en que abordamos la calidad del software. Descubramos juntos cómo las pruebas son más que una simple verificación automatizada o una acción manual: son una actividad cognitiva, estratégica y asistida por herramientas. 🚀&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>💻 Wiremock como Servicio en Windows</title>
-				<link>https://automationtesting.ar/post/mssn-wiremock/</link>
+				<link>http://localhost:1313/post/mssn-wiremock/</link>
 				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/mssn-wiremock/</guid>
+				<guid>http://localhost:1313/post/mssn-wiremock/</guid>
 				<description>&lt;h1 id=&#34;wiremock-como-servicio-en-windows&#34;&gt;Wiremock como Servicio en Windows&lt;/h1&gt;&#xA;&lt;p&gt;En esta guía, veremos cómo configurar &lt;strong&gt;Wiremock&lt;/strong&gt; como un servicio en Windows, utilizando la herramienta &lt;strong&gt;NSSM (Non-Sucking Service Manager)&lt;/strong&gt;, que facilita la instalación y administración de servicios.&#xA;&lt;strong&gt;Para el presente ejemplo, WireMock y NSSM deben estar instalados en la misma computadora con sistema operativo Windows y además, respetando los nombres de los directorios de este tutorial.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;instalación-del-servicio&#34;&gt;Instalación del Servicio&lt;/h2&gt;&#xA;&lt;p&gt;Para instalar Wiremock como un servicio, utilizaremos &lt;strong&gt;NSSM&lt;/strong&gt;. Puedes descargar NSSM desde su sitio oficial: &lt;a href=&#34;https://nssm.cc/download&#34;&gt;nssm.cc/download&lt;/a&gt;.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>🤖 Selenium POM</title>
-				<link>https://automationtesting.ar/post/seleniumpom/</link>
+				<link>http://localhost:1313/post/seleniumpom/</link>
 				<pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/seleniumpom/</guid>
+				<guid>http://localhost:1313/post/seleniumpom/</guid>
 				<description>&lt;h1 id=&#34;imlementación&#34;&gt;Imlementación&lt;/h1&gt;&#xA;&lt;h2 id=&#34;de-que-trata-este-post&#34;&gt;De que trata este post:&lt;/h2&gt;&#xA;&lt;p&gt;Se presenta un proyecto en base a un &amp;ldquo;modelo&amp;rdquo; que implementa POM &lt;strong&gt;(Page Object Model)&lt;/strong&gt; con selenium, python y pytest.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/&#34;&gt;Page Objecto Model&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.selenium.dev/&#34;&gt;selenium&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.python.org/&#34;&gt;python&lt;/a&gt;&#xA;&lt;a href=&#34;http://pytest.org/&#34;&gt;pytest&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;por-qué-el-proyecto-es-útil&#34;&gt;Por qué el proyecto es útil&lt;/h2&gt;&#xA;&lt;p&gt;Descargando e implementando este proyecto puede lograr disponer en muy corto tiempo la posibilidad de automatizar sus pruebas de frontend.&lt;/p&gt;&#xA;&lt;p&gt;Este proyecto, le otorga un marco de trabajo simple y a la vez robusto que le ayudará a comenzar rápidamente sus automatizaciones de pruebas. El mismo, contiene los ejemplos de &lt;strong&gt;Page, Test y BasePage&lt;/strong&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>📤 Wiremock en automatizacón de pruebas</title>
-				<link>https://automationtesting.ar/post/wiremock/</link>
+				<link>http://localhost:1313/post/wiremock/</link>
 				<pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/wiremock/</guid>
+				<guid>http://localhost:1313/post/wiremock/</guid>
 				<description>&lt;p&gt;WireMock es útil en testing automatizado porque permite simular servicios y APIs externas de manera controlada, sin depender de sistemas externos reales. Con WireMock, puedes configurar respuestas predefinidas (stubs) para distintas solicitudes HTTP, lo que facilita probar cómo responde tu aplicación en diferentes escenarios, incluyendo casos de errores y latencia. Esto permite hacer pruebas más rápidas, repetibles y aisladas, ideal para entornos de CI/CD donde la consistencia y el tiempo de ejecución son cruciales.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>🎭 Playwright con Python: Base UI Automation (POM)</title>
-				<link>https://automationtesting.ar/post/playwright/</link>
+				<link>http://localhost:1313/post/playwright/</link>
 				<pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/playwright/</guid>
+				<guid>http://localhost:1313/post/playwright/</guid>
 				<description>&lt;h1 id=&#34;base-ui-automation-con-playwright--python&#34;&gt;Base UI Automation con Playwright + Python&lt;/h1&gt;&#xA;&lt;p&gt;Este proyecto es una &lt;strong&gt;base simple y didáctica&lt;/strong&gt; usando Page Object Model para automatizar:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://walletchallenge-front.onrender.com/&#34;&gt;https://walletchallenge-front.onrender.com/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;La idea es que el código sea fácil de leer para personas que recién empiezan.&lt;/p&gt;&#xA;&lt;p&gt;El objetivo del ejercicio es automatizar, el login, (usuario y password &amp;ldquo;challenge&amp;rdquo;), cuentas y saldos utilizando el patron de diseño Page Object Model.&lt;/p&gt;&#xA;&lt;h2 id=&#34;instalación-del-entorno-windows--wslubuntu--vscode&#34;&gt;Instalación del entorno (Windows / WSL(Ubuntu) / VSCode)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Solo si estas en Ubuntu:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;code-block&#34;&gt;&#xD;&#xA;    &lt;button class=&#34;code-copy&#34; type=&#34;button&#34; hidden aria-label=&#34;Copy code to clipboard&#34;&gt;&#xD;&#xA;      &lt;span class=&#34;code-copy-label&#34; aria-hidden=&#34;true&#34;&gt;Copy&lt;/span&gt;&#xD;&#xA;    &lt;/button&gt;&#xD;&#xA;    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt update&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install python3-venv&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xD;&#xA;  &lt;/div&gt;&lt;ul&gt;&#xA;&lt;li&gt;Crear entorno virtual&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Windows:&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>📈 Web dashboard en k6</title>
-				<link>https://automationtesting.ar/post/k6_dashboard/</link>
+				<link>http://localhost:1313/post/k6_dashboard/</link>
 				<pubDate>Sat, 13 Jul 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/k6_dashboard/</guid>
-				<description>&lt;h1 id=&#34;-web-dashboard&#34;&gt;📉 Web dashboard&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;k6&lt;/strong&gt; proporciona un panel web integrado que puede habilitar para visualizar y monitorear los resultados de sus pruebas en &lt;strong&gt;tiempo real&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://automationtesting.ar/images/k6/web-dashboard.png&#34; alt=&#34;web-dashboard&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;cómo-utilizar&#34;&gt;Cómo utilizar&lt;/h1&gt;&#xA;&lt;p&gt;El panel web es una función integrada de k6. se puede habilitar configurando la variable de entorno &lt;strong&gt;K6_WEB_DASHBOARD&lt;/strong&gt; en &lt;strong&gt;true&lt;/strong&gt; cuando ejecute su script de prueba, por ejemplo:&lt;/p&gt;&#xA;&lt;div class=&#34;code-block&#34;&gt;&#xD;&#xA;    &lt;button class=&#34;code-copy&#34; type=&#34;button&#34; hidden aria-label=&#34;Copy code to clipboard&#34;&gt;&#xD;&#xA;      &lt;span class=&#34;code-copy-label&#34; aria-hidden=&#34;true&#34;&gt;Copy&lt;/span&gt;&#xD;&#xA;    &lt;/button&gt;&#xD;&#xA;    &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-linux&#34; data-lang=&#34;linux&#34;&gt;export K6_WEB_DASHBOARD=true&lt;/code&gt;&lt;/pre&gt;&#xD;&#xA;  &lt;/div&gt;&lt;p&gt;De forma predeterminada, el panel web está disponible en el puerto localhost 5665&lt;/p&gt;</description>
+				<guid>http://localhost:1313/post/k6_dashboard/</guid>
+				<description>&lt;h1 id=&#34;-web-dashboard&#34;&gt;📉 Web dashboard&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;k6&lt;/strong&gt; proporciona un panel web integrado que puede habilitar para visualizar y monitorear los resultados de sus pruebas en &lt;strong&gt;tiempo real&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/k6/web-dashboard.png&#34; alt=&#34;web-dashboard&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;cómo-utilizar&#34;&gt;Cómo utilizar&lt;/h1&gt;&#xA;&lt;p&gt;El panel web es una función integrada de k6. se puede habilitar configurando la variable de entorno &lt;strong&gt;K6_WEB_DASHBOARD&lt;/strong&gt; en &lt;strong&gt;true&lt;/strong&gt; cuando ejecute su script de prueba, por ejemplo:&lt;/p&gt;&#xA;&lt;div class=&#34;code-block&#34;&gt;&#xD;&#xA;    &lt;button class=&#34;code-copy&#34; type=&#34;button&#34; hidden aria-label=&#34;Copy code to clipboard&#34;&gt;&#xD;&#xA;      &lt;span class=&#34;code-copy-label&#34; aria-hidden=&#34;true&#34;&gt;Copy&lt;/span&gt;&#xD;&#xA;    &lt;/button&gt;&#xD;&#xA;    &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-linux&#34; data-lang=&#34;linux&#34;&gt;export K6_WEB_DASHBOARD=true&lt;/code&gt;&lt;/pre&gt;&#xD;&#xA;  &lt;/div&gt;&lt;p&gt;De forma predeterminada, el panel web está disponible en el puerto localhost 5665&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>📱 Setup Appium con Python &#43; Pytest (Android)</title>
-				<link>https://automationtesting.ar/post/appium/</link>
+				<link>http://localhost:1313/post/appium/</link>
 				<pubDate>Sat, 13 Jul 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/appium/</guid>
+				<guid>http://localhost:1313/post/appium/</guid>
 				<description>&lt;h1 id=&#34;-setup-appium-con-python--pytest-android&#34;&gt;📱 Setup Appium con Python + Pytest (Android)&lt;/h1&gt;&#xA;&lt;p&gt;Guía completa para preparar una laptop nueva y dejarla lista para automatizar tests con &lt;strong&gt;Python + Pytest + Appium (Android)&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-preparar-la-máquina&#34;&gt;1. Preparar la máquina&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Instalar &lt;strong&gt;Python 3.x&lt;/strong&gt; desde la página oficial&lt;/li&gt;&#xA;&lt;li&gt;Marcar &lt;strong&gt;Add Python to PATH&lt;/strong&gt; durante la instalación&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;2-ide--editor&#34;&gt;2. IDE / Editor&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Instalar &lt;strong&gt;Visual Studio Code&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;3-java--android-sdk-para-poder-usar-uiautomator2&#34;&gt;3. Java + Android SDK (para poder usar UiAutomator2)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Instalar un &lt;strong&gt;JDK&lt;/strong&gt;, preferentemente Temurin. (ruta de instalación opcional, por ejemplo: C:\jdk-21.0.10.7-hotspot)&#xA;(&lt;a href=&#34;https://adoptium.net/es/temurin/releases&#34;&gt;https://adoptium.net/es/temurin/releases&lt;/a&gt;)&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>✅ Tipos de Checks en k6</title>
-				<link>https://automationtesting.ar/post/k6_checks/</link>
+				<link>http://localhost:1313/post/k6_checks/</link>
 				<pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/k6_checks/</guid>
+				<guid>http://localhost:1313/post/k6_checks/</guid>
 				<description>&lt;h1 id=&#34;tipos-de-checks-en-k6&#34;&gt;Tipos de Checks en k6&lt;/h1&gt;&#xA;&lt;p&gt;En &lt;strong&gt;k6&lt;/strong&gt;, los &lt;strong&gt;checks&lt;/strong&gt; son aserciones que permiten validar las respuestas de tus solicitudes HTTP. A continuación, se describen los tipos comunes de checks que puedes usar:&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-checks-de-código-de-estado&#34;&gt;1. Checks de Código de Estado&lt;/h2&gt;&#xA;&lt;p&gt;Verifica que el código de estado de la respuesta sea el esperado.&lt;/p&gt;&#xA;&lt;div class=&#34;code-block&#34;&gt;&#xD;&#xA;    &lt;button class=&#34;code-copy&#34; type=&#34;button&#34; hidden aria-label=&#34;Copy code to clipboard&#34;&gt;&#xD;&#xA;      &lt;span class=&#34;code-copy-label&#34; aria-hidden=&#34;true&#34;&gt;Copy&lt;/span&gt;&#xD;&#xA;    &lt;/button&gt;&#xD;&#xA;    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;check&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;, {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;el código de estado es 200&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;) =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xD;&#xA;  &lt;/div&gt;&lt;h2 id=&#34;checks-de-tiempo-de-respuesta&#34;&gt;Checks de Tiempo de Respuesta&lt;/h2&gt;&#xA;&lt;p&gt;Comprueba que el tiempo de respuesta esté dentro de los límites aceptables.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>⚡ Performance testing</title>
-				<link>https://automationtesting.ar/post/performance/</link>
+				<link>http://localhost:1313/post/performance/</link>
 				<pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/performance/</guid>
+				<guid>http://localhost:1313/post/performance/</guid>
 				<description>&lt;h2 id=&#34;-la-importancia-de-un-plan-en-las-pruebas-de-rendimiento&#34;&gt;📊 La importancia de un plan en las pruebas de rendimiento&lt;/h2&gt;&#xA;&lt;p&gt;Las pruebas de rendimiento son cruciales para evaluar el comportamiento de un sistema bajo carga, identificando cuellos de botella y garantizando una experiencia de usuario satisfactoria. Sin embargo, para sacar el máximo provecho de estas pruebas y obtener resultados confiables, es fundamental contar con un plan bien definido.&lt;/p&gt;&#xA;&lt;p&gt;Un plan de pruebas de rendimiento sirve como una hoja de ruta detallada, estableciendo objetivos claros, metodologías, herramientas, recursos y responsabilidades. A continuación, se destacan algunos puntos clave que resaltan la importancia de contar con un plan:&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>🤝 Contract First y testing</title>
-				<link>https://automationtesting.ar/post/contractfirst/</link>
+				<link>http://localhost:1313/post/contractfirst/</link>
 				<pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/contractfirst/</guid>
+				<guid>http://localhost:1313/post/contractfirst/</guid>
 				<description>&lt;h2 id=&#34;-implementación-de-la-metodología-contract-first-en-pruebas-de-software&#34;&gt;🧰 Implementación de la Metodología Contract First en Pruebas de Software.&lt;/h2&gt;&#xA;&lt;p&gt;Este post tiene la intención de mostrar cómo adoptar la metodología Contract First en el contexto de pruebas de software. Implementar esta metodología implica una serie de pasos que facilitan la integración de contratos en el proceso de pruebas, abarcando desde la educación y la capacitación hasta la automatización y la colaboración continua. Al usar herramientas como Postman y generadores de clientes API, los testers pueden crear y ejecutar pruebas de manera eficiente y consistente, asegurando que las APIs cumplan con las especificaciones definidas en los contratos.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>👩‍💻 Introducción a la Programación Orientada a Objetos (POO) TypeScript</title>
-				<link>https://automationtesting.ar/post/poo/</link>
+				<link>http://localhost:1313/post/poo/</link>
 				<pubDate>Sun, 14 Apr 2024 11:25:05 -0400</pubDate>
-				<guid>https://automationtesting.ar/post/poo/</guid>
+				<guid>http://localhost:1313/post/poo/</guid>
 				<description>&lt;p&gt;&amp;lt;/&amp;gt; Un tema muy importante a la hora de comenzar el camino de la automatización de pruebas es la programación orientada a objetos.&lt;/p&gt;&#xA;&lt;p&gt;La Programación Orientada a Objetos (POO) es un estilo de programación que organiza el código en torno a objetos. Estos objetos representan entidades del mundo real o del dominio del problema, y tienen características (llamadas propiedades) y comportamientos (llamados métodos). El objetivo de la POO es hacer que el código sea más fácil de entender, mantener y reutilizar. Es una forma natural de pensar en los problemas y cómo resolverlos.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Challenge automatización de pruebas</title>
-				<link>https://automationtesting.ar/post/challenge/</link>
+				<link>http://localhost:1313/post/challenge/</link>
 				<pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>https://automationtesting.ar/post/challenge/</guid>
+				<guid>http://localhost:1313/post/challenge/</guid>
 				<description>&lt;h2 id=&#34;-proyecto-para-entrenamiento-de-tester-automatizadores&#34;&gt;🎉 ¡Proyecto para entrenamiento de tester automatizadores!&lt;/h2&gt;&#xA;&lt;p&gt;💻 &lt;strong&gt;Backend:&lt;/strong&gt;  &lt;a href=&#34;https://walletchallenge-back.onrender.com/docs&#34;&gt;Wallet Challenge Backend&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;🌐 &lt;strong&gt;Frontend:&lt;/strong&gt; &lt;a href=&#34;https://walletchallenge-front.onrender.com/&#34;&gt;Wallet Challenge Frontend&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Este proyecto fue creado como una herramienta de entrenamiento para quienes desean practicar y mejorar sus habilidades en automatización de pruebas. Es ideal tanto para testers principiantes como avanzados que buscan un entorno controlado y realista para probar técnicas y herramientas de automatización.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-características-del-proyecto&#34;&gt;🔑 Características del proyecto:&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Backend:&lt;/strong&gt; openapi: 3.1.0 [Swagger]&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Frontend:&lt;/strong&gt; Login (usuario: &lt;strong&gt;challenge&lt;/strong&gt;, password &lt;strong&gt;challenge&lt;/strong&gt;).&#xA;(Por el momento funciona el login y la consulta de cuentas para la cuál se debe ingresar el número de tarjeta en el textbox &amp;ldquo;Cuentas&amp;rdquo;)&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>🔺 Pirámide de automatización</title>
-				<link>https://automationtesting.ar/post/piramide/</link>
+				<link>http://localhost:1313/post/piramide/</link>
 				<pubDate>Sun, 14 May 2023 11:25:05 -0400</pubDate>
-				<guid>https://automationtesting.ar/post/piramide/</guid>
-				<description>&lt;h1 id=&#34;-la-pirámide-de-pruebas-según-mike-cohn&#34;&gt;🔺 La Pirámide de Pruebas según Mike Cohn&lt;/h1&gt;&#xA;&lt;p&gt;Mike Cohn ha discutido y promovido este modelo en sus libros y presentaciones sobre desarrollo ágil y gestión de proyectos, destacando su importancia para la calidad del software y la eficiencia en las prácticas de prueba.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://automationtesting.ar/images/piramide.png&#34; alt=&#34;Pirámide&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;base-de-la-pirámide---pruebas-unitarias&#34;&gt;Base de la pirámide - Pruebas Unitarias&lt;/h2&gt;&#xA;&lt;p&gt;Las pruebas unitarias constituyen la base de la pirámide. Son pruebas automatizadas que verifican el funcionamiento correcto de unidades individuales de código, como funciones, métodos o componentes pequeños.&lt;/p&gt;</description>
+				<guid>http://localhost:1313/post/piramide/</guid>
+				<description>&lt;h1 id=&#34;-la-pirámide-de-pruebas-según-mike-cohn&#34;&gt;🔺 La Pirámide de Pruebas según Mike Cohn&lt;/h1&gt;&#xA;&lt;p&gt;Mike Cohn ha discutido y promovido este modelo en sus libros y presentaciones sobre desarrollo ágil y gestión de proyectos, destacando su importancia para la calidad del software y la eficiencia en las prácticas de prueba.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/piramide.png&#34; alt=&#34;Pirámide&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;base-de-la-pirámide---pruebas-unitarias&#34;&gt;Base de la pirámide - Pruebas Unitarias&lt;/h2&gt;&#xA;&lt;p&gt;Las pruebas unitarias constituyen la base de la pirámide. Son pruebas automatizadas que verifican el funcionamiento correcto de unidades individuales de código, como funciones, métodos o componentes pequeños.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

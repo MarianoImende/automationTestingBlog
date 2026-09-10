@@ -2381,3 +2381,18 @@ code:not(pre code) {
     justify-content: center;
   }
 }
+
+@media (max-width: 600px) {
+  .nav-brand {
+    font-size: 0.82rem;
+    gap: 4px;
+  }
+
+  .brand-icon {
+    font-size: 1rem;
+  }
+
+  .nav-actions {
+    gap: 5px;
+  }
+}
